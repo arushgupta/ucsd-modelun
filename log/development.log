@@ -218,3 +218,284 @@ Processing by Admin::AdminUsersController#index as HTML
   [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
   Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (370.3ms)
 Completed 200 OK in 443ms (Views: 408.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin" for ::1 at 2015-07-08 17:37:42 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.6ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/timcy/.rvm/gems/ruby-2.2.1/gems/active_admin_theme-1.0.2/app/assets/stylesheets/wigu/active_admin_theme.css.scss to /Users/timcy/.rvm/gems/ruby-2.2.1/gems/active_admin_theme-1.0.2/app/assets/stylesheets/wigu/active_admin_theme.scss. (called from block (2 levels) in build_active_admin_head at /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/lib/active_admin/views/pages/base.rb:27)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/timcy/.rvm/gems/ruby-2.2.1/gems/active_admin_theme-1.0.2/app/assets/stylesheets/wigu/active_admin_theme.css.scss to /Users/timcy/.rvm/gems/ruby-2.2.1/gems/active_admin_theme-1.0.2/app/assets/stylesheets/wigu/active_admin_theme.scss. (called from block (2 levels) in build_active_admin_head at /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/lib/active_admin/views/pages/base.rb:27)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (5801.5ms)
+Completed 200 OK in 5891ms (Views: 5833.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/admin" for ::1 at 2015-07-08 17:37:48 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (322.0ms)
+Completed 200 OK in 337ms (Views: 333.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-08 17:37:54 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (405.3ms)
+Completed 200 OK in 461ms (Views: 430.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/comments" for ::1 at 2015-07-08 17:38:46 +0530
+Processing by Admin::CommentsController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (13.5ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT 30 OFFSET 0) subquery_for_count  [["namespace", "admin"]]
+  [1m[36m (0.8ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc[0m
+  [1m[35m (0.5ms)[0m  SELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (400.9ms)
+Completed 200 OK in 430ms (Views: 408.4ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-08 17:38:48 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.4ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (331.8ms)
+Completed 200 OK in 356ms (Views: 351.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-08 17:39:21 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.4ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (351.6ms)
+Completed 200 OK in 383ms (Views: 375.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/admin_users/1" for ::1 at 2015-07-08 17:39:33 +0530
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "AdminUser"], ["resource_id", "1"], ["namespace", "admin"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3  [["resource_type", "AdminUser"], ["resource_id", "1"], ["namespace", "admin"]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/show.html.arb (371.1ms)
+Completed 200 OK in 428ms (Views: 408.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-08 17:39:39 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.4ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (344.8ms)
+Completed 200 OK in 369ms (Views: 364.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2015-07-08 17:39:53 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (273.6ms)
+Completed 200 OK in 286ms (Views: 283.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2015-07-08 17:44:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (681.1ms)
+Completed 500 Internal Server Error in 743ms (ActiveRecord: 3.6ms)
+
+NameError (uninitialized constant Post):
+  app/admin/dashboard.rb:19:in `block (6 levels) in <top (required)>'
+  app/admin/dashboard.rb:18:in `block (5 levels) in <top (required)>'
+  app/admin/dashboard.rb:17:in `block (4 levels) in <top (required)>'
+  app/admin/dashboard.rb:16:in `block (3 levels) in <top (required)>'
+  app/admin/dashboard.rb:15:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (14.4ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (134.2ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2015-07-08 17:46:23 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (652.0ms)
+Completed 200 OK in 723ms (Views: 674.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin.self-58b67254960e0d8bb8927a6765682c6128155f75e480df6c5f83a25b1d2fd577.css?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-10ee4c07784b00259ca97a02c4e7fb53c1b27ebe5653a3b910426b4ea0941250.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-161387c54d1640bd9f174301b77d73ea88ce6d7daf0d7356bd50b4d0143d1b72.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/print.self-6f3945e3efebc0ed85d6f019c92ca657edea956d558e50e8926cce4031dce366.css?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/assets/active_admin/application.self-50ffc9f86e474cd52ffb7ce3b3572255ad6646ea17097a056f330b540eae402c.js?body=1" for ::1 at 2015-07-08 17:46:24 +0530
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-08 17:46:26 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.6ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (376.1ms)
+Completed 200 OK in 407ms (Views: 397.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2015-07-08 17:46:28 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (290.0ms)
+Completed 200 OK in 303ms (Views: 300.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-08 17:46:33 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (431.6ms)
+Completed 200 OK in 456ms (Views: 451.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/admin_users/new" for ::1 at 2015-07-08 17:46:35 +0530
+Processing by Admin::AdminUsersController#new as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/new.html.arb (388.7ms)
+Completed 200 OK in 422ms (Views: 419.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/admin/admin_users" for ::1 at 2015-07-08 17:47:11 +0530
+Processing by Admin::AdminUsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dvoVQ1Bv37VXDDlLUxrjaE7APuggGEX9zOz9k8PBJk7KI+JuLzfoTQVD1RRK8WLbWXMpbsKf1OWoeE/Z9AaYrw==", "admin_user"=>{"email"=>"admin2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Admin user"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAdminUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = 'admin2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "admin2@example.com"], ["encrypted_password", "$2a$10$8t1TvSN4fzgjMjouBoLodOROeamxZzyG5o0UyZAtuDJxGdxRHZ51O"], ["created_at", "2015-07-08 12:17:11.686190"], ["updated_at", "2015-07-08 12:17:11.686190"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/admin_users/2
+Completed 302 Found in 171ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/admin/admin_users/2" for ::1 at 2015-07-08 17:47:11 +0530
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/show.html.arb (320.0ms)
+Completed 200 OK in 348ms (Views: 339.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-08 17:48:07 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (353.2ms)
+Completed 200 OK in 378ms (Views: 373.1ms | ActiveRecord: 1.5ms)
