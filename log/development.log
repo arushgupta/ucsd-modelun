@@ -1651,3 +1651,661 @@ ActionController::RoutingError (No route matches [GET] "/javascripts/active_admi
 
   Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
   Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (88.4ms)
+
+
+Started GET "/admin" for ::1 at 2015-07-09 16:02:06 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (18.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.7ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (550.0ms)
+Completed 200 OK in 678ms (Views: 585.3ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/admin" for ::1 at 2015-07-09 16:02:07 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (75.5ms)
+Completed 200 OK in 89ms (Views: 85.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:02:07 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (102.3ms)
+
+
+Started GET "/admin/logout" for ::1 at 2015-07-09 16:02:11 +0530
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 32ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for ::1 at 2015-07-09 16:02:11 +0530
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for ::1 at 2015-07-09 16:02:11 +0530
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/devise/shared/_links.erb (1.6ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (124.2ms)
+Completed 200 OK in 215ms (Views: 212.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:02:12 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (90.1ms)
+
+
+Started POST "/admin/login" for ::1 at 2015-07-09 16:02:15 +0530
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mM/s2fj315AIOMBnmOmYKQcGSyqdtOUaAZddQ4/jOvk+zjDXFmojtc5Ag9PONFxM4Gz6wEevblNi53ceGbDhgA==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["email", "admin@example.com"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "admin_users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "admin_users"."id" = $3[0m  [["remember_created_at", "2015-07-09 10:32:15.132982"], ["updated_at", "2015-07-09 10:32:15.133794"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "admin_users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "admin_users"."id" = $5  [["last_sign_in_at", "2015-07-09 09:19:12.180089"], ["current_sign_in_at", "2015-07-09 10:32:15.138025"], ["sign_in_count", 5], ["updated_at", "2015-07-09 10:32:15.139301"], ["id", 1]]
+  [1m[36m (7.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 152ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/admin" for ::1 at 2015-07-09 16:02:15 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (75.6ms)
+Completed 200 OK in 89ms (Views: 86.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:02:15 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (88.6ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-09 16:02:19 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.7ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (185.9ms)
+Completed 200 OK in 256ms (Views: 223.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:02:20 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (88.7ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2015-07-09 16:02:25 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (91.0ms)
+Completed 200 OK in 104ms (Views: 101.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:02:25 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (98.1ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2015-07-09 16:02:34 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (2.6ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (90.8ms)
+Completed 200 OK in 108ms (Views: 102.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:02:34 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (88.2ms)
+
+
+Started GET "/assets/active_admin.self-58b67254960e0d8bb8927a6765682c6128155f75e480df6c5f83a25b1d2fd577.css?body=1" for ::1 at 2015-07-09 16:02:35 +0530
+
+
+Started GET "/assets/active_admin/print.self-6f3945e3efebc0ed85d6f019c92ca657edea956d558e50e8926cce4031dce366.css?body=1" for ::1 at 2015-07-09 16:02:35 +0530
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-09 16:03:46 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.6ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (125.9ms)
+Completed 200 OK in 152ms (Views: 145.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:03:46 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (95.6ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-09 16:08:53 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mAdminUser Load (0.6ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/timcy/.rvm/gems/ruby-2.2.1/gems/active_skin-0.0.9/app/assets/stylesheets/active_skin.css.sass to /Users/timcy/.rvm/gems/ruby-2.2.1/gems/active_skin-0.0.9/app/assets/stylesheets/active_skin.sass. (called from block (2 levels) in build_active_admin_head at /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/lib/active_admin/views/pages/base.rb:27)
+Warning. Error encountered while saving cache f1c1521dc3276619347bebbf671b12082fe0c3fb/active_skin.css.sassc: can't dump hash with default proc
+
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/timcy/.rvm/gems/ruby-2.2.1/gems/active_skin-0.0.9/app/assets/stylesheets/active_skin.css.sass to /Users/timcy/.rvm/gems/ruby-2.2.1/gems/active_skin-0.0.9/app/assets/stylesheets/active_skin.sass. (called from block (2 levels) in build_active_admin_head at /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/lib/active_admin/views/pages/base.rb:27)
+Warning. Error encountered while saving cache f1c1521dc3276619347bebbf671b12082fe0c3fb/active_skin.css.sassc: can't dump hash with default proc
+
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.6ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (5005.8ms)
+Completed 200 OK in 5085ms (Views: 5035.4ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:08:59 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (93.3ms)
+
+
+Started GET "/assets/active_admin/print.self-6f3945e3efebc0ed85d6f019c92ca657edea956d558e50e8926cce4031dce366.css?body=1" for ::1 at 2015-07-09 16:08:59 +0530
+
+
+Started GET "/assets/active_admin.self-2ab84902bcc1e03258c551666680e7514b57bfc6b32bc3891352cf7d7a4568f2.css?body=1" for ::1 at 2015-07-09 16:08:59 +0530
+
+
+Started GET "/assets/active_skin/default_logo-d59b61453e0b8e5c6713a61a8b199a12288aa33e75f91db273067afffed549e8.png" for ::1 at 2015-07-09 16:08:59 +0530
+
+
+Started GET "/assets/active_admin/orderable-29374dbb55b0012d78a37c614d573bb3474f0779849b478a147d0f1845ca6617.png" for ::1 at 2015-07-09 16:08:59 +0530
+
+
+Started GET "/assets/active_admin/datepicker/datepicker-input-icon-d9c2bb73769af777c8a71720d29741f3a499aebd5a043e9a119bd0d9597aed47.png" for ::1 at 2015-07-09 16:08:59 +0530
+
+
+Started GET "/admin/dashboard" for ::1 at 2015-07-09 16:09:14 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (84.1ms)
+Completed 200 OK in 98ms (Views: 95.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:09:14 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (94.1ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-09 16:09:20 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (125.3ms)
+Completed 200 OK in 154ms (Views: 149.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:09:20 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (89.2ms)
+
+
+Started GET "/admin/comments" for ::1 at 2015-07-09 16:09:21 +0530
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1  [["namespace", "admin"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT 30 OFFSET 0) subquery_for_count[0m  [["namespace", "admin"]]
+  [1m[35m (0.6ms)[0m  SELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc
+  [1m[36m (0.5ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc[0m
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (155.8ms)
+Completed 200 OK in 185ms (Views: 176.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:09:22 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (92.6ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-09 16:09:23 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (141.3ms)
+Completed 200 OK in 168ms (Views: 163.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:09:23 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (93.6ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2015-07-09 16:09:24 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/page/index.html.arb (80.1ms)
+Completed 200 OK in 93ms (Views: 90.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:09:25 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (85.8ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2015-07-09 16:09:35 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.4ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-aff21a4b4144/app/views/active_admin/resource/index.html.arb (129.3ms)
+Completed 200 OK in 154ms (Views: 149.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/javascripts/active_admin.js" for ::1 at 2015-07-09 16:09:35 +0530
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/active_admin.js"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/timcy/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/timcy/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (83.1ms)
