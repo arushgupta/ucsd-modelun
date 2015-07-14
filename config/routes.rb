@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'abouts/new'
+
   get 'users/new'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

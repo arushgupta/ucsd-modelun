@@ -1,0 +1,2 @@
+class AboutSecretariatsController < ApplicationController
+end
