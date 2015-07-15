@@ -5,12 +5,13 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get 'static_pages/home'
-
+  # get 'static_pages/home'
+  get 'home/dashboard'
   get 'static_pages/help'
 
  
   resources :users
+  resources :tritonmuns
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
