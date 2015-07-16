@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
 
-menu priority: 1
+  menu priority: 1
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -14,15 +14,25 @@ menu priority: 1
 #   permitted
 # end
 
-permit_params :name, :category_id, :is_deleted
+  permit_params :name, :category_id, :is_deleted
 
-form do |f|
-    f.inputs 'Category Details' do
-      f.input :name
-      f.input :category_id
-      f.input :is_deleted
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :is_deleted
+    column :category, :collection => Category.all.map {|c| [c.name]}
+    actions
+  end
+
+  form do |f|
+  	f.inputs "Category Details" do
+  	  f.input :name
+  	  f.input :category_id, :collection => Category.all.map {|c| [c.name]}
+  	  f.input :is_deleted
     end
     f.actions
   end
+
 
 end

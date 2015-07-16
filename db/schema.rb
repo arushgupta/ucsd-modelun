@@ -16,31 +16,6 @@ ActiveRecord::Schema.define(version: 20150716063021) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "about_histories", force: :cascade do |t|
-    t.string   "year"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "about_overviews", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "about_secretariats", force: :cascade do |t|
-    t.string   "position"
-    t.string   "name"
-    t.string   "college"
-    t.string   "major"
-    t.text     "description"
-    t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
@@ -74,59 +49,24 @@ ActiveRecord::Schema.define(version: 20150716063021) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "articles", force: :cascade do |t|
-    t.string   "title"
-    t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.integer  "category_id"
     t.boolean  "is_deleted"
+    t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.string   "commenter"
-    t.text     "body"
-    t.integer  "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
-
   create_table "pages", force: :cascade do |t|
-    t.integer  "category_id"
     t.string   "name"
     t.string   "summary"
     t.text     "content"
     t.text     "meta_keywords"
     t.string   "meta_title"
-    t.integer  "page_id"
     t.boolean  "is_deleted"
+    t.integer  "category_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "tritonmuns", force: :cascade do |t|
-    t.string   "season"
-    t.integer  "number"
-    t.integer  "year"
-    t.string   "date"
-    t.string   "location"
-    t.integer  "early_price"
-    t.integer  "normal_price"
-    t.integer  "late_price"
-    t.string   "early_date"
-    t.string   "normal_date"
-    t.string   "late_date"
-    t.integer  "delegation_fee"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -139,5 +79,4 @@ ActiveRecord::Schema.define(version: 20150716063021) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
-  add_foreign_key "comments", "articles"
 end

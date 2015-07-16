@@ -7,7 +7,7 @@ before_action :admin_user,     only: [:destroy, :create]
   end
   
   def create
-  	 @category = Category.new(user_params)
+  	 @category = Category.new(category_params)
       if @category.save
         # UserMailer.account_activation(@user).deliver_now
         redirect_to root_url
@@ -15,5 +15,18 @@ before_action :admin_user,     only: [:destroy, :create]
         render 'new'
       end
   end
+  
+  def show
+    @page = Page.find(params[:id])
+  end
 
+  def index
+    @categories = Category.order(:id)
+    @categories = Category.paginate(page: params[:category], per_page: 5)
+  end
+  
+  private
+  def category_params
+    params.require(:category).permit(:name,:is_deleted, :category_id)
+  end
 end

@@ -7,13 +7,27 @@ before_action :admin_user,     only: [:destroy, :create]
   end
   
   def create
-  	 @page = Page.new(user_params)
-      if @page.save
+  	@page = Page.new(page_params)
+    if @page.save
         # UserMailer.account_activation(@user).deliver_now
-        redirect_to root_url
-      else
-        render 'new'
-      end
+      redirect_to root_url
+    else
+     render 'new'
+    end    
   end
+
+
+  def index
+    @pages = Page.paginate(page: params[:page], per_page: 5)
+  end
+
+  def show
+    @page = Page.find(params[:id])
+  end
+  
+  private
+    def page_params
+      params.require(:page).permit(:name, :summary, :content, :meta_keywords, :meta_title, :is_deleted)
+    end
 
 end
