@@ -1,6 +1,6 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Category do
 
-menu priority: 3
+menu priority: 1
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -13,16 +13,16 @@ menu priority: 3
 #   permitted << :other if resource.something?
 #   permitted
 # end
-permit_params :name, :email, :password
+
+permit_params :name, :category_id, :is_deleted
 
 form do |f|
-    f.inputs 'User Details' do
+    f.inputs 'Category Details' do
       f.input :name
-      f.input :email
-      f.input :password
+      f.input :category_id
+      f.input :is_deleted
     end
     f.actions
   end
-
 
 end
