@@ -7,6 +7,11 @@ before_action :admin_user,     only: [:destroy, :create]
   end
   
   def create
+    
+    if @category.exists
+      return redirect_to :action => 'index'
+    end
+
   	 @category = Category.new(category_params)
       if @category.save
         # UserMailer.account_activation(@user).deliver_now

@@ -13,7 +13,7 @@ ActiveAdmin.register Page do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-  permit_params :name, :summary, :content, :meta_keywords, :meta_title, :category, :is_deleted
+  permit_params :name, :summary, :content, :meta_keywords, :meta_title, :category_id, :is_deleted
 
   index do
     selectable_column
@@ -21,7 +21,7 @@ ActiveAdmin.register Page do
     column :name
     column :summary
     column :content
-    column :category, :collection => Category.all.map {|c| [c.name]}
+    column :category
     column :is_deleted
     actions
   end
@@ -33,7 +33,7 @@ form do |f|
       f.input :content, :as => :ckeditor
       f.input :meta_keywords
       f.input :meta_title
-      f.input :category, :collection => Category.all.map {|c| [c.name]}
+      f.input :category, :collection => Category.all.map {|category| [category.name, category.id]}
       f.input :is_deleted
     end
     f.actions
