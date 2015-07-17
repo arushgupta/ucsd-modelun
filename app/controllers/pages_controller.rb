@@ -18,7 +18,7 @@ before_action :admin_user,     only: [:destroy, :create]
 
 
   def index
-    @pages = Page.paginate(page: params[:page], per_page: 5)
+    # @pages = Page.paginate(page: params[:page], per_page: 5)
   end
 
   def show

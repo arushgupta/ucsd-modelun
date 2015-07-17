@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: f99081c0c3327c0d696e5190d0d31433a2eb79e4
+  revision: 5a2b7b5bc683ae98a114958c3d1eb9c932234c56
   specs:
     activeadmin (1.0.0.pre1)
       arbre (~> 1.0, >= 1.0.2)
@@ -66,7 +66,7 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.2)
-    autoprefixer-rails (5.2.1)
+    autoprefixer-rails (5.2.1.1)
       execjs
       json
     bcrypt (3.1.7)

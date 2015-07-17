@@ -2,6 +2,7 @@ ActiveAdmin.register Schedule do
 menu priority: 5
 #belongs_to :conference
 permit_params :conference_id ,:name ,:date
+menu parent: "Others"
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

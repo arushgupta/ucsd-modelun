@@ -1,5 +1,6 @@
 ActiveAdmin.register Event do
  menu priority: 6
+ menu parent: "Others"
  permit_params :activity,:place,:datetime,:time_start,:time_end,:schedule_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

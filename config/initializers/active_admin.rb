@@ -32,6 +32,7 @@ ActiveAdmin.setup do |config|
   #
   # To set no namespace by default, use:
   #   config.default_namespace = false
+  config.default_per_page = 5
   #
   # Default:
   # config.default_namespace = :admin
@@ -44,11 +45,12 @@ ActiveAdmin.setup do |config|
   #     admin.site_title = "Custom Admin Title"
   #   end
   #
-  # config.namespace :admin do |admin|
-  #   admin.build_menu do |menu|
-  #     menu.add :label => "Settings",  :priority => 3
-  #   end
-  # end
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add :label => "Others", :priority => 12
+      menu.add :label => "Settings",  :priority => 13
+    end
+  end
 
   # This will ONLY change the title for the admin section. Other
   # namespaces will continue to use the main "site_title" configuration.

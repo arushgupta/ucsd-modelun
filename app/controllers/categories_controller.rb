@@ -27,7 +27,7 @@ before_action :admin_user,     only: [:destroy, :create]
 
   def index
     @categories = Category.order(:id)
-    @categories = Category.paginate(page: params[:category], per_page: 5)
+    # @categories = Category.paginate(page: params[:category], per_page: 5)
   end
   
   private

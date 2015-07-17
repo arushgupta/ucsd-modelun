@@ -3,6 +3,7 @@ class CreateFaqs < ActiveRecord::Migration
     create_table :faqs do |t|
       t.string :name
       t.references :conference
+      
       t.timestamps null: false
     end
   end

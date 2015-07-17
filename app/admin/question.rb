@@ -1,6 +1,6 @@
 ActiveAdmin.register Question do
  menu priority: 9
- permit_params :content,:faq_id
+ permit_params :question, :answer, :faq_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
