@@ -1,6 +1,6 @@
-class CreateConferences < ActiveRecord::Migration
+class CreateOverview < ActiveRecord::Migration
   def change
-    create_table :conferences do |t|
+    create_table :overview do |t|
       t.string :session
       t.integer :year
       t.date :date
@@ -11,9 +11,8 @@ class CreateConferences < ActiveRecord::Migration
       t.integer :late
       t.integer :number
       t.string :reg_url
-      t.references :branch
-      t.timestamps null: false
-      t.timestamps null: false
+      t.references :category
+
       t.timestamps null: false
     end
   end

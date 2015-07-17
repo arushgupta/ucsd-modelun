@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  session: MyString
+  year: 1
+  date: 2015-07-17
+  location: MyString
+  delegation_fee: 1
+  early_fee: 1
+  regular_fee: 1
+  late_fee: 1
+  number: 1
+
+two:
+  session: MyString
+  year: 1
+  date: 2015-07-17
+  location: MyString
+  delegation_fee: 1
+  early_fee: 1
+  regular_fee: 1
+  late_fee: 1
+  number: 1

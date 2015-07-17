@@ -1,4 +1,4 @@
 class Schedule < ActiveRecord::Base
-	belongs_to :conference
+	belongs_to :category
 	has_many :events
 end

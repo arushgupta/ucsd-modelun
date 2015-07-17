@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.time :time_start
       t.time :time_end
       t.references :schedule
+      
       t.timestamps null: false
     end
   end

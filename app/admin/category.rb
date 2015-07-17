@@ -15,7 +15,8 @@ ActiveAdmin.register Category do
 # end
 
   permit_params :name, :category_id, :is_deleted
-
+  config.sort_order = 'id_asc'
+  
   index do
     selectable_column
     id_column

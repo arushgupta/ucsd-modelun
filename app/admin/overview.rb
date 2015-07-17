@@ -1,7 +1,7 @@
-ActiveAdmin.register Conference do
+ActiveAdmin.register Overview do
 menu priority: 4
 menu parent: "Others"
-permit_params :session,:year,:date,:location,:delegation_fee,:early,:regular,:late,:number,:reg_url, :branch_id
+permit_params :session, :year, :date, :location, :delegation_fee, :early_fee, :regular_fee, :late_fee, :number, :category_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -14,6 +14,7 @@ permit_params :session,:year,:date,:location,:delegation_fee,:early,:regular,:la
 #   permitted << :other if resource.something?
 #   permitted
 # end
+
 index do
     selectable_column
     id_column
@@ -22,12 +23,11 @@ index do
     column :date
     column :location
     column :delegation_fee
-    column :early
-    column :regular
-    column :late
+    column :early_fee
+    column :regular_fee
+    column :late_fee
     column :number
-    column :branch,:collection => Branch.all.map {|c| [c.name,c.id]}
-    column :reg_url
+    column :category, :collection => Category.all.map {|c| [c.name,c.id]}
     actions
-  end
+end
 end
