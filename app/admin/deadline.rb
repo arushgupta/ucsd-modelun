@@ -1,4 +1,5 @@
 ActiveAdmin.register Deadline do
+menu priority: 6
 permit_params :date, :text,:conference_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

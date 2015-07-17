@@ -1,6 +1,6 @@
-ActiveAdmin.register User do
-
- 
+ActiveAdmin.register Question do
+ menu priority: 8
+ permit_params :content,:faq_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -13,16 +13,6 @@ ActiveAdmin.register User do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-permit_params :name, :email, :password
-
-form do |f|
-    f.inputs 'User Details' do
-      f.input :name
-      f.input :email
-      f.input :password
-    end
-    f.actions
-  end
 
 
 end

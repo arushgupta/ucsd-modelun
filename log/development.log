@@ -40631,3 +40631,299 @@ Processing by Admin::BranchesController#new as HTML
   [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/new.html.arb (1024.1ms)
 Completed 200 OK in 1039ms (Views: 1031.9ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQuestions (20150717062304)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.3ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "content" character varying, "faq_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150717062304"]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAnswers (20150717062519)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (4.6ms)[0m  [1mCREATE TABLE "answers" ("id" serial primary key, "content" character varying, "question_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150717062519"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'active_admin_comments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'admin_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'branches'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'conferences'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'deadlines'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'faqs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'pages'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'schedules'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/admin/branches/new" for ::1 at 2015-07-17 11:57:55 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::BranchesController#new as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/new.html.arb (1071.0ms)
+Completed 200 OK in 1124ms (Views: 1079.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/admin/branches/new" for ::1 at 2015-07-17 12:01:02 +0530
+
+SyntaxError (/Users/anshusharma/workspace/tmun_project/rails-sample-app/app/admin/user.rb:16: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+permit_params :name, :email, :password
+               ^):
+  app/admin/user.rb:16: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  config/routes.rb:7:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (55.2ms)
+
+
+Started GET "/admin/branches/new" for ::1 at 2015-07-17 12:01:44 +0530
+Processing by Admin::BranchesController#new as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/new.html.arb (1037.2ms)
+Completed 200 OK in 1094ms (Views: 1046.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/admin/branches" for ::1 at 2015-07-17 12:04:51 +0530
+Processing by Admin::BranchesController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "branches" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mConference Load (2.3ms)[0m  SELECT "conferences".* FROM "conferences"
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/index.html.arb (1268.1ms)
+Completed 200 OK in 1317ms (Views: 1272.8ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/admin/branches/new" for ::1 at 2015-07-17 12:04:55 +0530
+Processing by Admin::BranchesController#new as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/new.html.arb (1054.8ms)
+Completed 200 OK in 1070ms (Views: 1062.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/admin/branches" for ::1 at 2015-07-17 12:05:02 +0530
+Processing by Admin::BranchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dQO9qhr5QRtYS/2yflCd52KcBOiV9EOpsWdUIwaTSTYcLy1SPpVwQDiaazTp7fOArvxpWww0PnzU/xkQVTol6w==", "branch"=>{"name"=>"test1"}, "commit"=>"Create Branch"}
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "branches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "test1"], ["created_at", "2015-07-17 06:35:02.554736"], ["updated_at", "2015-07-17 06:35:02.554736"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/branches/1
+Completed 302 Found in 51ms (ActiveRecord: 16.9ms)
+
+
+Started GET "/admin/branches/1" for ::1 at 2015-07-17 12:05:02 +0530
+Processing by Admin::BranchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdminUser Load (0.4ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mBranch Load (0.3ms)[0m  [1mSELECT  "branches".* FROM "branches" WHERE "branches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/show.html.arb (1077.8ms)
+Completed 200 OK in 1094ms (Views: 1085.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/conferences" for ::1 at 2015-07-17 12:05:08 +0530
+Processing by Admin::ConferencesController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "conferences" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mBranch Load (0.4ms)[0m  SELECT "branches".* FROM "branches"
+  [1m[36mDeadline Load (0.4ms)[0m  [1mSELECT "deadlines".* FROM "deadlines"[0m
+  [1m[35mSchedule Load (0.4ms)[0m  SELECT "schedules".* FROM "schedules"
+  [1m[36mFaq Load (0.4ms)[0m  [1mSELECT "faqs".* FROM "faqs"[0m
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/index.html.arb (1153.1ms)
+Completed 200 OK in 1168ms (Views: 1156.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/admin/conferences/new" for ::1 at 2015-07-17 12:05:11 +0530
+Processing by Admin::ConferencesController#new as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mBranch Load (0.4ms)[0m  [1mSELECT "branches".* FROM "branches"[0m
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/new.html.arb (1114.8ms)
+Completed 200 OK in 1138ms (Views: 1122.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/admin/conferences" for ::1 at 2015-07-17 12:05:37 +0530
+Processing by Admin::ConferencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jjh3N/YHjn2yRMFa2vyTNL4BELJgj1ZoSP+DvI8W/zTnFOfP0mu/JtKVV9xNQf1TcmF9AflPK70tZ86P3L+T6Q==", "conference"=>{"branch_id"=>"1", "session"=>"dfsf", "year"=>"2014", "date(1i)"=>"2010", "date(2i)"=>"1", "date(3i)"=>"1", "location"=>"sdfsf", "delegation_fee"=>"1", "early"=>"2", "regular"=>"3", "late"=>"5", "number"=>"3", "reg_url"=>"gdh"}, "commit"=>"Create Conference"}
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "conferences" ("session", "year", "location", "delegation_fee", "early", "regular", "late", "number", "reg_url", "branch_id", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["session", "dfsf"], ["year", 2014], ["location", "sdfsf"], ["delegation_fee", 1], ["early", 2], ["regular", 3], ["late", 5], ["number", 3], ["reg_url", "gdh"], ["branch_id", 1], ["date", "2010-01-01"], ["created_at", "2015-07-17 06:35:37.182333"], ["updated_at", "2015-07-17 06:35:37.182333"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/conferences/1
+Completed 302 Found in 38ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/admin/conferences/1" for ::1 at 2015-07-17 12:05:37 +0530
+Processing by Admin::ConferencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mConference Load (0.3ms)[0m  [1mSELECT  "conferences".* FROM "conferences" WHERE "conferences"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mBranch Load (0.4ms)[0m  SELECT  "branches".* FROM "branches" WHERE "branches"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/show.html.arb (1042.7ms)
+Completed 200 OK in 1056ms (Views: 1050.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/categories" for ::1 at 2015-07-17 12:05:43 +0530
+Processing by Admin::CategoriesController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "categories" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/index.html.arb (1149.8ms)
+Completed 200 OK in 1166ms (Views: 1155.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/admin/categories/new" for ::1 at 2015-07-17 12:05:46 +0530
+Processing by Admin::CategoriesController#new as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered /Users/anshusharma/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/active_admin-f99081c0c332/app/views/active_admin/resource/new.html.arb (1070.6ms)
+Completed 200 OK in 1088ms (Views: 1078.3ms | ActiveRecord: 0.7ms)

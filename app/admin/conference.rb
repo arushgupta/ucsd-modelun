@@ -1,4 +1,5 @@
 ActiveAdmin.register Conference do
+menu priority: 4
 permit_params :session,:year,:date,:location,:delegation_fee,:early,:regular,:late,:number,:reg_url, :branch_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
