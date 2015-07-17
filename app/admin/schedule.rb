@@ -1,4 +1,5 @@
 ActiveAdmin.register Schedule do
+menu priority: 5
 #belongs_to :conference
 permit_params :conference_id ,:name ,:date
 # See permitted parameters documentation:
