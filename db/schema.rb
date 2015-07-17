@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716063021) do
+ActiveRecord::Schema.define(version: 20150717062519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,12 +49,67 @@ ActiveRecord::Schema.define(version: 20150716063021) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "answers", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "branches", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.boolean  "is_deleted"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "conferences", force: :cascade do |t|
+    t.string   "session"
+    t.integer  "year"
+    t.date     "date"
+    t.text     "location"
+    t.integer  "delegation_fee"
+    t.integer  "early"
+    t.integer  "regular"
+    t.integer  "late"
+    t.integer  "number"
+    t.string   "reg_url"
+    t.integer  "branch_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "deadlines", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "conference_id"
+    t.datetime "date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "activity"
+    t.string   "place"
+    t.datetime "datetime"
+    t.time     "time_start"
+    t.time     "time_end"
+    t.integer  "schedule_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "conference_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "pages", force: :cascade do |t|
@@ -65,6 +120,21 @@ ActiveRecord::Schema.define(version: 20150716063021) do
     t.string   "meta_title"
     t.boolean  "is_deleted"
     t.integer  "category_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "faq_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.integer  "conference_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
