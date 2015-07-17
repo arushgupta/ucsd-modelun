@@ -27,7 +27,7 @@ before_action :admin_user,     only: [:destroy, :create]
   
   private
     def page_params
-      params.require(:page).permit(:name, :summary, :content, :meta_keywords, :meta_title, :is_deleted)
+      params.require(:page).permit(:name, :summary, :content, :meta_keywords, :meta_title, :category_id, :is_deleted)
     end
 
 end

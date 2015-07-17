@@ -21,14 +21,14 @@ ActiveAdmin.register Category do
     id_column
     column :name
     column :is_deleted
-    column :category, :collection => Category.all.map {|c| [c.name]}
+    column :category#, :collection => Category.all.map {|c| [c.name]}
     actions
   end
 
   form do |f|
   	f.inputs "Category Details" do
   	  f.input :name
-  	  f.input :category_id, :collection => Category.all.map {|c| [c.name]}
+  	  f.input :category, :collection => Category.all.map {|c| [c.name]}
   	  f.input :is_deleted
     end
     f.actions
