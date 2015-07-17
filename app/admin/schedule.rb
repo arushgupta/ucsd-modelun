@@ -13,19 +13,19 @@ permit_params :conference_id ,:name ,:date
 #   permitted << :other if resource.something?
 #   permitted
 # end
-# index do
-#     selectable_column
-#     id_column
-#     column :name
-#     column :date
-#     column :conference,:collection => Conference.all.map {|c| [c.session]}
-#     actions
-#   end
+index do
+    selectable_column
+    id_column
+    column :name
+    column :date
+    column :conference,:collection => Conference.all.map {|c| [c.session,c.id]}
+    actions
+  end
 form do |f|
     f.inputs 'schedule Details' do
       f.input :name
       f.input :date
-      f.input :conference,:collection => Conference.all.map {|c| [c.session]}
+      f.input :conference,:collection => Conference.all.map {|c| [c.session,c.id]}
     end
     f.actions
   end
