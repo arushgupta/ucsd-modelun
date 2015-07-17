@@ -1,2 +1,0 @@
-class AboutOverviewController < ApplicationController
-end

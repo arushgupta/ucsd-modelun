@@ -1,5 +1,10 @@
 ActiveAdmin.register AdminUser do
+  
+  menu parent: "Settings"
   permit_params :email, :password, :password_confirmation
+
+# Removes filters that are shown on the side by default
+  before_filter :skip_sidebar!, :only => :index
 
   index do
     selectable_column
@@ -11,10 +16,10 @@ ActiveAdmin.register AdminUser do
     actions
   end
 
-  filter :email
-  filter :current_sign_in_at
-  filter :sign_in_count
-  filter :created_at
+  # filter :email
+  # filter :current_sign_in_at
+  # filter :sign_in_count
+  # filter :created_at
 
   form do |f|
     f.inputs "Admin Details" do

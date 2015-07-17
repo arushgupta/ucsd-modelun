@@ -16,31 +16,6 @@ ActiveRecord::Schema.define(version: 20150717040625) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "about_histories", force: :cascade do |t|
-    t.string   "year"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "about_overviews", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "about_secretariats", force: :cascade do |t|
-    t.string   "position"
-    t.string   "name"
-    t.string   "college"
-    t.string   "major"
-    t.text     "description"
-    t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
@@ -81,9 +56,9 @@ ActiveRecord::Schema.define(version: 20150717040625) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.integer  "category_id"
     t.string   "name"
     t.boolean  "is_deleted"
+    t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -131,14 +106,13 @@ ActiveRecord::Schema.define(version: 20150717040625) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.integer  "category_id"
     t.string   "name"
     t.string   "summary"
     t.text     "content"
     t.text     "meta_keywords"
     t.string   "meta_title"
-    t.integer  "page_id"
     t.boolean  "is_deleted"
+    t.integer  "category_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -149,23 +123,6 @@ ActiveRecord::Schema.define(version: 20150717040625) do
     t.integer  "conference_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "tritonmuns", force: :cascade do |t|
-    t.string   "season"
-    t.integer  "number"
-    t.integer  "year"
-    t.string   "date"
-    t.string   "location"
-    t.integer  "early_price"
-    t.integer  "normal_price"
-    t.integer  "late_price"
-    t.string   "early_date"
-    t.string   "normal_date"
-    t.string   "late_date"
-    t.integer  "delegation_fee"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

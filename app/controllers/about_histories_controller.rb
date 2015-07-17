@@ -1,2 +1,0 @@
-class AboutHistoriesController < ApplicationController
-end
