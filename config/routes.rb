@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # get 'static_pages/home'
   get 'home/dashboard'
   get 'static_pages/help'
+  get 'faqs/' => 'questions#index'
 
  
   resources :users

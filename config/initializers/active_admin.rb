@@ -32,7 +32,7 @@ ActiveAdmin.setup do |config|
   #
   # To set no namespace by default, use:
   #   config.default_namespace = false
-  config.default_per_page = 5
+  config.default_per_page = 10
   #
   # Default:
   # config.default_namespace = :admin
