@@ -21,7 +21,7 @@ before_action :admin_user,     only: [:destroy, :create]
   end
   
   def show
-    @page = Page.find(params[:id])
+    @category = Category.find(params[:id])
   end
 
   def index

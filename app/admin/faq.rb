@@ -1,7 +1,7 @@
 ActiveAdmin.register Faq do
  
  menu priority: 8
- permit_params :name, :category_id, questions_attributes: [:question, :answer, :id, :_destroy]
+ permit_params :name, :category_id #, questions_attributes: [:question, :answer, :id, :_destroy]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -23,6 +23,12 @@ index do
   column :name
   column :category
   actions
+  # column "FAQs" do |site|
+  #   link_to "FAQs (#{site.faqs.count})", :controller => "edit_qa", :action => "index", 'q[site_id_eq]' => "#{site.id}".html_safe
+  column '' do |faq|
+      #link_to 'Edit Q&A', admin_question_path(:faq_id => 2)
+      link_to "Questions", :controller => "questions", :id => faq
+  end
 end
 
 
@@ -31,28 +37,28 @@ form do |f|
       f.input :name
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}
     end
-      f.has_many :questions do |q|
-        q.input :question
-        q.input :answer, :as => :ckeditor
-      end
+      # f.has_many :questions do |q|
+      #   q.input :question
+      #   q.input :answer, :as => :ckeditor
+      # end
     f.actions
 end
 
-show do
-  # default_main_content
-  attributes_table do
-    default_attribute_table_rows.each do |field|
-      row field
-    end
+# show do
+#   # default_main_content
+#   attributes_table do
+#     default_attribute_table_rows.each do |field|
+#       row field
+#     end
     
-    h4 "Q&As"
+#     h4 "Q&As"
 
-    table_for faq.questions do
-     column "ID",              :id
-     column "Questions",       :question
-     column "Answers",         :answer
-    end
-  end
+#     table_for faq.questions do
+#      column "ID",              :id
+#      column "Questions",       :question
+#      column "Answers",         :answer
+#     end
+#   end
 
  # Other ways to make tables
     # rows 'Q&A' do |n|
@@ -97,6 +103,6 @@ show do
     #   faq.questions.map(&:answer).join("<br />").html_safe
     # end
 
-end
+# end
 end
 
