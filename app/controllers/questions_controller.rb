@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
 before_action :admin_user,     only: [:destroy, :create]
   
   def new
+    byebug
   	@question = Question.new
   end
   
@@ -27,10 +28,18 @@ before_action :admin_user,     only: [:destroy, :create]
   def index
   	# @questions = Question.find(params[:faq_id])
   	# @questions = Question.where()
-    puts 2
+    byebug
+    puts :id
+
   	@faq = Faq.find(params[:faq_id])
 
-    questions = Question.where(faq_id: params[:faq_id]).to_a.count
+    questions = Question.where(faq_id: params[:id]).to_a.count
+    @questions = Question.where(faq_id: params[:id], sort_by: 'faq_id').to_a
+    # @faq = Faq.find(params[:id])
+    #   @questions = @faq.questions.page(params[:page]).per(10)
+    # # end
+    # index!
+
 
   	# redirect_to showimport_admin_question_path(@question), :notice => 'Imported'
     # @questions = Question.order(:id)

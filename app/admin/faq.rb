@@ -27,10 +27,10 @@ index do
   #   link_to "FAQs (#{site.faqs.count})", :controller => "edit_qa", :action => "index", 'q[site_id_eq]' => "#{site.id}".html_safe
   column '' do |faq|
       #link_to 'Edit Q&A', admin_question_path(:faq_id => 2)
-      link_to "Questions", :controller => "questions", :id => faq
+      link_to "Questions",  :controller => "questions", :id => faq #admin_questions_path(q: { faq_id_eq: faq.id}), 'q[faq_id_eq]' => "#{faq.id}".html_safe
   end
 end
-
+# link_to "Questions", :controller => "questions", :id => faq, 'q[faq_id_eq]' => "#{faq.id}".html_safe
 
 form do |f|
     f.inputs 'FAQs Details' do

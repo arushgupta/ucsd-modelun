@@ -1,6 +1,10 @@
 ActiveAdmin.register Question do
  menu priority: 9
+ # belongs_to :faq
  permit_params :question, :answer, :faq_id
+ config.batch_actions = false
+ before_filter :skip_sidebar!, :only => :index
+ # scope_to :faq
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -16,7 +20,13 @@ ActiveAdmin.register Question do
 
 config.sort_order = 'faq_id_asc'
 
-# menu false
+menu false
+
+  action_item only: :index do
+    #link_to "New Question", "1"
+    link_to "New Question",  :controller => "questions", :action => "new", :id => params[:id].to_s
+    #link_to "New Question", new_question_path, :id => params[:id].to_s
+  end
 
 index do
   selectable_column
@@ -24,7 +34,42 @@ index do
   column :question
   column :answer
   column :faq
+  # column '' do |faq|
+  #     #link_to 'Edit Q&A', admin_question_path(:faq_id => 2)
+  #     link_to "New",  :controller => "questions", :id => params[:id] #admin_questions_path(q: { faq_id_eq: faq.id}), 'q[faq_id_eq]' => "#{faq.id}".html_safe
+  # end
+
   actions
+  
+end
+
+controller do
+  def index
+    if params[:id]
+      @faq = Faq.find(params[:id])
+      @questions = @faq.questions.page(params[:page]).per(10)
+    end
+      #@id = @faq.id
+
+
+    index!
+  #byebug
+    
+    # @question = Question.new
+  end
+
+  def new
+    debugger
+    @question = Question.new
+    # @question.faq = @id
+  end
+
+  def create
+    super do |format|
+      redirect_to admin_question_path(id: faq.question.slug) and return if question.valid?
+    end
+  end
+
 end
 
 form do |f|
@@ -36,4 +81,8 @@ form do |f|
    end
 end
 
+# private
+# def faqId
+#   @faq_id = Faq.find(params[:id])
+# end
 end
