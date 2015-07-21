@@ -65,16 +65,29 @@ controller do
   end
 
   def create
-    super do |format|
-      redirect_to admin_question_path(id: faq.question.slug) and return if question.valid?
-    end
-  end
+    # if @question.exists
+    #   return redirect_to :action => 'index'
+    # end
 
+     @question = Question.new(question_params)
+      if @question.save
+        redirect_to root_url
+      else
+        render 'new'
+      end
+    # super do |format|
+    #   redirect_to admin_question_path(id: faq.question.slug) and return if question.valid?
+    # end
+  end
+  private
+  def question_params
+    params.require(:question).permit(:question, :answer, :faq_id)
+  end
 end
 
 form do |f|
     f.inputs 'Question Details' do
-      f.input :faq, :collection => FAQ.all.map {|faq| [faq.name, faq.id]}
+    #  f.input :faq, :collection => FAQ.all.map {|faq| [faq.name, faq.id]}
       f.input :question
       f.input :answer, :as => :ckeditor
       f.actions
