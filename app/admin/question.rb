@@ -1,6 +1,6 @@
 ActiveAdmin.register Question do
  menu priority: 9
- # belongs_to :faq
+  belongs_to :faq
  permit_params :question, :answer, :faq_id
  config.batch_actions = false
  before_filter :skip_sidebar!, :only => :index
@@ -20,13 +20,13 @@ ActiveAdmin.register Question do
 
 config.sort_order = 'faq_id_asc'
 
-menu false
+ # menu false
 
-  action_item only: :index do
+  # action_item only: :index do
     #link_to "New Question", "1"
-    link_to "New Question",  :controller => "questions", :action => "new", :id => params[:id].to_s
+    # link_to "New Question",  :controller => "faqs/questions", :action => "new", :id => params[:id].to_s
     #link_to "New Question", new_question_path, :id => params[:id].to_s
-  end
+  # end
 
 index do
   selectable_column
@@ -44,6 +44,9 @@ index do
 end
 
 controller do
+  
+  @@faq = 0
+
   def index
     if params[:id]
       @faq = Faq.find(params[:id])
@@ -59,8 +62,9 @@ controller do
   end
 
   def new
-    debugger
     @question = Question.new
+    # find_faq
+    # debugger
     # @question.faq = @id
   end
 
@@ -68,10 +72,17 @@ controller do
     # if @question.exists
     #   return redirect_to :action => 'index'
     # end
+    # @faq = Faq.find(params[:id])
+    # debugger
+     #@question = Question.new(question_params)
+     # debugger
+     # @faq = Faq.find(params[:id])
 
-     @question = Question.new(question_params)
+     @question = Question.create(ques_hash(params))
+
       if @question.save
-        redirect_to root_url
+        # @faq = Faq.find(params[:id])
+        redirect_to admin_faqs_questions_path(:id => params[:faq_id].to_s)# and return if question.valid?#{}"Questions",  :controller => "questions", :id => @question.faq_id
       else
         render 'new'
       end
@@ -79,23 +90,36 @@ controller do
     #   redirect_to admin_question_path(id: faq.question.slug) and return if question.valid?
     # end
   end
+
   private
-  def question_params
-    params.require(:question).permit(:question, :answer, :faq_id)
+  def ques_hash(params)
+    # "question"=>{"question"=>"q4", "answer"=>"<p>a4</p>\r\n"}
+    @ques_hs = {}
+    debugger
+    @ques_hs['question'] = params[:question].to_a[0][1]
+    @ques_hs['answer'] = params[:question].to_a[1][1]
+    @ques_hs['faq_id'] = params[:faq_id]
+    @ques_hs
   end
+
+  def question_params
+    params.require(:question).permit(:question, :answer, :faq_id => params[:faq_id])
+  end
+  # def find_faq
+  #   debugger
+  #   @@faq = Faq.find(params[:id])
+  # end
 end
+
 
 form do |f|
     f.inputs 'Question Details' do
-    #  f.input :faq, :collection => FAQ.all.map {|faq| [faq.name, faq.id]}
+      f.hidden_field :faq, :name => "faq_id", :value => params[:id], :id => "faq_id"
+      # debugger
       f.input :question
       f.input :answer, :as => :ckeditor
       f.actions
    end
 end
 
-# private
-# def faqId
-#   @faq_id = Faq.find(params[:id])
-# end
 end

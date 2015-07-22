@@ -12,7 +12,13 @@ Rails.application.routes.draw do
   # get 
  
   resources :users
-  resources :questions
+  
+  get '/admin/faqs/:faq_id/questions/:id', to: 'questions#index', as: 'faq/questions'
+
+  resources :faqs do
+    resources :questions
+  end
+ 
  # resources :tritonmuns
 
   # The priority is based upon order of creation: first created -> highest priority.
