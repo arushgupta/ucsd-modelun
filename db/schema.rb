@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717130821) do
+ActiveRecord::Schema.define(version: 20150722063855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20150717130821) do
     t.string   "text"
     t.integer  "category_id"
     t.datetime "date"
+    t.integer  "phase_id"
+    t.string   "fee"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -68,35 +70,15 @@ ActiveRecord::Schema.define(version: 20150717130821) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "overview", force: :cascade do |t|
-    t.string   "session"
-    t.integer  "year"
-    t.date     "date"
-    t.text     "location"
-    t.integer  "delegation_fee"
-    t.integer  "early"
-    t.integer  "regular"
-    t.integer  "late"
-    t.integer  "number"
-    t.string   "reg_url"
-    t.integer  "category_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
   create_table "overviews", force: :cascade do |t|
     t.string   "session"
     t.integer  "year"
     t.date     "date"
     t.string   "location"
-    t.integer  "delegation_fee"
-    t.integer  "early_fee"
-    t.integer  "regular_fee"
-    t.integer  "late_fee"
     t.integer  "number"
     t.integer  "category_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "pages", force: :cascade do |t|
@@ -113,7 +95,7 @@ ActiveRecord::Schema.define(version: 20150717130821) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "question"
-    t.text     "answer"
+    t.string   "answer"
     t.integer  "faq_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -123,6 +105,25 @@ ActiveRecord::Schema.define(version: 20150717130821) do
     t.string   "name"
     t.datetime "date"
     t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "secretariats", force: :cascade do |t|
+    t.string   "position"
+    t.string   "name"
+    t.string   "college"
+    t.string   "major"
+    t.string   "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "speakers", force: :cascade do |t|
+    t.string   "panel"
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
