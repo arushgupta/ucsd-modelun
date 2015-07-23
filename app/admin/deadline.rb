@@ -3,6 +3,11 @@ menu priority: 7
 permit_params :date, :text, :category_id,:phase_id,:fee
 #menu parent: "Others"
 before_filter :skip_sidebar!, :only => :index
+controller do
+    def show
+      @page_title = "Deadline Details"
+    end
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -15,9 +20,7 @@ before_filter :skip_sidebar!, :only => :index
 #   permitted << :other if resource.something?
 #   permitted
 # end
-def phase_id=(value)
-    self[:phase_id] = value.to_i
-end
+
 index do
     selectable_column
     id_column
@@ -33,7 +36,7 @@ form do |f|
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}
       f.input :text
       f.input :date,:as => :string, :input_html => {:class => "hasDatetimePicker"}
-      f.input :phase_id,as: :select, collection: Deadline.phase_ids
+      f.input :phase_id,as: :select, collection: Deadline.phase_ids,:include_blank => "select"
       f.input :fee,label:"fee (in $)"
     end
     actions

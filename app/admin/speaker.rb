@@ -1,6 +1,11 @@
 ActiveAdmin.register Speaker do
 permit_params :panel,:name,:description
 before_filter :skip_sidebar!, :only => :index
+controller do
+    def show
+      @page_title = "Speaker Details"
+    end
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -21,5 +26,12 @@ selectable_column
     column :description
     actions
 end
-
+form do |f|
+    f.inputs "Speaker Details",multipart: true do
+      f.input :name
+      f.input :panel
+      f.input :description
+    end
+    f.actions
+  end
 end
