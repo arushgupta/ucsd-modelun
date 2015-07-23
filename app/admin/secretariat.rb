@@ -25,30 +25,18 @@ selectable_column
     column :image
     actions
 end
-def new
+
 form do |f|
     f.inputs "Secretariat Details",multipart: true do
       f.input :position
       f.input :name
       f.input :college
-      # f.input :major
+      f.input :major
       f.input :description
-      f.input :image, :as => :file,:image_preview => true,label: "image (size 500x500)"#,required: false,:hint => image_tag(f.object.image.url)
+      f.input :image, :as => :file,:image_preview => true,label: "image (size 500x500)",:hint => f.object.id? ? image_tag(f.object.image.url) : ""
     end
     f.actions
   end
 end
 
-# form do |f|
-#     f.inputs "Secretariat Details",multipart: true do
-#       f.input :position
-#       f.input :name
-#       f.input :college
-#       f.input :major
-#       f.input :description
-#       f.input :image, :as => :file,:image_preview => true,label: "image (size 500x500)",required: false,:hint => image_tag(f.object.image.url)
-#     end
-#     f.actions
-#   end
 
-end
