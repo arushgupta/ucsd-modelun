@@ -4,7 +4,8 @@ class CreateDeadlines < ActiveRecord::Migration
       t.string :text
       t.references :category
       t.datetime :date
-      
+      t.integer :phase_id
+      t.string :fee
       t.timestamps null: false
     end
   end
