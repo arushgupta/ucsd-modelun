@@ -1,7 +1,9 @@
 ActiveAdmin.register Faq do
  
  menu priority: 8
- permit_params :name, :category_id #, questions_attributes: [:question, :answer, :id, :_destroy]
+ # debugger
+ # has_many :questions
+ permit_params :name, :category_id, questions_attributes: [:question, :answer, :id, :_destroy]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -27,10 +29,10 @@ index do
   #   link_to "FAQs (#{site.faqs.count})", :controller => "edit_qa", :action => "index", 'q[site_id_eq]' => "#{site.id}".html_safe
   column '' do |faq|
       #link_to 'Edit Q&A', admin_question_path(:faq_id => 2)
-      link_to "Questions", :controller => "questions", :id => faq
+       link_to "Questions", admin_faq_questions_path(:faq_id => faq)#, :id => faq.questions) # "Questions",  :controller => "faqs/questions", admin_questions_path(q: { faq_id_eq: faq.id}), 'q[faq_id_eq]' => "#{faq.id}".html_safe
   end
 end
-
+# link_to "Questions", :controller => "questions", :id => faq, 'q[faq_id_eq]' => "#{faq.id}".html_safe
 
 form do |f|
     f.inputs 'FAQs Details' do

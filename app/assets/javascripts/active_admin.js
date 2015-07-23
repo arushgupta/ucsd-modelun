@@ -20,3 +20,11 @@ jQuery(document).ready(function() {
         dateFormat : 'yy-mm-dd'
     });
 });
+<<<<<<< HEAD
+=======
+jQuery(document).ready(function() {
+    jQuery('.timepicker').timepicker({
+       
+    });
+});
+>>>>>>> c56a03dd0b8d8562dfe8deb18dcf20f46838e2ab
