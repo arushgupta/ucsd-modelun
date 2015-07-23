@@ -6,8 +6,11 @@
 //
 // For example, to change the sidebar width:
 // $sidebar-width: 242px;
+//=require jquery-ui
+//=require jquery-ui-timepicker-addon
 
 // Active Admin's got SASS!
+@import "admin_change";
 @import "bootstrap.min";
 @import "active_admin/mixins";
 @import "active_admin/base";
@@ -18,3 +21,24 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+#overview_category_id{ padding-right: 23px;}
+#overview_year{padding-right: 23px;}
+
+.col-date a{padding-right: 70px !important;}
+
+form ol, form ul {
+    list-style: none outside none;
+    float: left !important; 
+}
+form ol >li label{margin-right: 22px;}
+
+.col-image img{width: 33px;}
+#ui-datepicker-div {
+    background: none repeat scroll 0% 0% transparent;
+    text-shadow: none;
+    box-shadow: none;
+    background-color: #5ea3d3;
+}
+#ui-datepicker-div{left:230.833px !important;}
+.ui-datepicker table.ui-datepicker-calendar { left: -1px !important;}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title {  line-height: 0.0em !important;}
