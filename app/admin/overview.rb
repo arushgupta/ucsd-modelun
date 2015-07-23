@@ -43,17 +43,17 @@ form do |f|
     end
     f.actions
   end
-  show do
-    attributes_table do
-      row :category, :collection => Category.all.map {|category| [category.name, category.id]}
-      row :session
-      row :year
-      row :date
-      row :location
-      row :number
-      row :created_at
-      row :updated_at
-      end
-    end 
+  # show do
+  #   attributes_table do
+  #     row :category, :collection => Category.all.map {|category| [category.name, category.id]}
+  #     row :session
+  #     row :year
+  #     row :date
+  #     row :location
+  #     row :number
+  #     row :created_at
+  #     row :updated_at
+  #     end
+  #   end 
 
 end
