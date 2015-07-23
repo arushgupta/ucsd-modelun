@@ -13,10 +13,16 @@ Rails.application.routes.draw do
  
   resources :users
   
-  get '/admin/faqs/:faq_id/questions/:id', to: 'questions#index', as: 'faq/questions'
+  # get '/admin/faqs/:faq_id/questions/:id', to: 'questions#index', as: 'faq/questions'
 
   resources :faqs do
     resources :questions
+    resources :categories
+    resources :deadlines
+    resources :events
+    resources :overviews
+    resources :schedules
+    resources :users
   end
  
  # resources :tritonmuns

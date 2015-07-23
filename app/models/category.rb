@@ -6,5 +6,6 @@ class Category < ActiveRecord::Base
  has_many :overviews
  has_many :deadlines
  has_many :schedules
+ has_many :faqs
 
 end

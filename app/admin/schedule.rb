@@ -20,14 +20,14 @@ index do
     id_column
     column :name
     column :date
-    column :category, :collection => Category.all.map {|c| [c.session,c.id]}
+    column :category, :collection => Category.all.map {|c| [c.name,c.id]}
     actions
   end
 form do |f|
-    f.inputs 'schedule Details' do
+    f.inputs 'Schedule Details' do
       f.input :name
       f.input :date
-      f.input :category, :collection => Category.all.map {|c| [c.session,c.id]}
+      f.input :category, :collection => Category.all.map {|c| [c.name,c.id]}
     end
     f.actions
   end
