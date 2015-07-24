@@ -8,6 +8,7 @@ class CreateTravelConferences < ActiveRecord::Migration
       t.date :date
       t.string :location
       t.string :host
+      t.references :category
       t.timestamps null: false
     end
   end

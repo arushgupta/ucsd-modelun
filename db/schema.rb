@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150724094733) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "apply_nows", force: :cascade do |t|
-    t.text     "title"
+    t.string   "title"
     t.string   "button_url"
     t.string   "button_text"
     t.datetime "created_at",  null: false
@@ -153,8 +153,9 @@ ActiveRecord::Schema.define(version: 20150724094733) do
     t.date     "date"
     t.string   "location"
     t.string   "host"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

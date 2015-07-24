@@ -1,6 +1,7 @@
 ActiveAdmin.register Page do
  before_filter :skip_sidebar!, :only => :index
  menu priority: 2
+
  config.batch_actions = false
   controller do
     def show
