@@ -26,13 +26,13 @@ ActiveAdmin.register Committee do
     actions
   end
 
-  form do |f|
+  form(:html => { :multipart => true }) do |f|
     f.inputs 'Committee Details' do
       f.input :order
       f.input :committee
       f.input :chair
       f.input :vice_chair
-      f.input :topic_guide
+      f.input :topic_guide, :as => :file
       f.input :is_active
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
     end

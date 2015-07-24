@@ -43,7 +43,7 @@ ActiveAdmin.register Topic do
     f.inputs 'Topic Details' do
       f.input :order
       f.input :topic
-      f.input :image, :as => :file, :image_preview => true, label: "image (size 500x500)", :hint => f.object.id? ? image_tag(f.object.image.url) : ""
+      f.input :image, :as => :file, :image_preview => true, label: "image (size 500x500)" #, :hint => f.object.id? ? image_tag(f.object.image.url) : ""
       f.input :description, :as => :ckeditor
       f.input :is_active
     end
