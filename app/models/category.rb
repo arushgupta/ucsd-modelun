@@ -1,4 +1,5 @@
 class Category < ActiveRecord::Base
+
   has_many :pages
   has_many :categories
   has_many :overviews

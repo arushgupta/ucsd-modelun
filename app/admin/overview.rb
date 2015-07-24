@@ -3,7 +3,6 @@ ActiveAdmin.register Overview do
   menu priority: 4
   permit_params :season, :start_date, :end_date, :location, :category_id, :is_active
   before_filter :skip_sidebar!, :only => :index
-  before_filter :skip_sidebar!, :only => :index
   
   controller do
     def show

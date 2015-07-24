@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
 gem "jquery-ui-rails"
@@ -18,15 +19,14 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'cancancan'
 gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
+gem 'pg',          '0.17.1'
 
 group :development, :test do
-  gem 'pg',          '0.17.1'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
 end
 
 group :production do
-  gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end

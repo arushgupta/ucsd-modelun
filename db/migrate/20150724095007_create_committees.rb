@@ -10,6 +10,7 @@ class CreateCommittees < ActiveRecord::Migration
       t.string :image
       t.text :description
       t.string :topic_guide
+      t.boolean :is_active
       t.references :category
 
       t.timestamps null: false

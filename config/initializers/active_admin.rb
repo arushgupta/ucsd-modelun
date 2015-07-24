@@ -53,8 +53,8 @@ ActiveAdmin.setup do |config|
       menu.add :label => "Apply Now", :priority => 10
       menu.add :label => "Home Gallery", :priority => 11
       menu.add :label => "History", :priority => 12
-      menu.add :label => "Training Conference", :priority => 13
-      menu.add :label => "Committees", :priority => 14
+      # menu.add :label => "Training Conference", :priority => 13
+      # menu.add :label => "Committees", :priority => 14
       menu.add :label => "Settings",  :priority => 16
     end
   end

@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150724095007) do
     t.string   "image"
     t.text     "description"
     t.string   "topic_guide"
+    t.boolean  "is_active"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
