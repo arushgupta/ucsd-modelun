@@ -20,3 +20,10 @@ jQuery(document).ready(function() {
         dateFormat : 'yy-mm-dd'
     });
 });
+
+jQuery(document).ready(function() {
+    jQuery('.timepicker').timepicker({
+       
+    });
+});
+

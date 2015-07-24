@@ -1,7 +1,11 @@
 ActiveAdmin.register Page do
 
   menu priority: 2
-  
+  controller do
+    def show
+      @page_title = "Page Details"
+    end
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -34,7 +38,7 @@ form do |f|
       f.input :content, :as => :ckeditor
       f.input :meta_keywords
       f.input :meta_title
-      f.input :category, :collection => Category.all.map {|category| [category.name, category.id]}
+      f.input :category, :collection => Category.all.map {|category| [category.name, category.id]},:include_blank => "select"
       f.input :is_deleted
     end
     f.actions

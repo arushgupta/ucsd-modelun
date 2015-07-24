@@ -32,7 +32,7 @@ controller do
 index do
     selectable_column
     id_column
-    column :category, :collection => Category.all.map {|c| [c.name,c.id]},:include_blank => "select"
+    column :category, :collection => Category.all.map {|c| [c.name,c.id]}
     column :session
     column :year
     column :date
@@ -42,7 +42,7 @@ end
 
 form do |f|
     f.inputs "Overview Details" do
-      f.input :category, :collection => Category.all.map {|category| [category.name, category.id]}
+      f.input :category, :collection => Category.all.map {|category| [category.name, category.id]},:include_blank => "select"
       f.input :session, :as => :select, :collection => ["Fall","Spring","Summer1","Summer2","Winter"],:include_blank => "select"
       f.input :year, :as => :select , :collection => (2010..2030),:include_blank => "none"
       f.input :date,:as => :string, :input_html => {:class => 'datepicker'}
