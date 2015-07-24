@@ -77,8 +77,11 @@ ActiveRecord::Schema.define(version: 20150722063855) do
     t.integer  "year"
     t.date     "date"
     t.string   "location"
+<<<<<<< HEAD
     t.integer  "number"
     t.boolean  "is_active"
+=======
+>>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

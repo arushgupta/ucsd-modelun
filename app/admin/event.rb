@@ -57,11 +57,17 @@ form do |f|
       f.input :place
       # f.input :date, :as => :string, :input_html => {:class => "datepicker"}
       # f.input :schedule, :collection => Schedule.all.map {|c| [c.name,c.id]}
+<<<<<<< HEAD
       f.input :start_time, :as => :string, :input_html => {:class => 'timepicker'}
       f.input :end_time, :as => :string, :input_html => {:class => 'timepicker'}
       f.input :is_active
       f.actions
+=======
+      f.input :time_start, :as => :string, :input_html => {:class => 'timepicker'}
+      f.input :time_end, :as => :string, :input_html => {:class => 'timepicker'}
+>>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
   end
+   f.actions
 end
 
 end

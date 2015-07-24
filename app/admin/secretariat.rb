@@ -2,7 +2,15 @@ ActiveAdmin.register Secretariat do
 permit_params :position,:name,:major,:description,:image,:college, :is_active
 decorate_with SecretariatDecorator
 before_filter :skip_sidebar!, :only => :index
+<<<<<<< HEAD
 menu priority: 5
+=======
+controller do
+    def show
+      @page_title = "Secretariat Details"
+    end
+  end
+>>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

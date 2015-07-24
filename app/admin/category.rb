@@ -2,6 +2,11 @@ ActiveAdmin.register Category do
 
   menu priority: 1
   before_filter :skip_sidebar!, :only => :index
+  controller do
+    def show
+      @page_title = " Category"
+    end
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -30,8 +35,13 @@ ActiveAdmin.register Category do
   form do |f|
   	f.inputs "Category Details" do
   	  f.input :name
+<<<<<<< HEAD
   	  f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}
   	  f.input :is_active
+=======
+  	  f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
+  	  f.input :is_deleted
+>>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
     end
     f.actions
   end

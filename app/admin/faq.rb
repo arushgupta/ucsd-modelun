@@ -1,4 +1,5 @@
 ActiveAdmin.register Faq do
+<<<<<<< HEAD
  
  menu priority: 3
  # debugger
@@ -6,6 +7,17 @@ ActiveAdmin.register Faq do
  before_filter :skip_sidebar!, :only => :index
  permit_params :name, :category_id, :is_active, questions_attributes: [:question, :answer, :id, :_destroy]
 
+=======
+ menu priority: 8
+ # debugger
+ # has_many :questions
+ permit_params :name, :category_id, questions_attributes: [:question, :answer, :id, :_destroy]
+controller do
+    def show
+      @page_title = "Faq Details"
+    end
+end
+>>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -25,22 +37,31 @@ index do
   id_column
   column :name
   column :category
+<<<<<<< HEAD
   column :is_active
   actions
+=======
+  
+>>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
   # column "FAQs" do |site|
   #   link_to "FAQs (#{site.faqs.count})", :controller => "edit_qa", :action => "index", 'q[site_id_eq]' => "#{site.id}".html_safe
   column '' do |faq|
       #link_to 'Edit Q&A', admin_question_path(:faq_id => 2)
        link_to "Questions", admin_faq_questions_path(:faq_id => faq)#, :id => faq.questions) # "Questions",  :controller => "faqs/questions", admin_questions_path(q: { faq_id_eq: faq.id}), 'q[faq_id_eq]' => "#{faq.id}".html_safe
   end
+  actions
 end
 # link_to "Questions", :controller => "questions", :id => faq, 'q[faq_id_eq]' => "#{faq.id}".html_safe
 
 form do |f|
     f.inputs 'FAQs Details' do
       f.input :name
+<<<<<<< HEAD
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}
       f.input :is_active
+=======
+      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
+>>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
     end
       # f.has_many :questions do |q|
       #   q.input :question
