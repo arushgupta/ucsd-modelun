@@ -1,4 +1,4 @@
-class Secretariat < ActiveRecord::Base
+# class Secretariat < ActiveRecord::Base
 	attr_accessor :image #If exists
 	mount_uploader :image, ImageUploader
 	validates :position, :presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
