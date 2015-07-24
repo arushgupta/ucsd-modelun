@@ -16,6 +16,7 @@ before_filter :skip_sidebar!, :only => :index
     end
     actions
   end
+  
   form do |f|
     f.inputs 'Schedule Details' do
       f.input :name
