@@ -2,6 +2,7 @@ ActiveAdmin.register Secretariat do
 permit_params :position,:name,:major,:description,:image,:college
 decorate_with SecretariatDecorator
 before_filter :skip_sidebar!, :only => :index
+config.batch_actions = false
 controller do
     def show
       @page_title = "Secretariat Details"

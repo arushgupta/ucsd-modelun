@@ -1,5 +1,7 @@
 ActiveAdmin.register Faq do
  menu priority: 8
+ before_filter :skip_sidebar!, :only => :index
+ config.batch_actions = false
  # debugger
  # has_many :questions
  permit_params :name, :category_id, questions_attributes: [:question, :answer, :id, :_destroy]

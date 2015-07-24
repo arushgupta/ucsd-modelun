@@ -2,8 +2,14 @@ ActiveAdmin.register Schedule do
 menu priority: 5
 #belongs_to :conference
 permit_params :category_id ,:name ,:date, event_attributes: [:activity, :place, :datetime, :time_start, :time_end, :_destroy]
-
+before_filter :skip_sidebar!, :only => :index
 menu parent: "Others"
+config.batch_actions = false
+controller do
+    def show
+      @page_title = "Schedule Details"
+    end
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

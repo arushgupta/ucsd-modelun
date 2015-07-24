@@ -2,6 +2,7 @@ ActiveAdmin.register Category do
 
   menu priority: 1
   before_filter :skip_sidebar!, :only => :index
+  config.batch_actions = false
   controller do
     def show
       @page_title = " Category"

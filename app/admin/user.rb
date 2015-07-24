@@ -1,6 +1,11 @@
 ActiveAdmin.register User do
 
 menu parent: "Others" 
+controller do
+    def show
+      @page_title = " User"
+    end
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

@@ -1,6 +1,7 @@
 ActiveAdmin.register Page do
-
-  menu priority: 2
+ before_filter :skip_sidebar!, :only => :index
+ menu priority: 2
+ config.batch_actions = false
   controller do
     def show
       @page_title = "Page Details"

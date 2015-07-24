@@ -1,6 +1,7 @@
 ActiveAdmin.register Speaker do
 permit_params :panel,:name,:description
 before_filter :skip_sidebar!, :only => :index
+config.batch_actions = false
 controller do
     def show
       @page_title = "Speaker Details"

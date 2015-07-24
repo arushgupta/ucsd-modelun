@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20150724094733) do
     t.string   "image_text"
     t.string   "button_url"
     t.string   "button_text"
-    t.text     "title"
+    t.string   "title"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

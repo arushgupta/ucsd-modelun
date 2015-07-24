@@ -5,7 +5,7 @@ class CreateHomeGalleries < ActiveRecord::Migration
       t.string :image_text
       t.string :button_url
       t.string :button_text
-      t.text :title
+      t.string :title
       t.timestamps null: false
     end
   end
