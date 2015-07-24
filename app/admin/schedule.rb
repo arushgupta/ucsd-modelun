@@ -31,7 +31,7 @@ form do |f|
     f.inputs 'Schedule Details' do
       f.input :name
       f.input :date, :as => :string, :input_html => {:class => "hasDatetimePicker"}
-      f.input :category, :collection => Category.all.map {|c| [c.name,c.id]}
+      f.input :category, :collection => Category.all.map {|c| [c.name,c.id]},:include_blank => "select"
     end
     f.actions
   end

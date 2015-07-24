@@ -33,7 +33,7 @@ index do
 end
 form do |f|
     f.inputs 'Deadlines Details' do
-      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}
+      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :text
       f.input :date,:as => :string, :input_html => {:class => "hasDatetimePicker"}
       f.input :phase_id,as: :select, collection: Deadline.phase_ids,:include_blank => "select"

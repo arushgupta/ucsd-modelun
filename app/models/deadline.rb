@@ -6,7 +6,7 @@ class Deadline < ActiveRecord::Base
 	#just_define_datetime_picker :date
 	#validates :phase_id ,:presence => true
 
-	validates :text,:presence => true, :format => { :with => /\A[a-zA-Z\s\-]+\z/}
+	validates :text,:presence => true, :format => { :with => /\A[a-zA-Z\s\.',:(){}_\-]+\z/}
 
 # 	def phase_id_enum
 #    [['Active', 1],['Pending',0],['Banned',2]]

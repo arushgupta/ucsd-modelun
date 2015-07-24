@@ -59,8 +59,8 @@ form do |f|
       # f.input :schedule, :collection => Schedule.all.map {|c| [c.name,c.id]}
       f.input :time_start, :as => :string, :input_html => {:class => 'timepicker'}
       f.input :time_end, :as => :string, :input_html => {:class => 'timepicker'}
-      f.actions
   end
+   f.actions
 end
 
 end
