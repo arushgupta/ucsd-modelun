@@ -2,6 +2,7 @@ ActiveAdmin.register Deadline do
 menu priority: 7
 permit_params :date, :text, :category_id,:phase_id,:fee
 #menu parent: "Others"
+config.batch_actions = false
 before_filter :skip_sidebar!, :only => :index
 controller do
     def show

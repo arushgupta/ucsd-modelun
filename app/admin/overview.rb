@@ -2,6 +2,7 @@ ActiveAdmin.register Overview do
 menu priority: 4
 permit_params :session, :year, :date, :location, :number, :category_id
 before_filter :skip_sidebar!, :only => :index
+config.batch_actions = false
 controller do
     def show
       @page_title = "Overview Details"

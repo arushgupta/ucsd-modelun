@@ -7,7 +7,11 @@ ActiveAdmin.register Question do
   before_filter :skip_sidebar!, :only => :index
   navigation_menu :default
   menu false
-
+controller do
+    def show
+      @page_title = " Question"
+    end
+  end
   # sortable tree: true,
   #          # Only display the parent menu's roots
   #          roots_collection: proc { parent.questions.roots }
