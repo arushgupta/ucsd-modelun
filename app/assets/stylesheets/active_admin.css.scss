@@ -42,3 +42,13 @@ form ol >li label{margin-right: 22px;}
 #ui-datepicker-div{left:230.833px !important;}
 .ui-datepicker table.ui-datepicker-calendar { left: -1px !important;}
 .ui-datepicker .ui-datepicker-header .ui-datepicker-title {  line-height: 0.0em !important;}
+.panel > h3 {
+    font-weight:bold !important;   
+}
+form fieldset.inputs legend span {font-weight:bold !important}
+input[type="file"] {
+    float: left;
+    padding-left:-1px;
+    margin-left: 10px;
+    width: 21%;
+}

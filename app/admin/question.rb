@@ -5,6 +5,12 @@ ActiveAdmin.register Question do
   permit_params :question, :answer#, :faq_id
   config.batch_actions = false
   before_filter :skip_sidebar!, :only => :index
+  navigation_menu :default
+  menu false
+
+  # sortable tree: true,
+  #          # Only display the parent menu's roots
+  #          roots_collection: proc { parent.questions.roots }
  # scope_to :faq
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -116,8 +122,8 @@ form do |f|
       # debugger
       f.input :question
       f.input :answer, :as => :ckeditor
-      f.actions
    end
+     f.actions
 end
 
 end

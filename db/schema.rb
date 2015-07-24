@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150722063855) do
   create_table "events", force: :cascade do |t|
     t.string   "activity"
     t.string   "place"
-    t.datetime "datetime"
+    t.date     "date"
     t.time     "time_start"
     t.time     "time_end"
     t.integer  "schedule_id"
@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 20150722063855) do
     t.integer  "year"
     t.date     "date"
     t.string   "location"
-    t.integer  "number"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
