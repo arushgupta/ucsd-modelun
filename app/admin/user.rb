@@ -4,6 +4,12 @@ ActiveAdmin.register User do
   before_filter :skip_sidebar!, :only => :index
   permit_params :name, :email, :password, :is_active
 
+  controller do
+    def show
+      @page_title = "User"
+    end
+  end
+
   index do
     selectable_column
     id_column

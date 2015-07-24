@@ -1,8 +1,9 @@
 ActiveAdmin.register Speaker do
-  
+
   menu priority: 7
   permit_params :panel,:name,:description, :is_active, :category_id
   before_filter :skip_sidebar!, :only => :index
+  config.batch_actions = false
 
   controller do
     def show

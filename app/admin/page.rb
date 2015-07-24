@@ -3,6 +3,7 @@ ActiveAdmin.register Page do
   menu priority: 2
   before_filter :skip_sidebar!, :only => :index
   permit_params :name, :summary, :content, :meta_keywords, :meta_title, :category_id, :is_active
+  config.batch_actions = false
 
   controller do
     def show

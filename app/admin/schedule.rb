@@ -1,8 +1,15 @@
 ActiveAdmin.register Schedule do
 
-menu priority: 15
-permit_params :category_id ,:name ,:date, :is_active, event_attributes: [:activity, :place, :datetime, :time_start, :time_end, :_destroy]
-before_filter :skip_sidebar!, :only => :index
+  menu priority: 15
+  permit_params :category_id ,:name ,:date, :is_active, event_attributes: [:activity, :place, :datetime, :time_start, :time_end, :_destroy]
+  before_filter :skip_sidebar!, :only => :index
+  config.batch_actions = false
+
+  controller do
+    def show
+      @page_title = "Schedule Details"
+    end
+  end
 
   index do
     selectable_column

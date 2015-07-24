@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20150724113810) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "apply_nows", force: :cascade do |t|
+    t.string   "title"
+    t.string   "button_url"
+    t.string   "button_text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.boolean  "is_active"
@@ -80,6 +88,16 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "name"
     t.boolean  "is_active"
     t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "home_galleries", force: :cascade do |t|
+    t.string   "image_url"
+    t.string   "image_text"
+    t.string   "button_url"
+    t.string   "button_text"
+    t.string   "title"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -156,6 +174,19 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.integer  "committee_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "travel_conferences", force: :cascade do |t|
+    t.string   "name"
+    t.string   "short_name"
+    t.string   "season"
+    t.integer  "year"
+    t.date     "date"
+    t.string   "location"
+    t.string   "host"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

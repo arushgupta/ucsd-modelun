@@ -19,7 +19,11 @@ ActiveAdmin.register Question do
   end
 
   controller do
-  
+    
+    def show
+      @page_title = " Question"
+    end
+
     def index
       if params[:id]
         @faq = Faq.find(params[:id])

@@ -6,6 +6,7 @@ ActiveAdmin.register Event do
  before_filter :skip_sidebar!, :only => :index
  permit_params :activity, :place,:start_time,:end_time,:schedule_id, :is_active
 
+
   index do
     selectable_column
     id_column
@@ -29,6 +30,10 @@ ActiveAdmin.register Event do
 
     def new
       @event = Event.new
+    end
+
+    def show
+      @page_title = " Event Details"
     end
 
     private

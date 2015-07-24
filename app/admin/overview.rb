@@ -3,7 +3,8 @@ ActiveAdmin.register Overview do
   menu priority: 4
   permit_params :season, :start_date, :end_date, :location, :category_id, :is_active
   before_filter :skip_sidebar!, :only => :index
-  
+  config.batch_actions = false
+
   controller do
     def show
       @page_title = "Overview Details"
