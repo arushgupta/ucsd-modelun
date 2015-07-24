@@ -15,14 +15,14 @@ ActiveAdmin.register Category do
 #   permitted
 # end
 
-  permit_params :name, :category_id, :is_deleted
+  permit_params :name, :category_id, :is_active
   config.sort_order = 'id_asc'
   
   index do
     selectable_column
     id_column
     column :name
-    column :is_deleted
+    column :is_active
     column :category
     actions
   end
@@ -31,7 +31,7 @@ ActiveAdmin.register Category do
   	f.inputs "Category Details" do
   	  f.input :name
   	  f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}
-  	  f.input :is_deleted
+  	  f.input :is_active
     end
     f.actions
   end

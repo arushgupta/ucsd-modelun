@@ -1,9 +1,10 @@
 ActiveAdmin.register Faq do
  
- menu priority: 8
+ menu priority: 3
  # debugger
  # has_many :questions
- permit_params :name, :category_id, questions_attributes: [:question, :answer, :id, :_destroy]
+ before_filter :skip_sidebar!, :only => :index
+ permit_params :name, :category_id, :is_active, questions_attributes: [:question, :answer, :id, :_destroy]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -24,6 +25,7 @@ index do
   id_column
   column :name
   column :category
+  column :is_active
   actions
   # column "FAQs" do |site|
   #   link_to "FAQs (#{site.faqs.count})", :controller => "edit_qa", :action => "index", 'q[site_id_eq]' => "#{site.id}".html_safe
@@ -38,6 +40,7 @@ form do |f|
     f.inputs 'FAQs Details' do
       f.input :name
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}
+      f.input :is_active
     end
       # f.has_many :questions do |q|
       #   q.input :question

@@ -6,6 +6,8 @@ class CreateDeadlines < ActiveRecord::Migration
       t.datetime :date
       t.integer :phase_id
       t.string :fee
+      t.boolean :is_active
+      
       t.timestamps null: false
     end
   end

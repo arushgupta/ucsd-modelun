@@ -1,6 +1,7 @@
 ActiveAdmin.register Overview do
 menu priority: 4
-permit_params :session, :year, :date, :location, :number, :category_id
+permit_params :session, :year, :date, :location, :number, :category_id, :is_active
+before_filter :skip_sidebar!, :only => :index
 before_filter :skip_sidebar!, :only => :index
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -24,6 +25,7 @@ index do
     selectable_column
     id_column
     column :category, :collection => Category.all.map {|c| [c.name,c.id]}
+    column :is_active
     column :session
     column :number
     column :year
@@ -35,11 +37,11 @@ end
 form do |f|
     f.inputs "Overview Details" do
       f.input :category, :collection => Category.all.map {|category| [category.name, category.id]}
-      f.input :session, :as => :select, :collection => ["select","Fall","Spring","Summer1","Summer2","Winte r"]
+      f.input :is_active
+      f.input :session, :as => :select, :collection => ["select","Fall","Spring","Summer1","Summer2","Winter"]
       f.input :year, :as => :select , :collection => (2010..2030)
       f.input :date,:as => :string, :input_html => {:class => 'datepicker'}
       f.input :location
-      f.input :number 
     end
     f.actions
   end

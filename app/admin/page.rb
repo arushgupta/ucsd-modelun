@@ -1,7 +1,7 @@
 ActiveAdmin.register Page do
 
   menu priority: 2
-  
+  before_filter :skip_sidebar!, :only => :index
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -14,7 +14,7 @@ ActiveAdmin.register Page do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-  permit_params :name, :summary, :content, :meta_keywords, :meta_title, :category_id, :is_deleted
+  permit_params :name, :summary, :content, :meta_keywords, :meta_title, :category_id, :is_active
 
   index do
     selectable_column
@@ -23,7 +23,7 @@ ActiveAdmin.register Page do
     column :summary
     column :content
     column :category
-    column :is_deleted
+    column :is_active
     actions
   end
 
@@ -35,7 +35,7 @@ form do |f|
       f.input :meta_keywords
       f.input :meta_title
       f.input :category, :collection => Category.all.map {|category| [category.name, category.id]}
-      f.input :is_deleted
+      f.input :is_active
     end
     f.actions
   end

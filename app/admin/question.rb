@@ -1,8 +1,8 @@
 ActiveAdmin.register Question do
   before_action :set_faq
-  menu priority: 9
+  # menu priority: 9
   belongs_to :faq
-  permit_params :question, :answer#, :faq_id
+  permit_params :question, :answer, :is_active #, :faq_id
   config.batch_actions = false
   before_filter :skip_sidebar!, :only => :index
  # scope_to :faq
@@ -37,6 +37,7 @@ index do
   column :question
   column :answer
   column :faq
+  column :is_active
   # column '' do |faq|
   #     #link_to 'Edit Q&A', admin_question_path(:faq_id => 2)
   #     link_to "New",  :controller => "questions", :id => params[:id] #admin_questions_path(q: { faq_id_eq: faq.id}), 'q[faq_id_eq]' => "#{faq.id}".html_safe

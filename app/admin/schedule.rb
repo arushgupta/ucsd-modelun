@@ -1,9 +1,9 @@
 ActiveAdmin.register Schedule do
-menu priority: 5
+menu priority: 15
 #belongs_to :conference
-permit_params :category_id ,:name ,:date, event_attributes: [:activity, :place, :datetime, :time_start, :time_end, :_destroy]
-
-menu parent: "Others"
+permit_params :category_id ,:name ,:date, :is_active, event_attributes: [:activity, :place, :datetime, :time_start, :time_end, :_destroy]
+before_filter :skip_sidebar!, :only => :index
+# menu parent: "Others"
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -22,6 +22,7 @@ index do
     column :name
     column :date
     column :category, :collection => Category.all.map {|c| [c.name,c.id]}
+    column :is_active
     actions
     column '' do |schedule|
       link_to "Events", admin_schedule_events_path(:schedule_id => schedule)
@@ -32,6 +33,7 @@ form do |f|
       f.input :name
       f.input :date, :as => :string, :input_html => {:class => "hasDatetimePicker"}
       f.input :category, :collection => Category.all.map {|c| [c.name,c.id]}
+      f.input :is_active
     end
     f.actions
   end

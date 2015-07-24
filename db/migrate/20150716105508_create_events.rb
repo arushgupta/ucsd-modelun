@@ -3,9 +3,9 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :activity
       t.string :place
-      t.date :date
-      t.time :time_start
-      t.time :time_end
+      t.time :start_time
+      t.time :end_time
+      t.boolean :is_active
       t.references :schedule
       
       t.timestamps null: false

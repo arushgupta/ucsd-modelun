@@ -1,6 +1,6 @@
 ActiveAdmin.register Deadline do
-menu priority: 7
-permit_params :date, :text, :category_id,:phase_id,:fee
+menu priority: 6
+permit_params :date, :text, :category_id,:phase_id,:fee, :is_active
 #menu parent: "Others"
 before_filter :skip_sidebar!, :only => :index
 # See permitted parameters documentation:
@@ -26,6 +26,7 @@ index do
     column :date
     column :phase_id
     column :fee
+    column :is_active
     actions
 end
 form do |f|
@@ -35,6 +36,7 @@ form do |f|
       f.input :date,:as => :string, :input_html => {:class => "hasDatetimePicker"}
       f.input :phase_id,as: :select, collection: Deadline.phase_ids
       f.input :fee,label:"fee (in $)"
+      f.input :is_active
     end
     actions
 end    
