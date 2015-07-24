@@ -3,7 +3,7 @@ class CreateSpeakers < ActiveRecord::Migration
     create_table :speakers do |t|
       t.string :panel
       t.string :name
-      t.string :description
+      t.text :description
       t.boolean :is_active
       t.references :category
       

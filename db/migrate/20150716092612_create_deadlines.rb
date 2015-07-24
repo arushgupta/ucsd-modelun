@@ -3,7 +3,7 @@ class CreateDeadlines < ActiveRecord::Migration
     create_table :deadlines do |t|
       t.string :text
       t.references :category
-      t.datetime :date
+      t.date :date
       t.integer :phase_id
       t.string :fee
       t.boolean :is_active

@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150722063855) do
   create_table "deadlines", force: :cascade do |t|
     t.string   "text"
     t.integer  "category_id"
-    t.datetime "date"
+    t.date     "date"
     t.integer  "phase_id"
     t.string   "fee"
     t.boolean  "is_active"
@@ -73,15 +73,11 @@ ActiveRecord::Schema.define(version: 20150722063855) do
   end
 
   create_table "overviews", force: :cascade do |t|
-    t.string   "session"
-    t.integer  "year"
-    t.date     "date"
+    t.string   "season"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "location"
-<<<<<<< HEAD
-    t.integer  "number"
     t.boolean  "is_active"
-=======
->>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -110,7 +106,7 @@ ActiveRecord::Schema.define(version: 20150722063855) do
 
   create_table "schedules", force: :cascade do |t|
     t.string   "name"
-    t.datetime "date"
+    t.date     "date"
     t.boolean  "is_active"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
@@ -132,7 +128,7 @@ ActiveRecord::Schema.define(version: 20150722063855) do
   create_table "speakers", force: :cascade do |t|
     t.string   "panel"
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.boolean  "is_active"
     t.integer  "category_id"
     t.datetime "created_at",  null: false

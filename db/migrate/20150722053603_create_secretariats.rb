@@ -8,6 +8,7 @@ class CreateSecretariats < ActiveRecord::Migration
       t.string :description
       t.string :image
       t.boolean :is_active
+      
       t.timestamps null: false
     end
   end

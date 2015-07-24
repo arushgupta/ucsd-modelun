@@ -1,28 +1,14 @@
 ActiveAdmin.register Page do
 
   menu priority: 2
-<<<<<<< HEAD
   before_filter :skip_sidebar!, :only => :index
-=======
+  permit_params :name, :summary, :content, :meta_keywords, :meta_title, :category_id, :is_active
+
   controller do
     def show
       @page_title = "Page Details"
     end
   end
->>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
-  permit_params :name, :summary, :content, :meta_keywords, :meta_title, :category_id, :is_active
 
   index do
     selectable_column
@@ -35,22 +21,16 @@ ActiveAdmin.register Page do
     actions
   end
 
-form do |f|
+  form do |f|
     f.inputs "Page Details" do
       f.input :name
       f.input :summary
       f.input :content, :as => :ckeditor
       f.input :meta_keywords
       f.input :meta_title
-<<<<<<< HEAD
-      f.input :category, :collection => Category.all.map {|category| [category.name, category.id]}
       f.input :is_active
-=======
       f.input :category, :collection => Category.all.map {|category| [category.name, category.id]},:include_blank => "select"
-      f.input :is_deleted
->>>>>>> 9e82046c0eebabaff8cd58261247f46586f0aca1
     end
     f.actions
   end
-
 end
