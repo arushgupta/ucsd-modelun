@@ -4,6 +4,9 @@ class CreateApplyNows < ActiveRecord::Migration
       t.string :title
       t.string :button_url
       t.string :button_text
+      t.references :category
+      t.boolean :is_active
+      
       t.timestamps null: false
     end
   end

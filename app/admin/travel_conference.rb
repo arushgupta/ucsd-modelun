@@ -1,9 +1,9 @@
 ActiveAdmin.register TravelConference do
 
-  permit_params :name, :short_name, :season, :year, :date, :location, :host, :category_id
-  before_filter :skip_sidebar!, :only => :index
   menu :priority => 13
+  before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
+  permit_params :name, :short_name, :season, :year, :date, :location, :host, :category_id
 
   controller do
     def show
@@ -27,14 +27,15 @@ ActiveAdmin.register TravelConference do
 
   form do |f|
     f.inputs "Upcoming Conferences" do
+      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :name
       f.input :short_name 
       f.input :season
       f.input :year, :as => :select , :collection => (2010..2030),:include_blank => "none"
       f.input :date,:as => :string, :input_html => {:class => 'datepicker'}
-      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :location
       f.input :host
+      f.input :is_active
     end
     f.actions
   end

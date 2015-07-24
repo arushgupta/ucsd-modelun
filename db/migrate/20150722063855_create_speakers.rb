@@ -4,8 +4,8 @@ class CreateSpeakers < ActiveRecord::Migration
       t.string :panel
       t.string :name
       t.text :description
-      t.boolean :is_active
       t.references :category
+      t.boolean :is_active
       
       t.timestamps null: false
     end

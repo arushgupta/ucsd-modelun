@@ -1,23 +1,10 @@
 ActiveAdmin.register Event do
 
- before_action :set_schedule
- belongs_to :schedule
- config.batch_actions = false
- before_filter :skip_sidebar!, :only => :index
- permit_params :activity, :place,:start_time,:end_time,:schedule_id, :is_active
-
-
-  index do
-    selectable_column
-    id_column
-    column :activity
-    column :place
-    column :start_time
-    column :end_time
-    column :schedule
-    column :is_active
-    actions
-  end
+  before_filter :skip_sidebar!, :only => :index
+  config.batch_actions = false
+  permit_params :activity, :place, :start_time, :end_time, :schedule_id, :is_active
+  before_action :set_schedule
+  belongs_to :schedule
 
   controller do
     def index
@@ -40,6 +27,18 @@ ActiveAdmin.register Event do
     def set_schedule
       @schedule = Schedule.find(params[:schedule_id])
     end
+  end
+
+  index do
+    selectable_column
+    id_column
+    column :activity
+    column :place
+    column :start_time
+    column :end_time
+    column :schedule
+    column :is_active
+    actions
   end
 
   form do |f|

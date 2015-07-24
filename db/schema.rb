@@ -38,14 +38,16 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "title"
     t.string   "button_url"
     t.string   "button_text"
+    t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "is_active"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -55,19 +57,19 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "committee"
     t.string   "chair"
     t.string   "vice_chair"
-    t.string   "topic_guide"
-    t.boolean  "is_active"
+    t.string   "topic_guide_url"
     t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "is_active"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "deadlines", force: :cascade do |t|
     t.string   "text"
-    t.integer  "category_id"
     t.date     "date"
     t.integer  "phase_id"
     t.string   "fee"
+    t.integer  "category_id"
     t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -78,16 +80,16 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "place"
     t.time     "start_time"
     t.time     "end_time"
-    t.boolean  "is_active"
     t.integer  "schedule_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "faqs", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "is_active"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -98,6 +100,8 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "button_url"
     t.string   "button_text"
     t.string   "title"
+    t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -107,8 +111,8 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "location"
-    t.boolean  "is_active"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -119,8 +123,8 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.text     "content"
     t.text     "meta_keywords"
     t.string   "meta_title"
-    t.boolean  "is_active"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -128,8 +132,8 @@ ActiveRecord::Schema.define(version: 20150724113810) do
   create_table "questions", force: :cascade do |t|
     t.string   "question"
     t.string   "answer"
-    t.boolean  "is_active"
     t.integer  "faq_id"
+    t.boolean  "is_active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -137,8 +141,8 @@ ActiveRecord::Schema.define(version: 20150724113810) do
   create_table "schedules", force: :cascade do |t|
     t.string   "name"
     t.date     "date"
-    t.boolean  "is_active"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -148,8 +152,9 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "name"
     t.string   "college"
     t.string   "major"
-    t.string   "description"
-    t.string   "image"
+    t.text     "description"
+    t.string   "image_url"
+    t.integer  "category_id"
     t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -159,8 +164,8 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "panel"
     t.string   "name"
     t.text     "description"
-    t.boolean  "is_active"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -168,10 +173,10 @@ ActiveRecord::Schema.define(version: 20150724113810) do
   create_table "topics", force: :cascade do |t|
     t.integer  "order"
     t.string   "topic"
-    t.string   "image"
+    t.string   "image_url"
     t.text     "description"
-    t.boolean  "is_active"
     t.integer  "committee_id"
+    t.boolean  "is_active"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -181,10 +186,12 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "short_name"
     t.string   "season"
     t.integer  "year"
-    t.date     "date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "location"
     t.string   "host"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

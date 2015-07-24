@@ -1,9 +1,9 @@
 ActiveAdmin.register Schedule do
 
   menu priority: 15
-  permit_params :category_id ,:name ,:date, :is_active, event_attributes: [:activity, :place, :datetime, :time_start, :time_end, :_destroy]
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
+  permit_params :category_id ,:name ,:date, :is_active, event_attributes: [:activity, :place, :datetime, :time_start, :time_end, :_destroy]
 
   controller do
     def show
@@ -26,9 +26,9 @@ ActiveAdmin.register Schedule do
   
   form do |f|
     f.inputs 'Schedule Details' do
+      f.input :category, :collection => Category.all.map {|c| [c.name,c.id]},:include_blank => "select"
       f.input :name
       f.input :date, :as => :string, :input_html => {:class => "datepicker"}
-      f.input :category, :collection => Category.all.map {|c| [c.name,c.id]},:include_blank => "select"
       f.input :is_active
     end
     f.actions

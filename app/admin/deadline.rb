@@ -1,8 +1,9 @@
 ActiveAdmin.register Deadline do
 
-menu priority: 6
-permit_params :date, :text, :category_id,:phase_id,:fee, :is_active
-before_filter :skip_sidebar!, :only => :index
+  menu priority: 6
+  before_filter :skip_sidebar!, :only => :index
+  config.batch_actions = false
+  permit_params :date, :text, :phase_id, :fee, :category_id, :is_active
 
   controller do
     def show
@@ -13,11 +14,11 @@ before_filter :skip_sidebar!, :only => :index
   index do
     selectable_column
     id_column
-    column :category, :collection => Category.all.map {|c| [c.name,c.id]}
     column :text
     column :date
     column :phase_id
     column :fee
+    column :category, :collection => Category.all.map {|c| [c.name,c.id]}
     column :is_active
     actions
   end

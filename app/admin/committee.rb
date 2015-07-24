@@ -1,8 +1,9 @@
 ActiveAdmin.register Committee do
 
   menu priority: 14
-  permit_params :order, :committee, :chair, :vice_chair, :topic_guide, :category_id, :is_active, questions_attributes: [:order, :topic, :image, :description, :_destroy]
   before_filter :skip_sidebar!, :only => :index
+  config.batch_actions = false
+  permit_params :order, :committee, :chair, :vice_chair, :topic_guide, :category_id, :is_active, questions_attributes: [:order, :topic, :image, :description, :_destroy]
   
   controller do
     def show

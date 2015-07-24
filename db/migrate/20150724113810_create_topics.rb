@@ -3,10 +3,10 @@ class CreateTopics < ActiveRecord::Migration
     create_table :topics do |t|
       t.integer :order
       t.string :topic
-      t.string :image
+      t.string :image_url
       t.text :description
-      t.boolean :is_active
       t.references :committee
+      t.boolean :is_active
 
       t.timestamps null: false
     end

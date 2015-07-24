@@ -1,23 +1,13 @@
 ActiveAdmin.register Topic do
 
+  menu false
+  before_filter :skip_sidebar!, :only => :index
+  config.batch_actions = false
+  permit_params :order, :topic, :image, :description, :is_active
   before_action :set_committee
   belongs_to :committee
-  permit_params :order, :topic, :image, :description, :is_active
-  config.batch_actions = false
-  before_filter :skip_sidebar!, :only => :index
   navigation_menu :default
-  menu false
 
-  index do
-    selectable_column
-    id_column
-    column :order
-    column :topic
-    column :image
-    column :description
-    column :is_active
-    actions
-  end
   controller do
   
     def index
@@ -38,6 +28,16 @@ ActiveAdmin.register Topic do
     end
   end
 
+  index do
+    selectable_column
+    id_column
+    column :order
+    column :topic
+    column :image
+    column :description
+    column :is_active
+    actions
+  end
 
   form do |f|
     f.inputs 'Topic Details' do
