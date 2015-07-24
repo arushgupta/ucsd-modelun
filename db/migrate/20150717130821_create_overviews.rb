@@ -5,7 +5,6 @@ class CreateOverviews < ActiveRecord::Migration
       t.integer :year
       t.date :date
       t.string :location
-      t.integer :number
       t.references :category
       
       t.timestamps null: false
