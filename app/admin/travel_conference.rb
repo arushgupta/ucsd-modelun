@@ -1,5 +1,5 @@
 ActiveAdmin.register TravelConference do
-permit_params :name,:short_name,:session,:year,:date,:location,:host
+permit_params :name,:short_name,:session,:year,:date,:location,:host,:category_id
 before_filter :skip_sidebar!, :only => :index
 menu :priority => 13
 config.batch_actions = false
@@ -21,7 +21,8 @@ controller do
 #   permitted
 # end
 form do |f|
-    f.inputs "Overview Details" do
+    f.inputs "TravelConference Details" do
+      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :name
       f.input :short_name 
       f.input :session
