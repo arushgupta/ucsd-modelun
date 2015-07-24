@@ -16,7 +16,7 @@ before_filter :skip_sidebar!, :only => :index
 # end
 form do |f|
     f.inputs "HomeGallery Details" do
-      f.input :image_url, :as => :file,:image_preview => true,label: "image (size 1400x730)",:hint => f.object.id? ? image_tag(f.object.image_url.url) : ""
+      f.input :image_url, :as => :file,:image_preview => true,label: "image (size 1400x730)"#,:hint => f.object.id? ? image_tag(f.object.image_url.url) : ""
       f.input :image_text
       f.input :title, :as => :ckeditor
       f.input :button_url

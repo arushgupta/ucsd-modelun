@@ -7,6 +7,9 @@ class Category < ActiveRecord::Base
  has_many :deadlines
  has_many :schedules
  has_many :faqs
+ 
+ validates :name, presence: true, length: { maximum: 50 }
+
 
 
  validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true

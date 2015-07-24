@@ -5,6 +5,9 @@ ActiveAdmin.register Question do
   permit_params :question, :answer#, :faq_id
   config.batch_actions = false
   before_filter :skip_sidebar!, :only => :index
+  navigation_menu :default
+  menu false
+
   # sortable tree: true,
   #          # Only display the parent menu's roots
   #          roots_collection: proc { parent.questions.roots }
