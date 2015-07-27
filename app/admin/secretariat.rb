@@ -34,7 +34,7 @@ ActiveAdmin.register Secretariat do
       f.input :college, :collection => ["Earl Warren College", "Eleanor Roosevelt College", "John Muir College", "Revelle College", "Sixth College", "Thurgood Marshall College"],:include_blank => "select"
       f.input :major
       f.input :description, :as => :ckeditor
-      f.input :image_url, :as => :file, :image_preview => true, label: "image (size 500x500)", :hint => f.object.id? ? image_tag(f.object.image_url.url) : ""
+      f.input :image_url, :as => :file, :image_preview => true, label: "image (size 500x500)" #:hint => f.object.id? ? image_tag(f.object.image_url.url) : ""
       f.input :is_active
     end
     f.actions
