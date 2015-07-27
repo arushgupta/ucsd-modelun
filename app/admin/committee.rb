@@ -18,7 +18,11 @@ ActiveAdmin.register Committee do
     column :committee
     column :chair
     column :vice_chair
-    column :topic_guide_url
+    # column :topic_guide_url
+    # Temporary fix for retrieving filename
+    column 'Topic Guide' do |upload|
+      upload.topic_guide_url.to_s.split('/')[-1] #upload.topic_guide_url.filename unless upload.topic_guide_url == nil
+    end
     column :category
     column :is_active
     column '' do |committee|
@@ -27,14 +31,14 @@ ActiveAdmin.register Committee do
     actions
   end
 
-  form(:html => { :multipart => true }) do |f|
-    f.inputs 'Committee Details' do
+  form do |f|
+    f.inputs 'Committee Details', multipart: true do
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :order
       f.input :committee
       f.input :chair
       f.input :vice_chair
-      f.input :topic_guide_url, :as => :file, :hint => f.object.id? ? link_to(f.object.topic_guide_url.url): ""
+      f.input :topic_guide_url, :as => :file, :hint => f.object.id? ? link_to(f.object.topic_guide_url.url): "", :label => "Topic Guide (PDF only)"
       f.input :is_active
     end
     f.actions

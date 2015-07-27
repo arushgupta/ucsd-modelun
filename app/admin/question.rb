@@ -12,7 +12,8 @@ ActiveAdmin.register Question do
     selectable_column
     id_column
     column :question
-    column :answer
+    column :answer #raw ActionView::Helpers::SanitizeHelper.strip_links(:answer)
+    # raw strip_tags(answer)
     column :faq
     column :is_active
     actions
