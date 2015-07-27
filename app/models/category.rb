@@ -9,6 +9,8 @@ class Category < ActiveRecord::Base
  has_many :faqs
  has_many :travel_conferences
  has_many :home_galleries
+ has_many :secretariats
+ has_many :apply_nows
  validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true
  
 end

@@ -24,7 +24,7 @@ ActiveAdmin.register ApplyNow do
   
   form do |f|
     f.inputs "Apply Now Button Details" do
-      f.input :category
+      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}, :include_blank => "select"
       f.input :title
       f.input :button_text
       f.input :button_url

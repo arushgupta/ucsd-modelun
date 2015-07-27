@@ -43,7 +43,8 @@ config.batch_actions = false
       f.input :short_name 
       f.input :season
       f.input :year, :as => :select , :collection => (2010..2030),:include_blank => "none"
-      f.input :date,:as => :string, :input_html => {:class => 'datepicker'}
+      f.input :start_date,:as => :string, :input_html => {:class => 'datepicker'}
+      f.input :end_date,:as => :string, :input_html => {:class => 'datepicker'}
       f.input :location
       f.input :host
       f.input :is_active

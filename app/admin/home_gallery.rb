@@ -25,7 +25,7 @@ ActiveAdmin.register HomeGallery do
 
 
   index do
-    selectable column
+    selectable_column
     id_column
     column :title
     column :image_text

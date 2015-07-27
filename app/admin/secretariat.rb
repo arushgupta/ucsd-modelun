@@ -31,10 +31,8 @@ ActiveAdmin.register Secretariat do
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}, :include_blank => "select"
       f.input :position
       f.input :name
-      f.input :college, :collection => ["Earl Warren College", "Eleanor Roosevelt College", "John Muir College", "Revelle College", "Sixth College", "Thurgood Marshall College"]
+      f.input :college, :collection => ["Earl Warren College", "Eleanor Roosevelt College", "John Muir College", "Revelle College", "Sixth College", "Thurgood Marshall College"],:include_blank => "select"
       f.input :major
-      f.input :description
-      f.input :image, :as => :file,:image_preview => true,label: "image (size 500x500)",:hint => f.object.id? ? image_tag(f.object.image.url) : ""
       f.input :description, :as => :ckeditor
       f.input :image, :as => :file, :image_preview => true, label: "image (size 500x500)", :hint => f.object.id? ? image_tag(f.object.image.url) : ""
       f.input :is_active
