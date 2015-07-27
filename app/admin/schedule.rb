@@ -3,7 +3,7 @@ ActiveAdmin.register Schedule do
   menu priority: 15
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
-  permit_params :category_id ,:name ,:date, :is_active, event_attributes: [:activity, :place, :datetime, :time_start, :time_end, :_destroy]
+  permit_params :category_id ,:name ,:date, :is_active, event_attributes: [:activity, :place,  :start_time, :end_time, :_destroy]
 
   controller do
     def show

@@ -1,15 +1,26 @@
 ActiveAdmin.register TravelConference do
-
-  menu :priority => 13
-  before_filter :skip_sidebar!, :only => :index
-  config.batch_actions = false
-  permit_params :name, :short_name, :season, :year, :date, :location, :host, :category_id
-
-  controller do
+permit_params :name,:short_name,:session,:year,:location,:host,:category_id
+before_filter :skip_sidebar!, :only => :index
+menu :priority => 13
+config.batch_actions = false
+ controller do
     def show
       @page_title = " Travel Conference"
     end
   end
+
+# See permitted parameters documentation:
+# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
+#
+# permit_params :list, :of, :attributes, :on, :model
+#
+# or
+#
+# permit_params do
+#   permitted = [:permitted, :attributes]
+#   permitted << :other if resource.something?
+#   permitted
+# end
 
   index do
     selectable_column
@@ -18,7 +29,6 @@ ActiveAdmin.register TravelConference do
     column :short_name
     column :season
     column :year
-    column :date
     column :location
     column :category_id
     column :is_active
@@ -32,7 +42,8 @@ ActiveAdmin.register TravelConference do
       f.input :short_name 
       f.input :season
       f.input :year, :as => :select , :collection => (2010..2030),:include_blank => "none"
-      f.input :date,:as => :string, :input_html => {:class => 'datepicker'}
+      f.input :start_date,:as => :string, :input_html => {:class => 'datepicker'}
+      f.input :end_date,:as => :string, :input_html => {:class => 'datepicker'}
       f.input :location
       f.input :host
       f.input :is_active

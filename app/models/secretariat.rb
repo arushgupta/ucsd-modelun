@@ -1,6 +1,7 @@
 class Secretariat < ActiveRecord::Base
-    
+
     belongs_to :category
+    
 	attr_accessor :image #If exists
 	mount_uploader :image, ImageUploader
 	validates :position, :presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
@@ -13,9 +14,9 @@ class Secretariat < ActiveRecord::Base
   
 
   def validate_minimum_image_size
-    image1 = MiniMagick::Image.open(image.path)
+    image1 = MiniMagick::Image.open(image_url.path)
     unless image1[:width] < 500 && image1[:height] < 500
-      errors.add :image, "should be 500x500px maximum!" 
+      errors.add :image_url, "should be 500x500px maximum!" 
     end
   end
 end

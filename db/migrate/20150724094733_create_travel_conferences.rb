@@ -11,7 +11,7 @@ class CreateTravelConferences < ActiveRecord::Migration
       t.string :host
       t.references :category
       t.boolean :is_active, :default => true
-      
+
       t.timestamps null: false
     end
   end
