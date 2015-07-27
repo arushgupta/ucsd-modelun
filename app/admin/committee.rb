@@ -34,7 +34,7 @@ ActiveAdmin.register Committee do
       f.input :committee
       f.input :chair
       f.input :vice_chair
-      f.input :topic_guide_url, :as => :file
+      f.input :topic_guide_url, :as => :file, :hint => f.object.id? ? link_to(f.object.topic_guide_url.url): ""
       f.input :is_active
     end
     f.actions
