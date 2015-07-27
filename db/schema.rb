@@ -191,10 +191,7 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "location"
     t.string   "host"
     t.integer  "category_id"
-<<<<<<< HEAD
-=======
     t.boolean  "is_active"
->>>>>>> 21042250126208e6aced40c9c7a6e818c45d77a6
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
