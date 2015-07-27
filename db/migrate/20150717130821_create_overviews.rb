@@ -6,7 +6,7 @@ class CreateOverviews < ActiveRecord::Migration
       t.date :end_date
       t.string :location
       t.references :category
-      t.boolean :is_active
+      t.boolean :is_active, :default => true
       
       t.timestamps null: false
     end
