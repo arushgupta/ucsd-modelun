@@ -3,11 +3,11 @@ ActiveAdmin.register Topic do
   menu false
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
-  permit_params :order, :topic, :image, :description, :is_active
+  permit_params :order, :topic, :image_url, :description, :is_active
   before_action :set_committee
   belongs_to :committee
   navigation_menu :default
-
+  menu false
   controller do
   
     def index
@@ -33,7 +33,7 @@ ActiveAdmin.register Topic do
     id_column
     column :order
     column :topic
-    column :image
+    column :image_url
     column :description
     column :is_active
     actions
@@ -43,7 +43,7 @@ ActiveAdmin.register Topic do
     f.inputs 'Topic Details' do
       f.input :order
       f.input :topic
-      f.input :image, :as => :file, :image_preview => true, label: "image (size 500x500)" #, :hint => f.object.id? ? image_tag(f.object.image.url) : ""
+      f.input :image_url, :as => :file, :image_preview => true, label: "image (size 500x500)" , :hint => f.object.id? ? image_tag(f.object.image_url.url) : ""
       f.input :description, :as => :ckeditor
       f.input :is_active
     end

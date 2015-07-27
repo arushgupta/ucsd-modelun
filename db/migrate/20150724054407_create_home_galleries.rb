@@ -7,7 +7,7 @@ class CreateHomeGalleries < ActiveRecord::Migration
       t.string :button_text
       t.string :title
       t.references :category
-      t.boolean :is_active
+      t.boolean :is_active, :default => true
 
       t.timestamps null: false
     end

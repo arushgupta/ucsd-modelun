@@ -1,4 +1,4 @@
-ActiveAdmin.register ApplyNow do
+ ActiveAdmin.register ApplyNow do
 
   menu priority: 10
   before_filter :skip_sidebar!, :only => :index
@@ -24,11 +24,12 @@ ActiveAdmin.register ApplyNow do
   
   form do |f|
     f.inputs "Apply Now Button Details" do
-      f.input :category
+      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}, :include_blank => "select"
       f.input :title
       f.input :button_text
       f.input :button_url
       f.input :is_active
     end
+    f.actions
   end
 end
