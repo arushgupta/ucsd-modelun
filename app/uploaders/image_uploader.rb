@@ -2,7 +2,7 @@
 
 class ImageUploader < CarrierWave::Uploader::Base
 include CarrierWave::MiniMagick
-  process resize_to_limit: [50, 50]
+  #process resize_to_limit: [50, 50]
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -20,6 +20,9 @@ include CarrierWave::MiniMagick
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  version :thumb do
+    process resize_to_limit: [100, 100]
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:

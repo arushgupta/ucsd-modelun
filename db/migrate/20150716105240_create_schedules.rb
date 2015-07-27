@@ -3,8 +3,8 @@ class CreateSchedules < ActiveRecord::Migration
     create_table :schedules do |t|
       t.string :name
       t.date :date
-      t.boolean :is_active
       t.references :category
+      t.boolean :is_active
       
       t.timestamps null: false
     end

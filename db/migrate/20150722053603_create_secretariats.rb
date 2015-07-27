@@ -5,8 +5,9 @@ class CreateSecretariats < ActiveRecord::Migration
       t.string :name
       t.string :college
       t.string :major
-      t.string :description
-      t.string :image
+      t.text :description
+      t.string :image_url
+      t.references :category
       t.boolean :is_active
       
       t.timestamps null: false

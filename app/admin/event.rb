@@ -32,10 +32,26 @@ ActiveAdmin.register Event do
       @event = Event.new
     end
 
+    def show
+      @page_title = " Event Details"
+    end
+
     private
     def set_schedule
       @schedule = Schedule.find(params[:schedule_id])
     end
+  end
+
+  index do
+    selectable_column
+    id_column
+    column :activity
+    column :place
+    column :start_time
+    column :end_time
+    column :schedule
+    column :is_active
+    actions
   end
 
   form do |f|
