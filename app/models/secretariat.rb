@@ -6,11 +6,13 @@
 	validates :college,:presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
 	validates :major,:presence => true,:format => { :with => /\A[a-zA-Z\s\.',:(){}\-]+\z/},length: { maximum: 100}
 	validates :description,:presence => true,:format => { :with => /\A[a-zA-Z0-9\s\.',:(){}_\-]+\z/},length: { maximum: 1000}
-    validate :validate_minimum_image_size
-    def validate_minimum_image_size
-    	image1 = MiniMagick::Image.open(image.path)
-    	unless image1[:width] <500 && image1[:height] < 500
-    		errors.add :image, "should be 500x500px maximum!" 
-  		end
-	end
+	validates :image,:presence => true
+  validate :validate_minimum_image_size
+  
+  def validate_minimum_image_size
+    image1 = MiniMagick::Image.open(image.path)
+    unless image1[:width] < 500 && image1[:height] < 500
+      errors.add :image, "should be 500x500px maximum!" 
+    end
+  end
 end
