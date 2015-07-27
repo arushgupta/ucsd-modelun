@@ -58,6 +58,6 @@ ActiveAdmin.register Question do
       f.input :answer, :as => :ckeditor
       f.input :is_active
     end
-      f.actions
+    f.actions
   end
 end
