@@ -2,9 +2,11 @@ ActiveAdmin.register Event do
 
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
-  permit_params :activity, :place, :start_time, :end_time, :schedule_id, :is_active
+  permit_params :activity, :place, :start_time, :end_time,  :is_active
   before_action :set_schedule
   belongs_to :schedule
+  navigation_menu :default
+  menu false
 
   controller do
     def index

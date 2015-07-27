@@ -30,5 +30,6 @@ ActiveAdmin.register ApplyNow do
       f.input :button_url
       f.input :is_active
     end
+    f.actions
   end
 end
