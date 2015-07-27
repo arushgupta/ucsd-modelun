@@ -8,8 +8,28 @@ class Overview < ActiveRecord::Base
   validates :season, presence: true
   validates :category,presence: true
   validates :location,:presence => true, :format => { :with => /\A[a-zA-Z0-9\s\.',:(){}_\-]+\z/},length: { maximum: 100}
-
-  def to_s
-    season
+  validate :date_validation1
+  validate :date_validation
+def date_validation
+  if :end_date < :start_date
+    errors[:end_date] << "cannot be before the start date"
+    return false
+  else
+    return true
   end
+end 
+
+def date_validation1
+  if start_date < Date.today
+    errors[:start_date] << "cannot be before the today date"
+    return false
+  else
+    return true
+  end
+end 
+
+def to_s
+    season
+end
+
 end
