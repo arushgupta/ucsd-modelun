@@ -1,5 +1,4 @@
 ActiveAdmin.register ApplyNow do
-
   menu priority: 10
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
