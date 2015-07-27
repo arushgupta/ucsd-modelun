@@ -5,6 +5,8 @@ ActiveAdmin.register Question do
   permit_params :question, :answer, :is_active
   config.batch_actions = false
   before_filter :skip_sidebar!, :only => :index
+  navigation_menu :default
+  menu false
 
   index do
     selectable_column
