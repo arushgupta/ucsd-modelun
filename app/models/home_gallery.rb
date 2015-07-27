@@ -1,5 +1,7 @@
 class HomeGallery < ActiveRecord::Base
-	belongs_to :category 
+
+	belongs_to :category
+
 	attr_accessor :image_url
 	mount_uploader :image_url, ImageUploader
 	#validates_format_of :button_url, :with => URI::regexp(%w(http https))

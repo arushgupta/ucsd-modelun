@@ -6,7 +6,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string :image_url
       t.text :description
       t.references :committee
-      t.boolean :is_active
+      t.boolean :is_active, :default => true
 
       t.timestamps null: false
     end

@@ -1,12 +1,22 @@
 ActiveAdmin.register Question do
-  
-  menu false
+
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
   permit_params :question, :answer, :is_active
   before_action :set_faq
   belongs_to :faq
   navigation_menu :default
+  menu false
+
+  index do
+    selectable_column
+    id_column
+    column :question
+    column :answer
+    column :faq
+    column :is_active
+    actions
+  end
 
   controller do
     

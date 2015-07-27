@@ -1,7 +1,9 @@
 class Secretariat < ActiveRecord::Base
+
     belongs_to :category
-	attr_accessor :image_url #If exists
-	mount_uploader :image_url, ImageUploader
+    
+	attr_accessor :image #If exists
+	mount_uploader :image, ImageUploader
 	validates :position, :presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
 	validates :name,:presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
 	validates :college,:presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
