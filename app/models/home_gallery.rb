@@ -9,7 +9,7 @@ class HomeGallery < ActiveRecord::Base
     def validate_minimum_image_size
      image1 = MiniMagick::Image.open(image_url.path)
       unless image1[:width] > 1400 && image1[:height] > 730
-        errors.add :image_url, "should be 1400x730px maximum!" 
+        errors.add :image_url, "should be 1400x730px minimum!" 
       end
     end
 end
