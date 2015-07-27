@@ -1,11 +1,12 @@
 class CreateOverviews < ActiveRecord::Migration
   def change
     create_table :overviews do |t|
-      t.string :session
-      t.integer :year
-      t.date :date
+      t.string :season
+      t.date :start_date
+      t.date :end_date
       t.string :location
       t.references :category
+      t.boolean :is_active
       
       t.timestamps null: false
     end

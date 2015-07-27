@@ -3,12 +3,14 @@ class CreateTravelConferences < ActiveRecord::Migration
     create_table :travel_conferences do |t|
       t.string :name
       t.string :short_name
-      t.string :session
+      t.string :season
       t.integer :year
-      t.date :date
+      t.date :start_date
+      t.date :end_date
       t.string :location
       t.string :host
       t.references :category
+      t.boolean :is_active
       t.timestamps null: false
     end
   end

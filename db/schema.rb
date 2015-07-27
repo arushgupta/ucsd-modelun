@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724094733) do
+ActiveRecord::Schema.define(version: 20150724113810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,24 +38,39 @@ ActiveRecord::Schema.define(version: 20150724094733) do
     t.string   "title"
     t.string   "button_url"
     t.string   "button_text"
+    t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "is_deleted"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+  create_table "committees", force: :cascade do |t|
+    t.integer  "order"
+    t.string   "committee"
+    t.string   "chair"
+    t.string   "vice_chair"
+    t.string   "topic_guide_url"
+    t.integer  "category_id"
+    t.boolean  "is_active"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "deadlines", force: :cascade do |t|
     t.string   "text"
-    t.integer  "category_id"
-    t.datetime "date"
+    t.date     "date"
     t.integer  "phase_id"
     t.string   "fee"
+    t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -63,10 +78,10 @@ ActiveRecord::Schema.define(version: 20150724094733) do
   create_table "events", force: :cascade do |t|
     t.string   "activity"
     t.string   "place"
-    t.date     "date"
-    t.time     "time_start"
-    t.time     "time_end"
+    t.time     "start_time"
+    t.time     "end_time"
     t.integer  "schedule_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -74,6 +89,7 @@ ActiveRecord::Schema.define(version: 20150724094733) do
   create_table "faqs", force: :cascade do |t|
     t.string   "name"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -84,16 +100,19 @@ ActiveRecord::Schema.define(version: 20150724094733) do
     t.string   "button_url"
     t.string   "button_text"
     t.string   "title"
+    t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "overviews", force: :cascade do |t|
-    t.string   "session"
-    t.integer  "year"
-    t.date     "date"
+    t.string   "season"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "location"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -104,8 +123,8 @@ ActiveRecord::Schema.define(version: 20150724094733) do
     t.text     "content"
     t.text     "meta_keywords"
     t.string   "meta_title"
-    t.boolean  "is_deleted"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -114,14 +133,16 @@ ActiveRecord::Schema.define(version: 20150724094733) do
     t.string   "question"
     t.string   "answer"
     t.integer  "faq_id"
+    t.boolean  "is_active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "schedules", force: :cascade do |t|
     t.string   "name"
-    t.datetime "date"
+    t.date     "date"
     t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -131,8 +152,10 @@ ActiveRecord::Schema.define(version: 20150724094733) do
     t.string   "name"
     t.string   "college"
     t.string   "major"
-    t.string   "description"
-    t.string   "image"
+    t.text     "description"
+    t.string   "image_url"
+    t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -140,20 +163,38 @@ ActiveRecord::Schema.define(version: 20150724094733) do
   create_table "speakers", force: :cascade do |t|
     t.string   "panel"
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
+    t.integer  "category_id"
+    t.boolean  "is_active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.integer  "order"
+    t.string   "topic"
+    t.string   "image_url"
+    t.text     "description"
+    t.integer  "committee_id"
+    t.boolean  "is_active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "travel_conferences", force: :cascade do |t|
     t.string   "name"
     t.string   "short_name"
-    t.string   "session"
+    t.string   "season"
     t.integer  "year"
-    t.date     "date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "location"
     t.string   "host"
     t.integer  "category_id"
+<<<<<<< HEAD
+=======
+    t.boolean  "is_active"
+>>>>>>> 21042250126208e6aced40c9c7a6e818c45d77a6
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -161,6 +202,7 @@ ActiveRecord::Schema.define(version: 20150724094733) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.boolean  "is_active"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"

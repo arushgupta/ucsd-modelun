@@ -3,44 +3,30 @@ ActiveAdmin.register Category do
   menu priority: 1
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
+  permit_params :name, :category_id, :is_active
+  config.sort_order = 'id_asc'
+
   controller do
     def show
       @page_title = " Category"
     end
   end
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
-
-  permit_params :name, :category_id, :is_deleted
-  config.sort_order = 'id_asc'
   
   index do
     selectable_column
     id_column
     column :name
-    column :is_deleted
     column :category
+    column :is_active
     actions
   end
 
   form do |f|
   	f.inputs "Category Details" do
+      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}, :include_blank => "select"
   	  f.input :name
-  	  f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
-  	  f.input :is_deleted
+      f.input :is_active
     end
     f.actions
   end
-
-
 end

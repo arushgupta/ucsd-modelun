@@ -6,8 +6,8 @@ class CreatePages < ActiveRecord::Migration
       t.text :content
       t.text :meta_keywords
       t.string :meta_title
-      t.boolean :is_deleted
-      t.references :category
+      t.references :category      
+      t.boolean :is_active
       
       t.timestamps null: false
     end

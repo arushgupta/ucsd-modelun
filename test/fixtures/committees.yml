@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: 1
+  committee: MyString
+  topic: MyString
+  chair: MyString
+  vice_chair: MyString
+  string: MyString
+  image: MyString
+  description: MyText
+  topic_guide: MyString
+
+two:
+  order: 1
+  committee: MyString
+  topic: MyString
+  chair: MyString
+  vice_chair: MyString
+  string: MyString
+  image: MyString
+  description: MyText
+  topic_guide: MyString
