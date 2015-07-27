@@ -5,6 +5,7 @@ class TravelConference < ActiveRecord::Base
       validates :name,:presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
       validates :short_name,:presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
       validate :date_validation
+      validate :date_validation1
 def date_validation
   if :end_date < :start_date
     errors[:end_date] << "cannot be before the start date"
@@ -12,5 +13,13 @@ def date_validation
   else
     return true
   end
-end  
+end
+def date_validation1
+  if start_date < Date.today
+    errors[:start_date] << "cannot be before the today date"
+    return false
+  else
+    return true
+  end
+end   
 end

@@ -5,4 +5,14 @@ class Schedule < ActiveRecord::Base
 	                       message: "should be one per category"}
     validates :category,presence: true
     validates :date,presence: true
+    validate :date_validation
+def date_validation
+  if date < Date.today
+    errors[:date] << "cannot be before the today date"
+    return false
+  else
+    return true
+  end
+end 
+    
 end
