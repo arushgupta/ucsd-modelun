@@ -23,6 +23,17 @@ ActiveAdmin.register Faq do
     actions
   end
 
+  show do
+    attributes_table do
+      row :name
+      row :category
+      row :is_active
+      row 'Questions' do |faq|
+        link_to "Questions", admin_faq_questions_path(:faq_id => faq)
+      end
+    end
+  end
+
   form do |f|
     f.inputs 'FAQs Details' do
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
