@@ -4,12 +4,6 @@ ActiveAdmin.register Committee do
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
   permit_params :order, :committee, :chair, :vice_chair, :topic_guide_url, :category_id, :is_active, topics_attributes: [:order, :topic, :image_url, :description, :_destroy]
-  
-  controller do
-    def show
-      @page_title = "Committee Details"
-    end
-  end
 
   index do
     selectable_column
@@ -19,7 +13,7 @@ ActiveAdmin.register Committee do
     column :chair
     column :vice_chair
     column 'Topic Guide' do |upload|
-      upload.topic_guide_url.file.original_filename
+      link_to upload.topic_guide_url.file.original_filename, download_committees_path(file: upload.topic_guide_url.file.original_filename )
     end
     column :category
     column :is_active
@@ -27,6 +21,23 @@ ActiveAdmin.register Committee do
       link_to "Topics", admin_committee_topics_path(:committee_id => committee)
     end
     actions
+  end
+
+  show do
+    attributes_table do
+      row :order
+      row :committee
+      row :chair
+      row :vice_chair
+      row 'Topic Guide' do |upload|
+        link_to upload.topic_guide_url.file.original_filename, committee_download_path(file: upload.topic_guide_url.file.original_filename, :committee_id => upload.id)
+      end
+      row :category
+      row :is_active
+      row 'Topics' do |committee|
+        link_to "Topics", admin_committee_topics_path(:committee_id => committee)
+      end
+    end
   end
 
   form do |f|

@@ -10,9 +10,17 @@ Rails.application.routes.draw do
   get 'static_pages/help'
   # get 'faqs/' => 'questions#index'
   # get 
+  # get "admin/committee/download"
+
  
   resources :users
-  
+  resources :committees do
+    get :download
+    collection do
+      get :download
+    end
+  end
+
   # get '/admin/faqs/:faq_id/questions/:id', to: 'questions#index', as: 'faq/questions'
 
     resources :categories
@@ -22,7 +30,6 @@ Rails.application.routes.draw do
     resources :schedules do
       resources :events
     end
-    resources :users
 
   resources :faqs do
     resources :questions
