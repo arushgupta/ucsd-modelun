@@ -34,7 +34,7 @@ ActiveAdmin.register Topic do
     column :order
     column :topic
     column :image_url
-    column (:description) {|topic| raw(topic.content)}
+    column (:description) {|topic| raw(topic.description)}
     column :is_active
     actions
   end
