@@ -8,15 +8,7 @@ ActiveAdmin.register Question do
   navigation_menu :default
   menu false
 
-  index do
-    selectable_column
-    id_column
-    column :question
-    column :answer
-    column :faq
-    column :is_active
-    actions
-  end
+  
 
   controller do
     
