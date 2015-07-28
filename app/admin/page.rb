@@ -15,11 +15,26 @@ permit_params :name, :summary, :content, :meta_keywords, :meta_title, :category_
     id_column
     column :name
     column :summary
-    column :content
+    column (:content) {|page| raw(page.content)}
     column :category
     column :is_active
     actions
   end
+
+show do
+  attributes_table do
+     row :id
+     row :name
+     row :summary
+     row (:content) {|page| raw(page.content)}
+     row :meta_keywords
+     row :meta_title
+     row :category
+     row :is_active
+     row :created_at
+     row :updated_at
+ end
+end
 
   form do |f|
     f.inputs "Page Details" do
