@@ -40,12 +40,7 @@ ActiveAdmin.register Question do
     selectable_column
     id_column
     column :question
-    column :answer
-    # debugger
-    # column 'Answer' do
-    #   ActionController::Base.helpers.sanitize(ActionController::Base.helpers.strip_tags(Question.last.answer)).gsub(/\r\n/,"\n")#ActionController::Base.helpers.strip_tags(:answer.to_s) #:answer #raw ActionView::Helpers::SanitizeHelper.strip_links(:answer)
-    # end
-    # raw strip_tags(answer)
+    column (:answer) {|question| raw(question.answer)}
     column :faq
     column :is_active
     actions

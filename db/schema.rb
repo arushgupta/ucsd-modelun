@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20150724113810) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "question"
-    t.string   "answer"
+    t.text     "answer"
     t.integer  "faq_id"
     t.boolean  "is_active",  default: true
     t.datetime "created_at",                null: false
