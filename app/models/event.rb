@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
 	validates :activity,presence: true
 	 validate :time_validation
 def time_validation
-  if :end_time < :start_time
+  if end_time < start_time
     errors[:end_time] << "cannot be before the start time"
     return false
   else

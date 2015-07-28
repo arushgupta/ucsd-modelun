@@ -27,9 +27,22 @@ ActiveAdmin.register Speaker do
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :name
       f.input :panel
-      f.input :description
+      f.input :description, :as => :ckeditor
       f.input :is_active
     end
     f.actions
   end
+
+show do
+  attributes_table do
+     row :id
+     row :category
+     row :name
+     row :panel
+     row (:description) {|speaker| raw(speaker.description)}
+     row :is_active
+     row :created_at
+     row :updated_at
+ end
+end
 end

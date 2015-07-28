@@ -1,5 +1,5 @@
 ActiveAdmin.register TravelConference do
-permit_params :name,:short_name,:session,:year,:location,:host,:category_id
+permit_params :name,:short_name,:session,:year,:location,:host,:category_id,:start_date,:end_date,:is_active
 before_filter :skip_sidebar!, :only => :index
 menu :priority => 13
 config.batch_actions = false

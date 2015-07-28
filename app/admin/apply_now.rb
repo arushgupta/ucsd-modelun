@@ -13,7 +13,7 @@ ActiveAdmin.register ApplyNow do
   end
 
   index do
-    selectable column
+    selectable_column
     id_column
     column :title
     column :button_url

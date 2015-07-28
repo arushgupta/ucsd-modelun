@@ -57,7 +57,7 @@ ActiveAdmin.register Question do
 show do
   attributes_table do
      row :id
-     row :qutestion
+     row :question
      row (:answer){|question| raw(question.answer)}
      #row :category
      row :is_active

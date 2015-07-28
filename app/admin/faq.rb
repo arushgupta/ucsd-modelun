@@ -25,9 +25,9 @@ ActiveAdmin.register Faq do
 
   form do |f|
     f.inputs 'FAQs Details' do
+      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :name
       f.input :is_active
-      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
     end
     f.actions
   end

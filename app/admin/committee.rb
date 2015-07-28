@@ -14,12 +14,12 @@ ActiveAdmin.register Committee do
   index do
     selectable_column
     id_column
+    column :category
     column :order
     column :committee
     column :chair
     column :vice_chair
     column :topic_guide_url
-    column :category
     column :is_active
     column '' do |committee|
       link_to "Topics", admin_committee_topics_path(:committee_id => committee)
