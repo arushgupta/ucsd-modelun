@@ -8,15 +8,7 @@ ActiveAdmin.register Question do
   navigation_menu :default
   menu false
 
-  index do
-    selectable_column
-    id_column
-    column :question
-    column :answer
-    column :faq
-    column :is_active
-    actions
-  end
+  
 
   controller do
     
@@ -46,7 +38,7 @@ ActiveAdmin.register Question do
     selectable_column
     id_column
     column :question
-    column :answer
+    column (:answer){|question| raw(question.answer)}
     column :faq
     column :is_active
     actions
@@ -59,5 +51,18 @@ ActiveAdmin.register Question do
       f.input :is_active
     end
       f.actions
+  end 
+
+  
+show do
+  attributes_table do
+     row :id
+     row :qutestion
+     row (:answer){|question| raw(question.answer)}
+     #row :category
+     row :is_active
+     row :created_at
+     row :updated_at
   end
+end
 end
