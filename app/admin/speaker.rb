@@ -16,7 +16,7 @@ ActiveAdmin.register Speaker do
     id_column
     column :name
     column :panel
-    column :description
+    column (:description) {|speaker| raw(speaker.description)}
     column :category
     column :is_active
     actions

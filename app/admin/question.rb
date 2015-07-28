@@ -1,3 +1,7 @@
+require 'active_support/core_ext/object/try'
+require 'active_support/deprecation'
+require 'rails-html-sanitizer'
+
 ActiveAdmin.register Question do
 
   before_filter :skip_sidebar!, :only => :index
@@ -8,10 +12,8 @@ ActiveAdmin.register Question do
   navigation_menu :default
   menu false
 
-  
-
   controller do
-    
+   
     def show
       @page_title = " Question"
     end
@@ -43,6 +45,17 @@ ActiveAdmin.register Question do
     column :is_active
     actions
   end
+  
+  show do
+    attributes_table do
+      row :id
+      row :qutestion
+      row (:answer){|question| raw(question.answer)}
+      row :is_active
+      row :created_at
+      row :updated_at
+    end
+  end
 
   form do |f|
     f.inputs 'Question Details' do
@@ -50,8 +63,9 @@ ActiveAdmin.register Question do
       f.input :answer, :as => :ckeditor
       f.input :is_active
     end
-      f.actions
+    f.actions
   end 
+<<<<<<< HEAD
 
   
 show do
@@ -65,4 +79,18 @@ show do
      row :updated_at
   end
 end
+=======
+>>>>>>> 581b09d7cd68b45d85b002d6217d5898aa468060
 end
+ 
+# show do
+#   attributes_table do
+#      row :id
+#      row :qutestion
+#      row (:answer){|question| raw(question.answer)}
+#      #row :category
+#      row :is_active
+#      row :created_at
+#      row :updated_at
+#   end
+# end

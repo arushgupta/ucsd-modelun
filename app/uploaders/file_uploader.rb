@@ -1,8 +1,8 @@
 # encoding: utf-8
 
-class ImageUploader < CarrierWave::Uploader::Base
+class FileUploader < CarrierWave::Uploader::Base
 include CarrierWave::MiniMagick
-  #process resize_to_limit: [50, 50]
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -10,19 +10,24 @@ include CarrierWave::MiniMagick
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
- def extension_white_list
-   %w(pdf jpg jpeg gif png  )
- end
- 
+  
+  CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
+  
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/"
+    #{}"/app/committee_guides"
+  end
+  
+  def extension_white_list
+   %w(pdf)
   end
 
-  version :thumb do
-    process resize_to_limit: [100, 100]
+  def filename
+    "#{original_filename}" if original_filename.present?
   end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -51,8 +56,6 @@ include CarrierWave::MiniMagick
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+
 
 end

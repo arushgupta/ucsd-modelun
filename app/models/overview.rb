@@ -19,17 +19,16 @@ def date_validation
   end
 end 
 
-def date_validation1
-  if start_date < Date.today
-    errors[:start_date] << "cannot be before the today date"
-    return false
-  else
-    return true
-  end
-end 
+  def date_validation1
+    if start_date < Date.today
+      errors[:start_date] << "cannot be before the today date"
+      return false
+    else
+      return true
+    end
+  end 
 
-def to_s
+  def to_s
     season
-end
-
+  end
 end

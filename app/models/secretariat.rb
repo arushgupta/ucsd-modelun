@@ -1,5 +1,6 @@
 class Secretariat < ActiveRecord::Base
 
+
     belongs_to :category
     # before_validation :image_url_provided?
 	attr_accessor :image #If exists
@@ -13,7 +14,8 @@ class Secretariat < ActiveRecord::Base
   
 # def image_url_provided?
 #     !self.image_url.blank?
-#   end
+
+	# validates :image,:presence => true
 
 #   def validate_minimum_image_size
 #   	debugger

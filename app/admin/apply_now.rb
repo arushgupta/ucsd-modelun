@@ -1,4 +1,3 @@
-
 ActiveAdmin.register ApplyNow do
 
   menu priority: 10

@@ -1,4 +1,5 @@
 ActiveAdmin.register HomeGallery do
+  
   menu priority: 11
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
@@ -10,27 +11,14 @@ ActiveAdmin.register HomeGallery do
       @page_title = "HomeGallery"
     end
   end
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
-
 
   index do
     selectable_column
     id_column
     column :title
     column :image_text
-    column :button_text
     column :image_url
+    column :button_text
     column :button_url
     column :category
     column :is_active
