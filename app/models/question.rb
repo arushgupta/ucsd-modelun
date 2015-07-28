@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
+	
 	belongs_to :faq
 	
 	validates :question,  presence: true, length: { maximum: 200 }
