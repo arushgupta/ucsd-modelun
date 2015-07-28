@@ -45,6 +45,17 @@ ActiveAdmin.register Question do
     column :is_active
     actions
   end
+  
+  show do
+    attributes_table do
+      row :id
+      row :qutestion
+      row (:answer){|question| raw(question.answer)}
+      row :is_active
+      row :created_at
+      row :updated_at
+    end
+  end
 
   form do |f|
     f.inputs 'Question Details' do
@@ -53,5 +64,5 @@ ActiveAdmin.register Question do
       f.input :is_active
     end
     f.actions
-  end
+  end 
 end
