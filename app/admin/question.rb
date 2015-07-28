@@ -1,3 +1,7 @@
+require 'active_support/core_ext/object/try'
+require 'active_support/deprecation'
+require 'rails-html-sanitizer'
+
 ActiveAdmin.register Question do
 
   before_filter :skip_sidebar!, :only => :index
@@ -7,17 +11,6 @@ ActiveAdmin.register Question do
   belongs_to :faq
   navigation_menu :default
   menu false
-
-  index do
-    selectable_column
-    id_column
-    column :question
-    column :answer #raw ActionView::Helpers::SanitizeHelper.strip_links(:answer)
-    # raw strip_tags(answer)
-    column :faq
-    column :is_active
-    actions
-  end
 
   controller do
     
@@ -47,7 +40,7 @@ ActiveAdmin.register Question do
     selectable_column
     id_column
     column :question
-    column :answer
+    column (:answer) {|question| raw(question.answer)}
     column :faq
     column :is_active
     actions

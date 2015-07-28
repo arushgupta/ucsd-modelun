@@ -4,12 +4,6 @@ ActiveAdmin.register Committee do
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
   permit_params :order, :committee, :chair, :vice_chair, :topic_guide_url, :category_id, :is_active, topics_attributes: [:order, :topic, :image_url, :description, :_destroy]
-  
-  controller do
-    def show
-      @page_title = "Committee Details"
-    end
-  end
 
   index do
     selectable_column
@@ -18,10 +12,8 @@ ActiveAdmin.register Committee do
     column :committee
     column :chair
     column :vice_chair
-    # column :topic_guide_url
-    # Temporary fix for retrieving filename
     column 'Topic Guide' do |upload|
-      upload.topic_guide_url.to_s.split('/')[-1] #upload.topic_guide_url.filename unless upload.topic_guide_url == nil
+      link_to upload.topic_guide_url.file.original_filename, download_committees_path(file: upload.topic_guide_url.file.original_filename )
     end
     column :category
     column :is_active
@@ -29,6 +21,23 @@ ActiveAdmin.register Committee do
       link_to "Topics", admin_committee_topics_path(:committee_id => committee)
     end
     actions
+  end
+
+  show do
+    attributes_table do
+      row :order
+      row :committee
+      row :chair
+      row :vice_chair
+      row 'Topic Guide' do |upload|
+        link_to upload.topic_guide_url.file.original_filename, committee_download_path(file: upload.topic_guide_url.file.original_filename, :committee_id => upload.id)
+      end
+      row :category
+      row :is_active
+      row 'Topics' do |committee|
+        link_to "Topics", admin_committee_topics_path(:committee_id => committee)
+      end
+    end
   end
 
   form do |f|
@@ -39,7 +48,7 @@ ActiveAdmin.register Committee do
       f.input :chair
       f.input :vice_chair
       f.input :topic_guide_url, :as => :file, :hint => f.object.id? ? link_to(f.object.topic_guide_url.url): "", :label => "Topic Guide (PDF only)"
-      f.input :is_active
+      f.input :is_active, :label => "Is Active"
     end
     f.actions
   end
