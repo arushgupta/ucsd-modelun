@@ -18,10 +18,8 @@ ActiveAdmin.register Committee do
     column :committee
     column :chair
     column :vice_chair
-    # column :topic_guide_url
-    # Temporary fix for retrieving filename
     column 'Topic Guide' do |upload|
-      upload.topic_guide_url.to_s.split('/')[-1] #upload.topic_guide_url.filename unless upload.topic_guide_url == nil
+      upload.topic_guide_url.file.original_filename
     end
     column :category
     column :is_active
@@ -39,7 +37,7 @@ ActiveAdmin.register Committee do
       f.input :chair
       f.input :vice_chair
       f.input :topic_guide_url, :as => :file, :hint => f.object.id? ? link_to(f.object.topic_guide_url.url): "", :label => "Topic Guide (PDF only)"
-      f.input :is_active
+      f.input :is_active, :label => "Is Active"
     end
     f.actions
   end
