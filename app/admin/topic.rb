@@ -49,4 +49,18 @@ ActiveAdmin.register Topic do
     end
       f.actions
   end
+
+show do
+  attributes_table do
+     row :id
+     row :order
+     row :topic
+     row :image_url
+     row (:description) {|topic| raw(topic.description)}
+     row :is_active
+     row :created_at
+     row :updated_at
+ end
+end
+
 end
