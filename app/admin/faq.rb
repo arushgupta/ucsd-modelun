@@ -32,6 +32,7 @@ ActiveAdmin.register Faq do
         link_to "Questions", admin_faq_questions_path(:faq_id => faq)
       end
     end
+  end
 
   form do |f|
     f.inputs 'FAQs Details' do
