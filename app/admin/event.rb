@@ -1,13 +1,13 @@
 ActiveAdmin.register Event do
 
- before_action :set_schedule
- belongs_to :schedule
- config.batch_actions = false
- before_filter :skip_sidebar!, :only => :index
- permit_params :activity, :place,:start_time,:end_time,:schedule_id, :is_active
- navigation_menu :default
- menu false
- 
+  before_action :set_schedule
+  belongs_to :schedule
+  config.batch_actions = false
+  before_filter :skip_sidebar!, :only => :index
+  permit_params :activity, :place,:start_time,:end_time,:schedule_id, :is_active
+  navigation_menu :default
+  menu false
+
   index do
     selectable_column
     id_column

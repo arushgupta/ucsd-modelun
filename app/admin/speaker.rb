@@ -16,7 +16,7 @@ ActiveAdmin.register Speaker do
     id_column
     column :name
     column :panel
-    column :description
+    column (:description) {|speaker| raw(speaker.description)}
     column :category
     column :is_active
     actions
@@ -27,7 +27,7 @@ ActiveAdmin.register Speaker do
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :name
       f.input :panel
-      f.input :description
+      f.input :description, :as => :ckeditor
       f.input :is_active
     end
     f.actions
