@@ -5,15 +5,12 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  # get 'static_pages/home'
+  
   get 'home/dashboard'
   get 'static_pages/help'
-  # get 'faqs/' => 'questions#index'
-  # get 
-  # get "admin/committee/download"
-
  
   resources :users
+  
   resources :committees do
     get :download
     collection do
@@ -21,15 +18,13 @@ Rails.application.routes.draw do
     end
   end
 
-  # get '/admin/faqs/:faq_id/questions/:id', to: 'questions#index', as: 'faq/questions'
-
-    resources :categories
-    resources :deadlines
-    resources :overviews
+  resources :categories
+  resources :deadlines
+  resources :overviews
     
-    resources :schedules do
-      resources :events
-    end
+  resources :schedules do
+    resources :events
+  end
 
   resources :faqs do
     resources :questions
