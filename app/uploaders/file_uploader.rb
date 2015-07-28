@@ -25,7 +25,7 @@ include CarrierWave::MiniMagick
   end
 
   def filename
-    "#{model.invoice_number}.#{file.extension}" if original_filename.present?
+    "#{original_filename}" if original_filename.present?
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
