@@ -38,7 +38,7 @@ ActiveAdmin.register Question do
     selectable_column
     id_column
     column :question
-    column :answer
+    column (:answer){|question| raw(question.content)}
     column :faq
     column :is_active
     actions

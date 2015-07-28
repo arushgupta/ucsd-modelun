@@ -19,7 +19,7 @@ ActiveAdmin.register Secretariat do
     column :position
     column :college
     column :major
-    column :description
+    column (:description) {|secretariat| raw(secretariat.content)}
     column :image_url
     column :category
     column :is_active
