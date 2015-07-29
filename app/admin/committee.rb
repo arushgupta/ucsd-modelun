@@ -8,18 +8,19 @@ ActiveAdmin.register Committee do
   index do
     selectable_column
     id_column
+    column :category
     column :order
     column :committee
     column :chair
     column :vice_chair
+
+    column :topic_guide_url
+
     column 'Topic Guide' do |upload|
       link_to upload.topic_guide_url.file.original_filename, download_committees_path(file: upload.topic_guide_url.file.original_filename )
     end
     column :category
     column :is_active
-    column '' do |committee|
-      link_to "Topics", admin_committee_topics_path(:committee_id => committee)
-    end
     actions
   end
 
@@ -34,9 +35,6 @@ ActiveAdmin.register Committee do
       end
       row :category
       row :is_active
-      row 'Topics' do |committee|
-        link_to "Topics", admin_committee_topics_path(:committee_id => committee)
-      end
     end
   end
 

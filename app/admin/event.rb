@@ -7,7 +7,19 @@ ActiveAdmin.register Event do
   permit_params :activity, :place,:start_time,:end_time,:schedule_id, :is_active
   navigation_menu :default
   menu false
- 
+
+  index do
+    selectable_column
+    id_column
+    column :activity
+    column :place
+    column :start_time
+    column :end_time
+    column :schedule
+    column :is_active
+    actions
+  end
+
   controller do
     def index
       if params[:id]

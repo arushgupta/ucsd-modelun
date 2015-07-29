@@ -32,4 +32,17 @@ ActiveAdmin.register Speaker do
     end
     f.actions
   end
+
+show do
+  attributes_table do
+     row :id
+     row :category
+     row :name
+     row :panel
+     row (:description) {|speaker| raw(speaker.description)}
+     row :is_active
+     row :created_at
+     row :updated_at
+ end
+end
 end
