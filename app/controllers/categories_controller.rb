@@ -1,31 +1,32 @@
 class CategoriesController < ApplicationController
 
-before_action :admin_user,     only: [:destroy, :create]
+# before_action :admin_user,     only: [:destroy, :create]
   
-  def new
-  	@category = Category.new
-  end
+#   def new
+#   	@category = Category.new
+#   end
   
-  def create
+#   def create
     
-    if @category.exists
-      return redirect_to :action => 'index'
-    end
+#     if @category.exists
+#       return redirect_to :action => 'index'
+#     end
 
-  	 @category = Category.new(category_params)
-      if @category.save
-        redirect_to root_url
-      else
-        render 'new'
-      end
-  end
+#   	 @category = Category.new(category_params)
+#       if @category.save
+#         redirect_to root_url
+#       else
+#         render 'new'
+#       end
+#   end
   
-  def show
-    @category = Category.find(params[:id])
-  end
+#   def show
+#     @category = Category.find(params[:id])
+#   end
 
   def index
-    @categories = Category.order(:id)
+    @categories = Category.all.where(:category_id => nil)
+    @images = HomeGallery.all.where(:category_id => params[:id])
   end
   
   private
