@@ -12,7 +12,7 @@ class Overview < ActiveRecord::Base
   validate :date_validation
 
   def date_validation
-    if :end_date < :start_date
+    if end_date < start_date
       errors[:end_date] << "cannot be before the start date"
       return false
     else

@@ -15,19 +15,18 @@ ActiveAdmin.register Secretariat do
   index do
     selectable_column
     id_column
+    column :category
     column :name
     column :position
     column :college
     column :major
     column (:description) {|secretariat| raw(secretariat.description)}
     column :image_url
-    column :category
     column :is_active
     actions
   end
 
   form do |f|
-    debugger
     f.inputs "Secretariat Details", multipart: true do
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}, :include_blank => "select"
       f.input :position
@@ -44,13 +43,13 @@ ActiveAdmin.register Secretariat do
 show do
   attributes_table do
      row :id
+     row :category
      row :name
      row :position
      row :college
      row :major
      row (:description) {|secretariat| raw(secretariat.description)}
-     row :image_url
-     row :category
+     row :image_url 
      row :is_active
      row :created_at
      row :updated_at
