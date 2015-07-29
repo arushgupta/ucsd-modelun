@@ -65,22 +65,6 @@ ActiveAdmin.register Question do
     end
     f.actions
   end 
-<<<<<<< HEAD
-
-  
-show do
-  attributes_table do
-     row :id
-     row :question
-     row (:answer){|question| raw(question.answer)}
-     #row :category
-     row :is_active
-     row :created_at
-     row :updated_at
-  end
-end
-=======
->>>>>>> 581b09d7cd68b45d85b002d6217d5898aa468060
 end
  
 # show do
