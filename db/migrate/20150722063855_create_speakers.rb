@@ -4,6 +4,7 @@ class CreateSpeakers < ActiveRecord::Migration
       t.string :panel
       t.string :name
       t.text :description
+      t.string :image_url
       t.references :category
       t.boolean :is_active, :default => true
       

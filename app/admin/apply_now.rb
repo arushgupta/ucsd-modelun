@@ -19,7 +19,6 @@ ActiveAdmin.register ApplyNow do
     column :button_url
     column :button_text
     column 'Image' do |finder|
-      debugger
       finder.image_url
     end
     column :category
