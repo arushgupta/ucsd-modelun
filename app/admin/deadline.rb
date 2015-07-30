@@ -30,7 +30,7 @@ ActiveAdmin.register Deadline do
       f.input :date,:as => :string, :input_html => {:class => "datepicker"}
       f.input :phase_id, as: :select, collection: Deadline.phase_ids,:include_blank => "select"
       f.input :fee, label: "Fee (in $)"
-      f.input :is_active
+      f.input :is_active, label: "Active"
     end
     actions
   end    

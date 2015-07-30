@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20150724113810) do
 
   create_table "committees", force: :cascade do |t|
     t.integer  "order"
-    t.string   "committee"
+    t.string   "committee_name"
     t.string   "chair"
     t.string   "vice_chair"
     t.string   "topic_guide_url"
@@ -172,7 +172,7 @@ ActiveRecord::Schema.define(version: 20150724113810) do
 
   create_table "topics", force: :cascade do |t|
     t.integer  "order"
-    t.string   "topic"
+    t.string   "topic_name"
     t.string   "image_url"
     t.text     "description"
     t.integer  "committee_id"

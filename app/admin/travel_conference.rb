@@ -35,7 +35,7 @@ config.batch_actions = false
       f.input :end_date,:as => :string, :input_html => {:class => 'datepicker'}
       f.input :location
       f.input :host
-      f.input :is_active
+      f.input :is_active, label: "Active"
     end
     f.actions
   end

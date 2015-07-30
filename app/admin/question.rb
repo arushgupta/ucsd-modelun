@@ -1,7 +1,3 @@
-require 'active_support/core_ext/object/try'
-require 'active_support/deprecation'
-require 'rails-html-sanitizer'
-
 ActiveAdmin.register Question do
 
   before_filter :skip_sidebar!, :only => :index
@@ -15,7 +11,7 @@ ActiveAdmin.register Question do
   controller do
    
     def show
-      @page_title = " Question"
+      @page_title = "Question"
     end
 
     def index
@@ -51,6 +47,7 @@ ActiveAdmin.register Question do
       row :id
       row :qutestion
       row (:answer){|question| raw(question.answer)}
+      row :faq
       row :is_active
       row :created_at
       row :updated_at

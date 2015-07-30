@@ -28,7 +28,7 @@ ActiveAdmin.register Speaker do
       f.input :name
       f.input :panel
       f.input :description, :as => :ckeditor
-      f.input :is_active
+      f.input :is_active, label: "Active"
     end
     f.actions
   end

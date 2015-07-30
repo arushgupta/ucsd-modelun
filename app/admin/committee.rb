@@ -3,19 +3,18 @@ ActiveAdmin.register Committee do
   menu priority: 14
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
-  permit_params :order, :committee, :chair, :vice_chair, :topic_guide_url, :category_id, :is_active, topics_attributes: [:order, :topic, :image_url, :description, :_destroy]
+  permit_params :order, :committee_name, :chair, :vice_chair, :topic_guide_url, :category_id, :is_active, topics_attributes: [:order, :topic_name, :image_url, :description, :_destroy]
 
   index do
     selectable_column
     id_column
-    column :category
-    column :order
-    column :committee
+    column :committee_name
     column :chair
     column :vice_chair
-
-    column :topic_guide_url
-
+    column :order
+    column 'Topics' do |committee|
+      link_to "Topics", admin_committee_topics_path(:committee_id => committee)
+    end
     column 'Topic Guide' do |upload|
       link_to upload.topic_guide_url.file.original_filename, download_committees_path(file: upload.topic_guide_url.file.original_filename )
     end
@@ -26,10 +25,10 @@ ActiveAdmin.register Committee do
 
   show do
     attributes_table do
-      row :order
-      row :committee
+      row :committee_name
       row :chair
       row :vice_chair
+      row :order
       row 'Topic Guide' do |upload|
         link_to upload.topic_guide_url.file.original_filename, committee_download_path(file: upload.topic_guide_url.file.original_filename, :committee_id => upload.id)
       end
@@ -42,7 +41,7 @@ ActiveAdmin.register Committee do
     f.inputs 'Committee Details', multipart: true do
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :order
-      f.input :committee
+      f.input :committee_name
       f.input :chair
       f.input :vice_chair
       f.input :topic_guide_url, :as => :file, :hint => f.object.id? ? link_to(f.object.topic_guide_url.url): "", :label => "Topic Guide (PDF only)"

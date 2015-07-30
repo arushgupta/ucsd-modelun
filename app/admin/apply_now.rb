@@ -28,7 +28,7 @@ ActiveAdmin.register ApplyNow do
       f.input :title
       f.input :button_text
       f.input :button_url
-      f.input :is_active
+      f.input :is_active, label: "Active"
     end
     f.actions
   end
