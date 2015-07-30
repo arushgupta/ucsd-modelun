@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "headline"
     t.string   "button_url"
     t.string   "button_text"
+    t.string   "image_url"
     t.integer  "category_id"
     t.boolean  "is_active",   default: true
     t.datetime "created_at",                 null: false

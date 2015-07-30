@@ -15,13 +15,15 @@ ActiveAdmin.register Secretariat do
   index do
     selectable_column
     id_column
-    column :category
     column :name
     column :position
     column :college
     column :major
     column (:description) {|secretariat| raw(secretariat.description)}
-    column :image_url
+    column 'Image' do |finder|
+      finder.image_url
+    end
+    column :category
     column :is_active
     actions
   end
@@ -40,20 +42,19 @@ ActiveAdmin.register Secretariat do
     f.actions
   end
 
-show do
-  attributes_table do
-     row :id
-     row :category
-     row :name
-     row :position
-     row :college
-     row :major
-     row (:description) {|secretariat| raw(secretariat.description)}
-     row :image_url 
-     row :is_active
-     row :created_at
-     row :updated_at
- end
-end
-
+  show do
+    attributes_table do
+      row :id
+      row :category
+      row :name
+      row :position
+      row :college
+      row :major
+      row (:description) {|secretariat| raw(secretariat.description)}
+      row :image_url 
+      row :is_active
+      row :created_at
+      row :updated_at
+    end
+  end
 end
