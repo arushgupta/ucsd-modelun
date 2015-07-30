@@ -41,7 +41,9 @@ ActiveAdmin.register Topic do
     column :topic_name
     column :image_url
     column (:description) {|topic| raw(topic.description)}
-    column :committee
+    column 'Committee' do |finder|
+      link_to finder.committee.committee_name, admin_committees_path
+    end
     column :is_active
     actions
   end
@@ -64,7 +66,9 @@ ActiveAdmin.register Topic do
       row :topic_name
       row :image_url
       row (:description) {|topic| raw(topic.description)}
-      row :committee
+      row 'Committee' do |finder|
+        link_to finder.committee.committee_name, admin_committees_path
+      end
       row :is_active
       row :created_at
       row :updated_at

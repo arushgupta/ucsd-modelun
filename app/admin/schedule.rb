@@ -18,7 +18,7 @@ ActiveAdmin.register Schedule do
     column :date
     column :category, :collection => Category.all.map {|c| [c.name,c.id]}
     column :is_active
-    column '' do |schedule|
+    column 'Events' do |schedule|
       link_to "Events", admin_schedule_events_path(:schedule_id => schedule)
     end
     actions
@@ -29,7 +29,7 @@ ActiveAdmin.register Schedule do
       f.input :category, :collection => Category.all.map {|c| [c.name,c.id]},:include_blank => "select"
       f.input :name
       f.input :date, :as => :string, :input_html => {:class => "datepicker"}
-      f.input :is_active
+      f.input :is_active, label: "Active"
     end
     f.actions
   end

@@ -34,6 +34,9 @@ ActiveAdmin.register Committee do
       end
       row :category
       row :is_active
+      row 'Topics' do |committee|
+        link_to "Topics", admin_committee_topics_path(:committee_id => committee)
+      end
     end
   end
 

@@ -6,9 +6,9 @@ class HomeGallery < ActiveRecord::Base
 	mount_uploader :image_url, ImageUploader
 	#validates_format_of :button_url, :with => URI::regexp(%w(http https))
 	#validates :button_url, presence: true, :format => {:with => URI.regexp}
-	validates :category,presence: true
-	validates :button_text,presence:true,:format => { :with => /\A[a-zA-Z\-]+\z/},length: { maximum: 15 }
-	validates :image_text,presence:true,:format => { :with => /\A[a-zA-Z\-]+\z/},length: { maximum: 50 }
+	validates :category, presence: true
+	validates :button_text, presence: true, length: { maximum: 15 }
+	validates :image_text, :format => { :with => /\A[a-zA-Z\-]+\z/}, length: { maximum: 50 }
 	# validate :validate_minimum_image_size
  #    def validate_minimum_image_size
  #     image1 = MiniMagick::Image.open(image_url.path)
