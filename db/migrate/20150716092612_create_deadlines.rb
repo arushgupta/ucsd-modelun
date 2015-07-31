@@ -1,7 +1,7 @@
 class CreateDeadlines < ActiveRecord::Migration
   def change
     create_table :deadlines do |t|
-      t.string :text
+      t.string :deadline_info
       t.date :date
       t.integer :phase_id
       t.string :fee

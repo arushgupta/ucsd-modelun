@@ -1113,8 +1113,11 @@ img {
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
+<<<<<<< HEAD
   line-height: 1;
   width: 100%;
+=======
+>>>>>>> 98af9f3d9b6a92a87e1ca10a3a37d292bac2daa2
   display: block;
   max-width: 100%;
   height: auto;
@@ -2222,7 +2225,10 @@ pre code {
   }
   .col-lg-offset-2 {
     margin-left: 16.66666667%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 98af9f3d9b6a92a87e1ca10a3a37d292bac2daa2
   }
   .col-lg-offset-1 {
     margin-left: 8.33333333%;
@@ -6056,7 +6062,10 @@ button.close {
   position: relative;
   width: 100%;
   overflow: hidden;
+<<<<<<< HEAD
   height: auto;
+=======
+>>>>>>> 98af9f3d9b6a92a87e1ca10a3a37d292bac2daa2
 }
 .carousel-inner > .item {
   position: relative;

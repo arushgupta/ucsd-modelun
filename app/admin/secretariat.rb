@@ -15,13 +15,15 @@ ActiveAdmin.register Secretariat do
   index do
     selectable_column
     id_column
-    column :category
     column :name
     column :position
     column :college
     column :major
     column (:description) {|secretariat| raw(secretariat.description)}
-    column :image_url
+    column 'Image' do |finder|
+      finder.image_url
+    end
+    column :category
     column :is_active
     actions
   end
@@ -33,27 +35,26 @@ ActiveAdmin.register Secretariat do
       f.input :name
       f.input :college, :collection => ["Earl Warren College", "Eleanor Roosevelt College", "John Muir College", "Revelle College", "Sixth College", "Thurgood Marshall College"],:include_blank => "select"
       f.input :major
-      f.input :description, :as => :ckeditor
-      f.input :image_url, :as => :file, :image_preview => true, label: "image (size 500x500)", :hint => f.object.id? ? image_tag(f.object.image_url) : ""
-      f.input :is_active
+      f.input :description, label: "Description", :as => :ckeditor
+      f.input :image_url, :as => :file, :image_preview => true, label: "Image (size 500x500)", :hint => f.object.id? ? image_tag(f.object.image_url) : ""
+      f.input :is_active, label: "Active"
     end
     f.actions
   end
 
-show do
-  attributes_table do
-     row :id
-     row :category
-     row :name
-     row :position
-     row :college
-     row :major
-     row (:description) {|secretariat| raw(secretariat.description)}
-     row :image_url 
-     row :is_active
-     row :created_at
-     row :updated_at
- end
-end
-
+  show do
+    attributes_table do
+      row :id
+      row :category
+      row :name
+      row :position
+      row :college
+      row :major
+      row (:description) {|secretariat| raw(secretariat.description)}
+      row :image_url 
+      row :is_active
+      row :created_at
+      row :updated_at
+    end
+  end
 end

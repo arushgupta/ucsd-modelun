@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     resources :questions
   end
  
+ root 'static_pages#home'
  # resources :tritonmuns
 
   # The priority is based upon order of creation: first created -> highest priority.

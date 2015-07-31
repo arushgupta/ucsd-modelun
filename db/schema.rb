@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(version: 20150724113810) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "apply_nows", force: :cascade do |t|
-    t.string   "title"
+    t.string   "headline"
     t.string   "button_url"
     t.string   "button_text"
+    t.string   "image_url"
     t.integer  "category_id"
     t.boolean  "is_active",   default: true
     t.datetime "created_at",                 null: false
@@ -54,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150724113810) do
 
   create_table "committees", force: :cascade do |t|
     t.integer  "order"
-    t.string   "committee"
+    t.string   "committee_name"
     t.string   "chair"
     t.string   "vice_chair"
     t.string   "topic_guide_url"
@@ -65,14 +66,14 @@ ActiveRecord::Schema.define(version: 20150724113810) do
   end
 
   create_table "deadlines", force: :cascade do |t|
-    t.string   "text"
+    t.string   "deadline_info"
     t.date     "date"
     t.integer  "phase_id"
     t.string   "fee"
     t.integer  "category_id"
-    t.boolean  "is_active",   default: true
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "is_active",     default: true
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -99,7 +100,7 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "image_text"
     t.string   "button_url"
     t.string   "button_text"
-    t.string   "title"
+    t.string   "image_title"
     t.integer  "category_id"
     t.boolean  "is_active",   default: true
     t.datetime "created_at",                 null: false
@@ -164,6 +165,7 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "panel"
     t.string   "name"
     t.text     "description"
+    t.string   "image_url"
     t.integer  "category_id"
     t.boolean  "is_active",   default: true
     t.datetime "created_at",                 null: false
@@ -172,7 +174,7 @@ ActiveRecord::Schema.define(version: 20150724113810) do
 
   create_table "topics", force: :cascade do |t|
     t.integer  "order"
-    t.string   "topic"
+    t.string   "topic_name"
     t.string   "image_url"
     t.text     "description"
     t.integer  "committee_id"

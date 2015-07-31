@@ -25,7 +25,7 @@ ActiveAdmin.register Category do
   	f.inputs "Category Details" do
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}, :include_blank => "select"
   	  f.input :name
-      f.input :is_active
+      f.input :is_active, label: "Active"
     end
     f.actions
   end

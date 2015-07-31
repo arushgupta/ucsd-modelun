@@ -7,6 +7,8 @@ class StaticPagesController < ApplicationController
 
   end 
   def home
+    
+    @categories = Category.all.where(:category_id => nil)
 
   end
 

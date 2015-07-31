@@ -5,7 +5,7 @@ class CreateHomeGalleries < ActiveRecord::Migration
       t.string :image_text
       t.string :button_url
       t.string :button_text
-      t.string :title
+      t.string :image_title
       t.references :category
       t.boolean :is_active, :default => true
 
