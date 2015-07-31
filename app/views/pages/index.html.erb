@@ -1,0 +1,27 @@
+<div class="container" style ='background-color:lightgrey';>
+<div class="row">    
+<h1 class="text-center">
+SHOW ALL DATA
+</h1>
+<p class="text-center text-inline">TITLE  :  </p>
+ <div class="col-md-6 col-md-offset-3">
+<table class="table color1">
+    <h1 class="text-center">information</h1>
+     <tr>
+          
+          <th>Content</th>
+          <th>summary</th>
+     </tr>
+     <tbody>
+        <tr>
+          <td><%=@pages.content.html_safe %></td>
+          <td><%=@pages.summary%></td>
+        </tr>
+      </tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
