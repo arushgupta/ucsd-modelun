@@ -39,11 +39,7 @@ ActiveAdmin.register Faq do
       f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
       f.input :name
       f.input :is_active
-<<<<<<< HEAD
     end
-=======
-      end
->>>>>>> 581b09d7cd68b45d85b002d6217d5898aa468060
     f.actions
   end
 end

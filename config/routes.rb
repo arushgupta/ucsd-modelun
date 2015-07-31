@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   
   get 'home/dashboard'
   get 'static_pages/help'
- 
+ get 'about'   => 'static_pages#about'
+  get 'contact'   => 'static_pages#contact'
+  get 'home'   => 'static_pages#index'
+  root 'static_pages#index'
   resources :users
+  resources :static_pages
   
   resources :committees do
     get :download
@@ -21,7 +25,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :deadlines
   resources :overviews
-    
+  resources :pages
   resources :schedules do
     resources :events
   end

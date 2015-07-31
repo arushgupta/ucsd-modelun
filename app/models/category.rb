@@ -13,6 +13,8 @@ class Category < ActiveRecord::Base
   has_many :speakers
   has_many :travel_conferences
   belongs_to :category
+  belongs_to :parent_category, class: "Category"
+  has_many :subcategories, class: "Category"
 
  validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true
  
