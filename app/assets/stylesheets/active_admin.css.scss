@@ -10,8 +10,9 @@
 //=require jquery-ui-timepicker-addon
 
 // Active Admin's got SASS!
-@import "admin_change";
+
 @import "bootstrap.min";
+@import "admin_change";
 @import "active_admin/mixins";
 @import "active_admin/base";
 @import "wigu/active_admin_theme";
@@ -60,6 +61,17 @@ input[type="file"] {
 .inline-hints >img{width:33px !important;}
 #committee_is_active_input{padding-top:28px !important;margin-left:-75px !important;}
 .boolean{margin-left:-48px;}
+a, a:link, a:visited {
+   color: #38678b; 
+   text-decoration: none !important;
+}
+.dropdown-menu{min-width:50px !important;}
+.dropdown:hover .dropdown-menu {
+    display: block !important;
+}
+.dropdown-menu {
+    margin-top: 0px !important;
+}
 td.col.col-description{
     width:1000px;
 }

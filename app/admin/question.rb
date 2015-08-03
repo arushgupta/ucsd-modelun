@@ -43,6 +43,22 @@ ActiveAdmin.register Question do
     actions
   end
   
+
+
+
+  # show do
+  #   attributes_table do
+  #     row :id
+  #     row :qutestion
+  #     row (:answer){|question| raw(question.answer)}
+  #     row :faq
+  #     row :is_active
+  #     row :created_at
+  #     row :updated_at
+  #   end
+  # end
+
+
   show do
     attributes_table do
       row :id
@@ -62,5 +78,20 @@ ActiveAdmin.register Question do
       f.input :is_active
     end
     f.actions
-  end 
+
+end
+  
+show do
+  attributes_table do
+     row :id
+     row :question
+     row (:answer){|question| raw(question.answer)}
+     #row :category
+     row :is_active
+     row :created_at
+     row :updated_at
+  end
+end
+
+
 end

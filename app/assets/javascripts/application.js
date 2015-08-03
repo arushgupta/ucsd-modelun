@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap.min
 //= require ckeditor/init
 //= require jquery_ujs
 //= require jquery-ui

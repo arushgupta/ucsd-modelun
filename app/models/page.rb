@@ -6,7 +6,7 @@ class Page < ActiveRecord::Base
 	                       message: "should be one per category"}
   validates :category, presence: true
   validates :summary, length: { maximum: 200 }
-  validates :content, length: { maximum: 500 }
+  validates :content, length: { maximum: 3000 }
   validates :meta_keywords, length: { maximum: 100 }
   validates :meta_title, length: { maximum: 50 }
 

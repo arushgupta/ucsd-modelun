@@ -1108,14 +1108,17 @@ figure {
 img {
   vertical-align: middle;
 }
+.carousel-inner > .item > img{height: 471px !important;}
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
+  line-height: 1;
+  width: 100.33%;
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 202px;
 }
 .img-rounded {
   border-radius: 6px;
@@ -1358,7 +1361,7 @@ a.text-danger:hover {
 }
 .bg-primary {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #090047;
 }
 a.bg-primary:hover {
   background-color: #286090;
@@ -2100,6 +2103,7 @@ pre code {
   }
   .col-lg-4 {
     width: 33.33333333%;
+    height: 190px;
   }
   .col-lg-3 {
     width: 25%;
@@ -2244,6 +2248,7 @@ th {
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;
+  border:0px;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -2254,7 +2259,7 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-top: 0px solid #ddd;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
@@ -2269,7 +2274,7 @@ th {
   border-top: 0;
 }
 .table > tbody + tbody {
-  border-top: 2px solid #ddd;
+  border-top: 0px solid #ddd;
 }
 .table .table {
   background-color: #fff;
@@ -2983,8 +2988,9 @@ select[multiple].form-group-lg .form-control {
           user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: -10px;
 }
+
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -3065,8 +3071,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -6053,6 +6058,9 @@ button.close {
   position: relative;
   width: 100%;
   overflow: hidden;
+
+  height: 471;
+
 }
 .carousel-inner > .item {
   position: relative;
@@ -6564,3 +6572,39 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.secretariat_img{width:200px;  float:left; }
+.photo{width:200px;    margin-top: 12px; margin-left: 0px;}
+.bio-header{font-size: 16px;
+  color: #4f4f4f;
+  font-style: italic;
+}
+div.position-one{ font-size: 40px;
+  color: black;
+  font-style: normal;
+  margin-bottom: 10px;}
+  .name{font-weight: bold;
+  font-size: 18px;}
+  .bio{margin-top: 11px;
+  line-height: 140%;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  margin-left:2px;}
+  div.bio-right {
+
+    margin-left: 17px;
+    width: calc(100% - 240px);
+    float:left;}
+  
+div.bio-box {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  padding-top: 40px;
+
+  //border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+
+  text-align: left;}
+.img-margin{margin-left: 12px;}
+.about-heading{text-align: center;}

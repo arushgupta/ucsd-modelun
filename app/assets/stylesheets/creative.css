@@ -52,7 +52,14 @@ p {
 }
 
 .bg-primary {
+
+    
+    background-image:url("/assets/default_avatar.png");
+    background-repeat: no-repeat;
+    background-color: #090047;
+    background-position: center; 
     background-color: #f05f40;
+
 }
 
 .bg-dark {
@@ -87,10 +94,14 @@ aside {
 
 .navbar-default .navbar-header .navbar-brand {
     text-transform: uppercase;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-weight: 700;
+    color: #f05f40;
     text-decoration: none;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
     color: #005040;
+
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
@@ -104,7 +115,9 @@ aside {
     font-size: 13px;
     font-weight: 700;
     color: #222;
+
     text-decoration: none;
+
 }
 
 .navbar-default .nav > li>a:hover,
@@ -130,7 +143,11 @@ aside {
     }
 
     .navbar-default .navbar-header .navbar-brand {
+
+        color: rgba(255,255,255,.7);
+
         color: rgba(0,0,0,.7);
+
     }
 
     .navbar-default .navbar-header .navbar-brand:hover,
@@ -177,15 +194,22 @@ aside {
 header {
     position: relative;
     width: 100%;
+    min-height: 50%;
+    text-align: center;
+    color: #fff;
+
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../assets/header.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+
+    background-color: turquoise;
+
+
 }
 
 header .header-content {
@@ -215,7 +239,7 @@ header .header-content .header-content-inner p {
 
 @media(min-width:768px) {
     header {
-        min-height: 100%;
+        min-height: 50%;
     }
 
     header .header-content {
@@ -230,6 +254,8 @@ header .header-content .header-content-inner p {
     header .header-content .header-content-inner {
         margin-right: auto;
         margin-left: auto;
+
+
         text-decoration: none;
         max-width: 1000px;
     }
@@ -394,6 +420,14 @@ fieldset[disabled] .btn-default.active {
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
+
+    float: left;
+    margin-top: -149px;
+    margin-left: -209px;
+    padding: 9px;
+    padding-left: 25px;
+    padding-right: 25px;
+
 }
 
 .btn-primary:hover,
@@ -476,4 +510,29 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+
 }
+.page_nav_bar{  background-color: turquoise;}
+#learn {
+    font-size: 1.75em;
+}
+    #arrow {
+      margin-left: .25em;
+      font-size: .6em;
+    }
+
+  
+.changebutton{margin-top: 0px;
+margin-left: 169px;}
+
+
+#contact{background-color: black;
+margin-top: 10px;}
+.secretariat_img{width:200px; margin-top: 60px; float:left; }
+.schedule{text-align: center;margin-left: -160px;}
+.schedule-name{text-transform: uppercase;color:black;font-weight: bold;font-size: 28px;}
+.schedule-date{font-size: 17px;color:black;}
+.overview-td{font-weight: bold;}
+.schedule-td{font-weight: bold;text-transform: uppercase;width: 20%;}
+.cmt_button{font-size: 18px;}
+
