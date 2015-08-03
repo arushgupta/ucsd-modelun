@@ -122,14 +122,15 @@
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
                         <%debugger%>
-                        <img src="assets/1.jpg" class="img-responsive" alt="">
+                        <%= image_tag  apply.image_url.url ,class: "img-responsive"%>
+                       
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
                                     <%=apply.category.name%>
                                 </div>
                                 <div class="project-name">
-                                    <%=apply.title%>
+                                    <%=apply.headline%>
                                 </div>
                                  <%= button_tag apply.button_url, :class => "btn btn-primary changebutton" do %>
                                  <%= t(apply.button_text)%>

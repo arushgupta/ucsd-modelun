@@ -1,10 +1,11 @@
 class StaticPagesController < ApplicationController
+  before_filter :find_category
   def index
-  	@categories = Category.all
-  	@cat=Category.all.where("categories.category_id IS NOT NULL")
-  	debugger
-  	@apply=ApplyNow.all
-
+  	
+# @categories = Category.all
+#     @cat=Category.all.where("categories.category_id IS NOT NULL")
+#     debugger
+#     @apply=ApplyNow.all
   end 
   def home
     
@@ -13,5 +14,20 @@ class StaticPagesController < ApplicationController
   end
 
   def help
+
   end
+
+  def about
+    @secretariats=Secretariat.all
+    # @categories = Category.all
+    # @cat=Category.all.where("categories.category_id IS NOT NULL")
+    # @apply=ApplyNow.all
+  end
+
+  private
+    def find_category
+    @categories = Category.all
+    @cat=Category.all.where("categories.category_id IS NOT NULL")
+    @apply=ApplyNow.all
+    end
 end

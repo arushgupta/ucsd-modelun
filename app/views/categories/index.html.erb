@@ -1,4 +1,6 @@
+<%if  @homeimages.blank? %> 
 
+<%else%>
 <header>
     	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
   <!-- Indicators -->
@@ -48,6 +50,7 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+
 </div>
         <!-- <div class="header-content">
             <div class="header-content-inner">
@@ -58,8 +61,10 @@
             </div>
         </div> -->
 </header>
+<%end%>
+
 <nav id="mainNav" class="navbar navbar-default page_nav_bar ">
-        <div class="container-fluid ">
+        <div class="container-fluid " style="background-color:#404da2">
 
 
 
@@ -70,126 +75,17 @@
                   
                     <% @pages.each do |page|%>
                       <li>
-                         <%=link_to page.name, pages_path(id: page.id),class: "pagedata",id:page.id%>
+                         <%=link_to page.name, pages_path(id: page.id),class: "pagedata",id:page.id,style:"color:white"%>
                       </li>
                     <%end%>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <% @categories.each do |category| %>
-                    <li>
-                        <%= link_to category.name, categories_path(id: category.id) %>
-                    </li>
-                    <% end %>
-
-                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
 
-              <% @pages.each do |page|%>
-                <% if page.name== "gjghj"%>
-                  <div>
-                    <div class="container a" style ='background-color:lightgrey;display:none;'; id="<%= page.id%>">
-                      <div class="row">    
-                        <h1 class="text-center">
-                           SHOW ALL DATA
-                        </h1>
-                      <p class="text-center text-inline"> </p>
-                        <div class="col-md-6 col-md-offset-3">
-                          <table class="table color1">
-                           <h1 class="text-center">information</h1>
-                          <tr>
-          
-                           <th>Content</th>
-                           <th>summary</th>
-                          </tr>
-                             <tbody>
-                                <tr>
-                                  <td><%=page.content.html_safe%></td>
-                                  <td><%=page.summary%></td>
-                  
-                                </tr>
-                             </tbody>
-                          </table>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>  
-                <%elsif page.name == "frdgfdf"%>
-                  <div>
-                    <div class="container a" style ='background-color:lightgrey;display:none;'; id="<%= page.id%>">
-                      <div class="row">    
-                       <p class="text-center text-inline"> </p>
-                        <div class="col-md-6 col-md-offset-3">
-                          <table class="table color1">
-                            <h1 class="text-center">information</h1>
-                              <tr>
-          
-                                <th>Content</th>
-                                <th>summary</th>
-                              </tr>
-                            <tbody>
-                              <tr>
-                                <td><%=page.content.html_safe%></td>
-                                <td><%=page.summary%></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <%elsif page.name == "daa"%>
-                  <div>
-                    <div class="container a" style ='background-color:lightgrey;display:none;'; id="<%= page.id%>">
-                      <div class="row">    
-                        <p class="text-center text-inline"> </p>
-                          <div class="col-md-6 col-md-offset-3">
-                            <table class="table color1">
-                              <h1 class="text-center">information</h1>
-                                <tr>
-                                 <th>Content</th>
-                                 <th>summary</th>
-                                </tr>
-                              <tbody>
-                               <tr>
-                                <!-- <td><%=page.content.html_safe%></td>
-                                <td><%=page.summary%></td> -->
-                               </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div>  
-                  <%elsif page.name=="gkhj"%>
-                      <div>
-                        <div class="container a" style ='background-color:lightgrey;display:none;'; id="<%= page.id%>">
-                          <div class="row">    
-                            <p class="text-center text-inline"> </p>
-                            <div class="col-md-6 col-md-offset-3">
-                              <table class="table color1">
-                                <h1 class="text-center"></h1>
-                                <tr>
-                                 <th>Content</th>
-                                 <th>summary</th>
-                                </tr>
-                              <tbody>
-                                <tr>
-                                 <td><%=page.content.html_safe%></td>
-                                 <td><%=page.summary%></td>
-                                </tr>
-                              </tbody>
-                              </table>
-                            </div>  
-                          </div>
-                        </div>
-                      </div>
-                    <%end%>
-              <%end%>
+              
                   
                    <!--  <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conference<span class="caret"></span></a>
@@ -205,13 +101,135 @@
                     <li>
                         <a class="page-scroll" href="">Contact</a>
                     </li> -->
-            
-      
+ <%if  @overviews.blank? %> 
+
+<%else%>
+    <h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
+padding-top: 17px;color:white;">Overview</h1>               
+ <div class="container a" style ='background-color:;'>
+      <div class="row">  
+          <p class="text-center text-inline"> </p>
+            <div class="col-md-6 col-md-offset-3" style="padding-left:156px;">
+              <table class="table color1">
+                  <tr>
+                    <td class="overview-td">Season</td>
+                    <td><%=@overviews.season%></td>
+                  </tr>
+              <tbody>
+                  <tr>
+                   <td class="overview-td">Location</td>
+                    <td><%=@overviews.location%></td>
+                  </tr>
+              </tbody>
+              </table>
+            </div>  
+      </div>
+  </div> 
+ <%end%> 
+<%if  @faqs.blank? %> 
+
+<%else%>
+ <h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
+padding-top: 17px;color:white;">FAQ</h1>
+ <div class="container a faq" style ='background-color:;'>
+    <div class="row">    
+      <p class="text-center text-inline"> </p>
+        <div class="col-md-6 col-md-offset-3" style="padding-left:195px;">
+          <table class="table color1">
+              <tr >
+              </tr>
+          <tbody>
+            <%@faqs.each do |faq|%>
+               <%faq.questions.each_with_index do |question, index|%>
+               <tr>
+                <td>
+                  <%=index+1 %>.<%= link_to question.question, "#",class: "cmt_button",id:question.id,style:"color:black;"%>
+                  <table class="table color1 test" style="display:none;" id="<%=question.id%>div">
+                  <tbody>
+                    <tr>
+                       <td><%=question.answer.html_safe%></td>
+                    </tr>
+                  </tbody>
+              </table>
+                </td>
+              </tr>
+               <%end%>
+              <%end%>
+          </tbody>
+          </table>
+        </div>  
+      </div>
+  </div>
+ <%end%>
+ 
+ <%if  @schedules.blank? %> 
+
+ <%else%> 
+ <h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
+padding-top: 17px;color:white;">SCHEDULE</h1>
+<div class="container a schedule" style ='background-color:'>
+    <div class="row">    
+      <p class="text-center text-inline"> </p>
+        <div class="col-md-6 col-md-offset-3"style="padding-left:190px;">
+          <table class="table color1">
+            <%@schedules.each do |schedule|%>
+              <caption class="schedule">
+                <span class="schedule-name"><%=schedule.name%></span><br>
+                <span class="schedule-date"><%=schedule.date%></span>
+              </caption>
+          <tbody>
+                  <%schedule.events.each do |event|%>
+                    <tr>
+                    
+                       <td class="schedule-td"><%=event.activity%></td>
+                       <td><%=event.start_time.strftime("%I:%M%P")%>-<%=event.end_time.strftime(" %I:%M%P")%></td>
+                    </tr>
+
+                    
+                <%end%>
+          </tbody>
+            <%end%>
+          </table>
+        </div>  
+      </div>
+  </div>
+ <%end%>
+
+<%if  @committees.blank? %> 
+
+<%else%> 
+<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
+padding-top: 17px;color:white;">COMMITEE</h1>
+<section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <% @committees.each do|cmt|%>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <%= image_tag  cmt.image_url.url ,class: "img-responsive"%>
+                       
+                        
+                    </a>
+                    
+                </div>
+                <%end%>
+            </div>
+        </div>
+    </section>                                
+<%end%>      
 <script type="text/javascript">
  $(".pagedata").click(function(){
         var id =$(this).attr("id")
         //$("#"+id+"div").show();
         $("#"+id+".a ").toggle();
+          // $("#"+id+"div").next("div").hide();
+        //$("#"+id+".a").hide();
+
+        // $('.comment').toggle();
+    });
+ $(".cmt_button").click(function(){
+        var id =$(this).attr("id")
+        $("#"+id+"div").toggle();
           // $("#"+id+"div").next("div").hide();
         //$("#"+id+".a").hide();
 

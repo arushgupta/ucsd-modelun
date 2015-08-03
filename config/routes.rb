@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   get 'home/dashboard'
   get 'static_pages/help'
- get 'about'   => 'static_pages#about'
+  get 'about'   => 'static_pages#about'
   get 'contact'   => 'static_pages#contact'
   get 'home'   => 'static_pages#index'
   root 'static_pages#index'
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     resources :questions
   end
  
- root 'static_pages#home'
+
  # resources :tritonmuns
 
   # The priority is based upon order of creation: first created -> highest priority.
