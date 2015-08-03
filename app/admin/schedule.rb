@@ -3,7 +3,7 @@ ActiveAdmin.register Schedule do
   menu priority: 15
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
-  permit_params :category_id ,:name ,:date, :is_active, event_attributes: [:activity, :place,  :start_time, :end_time, :_destroy]
+  permit_params :category_id ,:name ,:date, :is_active, event_attributes: [:activity, :place,  :start_time, :end_time, :is_active, :_destroy]
 
   controller do
     def show
@@ -19,7 +19,7 @@ ActiveAdmin.register Schedule do
     column :category, :collection => Category.all.map {|c| [c.name,c.id]}
     column :is_active
     column 'Events' do |schedule|
-      link_to "Events", admin_schedule_events_path(:schedule_id => schedule)
+      link_to "Add Events", admin_schedule_events_path(:schedule_id => schedule)
     end
     actions
   end

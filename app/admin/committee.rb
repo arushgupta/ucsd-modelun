@@ -3,7 +3,8 @@ ActiveAdmin.register Committee do
   menu priority: 14
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
-  permit_params :order, :committee_name, :chair, :vice_chair, :topic_guide_url, :category_id, :is_active, topics_attributes: [:order, :topic_name, :image_url, :description, :_destroy]
+  permit_params :order, :committee_name, :chair, :vice_chair, :topic_guide_url, :image_url, :category_id, :is_active, topics_attributes: [:order, :topic_name, :image_url, :description, :_destroy]
+  decorate_with SecretariatDecorator
 
   index do
     selectable_column
@@ -12,11 +13,14 @@ ActiveAdmin.register Committee do
     column :chair
     column :vice_chair
     column :order
-    column 'Topics' do |committee|
-      link_to "Topics", admin_committee_topics_path(:committee_id => committee)
+    column 'Image' do |finder|
+      finder.image_url
     end
     column 'Topic Guide' do |upload|
       link_to upload.topic_guide_url.file.original_filename, download_committees_path(file: upload.topic_guide_url.file.original_filename )
+    end
+    column 'Topics' do |committee|
+      link_to "Add Topics", admin_committee_topics_path(:committee_id => committee)
     end
     column :category
     column :is_active
@@ -29,13 +33,16 @@ ActiveAdmin.register Committee do
       row :chair
       row :vice_chair
       row :order
+      row 'Image' do |finder|
+        finder.image_url
+      end
       row 'Topic Guide' do |upload|
         link_to upload.topic_guide_url.file.original_filename, committee_download_path(file: upload.topic_guide_url.file.original_filename, :committee_id => upload.id)
       end
       row :category
       row :is_active
       row 'Topics' do |committee|
-        link_to "Topics", admin_committee_topics_path(:committee_id => committee)
+        link_to "Add Topics", admin_committee_topics_path(:committee_id => committee)
       end
     end
   end

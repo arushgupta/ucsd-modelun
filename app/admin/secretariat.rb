@@ -5,6 +5,7 @@ ActiveAdmin.register Secretariat do
   config.batch_actions = false
   permit_params :position, :name, :major, :description, :image_url, :college, :category_id, :is_active
   decorate_with SecretariatDecorator
+  config.sort_order = 'id_asc'
 
   controller do
     def show

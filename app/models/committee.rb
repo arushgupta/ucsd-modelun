@@ -5,6 +5,8 @@ class Committee < ActiveRecord::Base
 
   # attr_accessor :topic_guide_url
   mount_uploader :topic_guide_url, FileUploader
+  attr_accessor :image_url
+  mount_uploader :image_url, ImageUploader
   
   validates :order, presence: true, uniqueness: true
   validates :committee_name, presence: true, uniqueness: true, length: { maximum: 100 }

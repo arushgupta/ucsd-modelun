@@ -6,6 +6,7 @@ class CreateCommittees < ActiveRecord::Migration
       t.string :chair
       t.string :vice_chair
       t.string :topic_guide_url
+      t.string :image_url
       t.references :category
       t.boolean :is_active, :default => true
 
