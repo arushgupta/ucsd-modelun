@@ -3,6 +3,7 @@ ActiveAdmin.register Deadline do
   menu priority: 6
   before_filter :skip_sidebar!, :only => :index
   config.batch_actions = false
+  config.sort_order = 'id_asc'
   permit_params :date, :deadline_info, :phase_id, :fee, :category_id, :is_active
 
   controller do

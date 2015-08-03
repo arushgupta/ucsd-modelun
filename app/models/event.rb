@@ -2,10 +2,10 @@ class Event < ActiveRecord::Base
 	
 	belongs_to :schedule
 	# validates :date,presence: true
-	validates :start_time,presence: true
-	validates :end_time,presence: true
-	validates :activity,presence: true
-	 validate :time_validation
+	validates :start_time, presence: true
+	validates :end_time, presence: true
+	validates :activity, presence: true
+	validate :time_validation
 
   def time_validation
     if end_time < start_time

@@ -17,8 +17,8 @@ ActiveAdmin.register Faq do
     column :name
     column :category
     column :is_active
-    column '' do |faq|
-      link_to "Questions", admin_faq_questions_path(:faq_id => faq)
+    column 'Questions' do |faq|
+      link_to "Add Questions", admin_faq_questions_path(:faq_id => faq)
     end
     actions
   end
@@ -29,7 +29,7 @@ ActiveAdmin.register Faq do
       row :category
       row :is_active
       row 'Questions' do |faq|
-        link_to "Questions", admin_faq_questions_path(:faq_id => faq)
+        link_to "Add Questions", admin_faq_questions_path(:faq_id => faq)
       end
     end
   end

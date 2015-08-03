@@ -4,7 +4,7 @@ ActiveAdmin.register Event do
   belongs_to :schedule
   config.batch_actions = false
   before_filter :skip_sidebar!, :only => :index
-  permit_params :activity, :place,:start_time,:end_time,:schedule_id, :is_active
+  permit_params :activity, :place, :start_time, :end_time, :schedule_id, :is_active
   navigation_menu :default
   menu false
 
@@ -53,7 +53,7 @@ ActiveAdmin.register Event do
       f.input :activity
       f.input :place
       f.input :start_time, :as => :string, :input_html => {:class => 'timepicker'}
-      f.input :end_time, :as => :string, :input_html => {:class => 'hasDatetimePicker'}, :ignore_date => true
+      f.input :end_time, :as => :string, :input_html => {:class => 'timepicker'}
       f.input :is_active, label: "Active"
     end
     f.actions
