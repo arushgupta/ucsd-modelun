@@ -194,7 +194,7 @@ aside {
 header {
     position: relative;
     width: 100%;
-    min-height: 50%;
+    min-height: 100%;
     text-align: center;
     color: #fff;
 
@@ -207,7 +207,7 @@ header {
     background-size: cover;
     -o-background-size: cover;
 
-    background-color: turquoise;
+    background-color: white;
 
 
 }
@@ -529,10 +529,20 @@ margin-left: 169px;}
 #contact{background-color: black;
 margin-top: 10px;}
 .secretariat_img{width:200px; margin-top: 60px; float:left; }
-.schedule{text-align: center;margin-left: -160px;}
+.schedule{text-align: center;margin-left: -118px;}
 .schedule-name{text-transform: uppercase;color:black;font-weight: bold;font-size: 28px;}
 .schedule-date{font-size: 17px;color:black;}
 .overview-td{font-weight: bold;}
-.schedule-td{font-weight: bold;text-transform: uppercase;width: 20%;}
+.schedule-td{font-weight: bold;text-transform: uppercase;width: 52%;}
 .cmt_button{font-size: 18px;}
-
+#popup {
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    vertical-align:middle;
+    background-color: cornflowerblue;
+    color: white;
+    display: none;
+    padding-top: 8px;
+    position: absolute;
+}

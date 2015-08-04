@@ -1108,7 +1108,7 @@ figure {
 img {
   vertical-align: middle;
 }
-.carousel-inner > .item > img{height: 471px !important;}
+.carousel-inner > .item > img{height: 100% !important;}
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,

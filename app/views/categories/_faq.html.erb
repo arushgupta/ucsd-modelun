@@ -1,0 +1,31 @@
+<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
+padding-top: 17px;color:white;">FAQ</h1>
+  <div class="container a faq" style ='background-color:;'>
+    <div class="row">    
+      <p class="text-center text-inline"> </p>
+      <div class="col-md-6 col-md-offset-3" style="padding-left:195px;">
+        <%@faqs.each do |faq|%>
+          <h2><%=faq.name%></h2>
+             <%faq.questions.each_with_index do |question, index|%>
+              <table class="table color1">
+                <tbody>
+                <tr>
+                  <td>
+                    <%=index+1 %>.<%= link_to question.question, "#",class: "cmt_button",id:question.id,style:"color:black;"%>
+                    <table class="table color1 test" style="display:none;" id="<%=question.id%>div">
+                      <tbody>
+                        <tr>
+                          <td><%=question.answer.html_safe%></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <%end%>
+            <%end%>
+          
+      </div>  
+    </div>
+  </div>
