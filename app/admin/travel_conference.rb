@@ -1,9 +1,9 @@
 ActiveAdmin.register TravelConference do
 
-permit_params :name, :short_name, :season, :year, :location, :host, :category_id, :start_date, :end_date, :is_active
-before_filter :skip_sidebar!, :only => :index
-menu :priority => 13
-config.batch_actions = false
+  menu priority: 13
+  before_filter :skip_sidebar!, only: :index
+  config.batch_actions = false
+  permit_params :name, :short_name, :season, :year, :location, :host, :category_id, :start_date, :end_date, :is_active
  
   controller do
     def show
@@ -26,13 +26,13 @@ config.batch_actions = false
 
   form do |f|
     f.inputs "Upcoming Conferences" do
-      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
+      f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :name
       f.input :short_name 
-      f.input :season, :as => :select, :collection => ["Fall", "Spring", "Summer", "Winter"], :include_blank => "select"
-      f.input :year, :as => :select , :collection => (2010..2030),:include_blank => "none"
-      f.input :start_date,:as => :string, :input_html => {:class => 'datepicker'}
-      f.input :end_date,:as => :string, :input_html => {:class => 'datepicker'}
+      f.input :season, as: :select, collection: ["Fall", "Spring", "Summer", "Winter"], include_blank: "select"
+      f.input :year, as: :select , collection: (2010..2030), include_blank: "none"
+      f.input :start_date, as: :string, input_html: {class: 'datepicker'}
+      f.input :end_date, as: :string, input_html: {class: 'datepicker'}
       f.input :location
       f.input :host
       f.input :is_active, label: "Active"
