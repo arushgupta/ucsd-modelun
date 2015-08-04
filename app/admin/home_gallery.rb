@@ -1,7 +1,7 @@
 ActiveAdmin.register HomeGallery do
   
   menu priority: 11
-  before_filter :skip_sidebar!, :only => :index
+  before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :image_url, :image_text, :button_url, :button_text, :image_title, :category_id, :is_active
   decorate_with HomeGalleryDecorator
@@ -27,13 +27,13 @@ ActiveAdmin.register HomeGallery do
 
   form do |f|
     f.inputs "Home Gallery Details" do
-      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]}, :include_blank => "select"
+      f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :image_title
-      f.input :image_url, :as => :file,:image_preview => true,label: "image (size 1400x730)",:hint => f.object.id? ? image_tag(f.object.image_url) : ""
+      f.input :image_url, as: :file, image_preview: true, label: "Image (size 1400x730)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
       f.input :image_text
       f.input :button_url
       f.input :button_text
-      f.input :is_active
+      f.input :is_active, label: "Active"
     end
     f.actions
   end

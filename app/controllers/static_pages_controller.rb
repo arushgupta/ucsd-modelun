@@ -27,7 +27,7 @@ class StaticPagesController < ApplicationController
   private
     def find_category
     @categories = Category.all
-    @cat=Category.all.where("categories.category_id IS NOT NULL")
-    @apply=ApplyNow.all
+    @cat = Category.all.where("categories.category_id IS NOT NULL")
+    @apply = ApplyNow.all
     end
 end
