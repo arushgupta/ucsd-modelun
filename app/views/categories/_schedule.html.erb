@@ -1,0 +1,28 @@
+<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
+padding-top: 17px;color:white;">SCHEDULE</h1>
+<div class="container a schedule" style ='background-color:'>
+    <div class="row">    
+      <p class="text-center text-inline"> </p>
+        <div class="col-md-6 col-md-offset-3"style="padding-left:190px;">
+          <table class="table color1">
+            <%@schedules.each do |schedule|%>
+              <caption class="schedule">
+                <span class="schedule-name"><%=schedule.name%></span><br>
+                <span class="schedule-date"><%=schedule.date%></span>
+              </caption>
+          <tbody>
+                  <%schedule.events.each do |event|%>
+                    <tr>
+                    
+                       <td class="schedule-td"><%=event.activity%></td>
+                       <td><%=event.start_time.strftime("%I:%M%P")%>-<%=event.end_time.strftime(" %I:%M%P")%></td>
+                    </tr>
+
+                    
+                <%end%>
+          </tbody>
+            <%end%>
+          </table>
+        </div>  
+      </div>
+  </div>
