@@ -28,10 +28,8 @@ class CategoriesController < ApplicationController
    @categories = Category.all
    #@cat=Category.all.where("categories.category_id IS NOT NULL")
    @homeimages=HomeGallery.all.where(:category_id => params[:id])
-   debugger
    @pages=Page.all.where(:category_id => params[:id])
-   debugger
-   @overviews=Overview.all.where(:category_id => params[:id]).first
+   @overviews=Overview.all.where(category_id: params[:id],is_active: true).first
    @faqs=Faq.all.where(:category_id => params[:id])
    @schedules=Schedule.all.where(:category_id => params[:id])
    @committees=Committee.all.where(:category_id =>params[:id])

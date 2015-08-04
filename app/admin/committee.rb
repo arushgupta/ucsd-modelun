@@ -54,6 +54,7 @@ ActiveAdmin.register Committee do
       f.input :committee_name
       f.input :chair
       f.input :vice_chair
+      f.input :image_url, :as => :file,:image_preview => true,label: "image (size 1400x730)",:hint => f.object.id? ? image_tag(f.object.image_url) : ""
       f.input :topic_guide_url, :as => :file, :hint => f.object.id? ? link_to(f.object.topic_guide_url.url): "", :label => "Topic Guide (PDF only)"
       f.input :is_active, :label => "Is Active"
     end
