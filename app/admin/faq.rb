@@ -1,7 +1,7 @@
 ActiveAdmin.register Faq do
  
   menu priority: 3
-  before_filter :skip_sidebar!, :only => :index
+  before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :name, :category_id, :is_active, questions_attributes: [:question, :answer, :id, :_destroy]
 
@@ -18,7 +18,7 @@ ActiveAdmin.register Faq do
     column :category
     column :is_active
     column 'Questions' do |faq|
-      link_to "Add Questions", admin_faq_questions_path(:faq_id => faq)
+      link_to "Add Questions", admin_faq_questions_path(faq_id: faq)
     end
     actions
   end
@@ -29,16 +29,16 @@ ActiveAdmin.register Faq do
       row :category
       row :is_active
       row 'Questions' do |faq|
-        link_to "Add Questions", admin_faq_questions_path(:faq_id => faq)
+        link_to "Add Questions", admin_faq_questions_path(faq_id: faq)
       end
     end
   end
 
   form do |f|
     f.inputs 'FAQs Details' do
-      f.input :category, :collection => Category.all.map {|c| [c.name, c.id]},:include_blank => "select"
+      f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :name
-      f.input :is_active
+      f.input :is_active, label: "Active"
     end
     f.actions
   end
