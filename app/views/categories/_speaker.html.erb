@@ -1,1 +1,46 @@
-_speaker.html.erb
+<div class="div_height">
+<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
+padding-top: 17px;color:white;">Speaker</h1>
+
+<section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <% @speakers.each do|spk|%>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="javascript:void(0)" class="portfolio-box">
+                        <%= image_tag  spk.image_url.url ,class: "img-responsive testimg img-rounded",style:"margin-bottom:10px;"%> </a>
+                        
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                           <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                  <h2 class="modal-title" id="myModalLabel"><%=spk.name%></h2>
+                                </div>
+                                <div class="modal-body">
+                                  
+                                  <p>Panel:<%=spk.panel%></p>
+                                 
+                                  <span><%= image_tag  spk.image_url.url ,class: "img-responsive ",style:"height:45px; width:85px;" %> 
+                                    </span>
+                                    <span class="topic_des"><%= spk.description.html_safe%></span>
+                                </div>
+                              </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->       
+                </div>
+                <%end%>
+            </div>
+        </div>
+    </section>            
+</div>
+<script type="text/javascript">
+$(window).load(function(){
+    $('.testimg').on('click',function()
+                {
+                    // var sr=$(this).attr('src'); 
+                    // $('#mimg').attr('src',sr);
+                    $('#myModal').modal('show');
+                });
+});
+</script>

@@ -1,3 +1,4 @@
+<div class="div_height">
 <h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
 padding-top: 17px;color:white;">COMMITEE</h1>
 
@@ -15,15 +16,17 @@ padding-top: 17px;color:white;">COMMITEE</h1>
                                 <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                   <h2 class="modal-title" id="myModalLabel"><%=cmt.committee_name%></h2>
+                                  <%= button_tag "topic_guide", :class => "btn commt_button " %>
                                 </div>
                                 <div class="modal-body">
-                                  <%= image_tag  cmt.image_url.url ,class: "img-responsive ",style:"height:20px; width:50px;" %>
+                                  
                                   <p>Chair:<%=cmt.chair%></p>
                                   <p>Vice Chair:<%=cmt.vice_chair%></p>
                                   <div>
                                     <%cmt.topics.each do |topic|%>
                                     <h4><%=topic.topic_name%></h4>
-                                    <span><%= image_tag  topic.image_url.url ,class: "img-responsive ",style:"height:20px; width:50px;" %></span>
+                                    <span><%= image_tag  topic.image_url.url ,class: "img-responsive ",style:"height:45px; width:85px;" %> 
+                                    </span>
                                     <span class="topic_des"><%= topic.description.html_safe%></span>
                                     <%end%>
                                   </div>
@@ -38,3 +41,14 @@ padding-top: 17px;color:white;">COMMITEE</h1>
             </div>
         </div>
     </section>            
+</div>
+<script type="text/javascript">
+$(window).load(function(){
+    $('.testimg').on('click',function()
+                {
+                    // var sr=$(this).attr('src'); 
+                    // $('#mimg').attr('src',sr);
+                    $('#myModal').modal('show');
+                });
+});
+</script>
