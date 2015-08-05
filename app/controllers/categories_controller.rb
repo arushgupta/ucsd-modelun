@@ -27,12 +27,14 @@ class CategoriesController < ApplicationController
   def index
    @categories = Category.all
    #@cat=Category.all.where("categories.category_id IS NOT NULL")
-   @homeimages=HomeGallery.all.where(:category_id => params[:id])
-   @pages=Page.all.where(:category_id => params[:id])
+   @homeimages=HomeGallery.all.where(category_id: params[:id])
+   @pages=Page.all.where(category_id: params[:id])
    @overviews=Overview.all.where(category_id: params[:id],is_active: true).first
-   @faqs=Faq.all.where(:category_id => params[:id])
-   @schedules=Schedule.all.where(:category_id => params[:id])
-   @committees=Committee.all.where(:category_id =>params[:id])
+   @faqs=Faq.all.where(category_id: params[:id])
+   @schedules=Schedule.all.where(category_id: params[:id])
+   @committees=Committee.all.where(category_id:params[:id])
+   @deadlines=Deadline.all.where(category_id: params[:id])
+   @speakers=Speaker.all.where(category_id: params[:id])
 end
 #   def new
 #   	@category = Category.new

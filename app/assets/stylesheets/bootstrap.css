@@ -1938,7 +1938,7 @@ pre code {
     width: 58.33333333%;
   }
   .col-md-6 {
-    width: 50%;
+    width: 55%;
   }
   .col-md-5 {
     width: 41.66666667%;
@@ -6608,3 +6608,31 @@ div.bio-box {
   text-align: left;}
 .img-margin{margin-left: 12px;}
 .about-heading{text-align: center;}
+.div_height{height: 800px;
+background-color: azure;}
+.test22{float: right;
+  width:281px;
+/*margin-top: -248px;*/
+}
+.test12{float: left;
+  width:300px;
+}
+.schedule_display{float: left;
+  width:281px;}
+  .bg-primary1{color: #FFF;
+background-color: #337AB7;}
+.deadline_img{margin-left: 20px; width: 260px; height: 254px;}
+.deadline_head {
+    text-align: center;
+    margin-top: -153px;
+}
+.deadline_head2 {
+    text-align: center;
+}
+.ta{height: 290px !important;}
+.deadline_fee{text-align: center; margin-top: 122px;font-weight: bold;}
+.deadline_info {
+    text-align: center;
+    font-weight: bold;
+}
+.deadline_thumnail{border:0px!important;background-color:#f0ffff !important;}
