@@ -529,7 +529,7 @@ margin-left: 169px;}
 #contact{background-color: black;
 margin-top: 10px;}
 .secretariat_img{width:200px; margin-top: 60px; float:left; }
-.schedule{text-align: center;margin-left: -118px;}
+.schedule{text-align: center;}
 .schedule-name{text-transform: uppercase;color:black;font-weight: bold;font-size: 28px;}
 .schedule-date{font-size: 17px;color:black;}
 .overview-td{font-weight: bold;}
@@ -545,4 +545,9 @@ margin-top: 10px;}
     display: none;
     padding-top: 8px;
     position: absolute;
+}
+.commt_button{float:right;    margin-top: -34px;
+    background-color: aquamarine;
+    color: black;
+    font-weight: bold;
 }

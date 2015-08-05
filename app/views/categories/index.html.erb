@@ -2,7 +2,7 @@
 
 <%else%>
 <header>
-    	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -62,7 +62,6 @@
         </div> -->
 </header>
 <%end%>
-
 <nav id="mainNav" class="navbar navbar-default page_nav_bar ">
         <div class="container-fluid " style="background-color:#404da2">
 
@@ -101,10 +100,32 @@
                     <li>
                         <a class="page-scroll" href="">Contact</a>
                     </li> -->
- <%if  @overviews.blank? %> 
+<%if @deadlines.blank?%>
 
 <%else%>
-     <%= render "overview"%>
+<%=render "deadline"%>
+<%end%>
+
+
+<%if  @committees.blank? %> 
+      
+<%else%> 
+ <%= render "committee"%>              
+<%end%>  
+
+<%if  @speakers.blank? %> 
+
+<%else%>
+     <%= render "speaker"%>
+<%end%> 
+
+
+
+
+<%if  @schedules.blank? %> 
+
+<%else%> 
+ <%= render "schedule"%>
 <%end%>
 
 
@@ -115,19 +136,13 @@
 <%end%>
 
  
-<%if  @schedules.blank? %> 
-
-<%else%> 
- <%= render "schedule"%>
-<%end%>
 
 
 
-<%if  @committees.blank? %> 
-      
-<%else%> 
- <%= render "committee"%>              
-<%end%>  
+
+
+
+
 
 
 <script type="text/javascript">
