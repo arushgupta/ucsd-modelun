@@ -3,37 +3,34 @@
 padding-top: 17px;color:white;">Speaker</h1>
 
 <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <% @speakers.each do|spk|%>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="javascript:void(0)" class="portfolio-box">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <% @speakers.each do|spk|%>
+        <div class="col-lg-4 col-sm-6">
+          <a href="javascript:void(0)" class="portfolio-box">
                         <%= image_tag  spk.image_url.url ,class: "img-responsive spkimg img-rounded",style:"margin-bottom:10px;",id:spk.id%> 
-                    </a>
-                        
-                        <div class="modal fade" id="<%=spk.id%>spk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                           <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                  <h2 class="modal-title" id="myModalLabel"><%=spk.name%></h2>
-                                </div>
-                                <div class="modal-body">
-                                  
-                                  <p><span class="panel_data">Panel</span>:<%=spk.panel%></p>
-                                 
-                                  <span class="modal_data"><%= image_tag  spk.image_url.url ,class: "img-responsive ",style:"height:72px; width:85px;" %> 
-                                    </span>
-                                    <span class="topic_des"><%= spk.description.html_safe%></span>
-                                </div>
-                              </div><!-- /.modal-content -->
-                            </div><!-- /.modal-dialog -->
-                        </div><!-- /.modal -->       
-                </div>
-                <%end%>
-            </div>
+          </a>              
+          <div class="modal fade" id="<%=spk.id%>spk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel"><%=spk.name%></h2>
+                  </div>
+                  <div class="modal-body">
+                    <p><span class="panel_data">Panel</span>:<%=spk.panel%></p>   
+                    <span class="modal_data"><%= image_tag  spk.image_url.url ,class: "img-responsive ",style:"height:72px; width:85px;" %> 
+                    </span>
+                    <span class="topic_des"><%= spk.description.html_safe%></span>
+                  </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->       
         </div>
-    </section>            
+      <%end%>
+    </div>
+  </div>
+</section>            
 </div>
 <script type="text/javascript">
 $(window).load(function(){

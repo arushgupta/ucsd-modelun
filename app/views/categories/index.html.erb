@@ -52,7 +52,9 @@
   </header>
 <%end%>
 
-<% unless @pages.blank?%>
+<% if @pages.blank?%>
+
+<%else%>
 <nav id="mainNav" class="navbar navbar-default page_nav_bar ">
   <div class="container-fluid " style="background-color:#404da2">
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,51 +74,6 @@
 <%end%>
 
 
-<%unless  @overviews.blank? %> 
-  <%= render "overview"%>
-<%end%>
-
-<%if @pages.blank?%>
-
-<%else%>
-<nav id="mainNav" class="navbar navbar-default page_nav_bar ">
-        <div class="container-fluid " style="background-color:#404da2">
-
-
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                <ul class="nav navbar-nav navbar-left">
-                  
-                    <% @pages.each do |page|%>
-                      <li>
-                         <%=link_to page.name, pages_path(id: page.id),class: "pagedata",id:page.id,style:"color:white"%>
-                      </li>
-                    <%end%>
-
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-<%end%>
-              
-                  
-                   <!--  <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conference<span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                       <li><a href="#">Sdimun</a></li>
-                       <li><a href="#">tra</a></li>
-      
-                     </ul>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="">Travel</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="">Contact</a>
-                    </li> -->
 <% if @secretariats.blank?%>
 
 <%else%>
@@ -129,18 +86,27 @@
 <%=render "deadline"%>
 <%end%>
 
+<%unless  @committees.blank? %> 
+ <%= render "committee"%>              
+<%end%>
+
+<%unless @speakers.blank?%>
+<%=render "speaker"%>
+<%end%>
+
+
+<%unless  @schedules.blank? %> 
+ <%= render "schedule"%>
+<%end%>
+
+
 <%unless  @faqs.blank? %> 
   <%= render "faq"%>
 
 <%end%>
  
-<%unless  @schedules.blank? %> 
- <%= render "schedule"%>
-<%end%>
 
-<%unless  @committees.blank? %> 
- <%= render "committee"%>              
-<%end%>  
+  
 
 <script type="text/javascript">
   $(".pagedata").click(function(){
@@ -160,24 +126,6 @@
     // $('.comment').toggle();
   });
 
-  $(window).load(function(){
-    $('.testimg').on('click',function(){
-      // var sr=$(this).attr('src'); 
-      // $('#mimg').attr('src',sr);
-      $('#myModal').modal('show');
-    });
-
- $(".cmt_button").click(function(){
-        var id =$(this).attr("id")
-        $("#"+id+"div").toggle();
-          // $("#"+id+"div").next("div").hide();
-        //$("#"+id+".a").hide();
-
-        // $('.comment').toggle();
-    });
-
- 
-  });
 
 </script>
 
