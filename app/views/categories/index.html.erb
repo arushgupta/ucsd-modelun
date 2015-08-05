@@ -1,67 +1,81 @@
-<%if  @homeimages.blank? %> 
+<%unless  @homeimages.blank? %> 
+  <header>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <% @homeimages.each_with_index do |home,i| %>
+          <%if i == 0%>
+            <li data-target="#carousel-example-generic" data-slide-to=<%=i+1%> class="active"></li>
+          <%else%>
+            <li data-target="#carousel-example-generic" data-slide-to=<%=i+1%>></li>
+          <%end%>
+        <%end%>
+      </ol>
 
-<%else%>
-<header>
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
+      <!-- Wrapper for slides -->
 
-  <!-- Wrapper for slides -->
-
-<div class="carousel-inner" role="listbox">
-  <% @homeimages.each_with_index do |home,i| %>
-    <%if i == 0%>
-    <div class="item active">
-        <%= image_tag  home.image_url.url %>
-      <div class="carousel-caption">
-        <h3><%= home.image_text%></h3>
-        <%= button_tag home.button_url, :class => "btn btn-primary change" do %>
-          <%= t(home.button_text)%>
-        <% end %>
-      </div>
-   
-    </div>
-    <%else%>
-      <div class="item">
-        <%= image_tag  home.image_url.url %>
-      <div class="carousel-caption">
-        <h3><%= home.image_text%></h3>
-        <%= button_tag home.button_url, :class => "btn btn-primary change" do %>
-         <%= t(home.button_text)%>
-        <% end %>
-        
-      </div>
-    </div>
-    <%end%>
-  <% end%>
-  </div>
-
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-
-</div>
-        <!-- <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
-                <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+      <div class="carousel-inner" role="listbox">
+        <% @homeimages.each_with_index do |home,i| %>
+          <%if i == 0%>
+            <div class="item active">
+              <%= image_tag  home.image_url.url %>
+              <div class="carousel-caption">
+                <h3><%= home.image_text%></h3>
+                <%= button_tag home.button_url, :class => "btn btn-primary change" do %>
+                  <%= home.button_text%>
+                <% end %>
+              </div>
             </div>
-        </div> -->
-</header>
+           <%else%>
+            <div class="item">
+              <%= image_tag  home.image_url.url %>
+              <div class="carousel-caption">
+                <h3><%= home.image_text%></h3>
+                <%= button_tag home.button_url, :class => "btn btn-primary change" do %>
+                  <%= home.button_text%>
+                <% end %>
+              </div>
+            </div>
+          <%end%>
+        <% end%>
+      </div>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
 <%end%>
+
+<% unless @pages.blank?%>
+<nav id="mainNav" class="navbar navbar-default page_nav_bar ">
+  <div class="container-fluid " style="background-color:#404da2">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <% @pages.each do |page|%>
+          <li>
+            <%=link_to page.name, pages_path(id: page.id),class: "pagedata",id:page.id,style:"color:white"%>
+          </li>
+        <%end%>
+      </ul>
+    </div>
+  <!-- /.navbar-collapse -->
+  </div>
+<!-- /.container-fluid -->
+</nav>
+<%end%>
+
+
+<%unless  @overviews.blank? %> 
+  <%= render "overview"%>
+<%end%>
+
 <%if @pages.blank?%>
 
 <%else%>
@@ -110,61 +124,49 @@
 <%end%>
 
 
-<%if @deadlines.blank?%>
+<%unless @deadlines.blank?%>
 
-<%else%>
 <%=render "deadline"%>
 <%end%>
 
+<%unless  @faqs.blank? %> 
+  <%= render "faq"%>
 
-<%if  @committees.blank? %> 
-      
-<%else%> 
- <%= render "committee"%>              
-<%end%>  
-
-<%if  @speakers.blank? %> 
-
-<%else%>
-     <%= render "speaker"%>
-<%end%> 
-
-
-
-
-<%if  @schedules.blank? %> 
-
-<%else%> 
+<%end%>
+ 
+<%unless  @schedules.blank? %> 
  <%= render "schedule"%>
 <%end%>
 
-
-<%if  @faqs.blank? %> 
-
-<%else%>
- <%= render "faq"%>
-<%end%>
-
- 
-
-
-
-
-
-
-
-
+<%unless  @committees.blank? %> 
+ <%= render "committee"%>              
+<%end%>  
 
 <script type="text/javascript">
- $(".pagedata").click(function(){
-        var id =$(this).attr("id")
-        //$("#"+id+"div").show();
-        $("#"+id+".a ").toggle();
-          // $("#"+id+"div").next("div").hide();
-        //$("#"+id+".a").hide();
+  $(".pagedata").click(function(){
+    var id =$(this).attr("id")
+    //$("#"+id+"div").show();
+    $("#"+id+".a ").toggle();
+    // $("#"+id+"div").next("div").hide();
+    //$("#"+id+".a").hide();
+    // $('.comment').toggle();
+  });
 
-        // $('.comment').toggle();
+  $(".cmt_button").click(function(){
+    var id =$(this).attr("id")
+    $("#"+id+"div").toggle();
+    // $("#"+id+"div").next("div").hide();
+    //$("#"+id+".a").hide();
+    // $('.comment').toggle();
+  });
+
+  $(window).load(function(){
+    $('.testimg').on('click',function(){
+      // var sr=$(this).attr('src'); 
+      // $('#mimg').attr('src',sr);
+      $('#myModal').modal('show');
     });
+
  $(".cmt_button").click(function(){
         var id =$(this).attr("id")
         $("#"+id+"div").toggle();
@@ -175,6 +177,8 @@
     });
 
  
+  });
+
 </script>
 
    

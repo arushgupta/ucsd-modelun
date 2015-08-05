@@ -3,7 +3,7 @@ ActiveAdmin.register Event do
   before_action :set_schedule
   belongs_to :schedule
   config.batch_actions = false
-  before_filter :skip_sidebar!, :only => :index
+  before_filter :skip_sidebar!, only: :index
   permit_params :activity, :place, :start_time, :end_time, :schedule_id, :is_active
   navigation_menu :default
   menu false
@@ -52,8 +52,8 @@ ActiveAdmin.register Event do
     f.inputs 'Event Details' do
       f.input :activity
       f.input :place
-      f.input :start_time, :as => :string, :input_html => {:class => 'timepicker'}
-      f.input :end_time, :as => :string, :input_html => {:class => 'timepicker'}
+      f.input :start_time, as: :string, input_html: {class: 'timepicker'}
+      f.input :end_time, as: :string, input_html: {class: 'timepicker'}
       f.input :is_active, label: "Active"
     end
     f.actions

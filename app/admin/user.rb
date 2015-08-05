@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
 
   menu parent: "Settings"
-  before_filter :skip_sidebar!, :only => :index
+  before_filter :skip_sidebar!, only: :index
   permit_params :name, :email, :password, :is_active
 
   controller do

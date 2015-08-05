@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   before_filter :find_category
   def index
-  	
+   @images = HomeGallery.where(category_id: nil)	
 # @categories = Category.all
 #     @cat=Category.all.where("categories.category_id IS NOT NULL")
 #     debugger
@@ -27,7 +27,7 @@ class StaticPagesController < ApplicationController
   private
     def find_category
     @categories = Category.all
-    @cat=Category.all.where("categories.category_id IS NOT NULL")
-    @apply=ApplyNow.all
+    @cat = Category.all.where("categories.category_id IS NOT NULL")
+    @apply = ApplyNow.all
     end
 end
