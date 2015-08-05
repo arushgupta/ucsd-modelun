@@ -6572,8 +6572,8 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-.secretariat_img{width:200px;  float:left; }
-.photo{width:200px;    margin-top: 12px; margin-left: 0px;}
+.secretariat_img{width:181px;  float:left; }
+.photo{width:154px;    margin-top: 12px; margin-left: 0px;}
 .bio-header{font-size: 16px;
   color: #4f4f4f;
   font-style: italic;
@@ -6605,7 +6605,8 @@ div.bio-box {
   //border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
 
-  text-align: left;}
+  text-align: left;
+}
 .img-margin{margin-left: 12px;}
 .about-heading{text-align: center;}
 .div_height{height: 800px;
@@ -6636,3 +6637,9 @@ background-color: #337AB7;}
     font-weight: bold;
 }
 .deadline_thumnail{border:0px!important;background-color:#f0ffff !important;}
+.modal_data{float:left; padding-right: 17px;}
+.panel_data{font-weight: bold;font-size:20px;}
+.committee_chair{font-weight: bold;font-size:20px;}
+.secre_major{padding-bottom: 10px;}
+.about_img{height: 202px;width: 223px;margin: 10px;}
+.about_img_width{width:21.333% !important;}
