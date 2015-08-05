@@ -18,7 +18,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
-    @secretariats=Secretariat.all
+    
     # @categories = Category.all
     # @cat=Category.all.where("categories.category_id IS NOT NULL")
     # @apply=ApplyNow.all

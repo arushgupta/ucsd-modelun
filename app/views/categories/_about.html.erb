@@ -1,0 +1,47 @@
+<div class="div_height">
+<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
+padding-top: 17px;color:white;">ABOUT</h1>
+
+<section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <% @secretariats.each do|s|%>
+                <div class="col-lg-4 col-sm-6 about_img_width">
+                    <a href="javascript:void(0)" class="portfolio-box">
+                        <%= image_tag  s.image_url.url ,class: "img-responsive spkimg img-rounded about_img" ,id:s.id%> 
+                    </a>
+                        
+                        <div class="modal fade" id="<%=s.id%>s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                           <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-body">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                  <div class="secretariat_img"><%= image_tag  s.image_url.url,class: "photo" %></div>
+                                  <div class="bio-header">
+                                    <div class="position-one"><%=s.position%></div>
+                                      <div class="name"><%=s.name%></div>
+                                       <div><%=s.college%></div>
+                                        <div class="secre_major"><%=s.major%></div>
+                                  </div>
+                                    <span class="topic_des"><%= s.description.html_safe%></span>
+                                </div>
+                              </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->       
+                </div>
+                <%end%>
+            </div>
+        </div>
+    </section>            
+</div>
+<script type="text/javascript">
+$(window).load(function(){
+    $('.spkimg').on('click',function()
+                {  var id =$(this).attr("id")
+                    // var sr=$(this).attr('src'); 
+                    // $('#mimg').attr('src',sr);
+                    $('#'+id+"s").modal('show');
+                });
+});
+</script>
+

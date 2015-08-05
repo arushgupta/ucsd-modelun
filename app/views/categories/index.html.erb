@@ -62,6 +62,9 @@
         </div> -->
 </header>
 <%end%>
+<%if @pages.blank?%>
+
+<%else%>
 <nav id="mainNav" class="navbar navbar-default page_nav_bar ">
         <div class="container-fluid " style="background-color:#404da2">
 
@@ -83,7 +86,7 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
+<%end%>
               
                   
                    <!--  <li class="dropdown">
@@ -100,6 +103,13 @@
                     <li>
                         <a class="page-scroll" href="">Contact</a>
                     </li> -->
+<% if @secretariats.blank?%>
+
+<%else%>
+<%= render "about"%>
+<%end%>
+
+
 <%if @deadlines.blank?%>
 
 <%else%>
@@ -164,14 +174,7 @@
         // $('.comment').toggle();
     });
 
- $(window).load(function(){
-    $('.testimg').on('click',function()
-                {
-                    // var sr=$(this).attr('src'); 
-                    // $('#mimg').attr('src',sr);
-                    $('#myModal').modal('show');
-                });
-});
+ 
 </script>
 
    

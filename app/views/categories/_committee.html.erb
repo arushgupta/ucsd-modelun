@@ -8,9 +8,9 @@ padding-top: 17px;color:white;">COMMITEE</h1>
                 <% @committees.each do|cmt|%>
                 <div class="col-lg-4 col-sm-6">
                     <a href="javascript:void(0)" class="portfolio-box">
-                        <%= image_tag  cmt.image_url.url ,class: "img-responsive testimg",style:"padding-bottom:10px;"%> </a>
+                        <%= image_tag  cmt.image_url.url ,class: "img-responsive testimg",style:"padding-bottom:10px;",id:cmt.id%> </a>
                         
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="<%=cmt.id%>cmt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                            <div class="modal-dialog">
                               <div class="modal-content">
                                 <div class="modal-header">
@@ -20,12 +20,12 @@ padding-top: 17px;color:white;">COMMITEE</h1>
                                 </div>
                                 <div class="modal-body">
                                   
-                                  <p>Chair:<%=cmt.chair%></p>
-                                  <p>Vice Chair:<%=cmt.vice_chair%></p>
+                                  <p><span class="committee_chair">Chair:</span><%=cmt.chair%></p>
+                                  <p><span class="committee_chair">Vice Chair:</span><%=cmt.vice_chair%></p>
                                   <div>
                                     <%cmt.topics.each do |topic|%>
                                     <h4><%=topic.topic_name%></h4>
-                                    <span><%= image_tag  topic.image_url.url ,class: "img-responsive ",style:"height:45px; width:85px;" %> 
+                                    <span class="modal_data"><%= image_tag  topic.image_url.url ,class: "img-responsive ",style:"height:72px; width:85px;" %> 
                                     </span>
                                     <span class="topic_des"><%= topic.description.html_safe%></span>
                                     <%end%>
@@ -45,10 +45,10 @@ padding-top: 17px;color:white;">COMMITEE</h1>
 <script type="text/javascript">
 $(window).load(function(){
     $('.testimg').on('click',function()
-                {
+                {    var id =$(this).attr("id")
                     // var sr=$(this).attr('src'); 
                     // $('#mimg').attr('src',sr);
-                    $('#myModal').modal('show');
+                    $('#'+id+"cmt").modal('show');
                 });
 });
 </script>

@@ -5,7 +5,11 @@ ActiveAdmin.register Committee do
   config.batch_actions = false
   permit_params :order, :committee_name, :chair, :vice_chair, :topic_guide_url, :image_url, :category_id, :is_active, topics_attributes: [:order, :topic_name, :image_url, :description, :_destroy]
   decorate_with SecretariatDecorator
-
+controller do
+    def show
+      @page_title = "Committee Details"
+    end
+  end
   index do
     selectable_column
     id_column
