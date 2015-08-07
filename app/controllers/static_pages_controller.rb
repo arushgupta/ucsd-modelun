@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
-    @secretariats=Secretariat.all
+
   end
 
   private

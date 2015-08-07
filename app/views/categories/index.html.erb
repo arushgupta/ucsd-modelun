@@ -51,6 +51,10 @@
     </div>
   </header>
 <%end%>
+
+<% if @pages.blank?%>
+
+<%else%>
 <nav id="mainNav" class="navbar navbar-default page_nav_bar ">
   <div class="container-fluid " style="background-color:#404da2">
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,22 +71,42 @@
   </div>
 <!-- /.container-fluid -->
 </nav>
-
-<%unless  @overviews.blank? %> 
-  <%= render "overview"%>
 <%end%>
 
-<%unless  @faqs.blank? %> 
-  <%= render "faq"%>
+
+<% if @secretariats.blank?%>
+
+<%else%>
+<%= render "about"%>
 <%end%>
- 
-<%unless  @schedules.blank? %> 
- <%= render "schedule"%>
+
+
+<%unless @deadlines.blank?%>
+
+<%=render "deadline"%>
 <%end%>
 
 <%unless  @committees.blank? %> 
  <%= render "committee"%>              
-<%end%>  
+<%end%>
+
+<%unless @speakers.blank?%>
+<%=render "speaker"%>
+<%end%>
+
+
+<%unless  @schedules.blank? %> 
+ <%= render "schedule"%>
+<%end%>
+
+
+<%unless  @faqs.blank? %> 
+  <%= render "faq"%>
+
+<%end%>
+ 
+
+  
 
 <script type="text/javascript">
   $(".pagedata").click(function(){
@@ -102,13 +126,7 @@
     // $('.comment').toggle();
   });
 
-  $(window).load(function(){
-    $('.testimg').on('click',function(){
-      // var sr=$(this).attr('src'); 
-      // $('#mimg').attr('src',sr);
-      $('#myModal').modal('show');
-    });
-  });
+
 </script>
 
    

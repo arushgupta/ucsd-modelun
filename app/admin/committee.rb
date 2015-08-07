@@ -7,10 +7,13 @@ ActiveAdmin.register Committee do
   decorate_with SecretariatDecorator
 
   controller do
+
     def show
       @page_title = "Committee Details"
     end
   end
+
+
 
   index do
     selectable_column
