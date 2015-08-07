@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :deadlines
   resources :overviews
   resources :pages
+  resources :speakers
   resources :schedules do
     resources :events
   end

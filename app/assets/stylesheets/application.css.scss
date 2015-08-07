@@ -14,8 +14,8 @@
  *= require bootstrap-editable
  *= require bootstrap
  *= require jquery-ui
- *= require_tree .
  *= require_self
+ *= require_directory .
  */
 
 @font-face {
