@@ -1,182 +1,273 @@
-<header>
- 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <%@images.each_with_index do |image, ind|%>
-            <%if ind == 0%>
-                <li data-target="#carousel-example-generic" data-slide-to=<%=ind%> class="active"></li>
-            <%else%>
-                <li data-target="#carousel-example-generic" data-slide-to=<%=ind%>></li>
-            <%end%>
-        <%end%>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <%@images.each_with_index do |image, i|%>
-            <%if i == 0 %>
-                <div class="item active">
-            <%else%>
-                <div class="item">
-            <%end%>
-            <%=image_tag (image.image_url)%>
-            <!-- <img src="assets/f1.jpg" alt="..."> -->
-            <div class="carousel-caption">
-      	    </div>
-        </div>
-        <%end%>
+<div class="row">
+<div id="carousel-example-generic" class="carousel slide vertical" data-ride="carousel">
+  <!-- Indicators -->
+  <div class="col-sm-2 col-sm">
+    <div class="carousel-indicators carousel_ind">
+      <div data-target="#carousel-example-generic" data-slide-to="0" class="active thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
+      <div data-target="#carousel-example-generic" data-slide-to="1" class="thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
+      <div data-target="#carousel-example-generic" data-slide-to="2" class="thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
     </div>
+  </div>
+ 
+  <!-- Wrapper for slides -->
+  <div class="col-sm-9" style="flaot:left; width: 84%;">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="main_image">
+        <%begin%>
+            <%= image_tag (@tritonmun[2].image_url)%>
+          <%rescue%>
+            <img src="assets/image_1.jpg" alt="...">
+          <%end%>
+      </div>
+      <div class="second_img">
+        <div class="side_img_1">
+          <%begin%>
+            <%= image_tag (@tritonmun[1].image_url)%>
+          <%rescue%>
+            <img src="assets/image_2.jpg" alt="...">
+          <%end%>
+          <div class="caption">
+            <h4>Caption Text</h4>
+          </div>
+        </div>
+        <div class="side_img_2">
+          <%begin%>
+            <%= image_tag (@tritonmun[0].image_url)%>
+          <%rescue%>
+            <img src="assets/image_3.jpg" alt="...">
+          <%end%>
+          <div class="caption_1">
+            <h4>Caption Text</h4>
+          </div>
+        </div>
+      </div>
 
+      <!-- <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div> -->
+    </div>
+    <div class="item">
+      <div class="main_image">
+        <%begin%>
+          <%= image_tag (@sdimun[2].image_url)%>
+        <%rescue%>
+          <img src="assets/image_1.jpg" alt="...">
+        <%end%>
+      </div>
+      <div class="second_img">
+        <div class="side_img_1">
+        <%begin%>
+          <%= image_tag (@sdimun[1].image_url)%>
+        <%rescue%>
+          <img src="assets/image_2.jpg" alt="...">
+        <%end%>
+        <div class="caption">
+          <h4>Caption Text</h4>
+        </div>
+        </div>
+        <div class="side_img_2">
+          <%begin%>
+            <%= image_tag (@sdimun[0].image_url)%>
+          <%rescue%>
+            <img src="assets/image_3.jpg" alt="...">
+          <%end%>
+          <div class="caption_1">
+            <h4>Caption Text</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div> -->
+    </div>
+    <div class="item">
+      <div class="main_image">
+        <%begin%>
+          <%= image_tag (@travel[2].image_url)%>
+        <%rescue%>
+          <img src="assets/image_1.jpg" alt="...">
+        <%end%>
+      </div>
+      <div class="second_img">
+        <div class="side_img_1">
+        <%begin%>
+          <%= image_tag (@travel[1].image_url)%>
+        <%rescue%>
+          <img src="assets/image_2.jpg" alt="...">
+        <%end%>
+        <div class="caption">
+          <h4>Caption Text</h4>
+        </div>
+        </div>
+        <div class="side_img_2">
+          <%begin%>
+            <%= image_tag (@travel[0].image_url)%>
+          <%rescue%>
+            <img src="assets/image_3.jpg" alt="...">
+          <%end%>
+          <div class="caption_1">
+            <h4>Caption Text</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div> -->
+    </div>
+  </div>
+
+ 
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+ <!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a> -->
+</div>
+</div> <!-- Carousel -->
 </div>
 
-        <!-- <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
-                <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-            </div>
-        </div> -->
-</header>
+<script type="text/javascript">
+  var $carousel = $('.carousel');
+  $carousel.carousel();
 
-<section class="bg-primary" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading"> Model United Nations at UCSD</h2>
-                <!--     <hr class="light"> -->
-                <p class="text-faded">As a club, we aim to develop a globally aware and socially concerned community by expanding students' understanding of pertinent social, economic and political issues.
-                </p>
-                <a href="" style="position: relative; z-index: 999999;">
-                    <span id="learn">
-                        Learn how you can participate
-                        <span id="arrow">
-                             ➤
-                         </span>
-                       </span>
-                    </a>
-                     <a href="#" class="btn btn-default btn-xl">JOIN US</a> 
+  $carousel.bind('slide', function(e) {
+  console.log("e.direction = " + e.direction);
+});
+</script>
 
-                </div>
-            </div>
-        </div>
-    </section>
 
-    
-    <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <% @apply.each do|apply|%>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                   <!--      <%debugger%> -->
-                        <%= image_tag  apply.image_url.url ,class: "img-responsive"%>
-                       
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    <%=apply.headline%>
-                                </div>
-                                 <%= button_tag apply.button_url, :class => "btn btn-primary changebutton" do %>
-                                 <%= t(apply.button_text)%>
-                                 <% end %>
-                            </div>
-                        </div>
-                    </a>
-                    
-                </div>
-                <%end%>
-                <!-- <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="assets/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="assets/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="assets/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="assets/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="assets/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div> -->
-            </div>
-        </div>
-    </section>
+<style type="text/css">
+/* CSS used here will be applied after bootstrap.css */
+.carousel {
+  margin-top: 20px;
+  margin-bottom: 0px !important;
+}
 
-   
-<!-- 
-</body>
+.carousel_ind {
+  bottom: -465px;
+  left: 40%;
+}
 
-</html> -->
+.col-sm {
+  margin-left: 2px;
+  margin-right: -50px;
+  /*padding-top: 470px;*/
+  /*width: 16%;*/
+  float: left;
+}
+.main_image{
+  overflow: hidden;
+  width: 70%;
+  float: left;
+}
+.second_img{
+  width: 30%;
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+.second_img img {
+  height: 230px;
+  overflow: hidden;
+  width: 385px;
+}
+
+.side_img_2{
+  padding-top: 5px;
+}
+
+
+.main_image img {
+    height: 465px;
+    overflow: hidden;
+    width: 900px;
+}
+.thumb {
+  width: 100%;
+  cursor: pointer;
+  /*float: left;*/
+  margin-top: 10px;
+}
+.carousel-indicators .active{
+  background-color: red;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  margin-top: 10px;
+}
+ .thumb img {
+  width: 50%;
+  margin: 2px;
+}
+.thumb img {
+  width: 100%;  
+}
+.new_class{
+  float: left;
+  width: 14%;
+}
+.new_class .clearfix, .carousel, .carousel-inner, .item {
+  width: 100%;
+}
+
+.caption {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 180px;
+}
+.caption_1 {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 415px;
+}
+/*set slider to slide bottom to top*/
+
+.vertical .carousel-inner {
+  height: 100%;
+}
+
+.carousel.vertical .item {
+   -webkit-transition: 0.6s ease-in-out top;
+   -moz-transition: 0.6s ease-in-out top;
+   -ms-transition: 0.6s ease-in-out top;
+   -o-transition: 0.6s ease-in-out top;
+   transition: 0.6s ease-in-out top;
+}
+
+.carousel.vertical .active {
+   top: 0;
+}
+
+.carousel.vertical .next {
+   top: 400px;
+}
+
+.carousel.vertical .prev {
+   top: -400px;
+}
+
+.carousel.vertical .next.left,
+.carousel.vertical .prev.right {
+   top: 0;
+}
+
+.carousel.vertical .active.left {
+   top: -400px;
+}
+
+.carousel.vertical .active.right {
+   top: 400px;
+}
+
+.carousel.vertical .item {
+   left: 0;
+}
+
+</style>

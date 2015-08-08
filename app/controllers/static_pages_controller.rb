@@ -1,16 +1,13 @@
 class StaticPagesController < ApplicationController
   before_filter :find_category
   def index
-   @images = HomeGallery.where(category_id: nil)	
-# @categories = Category.all
-#     @cat=Category.all.where("categories.category_id IS NOT NULL")
-#     debugger
-#     @apply=ApplyNow.all
+    @tritonmun = HomeGallery.where(gallery_type: "T").order('created_at ASC').last(3)
+    @sdimun = HomeGallery.where(gallery_type: "S").order('created_at ASC').last(3)
+    @travel = HomeGallery.where(gallery_type: "V").order('created_at ASC').last(3)
   end 
+  
   def home
-    
     @categories = Category.all.where(:category_id => nil)
-
   end
 
   def help
@@ -18,16 +15,13 @@ class StaticPagesController < ApplicationController
   end
 
   def about
-    
-    # @categories = Category.all
-    # @cat=Category.all.where("categories.category_id IS NOT NULL")
-    # @apply=ApplyNow.all
+
   end
 
   private
     def find_category
-    @categories = Category.all
-    @cat = Category.all.where("categories.category_id IS NOT NULL")
-    @apply = ApplyNow.all
+      @categories = Category.all
+      @cat = Category.all.where("categories.category_id IS NOT NULL")
+      @apply = ApplyNow.all
     end
 end

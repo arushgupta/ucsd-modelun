@@ -102,10 +102,11 @@ ActiveRecord::Schema.define(version: 20150724113810) do
     t.string   "button_url"
     t.string   "button_text"
     t.string   "image_title"
+    t.string   "gallery_type"
     t.integer  "category_id"
-    t.boolean  "is_active",   default: true
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "is_active",    default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "overviews", force: :cascade do |t|
