@@ -75,3 +75,130 @@ footer {
 .main .page-header {
   margin-top: 0;
 }
+
+.carousel {
+  margin-top: 20px;
+  margin-bottom: 0px !important;
+}
+
+.carousel_ind {
+  bottom: -465px;
+  left: 40%;
+}
+
+.col-sm {
+  margin-left: 2px;
+  margin-right: -50px;
+  /*padding-top: 470px;*/
+  /*width: 16%;*/
+  float: left;
+}
+.main_image{
+  overflow: hidden;
+  width: 70%;
+  float: left;
+}
+.second_img{
+  width: 30%;
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+.second_img img {
+  height: 230px;
+  overflow: hidden;
+  width: 385px;
+}
+
+.side_img_2{
+  padding-top: 5px;
+}
+
+
+.main_image img {
+    height: 465px;
+    overflow: hidden;
+    width: 900px;
+}
+.thumb {
+  width: 100%;
+  cursor: pointer;
+  /*float: left;*/
+  margin-top: 10px;
+}
+.carousel-indicators .active{
+  background-color: red;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  margin-top: 10px;
+}
+ .thumb img {
+  width: 50%;
+  margin: 2px;
+}
+.thumb img {
+  width: 100%;  
+}
+.new_class{
+  float: left;
+  width: 14%;
+}
+.new_class .clearfix, .carousel, .carousel-inner, .item {
+  width: 100%;
+}
+
+.caption {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 180px;
+}
+.caption_1 {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 415px;
+}
+/*set slider to slide bottom to top*/
+
+.vertical .carousel-inner {
+  height: 100%;
+}
+
+.carousel.vertical .item {
+   -webkit-transition: 0.6s ease-in-out top;
+   -moz-transition: 0.6s ease-in-out top;
+   -ms-transition: 0.6s ease-in-out top;
+   -o-transition: 0.6s ease-in-out top;
+   transition: 0.6s ease-in-out top;
+}
+
+.carousel.vertical .active {
+   top: 0;
+}
+
+.carousel.vertical .next {
+   top: 400px;
+}
+
+.carousel.vertical .prev {
+   top: -400px;
+}
+
+.carousel.vertical .next.left,
+.carousel.vertical .prev.right {
+   top: 0;
+}
+
+.carousel.vertical .active.left {
+   top: -400px;
+}
+
+.carousel.vertical .active.right {
+   top: 400px;
+}
+
+.carousel.vertical .item {
+   left: 0;
+}
