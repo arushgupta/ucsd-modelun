@@ -1,120 +1,119 @@
 <div class="row">
-<div id="carousel-example-generic" class="carousel slide vertical" data-ride="carousel">
-  <!-- Indicators -->
-  <div class="col-sm-2 col-sm">
-    <div class="carousel-indicators carousel_ind">
-      <div data-target="#carousel-example-generic" data-slide-to="0" class="active thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
-      <div data-target="#carousel-example-generic" data-slide-to="1" class="thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
-      <div data-target="#carousel-example-generic" data-slide-to="2" class="thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
+  <div id="carousel-example-generic" class="carousel slide vertical" data-ride="carousel">
+    <!-- Indicators -->
+    <div class="col-sm-2 col-sm">
+      <div class="carousel-indicators carousel_ind">
+        <div data-target="#carousel-example-generic" data-slide-to="0" class="active thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
+        <div data-target="#carousel-example-generic" data-slide-to="1" class="thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
+        <div data-target="#carousel-example-generic" data-slide-to="2" class="thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
+      </div>
     </div>
-  </div>
  
-  <!-- Wrapper for slides -->
-  <div class="col-sm-9" style="flaot:left; width: 84%;">
-  <div class="carousel-inner">
-    <div class="item active">
-      <div class="main_image">
-        <%begin%>
-            <%= image_tag (@tritonmun[2].image_url)%>
-          <%rescue%>
-            <img src="assets/image_1.jpg" alt="...">
-          <%end%>
-      </div>
-      <div class="second_img">
-        <div class="side_img_1">
-          <%begin%>
-            <%= image_tag (@tritonmun[1].image_url)%>
-          <%rescue%>
-            <img src="assets/image_2.jpg" alt="...">
-          <%end%>
-          <div class="caption">
-            <h4>Caption Text</h4>
+    <!-- Wrapper for slides -->
+    <div class="col-sm-9" style="flaot:left; width: 84%; padding-top:50px">
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="main_image">
+            <%begin%>
+              <%= image_tag (@tritonmun[0].image_url)%>
+            <%rescue%>
+              <img src="assets/image_1.jpg" alt="...">
+            <%end%>
+          </div>
+          <div class="second_img">
+            <div class="side_img_1">
+              <%begin%>
+                <%= image_tag (@tritonmun[1].image_url)%>
+              <%rescue%>
+                <img src="assets/image_2.jpg" alt="...">
+              <%end%>
+              <div class="caption">
+                <h4>Caption Text</h4>
+              </div>
+            </div>
+            <div class="side_img_2">
+              <%begin%>
+                <%= image_tag (@tritonmun[2].image_url)%>
+              <%rescue%>
+                <img src="assets/image_3.jpg" alt="...">
+              <%end%>
+              <div class="caption_1">
+                <h4>Caption Text</h4>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="side_img_2">
-          <%begin%>
-            <%= image_tag (@tritonmun[0].image_url)%>
-          <%rescue%>
-            <img src="assets/image_3.jpg" alt="...">
-          <%end%>
-          <div class="caption_1">
-            <h4>Caption Text</h4>
+        <div class="item">
+          <div class="main_image">
+            <%begin%>
+              <%= image_tag (@sdimun[0].image_url)%>
+            <%rescue%>
+              <img src="assets/image_1.jpg" alt="...">
+            <%end%>
+          </div>
+          <div class="second_img">
+            <div class="side_img_1">
+              <%begin%>
+                <%= image_tag (@sdimun[1].image_url)%>
+              <%rescue%>
+                <img src="assets/image_2.jpg" alt="...">
+              <%end%>
+              <div class="caption">
+                <h4>Caption Text</h4>
+              </div>
+            </div>
+            <div class="side_img_2">
+              <%begin%>
+                <%= image_tag (@sdimun[2].image_url)%>
+              <%rescue%>
+                <img src="assets/image_3.jpg" alt="...">
+              <%end%>
+              <div class="caption_1">
+                <h4>Caption Text</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="main_image">
+            <%begin%>
+              <%= image_tag (@travel[0].image_url)%>
+            <%rescue%>
+              <img src="assets/image_1.jpg" alt="...">
+            <%end%>
+          </div>
+          <div class="second_img">
+            <div class="side_img_1">
+              <%begin%>
+                <%= image_tag (@travel[1].image_url)%>
+              <%rescue%>
+                <img src="assets/image_2.jpg" alt="...">
+              <%end%>
+              <div class="caption">
+                <h4>Caption Text</h4>
+              </div>
+            </div>
+            <div class="side_img_2">
+              <%begin%>
+                <%= image_tag (@travel[2].image_url)%>
+              <%rescue%>
+                <img src="assets/image_3.jpg" alt="...">
+              <%end%>
+              <div class="caption_1">
+                <h4>Caption Text</h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="item">
-      <div class="main_image">
-        <%begin%>
-          <%= image_tag (@sdimun[2].image_url)%>
-        <%rescue%>
-          <img src="assets/image_1.jpg" alt="...">
-        <%end%>
-      </div>
-      <div class="second_img">
-        <div class="side_img_1">
-        <%begin%>
-          <%= image_tag (@sdimun[1].image_url)%>
-        <%rescue%>
-          <img src="assets/image_2.jpg" alt="...">
-        <%end%>
-        <div class="caption">
-          <h4>Caption Text</h4>
-        </div>
-        </div>
-        <div class="side_img_2">
-          <%begin%>
-            <%= image_tag (@sdimun[0].image_url)%>
-          <%rescue%>
-            <img src="assets/image_3.jpg" alt="...">
-          <%end%>
-          <div class="caption_1">
-            <h4>Caption Text</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="main_image">
-        <%begin%>
-          <%= image_tag (@travel[2].image_url)%>
-        <%rescue%>
-          <img src="assets/image_1.jpg" alt="...">
-        <%end%>
-      </div>
-      <div class="second_img">
-        <div class="side_img_1">
-        <%begin%>
-          <%= image_tag (@travel[1].image_url)%>
-        <%rescue%>
-          <img src="assets/image_2.jpg" alt="...">
-        <%end%>
-        <div class="caption">
-          <h4>Caption Text</h4>
-        </div>
-        </div>
-        <div class="side_img_2">
-          <%begin%>
-            <%= image_tag (@travel[0].image_url)%>
-          <%rescue%>
-            <img src="assets/image_3.jpg" alt="...">
-          <%end%>
-          <div class="caption_1">
-            <h4>Caption Text</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
  
-  <!-- Controls -->
- <!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a> -->
-</div>
-</div> <!-- Carousel -->
+      <!-- Controls -->
+      <!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      </a> -->
+    </div>
+  </div> <!-- Carousel -->
 </div>
