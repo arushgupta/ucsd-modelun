@@ -1,50 +1,26 @@
-<div class="conference-columns">
-  <div class="container-fluid">
-        <div class = "column-1 col-md-2">
-          <div class = "category-text">
-            <%=link_to "Overview", overviews_path(category_id: params[:id])%>
-          </div>
-          <div class = "inner">
-          </div>
+<div class="conference">
+  <div class="conference_row conference_row_1">
+      <div class = "conference_column conference_column_4_4">
+        <div class = "conference_text conference_module conference_heading_text_center">
+          <h1>TritonMUN XI</h1>
+          <h2>Spring 2015</h2>
         </div>
-        <div class = "column-2 col-md-2">
-          <div class = "category-text">
-            <%= link_to "Deadlines", deadlines_path(category_id: params[:id])%>
-          </div>
-          <div class = "inner">
-          </div>
-        </div>
-        <div class = "column-3 col-md-2">
-          <div class = "category-text">
-            <%= link_to "Schedule", schedules_path(category_id: params[:id])%>
-          </div>
-          <div class = "inner">
-          </div>
-        </div>
-        <div class = "column-4 col-md-2">
-          <div class = "category-text">
-            <%= link_to "Committees", committees_path(category_id: params[:id])%>
-          </div>
-          <div class = "inner">
-          </div>
-        </div>
-        <div class = "column-5 col-md-2">
-          <div class = "category-text">
-            <%= link_to "Speakers", speakers_path(category_id: params[:id])%>
-          </div>
-          <div class = "inner">
-          </div>
-        </div>
-        <div class = "column-6 col-md-2">
-          <div class = "category-text">
-            <%= link_to "FAQs", faqs_path(category_id: params[:id])%>
-          </div>
-          <div class = "inner">
-          </div>
-        </div>
-    </div>
-</div>
+      </div>
+  </div>
 
-<div class = "register">
-  <button type = "button">Register</button>
+  <div class = "conference_row conference_row_2">
+    <div class = "conference_column conference_column_1_3">
+      <div class = "conference_blurb conference_module conference_heading_text_center">
+        <div class = "conference_blurb_content">
+          <div class = "conference_blurb_image">
+            <img src = "assets/image/conference-1.jpg" alt = "...">
+          </div>
+          <div class = "conference_blurb_container">
+            <h4>Overview</h4>
+            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

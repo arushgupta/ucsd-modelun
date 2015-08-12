@@ -25,9 +25,9 @@ ActiveAdmin.register Committee do
     column 'Image' do |finder|
       finder.image_url
     end
-    column 'Topic Guide' do |upload|
-      link_to upload.topic_guide_url.file.original_filename, download_committees_path(file: upload.topic_guide_url.file.original_filename )
-    end
+    # column 'Topic Guide' do |upload|
+    #   link_to upload.topic_guide_url.file.original_filename, download_committees_path(file: upload.topic_guide_url.file.original_filename )
+    # end
     column :category
     column :is_active
     column 'Topics' do |committee|
