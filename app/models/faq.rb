@@ -7,4 +7,7 @@ class Faq < ActiveRecord::Base
 	validates :name,  presence: true, length: { maximum: 100 }, uniqueness: {scope: :category,
 	                       message: "should be one per category"}
 	validates :category,presence: true
+ def display_name
+   "#{category.name}_#{name}"
+ end
 end

@@ -6,5 +6,10 @@ class CommitteesController < ApplicationController
         filename: "#{params[:file]}",
         type: "application/pdf"
       )
-    end
+  end
+
+  def index
+  	@committees=Committee.all.where(category_id:params[:id])
+  end
+
 end

@@ -89,7 +89,6 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    ckeditor-imgur (1.0.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -253,7 +252,6 @@ DEPENDENCIES
   cancancan
   carrierwave (= 0.10.0)
   ckeditor!
-  ckeditor-imgur
   coffee-rails (= 4.1.0)
   devise
   draper

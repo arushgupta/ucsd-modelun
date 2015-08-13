@@ -4,5 +4,7 @@ class Question < ActiveRecord::Base
 	
 	validates :question,  presence: true, length: { maximum: 200 }
     validates :answer,  presence: true, length: { maximum: 500 }
-
+def display_name
+   "#{id}"
+end 
 end
