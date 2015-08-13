@@ -1,9 +1,9 @@
 class StaticPagesController < ApplicationController
   before_filter :find_category
   def index
-    @tritonmun = HomeGallery.where(gallery_type: "T").order('created_at ASC').last(3)
-    @sdimun = HomeGallery.where(gallery_type: "S").order('created_at ASC').last(3)
-    @travel = HomeGallery.where(gallery_type: "V").order('created_at ASC').last(3)
+    @tritonmun = HomeGallery.where(gallery_type: "T").order('created_at DESC').last(3)
+    @sdimun = HomeGallery.where(gallery_type: "S").order('created_at DESC').last(3)
+    @travel = HomeGallery.where(gallery_type: "V").order('created_at DESC').last(3)
   end 
   
   def home

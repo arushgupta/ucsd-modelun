@@ -12,6 +12,10 @@ class Deadline < ActiveRecord::Base
    self[:phase_id] = value.to_i
   end
 
+  def display_name
+    "#{ id }"
+  end
+
   def date_validation
     if date < Date.today
       errors[:date] << "cannot be before the today date"

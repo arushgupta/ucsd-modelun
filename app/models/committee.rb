@@ -12,4 +12,7 @@ class Committee < ActiveRecord::Base
   validates :committee_name, presence: true, uniqueness: true, length: { maximum: 100 }
   validates :chair, presence: true, length: { maximum: 100 }
   validates :vice_chair, presence: true, length: { maximum: 100 }
+  def display_name
+  "#{category.name}"
+ end
 end
