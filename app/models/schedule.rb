@@ -14,5 +14,9 @@ class Schedule < ActiveRecord::Base
     else
       return true
     end
-  end   
+  end  
+
+  def display_name
+  "#{category.name}_#{name}"
+  end 
 end

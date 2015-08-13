@@ -13,7 +13,7 @@ class Deadline < ActiveRecord::Base
   end
 
   def display_name
-    "#{ id } "
+    "#{ id }"
   end
 
   def date_validation

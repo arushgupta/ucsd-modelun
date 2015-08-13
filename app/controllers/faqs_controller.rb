@@ -2,7 +2,7 @@ class FaqsController < ApplicationController
 
 before_action :admin_user,     only: [:destroy, :create]
   
-  def new
+  def new                                                                
   	@faq = Faq.new
   end
   
@@ -25,7 +25,7 @@ before_action :admin_user,     only: [:destroy, :create]
   end
 
   def index
-    @faqs = Faq.order(:id)
+    @faqs=Faq.all.where(category_id:params[:id])
   end
 
   private

@@ -10,7 +10,9 @@ class Overview < ActiveRecord::Base
   validates :location,:presence => true, :format => { :with => /\A[a-zA-Z0-9\s\.',:(){}_\-]+\z/},length: { maximum: 100}
   validate :date_validation1
   validate :date_validation
-
+  def display_name
+    "#{category.name}_#{season}"
+  end
   def date_validation
     if end_date < start_date
       errors[:end_date] << "cannot be before the start date"
