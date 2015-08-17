@@ -22,7 +22,17 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 193%;
+    width: 100% !important;
+    display: block;
 }
+.conference_row_2{height: 38%;
+    width: 100%;
+    display: inline-flex;}
+.conference_row_3{height: 38%;
+    width: 100%;
+    display: inline-flex;}    
+.conference_row_1{height:117px;}    
 @media (min-width: 981px) {
   .conference {
     padding: 4% 0;  
@@ -35,8 +45,7 @@ body {
 }
 .container,
 .conference_row {
-  width: 80%;
-  max-width: 1080px;
+  width: 100%;
   margin: auto;
   position: relative;
 }
@@ -138,13 +147,11 @@ h2 {
 	overflow: hidden;
 }
 .conference_parallax_bg {
-	background-image: url(assets/register-bg.jpg);
 	height: 383.5px;
 	transform: translate(0px, 96.8203125px);
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-size: cover;
-	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;

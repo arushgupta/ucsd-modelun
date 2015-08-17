@@ -13,7 +13,8 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <img src = "assets/conference-1.jpg" alt = "...">
+           <%= link_to image_tag("conference-1.jpg", alt: "logo"),
+            overviews_path(cat_id: params[:id]) %>
           </div>
           <div class = "conference_blurb_container">
             <h4>Overview</h4>
@@ -26,7 +27,8 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <img src = "assets/conference-2.jpg" alt = "...">
+            <%= link_to image_tag("conference-2.jpg", alt: "logo"),
+            schedules_path(:cat_id=>params[:id]) %>
           </div>
           <div class = "conference_blurb_container">
             <h4>Schedule</h4>
@@ -39,7 +41,8 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <img src = "assets/conference-3.jpg" alt = "...">
+            <%= link_to image_tag("conference-3.jpg", alt: "logo"),
+            committees_path(:cat_id=>params[:id]) %>
           </div>
           <div class = "conference_blurb_container">
             <h4>Committees</h4>
@@ -55,7 +58,8 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <img src = "assets/conference-4.jpg" alt = "...">
+            <%= link_to image_tag("conference-4.jpg", alt: "logo"),
+            speakers_path(cat_id:params[:id]) %>
           </div>
           <div class = "conference_blurb_container">
             <h4>Speakers</h4>
@@ -68,7 +72,8 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <img src = "assets/conference-5.jpg" alt = "...">
+            <%= link_to image_tag("conference-5.jpg", alt: "logo"),
+            deadlines_path(cat_id: params[:id]) %>
           </div>
           <div class = "conference_blurb_container">
             <h4>Deadlines</h4>
@@ -81,7 +86,8 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <img src = "assets/conference-6.jpg" alt = "...">
+            <%= link_to image_tag("conference-6.jpg", alt: "logo"),
+            faqs_path(cat_id:params[:id]) %>
           </div>
           <div class = "conference_blurb_container">
             <h4>FAQs</h4>
@@ -93,7 +99,7 @@
   </div>
 </div>
 
-<div class = "conference conference_register conference_parallax">
+<div class = " conference_register conference_parallax">
   <div class = "conference_parallax_bg">
   </div>
   <div class = "conference_row conference_row_4">
@@ -109,3 +115,30 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+$(window).load(function(){
+    $('.testimg').on('click',function()
+                {    var id =$(this).attr("id")
+                    // var sr=$(this).attr('src'); 
+                    // $('#mimg').attr('src',sr);
+                    $('#'+id+"cmt").modal('show');
+                });
+});
+
+$(window).load(function(){
+    $('.spkimg').on('click',function()
+                {   var id =$(this).attr("id")
+                    // var sr=$(this).attr('src'); 
+                    // $('#mimg').attr('src',sr);
+                    $('#'+id+"spk").modal('show');
+                });
+});
+
+$(document).ready(function(){
+$(".cmt_button11").click(function(){
+    var id =$(this).attr("id")
+    $("#"+id+"div").toggle();
+    
+  });
+});
+</script>
