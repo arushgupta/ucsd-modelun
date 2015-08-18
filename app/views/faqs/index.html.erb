@@ -1,25 +1,29 @@
-<div class="div_height">
-<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
-padding-top: 17px;color:white;">FAQ</h1>
-  <div class="container a faq" style ='background-color:;'>
-    <div class="row">    
-      <p class="text-center text-inline"> </p>
-      <div class="" >
+<section id="team" class="bg-light-gray" style="padding:0px 0px;">
+ <div class="container a faq" style="">
+ <div class="row">
+                <div class="col-lg-12 text-center " style="background-image: url('/assets/banner2.jpeg')">
+                    <h2 class="section-heading">faq</h2>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                </div>
+            </div> 
+    <div class="row" style="margin-top:40px;">   
         <%@faqs.each do |faq|%>
         <div class="content container">
             <div class="page-wrapper">
               <header class="page-heading clearfix faq_header">
-                <h1 class="heading-title pull-left " style="color:black;"> <%=faq.name%></h1>
+                <h1 class="heading-title pull-left " style="color:black;"> </h1>
               </header> 
-              <%faq.questions.each_with_index do |question, index|%>
+              <%faq.questions.each do |question|%>
               <div class="page-content">
                 <div class="row page-row">
                    <div class="faq-wrapper col-md-8 col-sm-7">                         
                       <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <%=index+1 %>.<%= link_to question.question, "javascript:void(0)",class: "cmt_button11",id:question.id,style:"color:black;"%>
+                            <h4 class="panel-title " style="margin-top:10px;">
+                              <div class="cmt_button11">
+                              <%= link_to question.question, "javascript:void(0)",class: "cmt_button11 ",id:question.id,style:"color:black;"%><i class="fa fa-plus-circle" style="float:right;"></i></div>
+
                             </h4>
                           </div><!--//pane-heading-->
                           <div style="display:none;" id="<%=question.id%>div">
@@ -37,10 +41,10 @@ padding-top: 17px;color:white;">FAQ</h1>
             </div>
         </div>
         <%end%> 
-      </div>
+    
     </div>
   </div>
-</div>
+</section>
 
 <script type="text/javascript">
 $(document).ready(function(){
