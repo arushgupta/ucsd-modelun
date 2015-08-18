@@ -1,44 +1,39 @@
-<div class="div_height">
-<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
-padding-top: 17px;color:white;">Speaker</h1>
 
-<section class="no-padding" id="portfolio">
-  <div class="container-fluid">
-    <div class="row no-gutter">
-      <% @speakers.each do|spk|%>
-        <div class="col-lg-4 col-sm-6">
-          <a href="javascript:void(0)" class="portfolio-box">
-                        <%= image_tag  spk.image_url.url ,class: "img-responsive spkimg img-rounded",style:"margin-bottom:10px;",id:spk.id%> 
-          </a>              
-          <div class="modal fade" id="<%=spk.id%>spk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="myModalLabel"><%=spk.name%></h2>
-                  </div>
-                  <div class="modal-body">
-                    <p><span class="panel_data">Panel</span>:<%=spk.panel%></p>   
-                    <span class="modal_data"><%= image_tag  spk.image_url.url ,class: "img-responsive ",style:"height:72px; width:85px;" %> 
-                    </span>
-                    <span class="topic_des"><%= spk.description.html_safe%></span>
-                  </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->       
+<!-- Team Section -->
+    <section id="team" class="bg-light-gray" style="padding:0px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center " style="background-image: url('/assets/banner2.jpeg')">
+                    <h2 class="section-heading">Our Speakers</h2>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                </div>
+            </div>
+            <div class="row">
+               <% @speakers.each do|spk|%>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                     
+                      <%= image_tag  spk.image_url.url ,class: "img-responsive  img-circle",id:spk.id%> 
+                        
+                        <h4><%=spk.name%></h4>
+                        <p class="text-muted"><%=spk.panel%></p>
+                        <div style="text-align:left;float:left;"><%= spk.description.html_safe%></div>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+           <%end%>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                </div>
+            </div>
         </div>
-      <%end%>
-    </div>
-  </div>
-</section>            
-</div>
-<script type="text/javascript">
-$(window).load(function(){
-    $('.spkimg').on('click',function()
-                {   var id =$(this).attr("id")
-                    // var sr=$(this).attr('src'); 
-                    // $('#mimg').attr('src',sr);
-                    $('#'+id+"spk").modal('show');
-                });
-});
-</script>
+    </section>
