@@ -4,62 +4,50 @@ padding-top: 17px;color:white;">FAQ</h1>
   <div class="container a faq" style ='background-color:;'>
     <div class="row">    
       <p class="text-center text-inline"> </p>
-      <div class="col-md-6 col-md-offset-3" >
-        <%@faqs.each_with_index do |faq, i|%>
-        <%if i%2 == 0%>
-        <div class="test12">
-        	<h2><%=faq.name%></h2>
-            <%faq.questions.each_with_index do |question, index|%> 
-              <table class="table color1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <%=index+1 %>.<%= link_to question.question, "javascript:void(0)",class: "cmt_button",id:question.id,style:"color:black;"%>
-                        <table class="table color1 test" style="display:none;" id="<%=question.id%>div">
-                          <tbody>
-                            <tr>
-                              <td><%=question.answer.html_safe%></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            <%end%>      
+      <div class="" >
+        <%@faqs.each do |faq|%>
+        <div class="content container">
+            <div class="page-wrapper">
+              <header class="page-heading clearfix faq_header">
+                <h1 class="heading-title pull-left " style="color:black;"> <%=faq.name%></h1>
+              </header> 
+              <%faq.questions.each_with_index do |question, index|%>
+              <div class="page-content">
+                <div class="row page-row">
+                   <div class="faq-wrapper col-md-8 col-sm-7">                         
+                      <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <%=index+1 %>.<%= link_to question.question, "javascript:void(0)",class: "cmt_button11",id:question.id,style:"color:black;"%>
+                            </h4>
+                          </div><!--//pane-heading-->
+                          <div style="display:none;" id="<%=question.id%>div">
+                            <div class="panel-body">
+                              <%=question.answer.html_safe%>
+                            </div><!--//panel-body-->
+                          </div><!--//panel-colapse-->
+                                  
+                        </div><!--//panel-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <%end%>
+            </div>
         </div>
-        <%else%>
-        <%if i == 1 %>
-        	<div class="test22" style="margin-top:; ">
-        <%else%>
-        	<div class="test22" >
-        <%end%>
-        	
-          <h2><%=faq.name%></h2>
-            <%faq.questions.each_with_index do |question, index|%>
-              
-              <table class="table color1">
-                <tbody>
-                <tr>
-                  <td>
-                    <%=index+1 %>.<%= link_to question.question, "javascript:void(0)",class: "cmt_button",id:question.id,style:"color:black;"%>
-                    <table class="table color1 test" style="display:none;" id="<%=question.id%>div">
-                      <tbody>
-                        <tr>
-                          <td style="width:10px;"><%=question.answer.html_safe%></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            <%end%>
-          </div>
-          
-        <%end%>
-        <%end%>      
-      </div>  
+        <%end%> 
+      </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$(".cmt_button11").click(function(){
+    var id =$(this).attr("id")
+    $("#"+id+"div").toggle();
+    
+  });
+});
+</script>

@@ -1,11 +1,16 @@
 <div class="conference">
-  <div class="conference_row conference_row_1">
-      <div class = "conference_column conference_column_4_4">
-        <div class = "conference_text conference_module conference_heading_text_center">
-          <h1>TritonMUN XI</h1>
-          <h2>Spring 2015</h2>
+  <div class = "conference_column_fullwidth conference_title">
+    <img src="assets/conference_title.jpg" alt="..." style = "width: 100%;">
+    <div class = "conference_fullwidth_header conference_module conference_bg_layout_dark conference_text_align_left">
+      <div class = "conference_fullwidth_header_container left">
+        <div class = "header-content-container center">
+          <div class = "header-content">
+            <h1>TritonMUN XI</h1>
+            <span class = "conference_fullwidth_header_subhead">Spring 2015</span>
+          </div>
         </div>
       </div>
+    </div>
   </div>
 
   <div class = "conference_row conference_row_2">
@@ -13,10 +18,84 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <img src = "assets/conference-1.jpg" alt = "...">
+           <%= link_to image_tag("conference-1.jpg", alt: "logo"),
+            overviews_path(cat_id: params[:id]) %>
           </div>
           <div class = "conference_blurb_container">
-            <h4>Overview</h4>
+            <h4><%= link_to "Overview", overviews_path(cat_id: params[:id]) %></h4>
+            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "conference_column conference_column_1_3">
+      <div class = "conference_blurb conference_module conference_heading_text_center">
+        <div class = "conference_blurb_content">
+          <div class = "conference_blurb_image">
+            <%= link_to image_tag("conference-2.jpg", alt: "logo"),
+            schedules_path(:cat_id=>params[:id]) %>
+          </div>
+          <div class = "conference_blurb_container">
+            <h4><%= link_to "Schedule", schedules_path(cat_id: params[:id]) %></h4>
+            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "conference_column conference_column_1_3">
+      <div class = "conference_blurb conference_module conference_heading_text_center">
+        <div class = "conference_blurb_content">
+          <div class = "conference_blurb_image">
+            <%= link_to image_tag("conference-3.jpg", alt: "logo"),
+            committees_path(:cat_id=>params[:id]) %>
+          </div>
+          <div class = "conference_blurb_container">
+            <h4><%= link_to "Committees", committees_path(cat_id: params[:id]) %></h4>
+            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "conference_row conference_row_3">
+    <div class = "conference_column conference_column_1_3">
+      <div class = "conference_blurb conference_module conference_heading_text_center">
+        <div class = "conference_blurb_content">
+          <div class = "conference_blurb_image">
+            <%= link_to image_tag("conference-4.jpg", alt: "logo"),
+            speakers_path(cat_id:params[:id]) %>
+          </div>
+          <div class = "conference_blurb_container">
+            <h4><%= link_to "Speakers", speakers_path(cat_id: params[:id]) %></h4>
+            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "conference_column conference_column_1_3">
+      <div class = "conference_blurb conference_module conference_heading_text_center">
+        <div class = "conference_blurb_content">
+          <div class = "conference_blurb_image">
+            <%= link_to image_tag("conference-5.jpg", alt: "logo"),
+            deadlines_path(cat_id: params[:id]) %>
+          </div>
+          <div class = "conference_blurb_container">
+            <h4><%= link_to "Fees & Timeline", deadlines_path(cat_id: params[:id]) %></h4>
+            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "conference_column conference_column_1_3">
+      <div class = "conference_blurb conference_module conference_heading_text_center">
+        <div class = "conference_blurb_content">
+          <div class = "conference_blurb_image">
+            <%= link_to image_tag("conference-6.jpg", alt: "logo"),
+            faqs_path(cat_id:params[:id]) %>
+          </div>
+          <div class = "conference_blurb_container">
+            <h4><%= link_to "FAQs", faqs_path(cat_id: params[:id]) %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>
@@ -24,3 +103,45 @@
     </div>
   </div>
 </div>
+
+<div class = " conference_register conference_parallax">
+  <div class = "conference_parallax_bg">
+  </div>
+    <div class = "conference_column conference_column_4_4">
+      <div class = "conference_promo conference_module conference_bg_layout_dark conference_heading_text_center conference_no_bg">
+        <div class = "conference_promo_description">
+          <h1>Look No Further. Register Today</h1>
+        </div>
+        <a class = "conference_promo_button conference_button" href = "https://www.google.com">
+          Register Now
+        </a>
+      </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(window).load(function(){
+    $('.testimg').on('click',function()
+                {    var id =$(this).attr("id")
+                    // var sr=$(this).attr('src'); 
+                    // $('#mimg').attr('src',sr);
+                    $('#'+id+"cmt").modal('show');
+                });
+});
+
+$(window).load(function(){
+    $('.spkimg').on('click',function()
+                {   var id =$(this).attr("id")
+                    // var sr=$(this).attr('src'); 
+                    // $('#mimg').attr('src',sr);
+                    $('#'+id+"spk").modal('show');
+                });
+});
+
+$(document).ready(function(){
+$(".cmt_button11").click(function(){
+    var id =$(this).attr("id")
+    $("#"+id+"div").toggle();
+    
+  });
+});
+</script>
