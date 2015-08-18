@@ -1,8 +1,7 @@
 //= require jquery
 //=require jquery-ui
 //= require jquery_ujs
-//=require jquery-ui-timepicker-addon
-$(document).ready(function() {
+//=require jquery-ui-timepicker-addon$(document).ready(function() {
   jQuery('input.hasDatetimePicker').datetimepicker({
     dateFormat: "dd/mm/yy",
     beforeShow: function () {
@@ -26,4 +25,3 @@ jQuery(document).ready(function() {
       showTimeZone: false
     });
 });
-
