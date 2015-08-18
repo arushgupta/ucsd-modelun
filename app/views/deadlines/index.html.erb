@@ -1,34 +1,25 @@
-
-  <h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
+<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
   padding-top: 17px;color:white;">DEADLINE</h1>
- 
 
-
-
-
-
-<div class="container" id="pricing-section">
-
-                <div class="main-low-margin col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margin-top-100 ">
-                    <div id="pricing-table" class="row">
-                        <% @deadlines.each do |dead|%>
-                        <div class="col-md-4 col-sm-4">
-                            <ul class="plan-main">
-                                <li class="plan-name"><%=dead.phase_id%></li>
-                                <li class="plan-price"></li>
-                                <li><%=dead.date.strftime(" %Y")%></li>
-                                <li><%=dead.fee%></li>
-                                <li><%=dead.deadline_info%></li>
-                                <li>100 Email Address</li>
-                                <li>24x7 Support</li>
-                                <li>Live Chat</li>
-                                <li class="plan-action"><</li>
-                            </ul>
-                        </div>
-                        <%end%>
-                    </div>
-
-                    
-                </div>
-                <!-- ./ Row Content-->
-            </div>
+ <div class="container" id="pricing-section">
+  <div class="main-low-margin col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margin-top-100 ">
+    <div id="pricing-table" class="row">
+      <% @deadlines.each do |dead|%>
+        <div class="col-md-4 col-sm-4">
+          <ul class="plan-main">
+            <li class="plan-name"><%= dead.phase_id %></li>
+            <li><%=dead.date.strftime("%e %B, %Y")%></li>
+            <li><span class = "plan-dollar">$</span>
+                <span class= "plan-price"><%= dead.fee %></span>
+            </li>
+            <li>
+                <span class = "plan-delegate">Per Delegate</span>
+            </li>
+            <li class = "plan-info"><%=dead.deadline_info%></li>
+            <li class="plan-action">Register</li>
+          </ul>
+        </div>
+      <%end%>
+    </div>              
+  </div>
+</div>

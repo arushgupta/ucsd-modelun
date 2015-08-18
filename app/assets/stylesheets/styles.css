@@ -215,44 +215,36 @@ footer {
 #pricing-section .plan-main li.plan-name {
     padding: 15px 0px;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
+    background-color: #AFAFAF;
+    color: #FFF;
 }
 #pricing-section .plan-main li {
     padding: 10px 0px;
-    margin: 0px 15px;
-    border-bottom: 1px dashed #EEE;
+    margin: 0px;
 }
 
 #pricing-section .plan-main {
     list-style: none outside none;
     text-align: center;
 }
-#pricing-section .plan-main li.plan-price {
-    color: #666;
-    padding: 15px 0px;
-    font-size: 48px;
+#pricing-section .plan-main span.plan-dollar {
+  vertical-align: top;
+  color: #777;
 }
-
-#pricing-section .plan-main li {
-    padding: 10px 0px;
-    margin: 0px 15px;
-    border-bottom: 1px dashed #EEE;
+#pricing-section .plan-main span.plan-delegate {
+  vertical-align: baseline;
+  color: #777;
 }
-
-#pricing-section .plan-main {
-    list-style: none outside none;
-    text-align: center;
+#pricing-section .plan-main span.plan-price {
+  color: #1C3D78;
+  padding: 15px 0px;
+  font-size: 102px;
 }
-
-#pricing-section .plan-main li {
-    padding: 10px 0px;
-    margin: 0px 15px;
-    border-bottom: 1px dashed #EEE;
-}
-
-#pricing-section .plan-main {
-    list-style: none outside none;
-    text-align: center;
+#pricing-section .plan-main li.plan-info {
+  color: #000;
+  text-align: left;
+  margin: 0px 15px;
 }
 
 #pricing-section .plan-main li.plan-action {
@@ -261,11 +253,6 @@ footer {
     border-bottom: 0px none;
 }
 
-#pricing-section .plan-main li {
-    padding: 10px 0px;
-    margin: 0px 15px;
-    border:0px;
-}
 #pricing-section .plan-main {
     background: none repeat scroll 0% 0% #FFF;
     list-style: none outside none;

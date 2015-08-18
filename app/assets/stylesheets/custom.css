@@ -202,7 +202,11 @@ h2 {
 	transition: all 0.2s;
 }
 .conference_title {
-	background-color: #fff;
+	background-image: url("register-bg.jpg");
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	margin-bottom: 20px;
 }
 @media (min-width: 981px) {
 	.conference_column_fullwidth {
