@@ -77,6 +77,7 @@ body {
 @media (min-width: 981px) {
 	.conference_column {
 		margin-right: 5.5%;
+		margin-left: 5.5%;
 	}.conference
 }
 @media (min-width: 981px) {
@@ -181,7 +182,7 @@ h2 {
 	color: #fff !important;
 }
 .conference_no_bg {
-	padding: 0 !important;
+	/*padding: 0 !important;*/
 }
 .conference_promo {
 	padding: 40px 60px;
