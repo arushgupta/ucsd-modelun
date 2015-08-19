@@ -319,12 +319,8 @@ header .intro-text .intro-heading {
     }
 }
 
-section {
-    
-}
-
 section h2.section-heading {
-    margin-bottom: 1%;
+    padding-bottom: 1%;
     font-size: 2em;
     text-align: left;
     color: #fff;
@@ -333,8 +329,29 @@ section h2.section-heading {
     font-family: Helvetica, 'Open Sans', Arial, sans-serif;
 }
 
+.row h2.section-heading {
+    padding-bottom: 1%;
+    font-size: 2em;
+    text-align: left;
+    color: #fff;
+    padding-top: 5%;
+    padding-left: 15%;
+    font-family: Helvetica, 'Open Sans', Arial, sans-serif;
+}
+
+.row h3.section-subheading {
+    padding-bottom: 3%;
+    text-transform: none;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: 100;
+    color: #fff;
+    padding-left: 15%;
+    text-align: left;
+}
+
 section h3.section-subheading {
-    margin-bottom: 3%;
+    padding-bottom: 3%;
     text-transform: none;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1em;
