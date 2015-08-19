@@ -1,16 +1,32 @@
-<div class="div_height">
-  <h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
-  padding-top: 17px;color:white;">COMMITEE</h1>
+<div class="section">
+      <div class="container cmt_container">
+        <h1 class="text-center title" id="portfolio" style="background-image:url(assets/banner2.jpeg)">Committees</h1>
+        <div class="separator"></div>
+        <br>      
+        <div class="row object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn">
+          <div class="col-md-12">
 
-  <section class="no-padding" id="portfolio">
-    <div class="container-fluid">
-      <div class="row no-gutter">
-        <% @committees.each do|cmt|%>
-          <div class="col-lg-4 col-sm-6">
-            <a href="javascript:void(0)" class="portfolio-box">
-              <%= image_tag  cmt.image_url.url ,class: "img-responsive testimg",style:"padding-bottom:10px;",id:cmt.id%> 
-            </a>  
-            <div class="modal fade" id="<%=cmt.id%>cmt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <!-- isotope filters start -->
+            <!-- isotope filters end -->
+
+            <!-- portfolio items start -->
+           
+            <div style="height:auto;" class="isotope-container row grid-space-20">
+                <% @committees.each do|cmt|%>
+              <div style="height:auto;" class="col-sm-6 col-md-3 isotope-item web-design">
+                
+                <div class="image-box">
+                  <div class="overlay-container">
+                    <%= image_tag  cmt.image_url.url ,class: "img-responsive " ,style:"height:305px;"%> 
+                    <a class="overlay testimg" id="<%=cmt.id%>" data-toggle="modal" data-target="#project-1" >
+                      <i class="fa fa-plus-circle"></i>
+                      <span>Web Design</span>
+                    </a>
+                  </div>
+                  <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1"><%=cmt.committee_name%></a>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="<%=cmt.id%>cmt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -32,13 +48,20 @@
                   </div>
                 </div><!-- /.modal-content -->
               </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->       
+            </div><!-- /.modal --> 
+                <!-- Modal end -->
+                 
+              </div>
+ <%end%>
+            </div>
+            <!-- portfolio items end -->
           </div>
-        <%end%>
+        </div>
       </div>
     </div>
-  </section>            
-</div>
+
+
+
 <script type="text/javascript">
 $(window).load(function(){
     $('.testimg').on('click',function()
