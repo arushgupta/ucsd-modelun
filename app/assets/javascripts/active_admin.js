@@ -26,4 +26,3 @@ jQuery(document).ready(function() {
       showTimeZone: false
     });
 });
-

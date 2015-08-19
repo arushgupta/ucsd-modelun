@@ -23,20 +23,29 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 193%;
-    width: 100% !important;
-    display: block;
+  height: auto;
+  width: 100% !important;
+  display: block;
 }
-.conference_row_2{height: 38%;
+.conference_row_2 { 
+	height: 38%;
     width: 100%;
-    display: inline-flex;}
-.conference_row_3{height: 38%;
+    display: inline-block;
+}
+.conference_row_3 { 
+	height: 38%;
     width: 100%;
-    display: inline-flex;}    
-.conference_row_1{height:117px;}    
+    display: inline-block;
+}    
+.conference_row_1 { 
+	height: 117px;
+} 
+.navbar{
+	margin-bottom: 0px !important;   
+}
 @media (min-width: 981px) {
   .conference {
-    padding: 4% 0;  
+	  /*top: 50px;*/
   }
 }
 @media (min-width: 981px) {
@@ -51,7 +60,7 @@ body {
   position: relative;
 }
 .conference_column {
-	float: left;
+	/*float: left;*/
 	background-size: cover;
 	background-position: center;
 }
@@ -69,8 +78,12 @@ body {
 @media (min-width: 981px) {
 	.conference_column {
 		margin-right: 5.5%;
+<<<<<<< HEAD
 	}
 	.faqtable{margin-left:290px;}
+=======
+	}.conference
+>>>>>>> 37dce45906435800addc67bb323c7d4088196d80
 }
 @media (min-width: 981px) {
 	.conference,
@@ -83,7 +96,7 @@ body {
 @media (min-width: 981px) {
 	.conference_column_4_4,
 	.conference_module {
-		margin-bottom: 2.75%;
+		/*margin-bottom: 2.75%;*/
 	}
 }
 .conference_heading_text_center {
@@ -101,7 +114,7 @@ body {
 @media (min-width: 981px) {
 	.conference_column_1_3,
 	.conference_module {
-		margin-bottom: 9.27%;
+		/*margin-bottom: 0%;*/
 	}
 }
 @media (min-width: 981px) {
@@ -111,11 +124,21 @@ body {
 }
 @media (min-width: 981px) {
 	.conference_column_4_4 .conference_module {
-		margin-bottom: 2.75%;
+		/*margin-bottom: 2.75%;*/
 	}
 }
-.conference_blurb h4 {
+
+@media (min-width: 981px){
+	.conference_row_2{
+		display:  inline-flex;
+	}
+	.conference_row_3{
+		display:  inline-flex;
+	}
+}
+.conference_blurb_container a {
 	padding-bottom: 5px;
+	color: #000;
 }
 h4 {
 	font-size: 18px;
@@ -143,13 +166,13 @@ h2 {
 	padding-right: 15px;
 }
 .conference_register {
-	background-color: #1087ED !important;
+	background-image: url("register-bg.jpg");
+	height:200px;
 }
 .conference_parallax {
 	overflow: hidden;
 }
 .conference_parallax_bg {
-	height: 383.5px;
 	transform: translate(0px, 96.8203125px);
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -157,7 +180,8 @@ h2 {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: auto;
+	position: relative;
 }
 .conference_bg_layout_dark {
 	color: #fff !important;
@@ -196,3 +220,80 @@ h2 {
 	margin-left: -1em;
 	transition: all 0.2s;
 }
+.conference_title {
+	background-image: url("register-bg.jpg");
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	/*margin-bottom: 20px;*/
+}
+@media (min-width: 981px) {
+	.conference_column_fullwidth {
+		padding: 0;
+	}
+	.saprator{
+	height: 50px
+}
+}
+.conference_column_fullwidth {
+	padding: 0;
+}
+.conference_fullwidth_header {
+	/*padding: 50px 0;*/
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+.conference_text_align_left {
+	text-align: left;
+}
+.conference_fullwidth_header
+.conference_fullwidth_header_container.left {
+	display: flex;
+	flex-flow: row;
+	width:100%;
+}
+.conference_fullwidth_header
+.conference_fullwidth_header_container {
+	position: relative;
+	z-index: 3;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.conference_fullwidth_header
+.conference_fullwidth_header_container.left
+.header-content-container.center {
+	align-self: center;
+}
+.conference_fullwidth_header
+.conference_fullwidth_header_container.left
+.header-content-container {
+	width: 100%;
+}
+.conference_fullwidth_header
+.conference_fullwidth_header_container.left
+.header-content {
+	text-align: left;
+	/*margin-left: 4%;
+	margin-right: 2%;*/
+	color: black;
+}
+.conference_fullwidth_header
+.header-content {
+	padding: 10px;
+}
+.conference_fullwidth_header_subhead {
+	display: block;
+}
+.conference_column_fullwidth.conference_title > img {
+    height: 150px;
+    width: 100%;
+	}
+	.header-img{
+background-image: url(/assets/conference_title.jpg);
+text-align: center !important;
+padding-top: 45px !important;
+padding-bottom: 45px !important;
+width: 100%;}
