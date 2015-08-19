@@ -247,3 +247,15 @@ footer {
   border-bottom: 0px none;
 }
 /* Schedules */
+.schedule-box {
+  color: #444;
+}
+.schedule-date h1 {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 35%;
+}
+.events {
+  
+}

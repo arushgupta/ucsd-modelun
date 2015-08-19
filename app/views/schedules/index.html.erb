@@ -1,5 +1,5 @@
 <div class="div_height">
-  <div class="container a schedule" style ='background-color:'>
+  <div class="container a schedule" style ='background-color: white'>
     
     <div class="row" style = "margin-bottom: 3%;">
       <div class="col-lg-12 text-center " style = "background-image: url('/assets/conference-title.jpg'); background-size: cover;">
@@ -11,7 +11,7 @@
     <div class = "row schedule-box">
       <div class = "col-lg-12 schedule-date">
         <% @schedules.each do |schedule| %>
-          <%= schedule.date.strftime("%A, %B %d") %>
+          <h1><%= schedule.date.strftime("%A, %B %d") %></h1>
           <div class = "events">
             <% schedule.events.each do |event| %>
               <div class = "row event-list">
