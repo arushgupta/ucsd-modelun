@@ -20,10 +20,10 @@
                     <%= image_tag  cmt.image_url.url ,class: "img-responsive " ,style:"height:305px;"%> 
                     <a class="overlay testimg" id="<%=cmt.id%>" data-toggle="modal" data-target="#project-1" >
                       <i class="fa fa-plus-circle"></i>
-                      <span>Web Design</span>
+                     
                     </a>
                   </div>
-                  <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1"><%=cmt.committee_name%></a>
+                  <div class=" btn-block" data-toggle="modal" data-target="#project-1"><%=cmt.committee_name%></div>
                 </div>
                 <!-- Modal -->
                 <div class="modal fade" id="<%=cmt.id%>cmt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
