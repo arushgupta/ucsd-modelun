@@ -60,7 +60,7 @@ h6 {
 }
 
 .bg-light-gray {
-    background-color: #f7f7f7;
+    background-color: #fff;
 }
 
 .bg-darkest-gray {
@@ -318,9 +318,8 @@ header .intro-text .intro-heading {
         line-height: 75px;
     }
 }
-
+/* Headers */
 section h2.section-heading {
-    padding-bottom: 1%;
     font-size: 2em;
     text-align: left;
     color: #fff;
@@ -330,7 +329,6 @@ section h2.section-heading {
 }
 
 .row h2.section-heading {
-    padding-bottom: 1%;
     font-size: 2em;
     text-align: left;
     color: #fff;
@@ -359,12 +357,6 @@ section h3.section-subheading {
     color: #fff;
     padding-left: 15%;
     text-align: left;
-}
-
-@media(min-width:768px) {
-    section {
-        
-    }
 }
 
 .service-heading {

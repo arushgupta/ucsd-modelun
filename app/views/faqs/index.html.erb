@@ -1,8 +1,7 @@
 <section id = "team" class = "bg-light-gray" style = "padding:0px 0px;">
-
   <div class = "container a faq">
-    
-    <div class="row">
+
+    <div class="row" style = "margin-bottom: 3%;">
       <div class="col-lg-12 text-center " style = "background-image: url('/assets/conference-title.jpg'); background-size: cover;">
         <h2 class = "section-heading">Frequently Asked Question</h2>
         <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
@@ -13,9 +12,6 @@
       <%@faqs.each do |faq|%>
       <div class = "content container">
         <div class = "page-wrapper">
-          <header class = "page-heading clearfix faq_header">
-            <h1 class = "heading-title pull-left " style="color:black;"></h1>
-          </header> 
           <%faq.questions.each do |question|%>
             <div class = "page-content">
               <div class = "row page-row">
@@ -30,8 +26,8 @@
                           </div>
                         </h4>
                       </div><!--//pane-heading-->
-                      <div style="display: none;" id="<%=question.id%>div">
-                        <div class="panel-body">
+                      <div style = "display: none;" id = "<%=question.id%>div">
+                        <div class = "panel-body">
                           <%=question.answer.html_safe%>
                         </div><!--//panel-body-->
                       </div><!--//panel-colapse-->            

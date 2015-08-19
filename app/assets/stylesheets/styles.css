@@ -194,34 +194,34 @@ footer {
 }
 
 .carousel.vertical .active.right {
-   top: 400px;
+ top: 400px;
 }
 
 .carousel.vertical .item {
-   left: 0;
+  left: 0;
 }
 .main-low-margin {
-    margin-top: 55px;
+  margin-top: 55px;
 }
-
+/* Deadlines */
 #pricing-section .plan-main {
-    background: none repeat scroll 0% 0% #FFF;
-    list-style: none outside none;
-    margin: 0px 0px 20px;
-    text-align: center;
-    padding: 0px;
-    border: 1px solid #E9E9E9;
+  background: none repeat scroll 0% 0% #FFF;
+  list-style: none outside none;
+  margin: 0px 0px 20px;
+  text-align: center;
+  padding: 0px;
+  border: 1px solid #E9E9E9;
 }
 #pricing-section .plan-main li.plan-name {
-    padding: 15px 0px;
-    font-size: 18px;
-    font-weight: 500;
-    background-color: #AFAFAF;
-    color: #FFF;
+  padding: 15px 0px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #AFAFAF;
+  color: #FFF;
 }
 #pricing-section .plan-main li {
-    padding: 10px 0px;
-    margin: 0px;
+  padding: 10px 0px;
+  margin: 0px;
 }
 #pricing-section .plan-main span.plan-dollar {
   vertical-align: top;
@@ -242,7 +242,8 @@ footer {
   margin: 0px 15px;
 }
 #pricing-section .plan-main li.plan-action {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-bottom: 0px none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 0px none;
 }
+/* Schedules */

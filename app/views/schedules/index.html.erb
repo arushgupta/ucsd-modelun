@@ -1,7 +1,29 @@
 <div class="div_height">
-<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
-padding-top: 17px;color:white;">SCHEDULE</h1>
-<div class="container a schedule" style ='background-color:'>
+  <div class="container a schedule" style ='background-color:'>
+    
+    <div class="row" style = "margin-bottom: 3%;">
+      <div class="col-lg-12 text-center " style = "background-image: url('/assets/conference-title.jpg'); background-size: cover;">
+        <h2 class = "section-heading">Schedule</h2>
+        <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      </div>
+    </div>
+  
+    <div class = "row schedule-box">
+      <div class = "col-lg-12 schedule-date">
+        <% @schedules.each do |schedule| %>
+          <%= schedule.date.strftime("%A, %B %d") %>
+          <div class = "events">
+            <% schedule.events.each do |event| %>
+              <div class = "row event-list">
+                <span class = "event-activity"><%= event.activity %></span>
+                <span class = "event-time"><%=event.start_time.strftime("%-I:%M %p")%>-<%=event.end_time.strftime(" %-I:%M %p")%></span>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
     <div class="row">    
       <p class="text-center text-inline"> </p>
         <div class="col-md-6 col-md-offset-3">
@@ -11,7 +33,7 @@ padding-top: 17px;color:white;">SCHEDULE</h1>
               <table class="table color1">
               <caption class="schedule">
                 <span class="schedule-name"><%=schedule.name%></span><br>
-                <span class="schedule-date"><%=schedule.date.strftime("%B %d, %Y")%></span>
+                <span class="schedule-date"><%=schedule.date.strftime("%A, %B %d")%></span>
               </caption>
               <tbody>
                   <%schedule.events.each do |event|%>
