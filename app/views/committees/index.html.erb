@@ -1,15 +1,10 @@
 <div class="section">
-      <div class="container cmt_container">
-        <h1 class="text-center title" id="portfolio" style="background-image:url(assets/banner2.jpeg)">Committees</h1>
-        <div class="separator"></div>
-        <br>      
+  <div class="container cmt_container">
+    <h1 class="text-center title" id="portfolio" style="background-image:url(assets/banner2.jpeg)">Committees</h1>
+    <div class="separator"></div>
+      <br>      
         <div class="row object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn">
           <div class="col-md-12">
-
-            <!-- isotope filters start -->
-            <!-- isotope filters end -->
-
-            <!-- portfolio items start -->
            
             <div style="height:auto;" class="isotope-container row grid-space-20">
                 <% @committees.each do|cmt|%>
@@ -18,47 +13,46 @@
                 <div class="image-box">
                   <div class="overlay-container">
                     <%= image_tag  cmt.image_url.url ,class: "img-responsive " ,style:"height:305px;"%> 
-                    <a class="overlay testimg" id="<%=cmt.id%>" data-toggle="modal" data-target="#project-1" >
+                    <a class="overlay testimg" href="javascript:void(0);" id="<%=cmt.id%>" data-toggle="modal" data-target="#project-1" >
                       <i class="fa fa-plus-circle"></i>
                      
                     </a>
                   </div>
-                  <div class=" btn-block" data-toggle="modal" data-target="#project-1"><%=cmt.committee_name%></div>
+                <div class=" btn-block" data-toggle="modal" data-target="#project-1"><%=cmt.committee_name%></div>
                 </div>
                 <!-- Modal -->
                 <div class="modal fade" id="<%=cmt.id%>cmt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="myModalLabel"><%=cmt.committee_name%></h2>
-                    <%= button_tag "topic_guide", :class => "btn commt_button " %>
-                  </div>
-                  <div class="modal-body">     
-                    <p><span class="committee_chair">Chair:</span><%=cmt.chair%></p>
-                    <p><span class="committee_chair">Vice Chair:</span><%=cmt.vice_chair%></p>
-                  <div>
-                    <%cmt.topics.each do |topic|%>
-                      <h4><%=topic.topic_name%></h4>
-                      <span class="modal_data"><%= image_tag  topic.image_url.url ,class: "img-responsive ",style:"height:72px; width:85px;" %> 
-                      </span>
-                      <span class="topic_des"><%= topic.description.html_safe%></span>
-                    <%end%>
-                  </div>
-                  </div>
-                </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-            </div><!-- /.modal --> 
-                <!-- Modal end -->
-                 
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title" id="myModalLabel"><%=cmt.committee_name%></h2>
+                          <%= button_tag "topic_guide", :class => "btn commt_button " %>
+                      </div>
+                      <div class="modal-body">     
+                        <p><span class="committee_chair">Chair:</span><%=cmt.chair%></p>
+                        <p><span class="committee_chair">Vice Chair:</span><%=cmt.vice_chair%></p>
+                        <div>
+                          <%cmt.topics.each do |topic|%>
+                            <h4><%=topic.topic_name%></h4>
+                              <span class="modal_data"><%= image_tag  topic.image_url.url ,class: "img-responsive ",style:"height:72px; width:85px;" %> 
+                              </span>
+                              <span class="topic_des"><%= topic.description.html_safe%></span>
+                          <%end%>
+                        </div>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal --> 
+                <!-- Modal end -->  
               </div>
- <%end%>
-            </div>
-            <!-- portfolio items end -->
+            <%end%>
           </div>
+            <!-- portfolio items end -->
         </div>
       </div>
-    </div>
+  </div>
+</div>
 
 
 
