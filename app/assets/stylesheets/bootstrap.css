@@ -5813,6 +5813,7 @@ button.close {
   .modal-dialog {
     width: 600px;
     margin: 30px auto;
+    top:10%;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
@@ -6645,3 +6646,4 @@ background-color: #337AB7;}
 .secre_major{padding-bottom: 10px;}
 .about_img{height: 202px;width: 223px;margin: 10px;}
 .about_img_width{width:21.333% !important;}
+.cmt_container{padding:0px !important;}

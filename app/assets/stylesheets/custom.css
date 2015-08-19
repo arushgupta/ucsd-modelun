@@ -10,6 +10,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body {
 	-webkit-font-smoothing: antialiased;
 }
+.faqtable{margin-left:0px;}
 .carousel-inner {
     position: relative;
     width: 100%;
@@ -75,9 +76,12 @@ body {
 	}
 }
 @media (min-width: 981px) {
-	.conference_column {
-		margin-right: 5.5%;
-	}.conference
+  .conference_column {
+	margin-right: 5.5%; 
+  }
+  .faqtable { 
+    margin-left:290px;
+  }
 }
 @media (min-width: 981px) {
 	.conference,
