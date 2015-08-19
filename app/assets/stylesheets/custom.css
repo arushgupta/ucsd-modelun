@@ -38,7 +38,10 @@ body {
 }    
 .conference_row_1 { 
 	height: 117px;
-}    
+} 
+.navbar{
+	margin-bottom: 0px !important;   
+}
 @media (min-width: 981px) {
   .conference {
 	  /*top: 50px;*/
@@ -216,7 +219,7 @@ h2 {
 	background-size: cover;
 	height: 100%;
 	width: 100%;
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
 }
 @media (min-width: 981px) {
 	.conference_column_fullwidth {
