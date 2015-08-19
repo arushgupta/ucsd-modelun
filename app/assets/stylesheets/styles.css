@@ -256,6 +256,7 @@ footer {
   font-weight: 500;
   padding-left: 35%;
 }
-.events {
-  
+.events .event-list {
+  text-align: left;
+  padding-left: 30%;
 }
