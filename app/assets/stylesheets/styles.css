@@ -249,14 +249,33 @@ footer {
 /* Schedules */
 .schedule-box {
   color: #444;
+  padding-top: 1%;
+  padding-bottom: 5%;
 }
 .schedule-date h1 {
   text-align: left;
   font-size: 20px;
   font-weight: 500;
-  padding-left: 35%;
+  padding-left: 31%;
+  color: #1C3D78;
 }
-.events .event-list {
+.events {
   text-align: left;
-  padding-left: 30%;
+  padding-left: 32%;
+}
+.events .activity-column {
+  float: left;
+  color: #464d52;
+}
+.events .activity-column .event-location {
+  color: #777;
+  font-style: oblique;
+  font-size: 12px;
+  padding-left: 0.8%;
+}
+.events .time-column {
+  float: left;
+  text-align: left;
+  padding-left: 20%;
+  color: #464d52;
 }

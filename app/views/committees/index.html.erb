@@ -16,14 +16,14 @@
               <div class = "image-box">
                 <div class = "overlay-container">
                   <%= image_tag  committee.image_url.url ,class: "img-responsive "%> 
-                  <a class = "overlay testimg" id = "<%=cmt.id%>" data-toggle = "modal" data-target = "#project-1">
+                  <a class = "overlay testimg" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
                     <i class = "fa fa-plus-circle"></i>
                   </a>
                 </div>
               <div class = "btn-block" data-toggle = "modal" data-target = "#project-1"><%=committee.committee_name%></div>
             </div>
                 <!-- Modal -->
-            <div class = "modal fade" id = "<%= cmt.id %>cmt" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+            <div class = "modal fade" id = "<%= committee.id %>committee" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
               <div class = "modal-dialog">
                 <div class = "modal-content">
                   <div class = "modal-header">
@@ -32,10 +32,10 @@
                     <%= button_tag "topic_guide", class: "btn commt_button " %>
                   </div>
                   <div class = "modal-body">
-                    <p><span class = "committee_chair">Chair:</span><%= cmt.chair %></p>
-                    <p><span class = "committee_chair">Vice Chair:</span><%= cmt.vice_chair %></p>
+                    <p><span class = "committee_chair">Chair:</span><%= committee.chair %></p>
+                    <p><span class = "committee_chair">Vice Chair:</span><%= committee.vice_chair %></p>
                     <div>
-                      <%cmt.topics.each do |topic|%>
+                      <%committee.topics.each do |topic|%>
                         <h4><%=topic.topic_name%></h4>
                         <span class = "modal_data"><%= image_tag  topic.image_url.url , class: "img-responsive ", style:"height: 72px; width: 85px;" %>
                         </span>
@@ -62,7 +62,7 @@ $(window).load(function(){
                 {    var id =$(this).attr("id")
                     // var sr=$(this).attr('src'); 
                     // $('#mimg').attr('src',sr);
-                    $('#'+id+"cmt").modal('show');
+                    $('#'+id+"committee").modal('show');
                 });
 });
 </script>

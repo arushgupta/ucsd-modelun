@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 
 jQuery(document).ready(function() {
     jQuery('.timepicker').timepicker({
-      timeFormat: 'hh:mm',
+      timeFormat: 'HH:mm',
       showTimeZone: false
     });
 });
