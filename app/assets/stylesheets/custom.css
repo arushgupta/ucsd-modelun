@@ -153,7 +153,7 @@ h2 {
 	font-weight: 400;
 }
 .conference_blurb_container h4 a:hover {
-	color: #333;
+	color: #1C3D78 ;
 }
 .conference_blurb_content {
 	max-width: 550px;
@@ -213,9 +213,21 @@ a.conference_promo_button.conference_button {
 	margin-bottom: 3%;
 	color: #ececec !important;
 }
+a.conference_promo_button.conference_button.button-white-bg {
+	margin-bottom: 3%;
+	color: #2EA3F2 !important;
+}
 .conference_promo_button {
 	display: inline-block;
 	color: inherit !important;
+}
+.conference_promo_button:hover {
+  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.2);
+  border: 0px;
+}
+a.conference_promo_button.button-white-bg:hover {
+  background: none repeat scroll 0% 0% rgba(204, 204, 204, 0.2);
+  border: 0px;	
 }
 .conference_button {
 	font-size: 20px;
@@ -227,6 +239,7 @@ a.conference_promo_button.conference_button {
 	border-radius: 3px;
 	transition: all 0.2s;
 }
+
 .conference_button:after {
 	font-size: 32px;
 	line-height: 1em;
@@ -364,4 +377,10 @@ a.conference_promo_button.conference_button {
   padding-top: 45px !important;
   padding-bottom: 45px !important;
   width: 100%;
+}
+.button-icon-hider {
+	display: none;
+}
+.conference_button:hover .button-icon-hider {
+	display: -webkit-inline-box;
 }

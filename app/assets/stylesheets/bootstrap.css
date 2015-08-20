@@ -4405,7 +4405,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333;
+  color: #1C3D78 !important;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
