@@ -61,8 +61,8 @@ body {
   width: 100%;
   margin: auto;
   position: relative;
-  padding-bottom: 5%;
 }
+
 .conference_column {
 	/*float: left;*/
 	background-size: cover;
@@ -81,10 +81,15 @@ body {
 }
 @media (min-width: 981px) {
   .conference_column {
-	margin-right: 5.5%;
+	margin-right: 2.5%;
   }
   .faqtable {
 	  margin-left: 290px;
+	}
+}
+@media (min-width: 981px) {
+	.conference_column_first {
+		margin-left: 2.5%;
 	}
 }
 @media (min-width: 981px) {
