@@ -279,3 +279,14 @@ footer {
   padding-left: 20%;
   color: #464d52;
 }
+/* Brand */
+#mainNav .white-bg {
+  background-color: #fff !important;
+  padding: 1% !important;
+  color: #666;
+}
+#mainNav .navbar-header .brand-name {
+  color: #666;
+  font-size: 24px;
+  font-weight: 400;
+}
