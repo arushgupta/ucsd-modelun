@@ -15,7 +15,7 @@
             <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
               <div class = "image-box">
                 <div class = "overlay-container">
-                  <%= image_tag  committee.image_url.url ,class: "img-responsive "%> 
+                  <%= image_tag  committee.image_url.url, class: "img-responsive "%> 
                   <a class = "overlay testimg" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
                     <i class = "fa fa-plus-circle"></i>
                   </a>
@@ -29,15 +29,35 @@
                   <div class = "modal-header">
                     <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">&times;</button>
                     <h2 class = "modal-title" id = "myModalLabel"><%= committee.committee_name %></h2>
-                    <%= button_tag "topic_guide", class: "btn commt_button " %>
                   </div>
                   <div class = "modal-body">
-                    <p><span class = "committee_chair">Chair:</span><%= committee.chair %></p>
-                    <p><span class = "committee_chair">Vice Chair:</span><%= committee.vice_chair %></p>
-                    <div>
+                    
+                    <p>  
+                      <span class = "committee_chair">
+                        Chair:
+                      </span>
+                      
+                      <span class = "committee-dias-name">
+                        <%= committee.chair %>
+                      </span>
+                    </p>
+
+                    <%= button_tag "topic guide", class: "btn commt_button" %>
+                    
+                    <p>
+                      <span class = "committee_chair">
+                        Vice Chair:
+                      </span>
+                    
+                      <span class = "committee-dias-name">
+                        <%= committee.vice_chair %>
+                      </span>
+                    </p>
+                    <div class = "committee-topic">
                       <%committee.topics.each do |topic|%>
                         <h4><%=topic.topic_name%></h4>
-                        <span class = "modal_data"><%= image_tag  topic.image_url.url , class: "img-responsive ", style:"height: 72px; width: 85px;" %>
+                        <span class = "modal_data">
+                          <%= image_tag  topic.image_url.url , class: "img-responsive committee-image-height" %>
                         </span>
                         <span class = "topic_des"><%= topic.description.html_safe%></span>
                       <%end%>

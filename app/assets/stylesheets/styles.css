@@ -290,3 +290,14 @@ footer {
   font-size: 24px;
   font-weight: 400;
 }
+#mainNav .navbar-header .brand-name:hover {
+  color: #222;
+}
+#mainNav .dropdown .dropdown-menu a:hover {
+  background-color: transparent !important;
+  color: #222 !important;
+}
+#mainNav .dropdown .dropdown-menu a {
+  background-color: transparent !important;
+  color: #666 !important;
+}

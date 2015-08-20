@@ -509,7 +509,9 @@ body {
     webkit-tap-highlight-color: #222;
 
 }
-.page_nav_bar{  background-color: turquoise;}
+.page_nav_bar { 
+    background-color: turquoise;
+}
 #learn {
     font-size: 1.75em;
 }
@@ -542,9 +544,13 @@ margin-left: 169px;}
     padding-top: 8px;
     position: absolute;
 }
-.commt_button{float:right;    margin-top: -34px;
-    background-color: aquamarine;
-    color: black;
-    font-weight: bold;
+.commt_button { 
+    float: right;
+    margin-top: -2.5%;
+    background-color: #ededed;
+    color: #666;
+    font-weight: 400;
 }
-.faq_header{background-color:#f0ffff  !important;}
+.faq_header { 
+    background-color: #f0ffff  !important;
+}

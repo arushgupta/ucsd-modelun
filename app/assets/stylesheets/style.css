@@ -118,8 +118,8 @@ a:active {
 	border-radius: 0px;
 }
 .modal-header {
-	background-color: #55acee;
-	color: #ffffff;
+	background-color: #eee;
+	color: #666;
 }
 .modal-header h4 {
 	color: #ffffff;
@@ -262,9 +262,14 @@ a:active {
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
-.grid-space-20{height: auto;
-margin-left: 20px;
-margin-right: 20px;}
-.btn-block{border:0px !important;text-align: center;
-background-color:;
-height: 33px;}
+.grid-space-20 {
+  height: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.btn-block {
+  border:0px !important;
+  text-align: center;
+  background-color:;
+  height: 33px;
+}
