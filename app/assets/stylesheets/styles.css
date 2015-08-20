@@ -258,6 +258,9 @@ footer {
   font-weight: 500;
   padding-left: 31%;
   color: #1C3D78;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 2%;
 }
 .events {
   text-align: left;
@@ -271,7 +274,6 @@ footer {
   color: #777;
   font-style: oblique;
   font-size: 12px;
-  padding-left: 0.8%;
 }
 .events .time-column {
   float: left;
