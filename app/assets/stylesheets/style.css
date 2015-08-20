@@ -210,7 +210,6 @@ a:active {
 	position: relative;
 	display: block;
 	overflow: hidden;
-	height: 304px;
 }
 .overlay {
 	position: absolute;
@@ -265,5 +264,5 @@ a:active {
 margin-left: 20px;
 margin-right: 20px;}
 .btn-block{border:0px !important;text-align: center;
-background-color: lightgrey;
+background-color:;
 height: 33px;}
