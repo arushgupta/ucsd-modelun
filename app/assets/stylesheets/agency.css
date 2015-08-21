@@ -60,7 +60,7 @@ h6 {
 }
 
 .bg-light-gray {
-    background-color: #f7f7f7;
+    background-color: #fff;
 }
 
 .bg-darkest-gray {
@@ -318,13 +318,8 @@ header .intro-text .intro-heading {
         line-height: 75px;
     }
 }
-
-section {
-    
-}
-
+/* Headers */
 section h2.section-heading {
-    margin-bottom: 1%;
     font-size: 2em;
     text-align: left;
     color: #fff;
@@ -333,8 +328,17 @@ section h2.section-heading {
     font-family: Helvetica, 'Open Sans', Arial, sans-serif;
 }
 
-section h3.section-subheading {
-    margin-bottom: 3%;
+.row h2.section-heading {
+    font-size: 2em;
+    text-align: left;
+    color: #fff;
+    padding-top: 5%;
+    padding-left: 15%;
+    font-family: Helvetica, 'Open Sans', Arial, sans-serif;
+}
+
+.row h3.section-subheading {
+    padding-bottom: 3%;
     text-transform: none;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1em;
@@ -344,10 +348,15 @@ section h3.section-subheading {
     text-align: left;
 }
 
-@media(min-width:768px) {
-    section {
-        
-    }
+section h3.section-subheading {
+    padding-bottom: 3%;
+    text-transform: none;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: 100;
+    color: #fff;
+    padding-left: 15%;
+    text-align: left;
 }
 
 .service-heading {

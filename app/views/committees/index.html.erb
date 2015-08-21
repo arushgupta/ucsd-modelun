@@ -1,60 +1,63 @@
-<div class="section">
-  <div class="container cmt_container">
-    <h1 class="text-center title" id="portfolio" style="background-image:url(assets/banner2.jpeg)">Committees</h1>
-    <div class="separator"></div>
-      <br>      
-        <div class="row object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn">
-          <div class="col-md-12">
-           
-            <div style="height:auto;" class="isotope-container row grid-space-20">
-                <% @committees.each do|cmt|%>
-              <div style="height:auto;" class="col-sm-6 col-md-3 isotope-item web-design">
-                
-                <div class="image-box">
-                  <div class="overlay-container">
-                    <%= image_tag  cmt.image_url.url ,class: "img-responsive " ,style:""%> 
-                    <a class="overlay testimg" href="javascript:void(0);" id="<%=cmt.id%>" data-toggle="modal" data-target="#project-1" >
-                      <i class="fa fa-plus-circle"></i>
-                     
-                    </a>
-                  </div>
-                <div class=" btn-block" data-toggle="modal" data-target="#project-1"><%=cmt.committee_name%></div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="<%=cmt.id%>cmt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h2 class="modal-title" id="myModalLabel"><%=cmt.committee_name%></h2>
-                          <%= button_tag "topic_guide", :class => "btn commt_button " %>
-                      </div>
-                      <div class="modal-body">     
-                        <p><span class="committee_chair">Chair:</span><%=cmt.chair%></p>
-                        <p><span class="committee_chair">Vice Chair:</span><%=cmt.vice_chair%></p>
-                        <div>
-                          <%cmt.topics.each do |topic|%>
-                            <h4><%=topic.topic_name%></h4>
-                              <span class="modal_data"><%= image_tag  topic.image_url.url ,class: "img-responsive ",style:"height:72px; width:85px;" %> 
-                              </span>
-                              <span class="topic_des"><%= topic.description.html_safe%></span>
-                          <%end%>
-                        </div>
-                      </div>
-                    </div><!-- /.modal-content -->
-                  </div><!-- /.modal-dialog -->
-                </div><!-- /.modal --> 
-                <!-- Modal end -->  
-              </div>
-            <%end%>
-          </div>
-            <!-- portfolio items end -->
-        </div>
+<div class = "section">
+  <div class = "container cmt_container">
+
+    <div class="row" style = "margin-bottom: 3%; margin-top: 2%;">
+      <div class="col-lg-12 text-center " style = "background-image: url('/assets/conference-title.jpg'); background-size: cover;">
+        <h2 class = "section-heading">Committees</h2>
+        <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
       </div>
+    </div>
+
+    <div class = "row object-non-visible animated object-visible fadeIn" data-animation-effect = "fadeIn">
+      <div class = "col-md-12">
+        <div style = "height: auto;" class = "isotope-container row grid-space-20">
+          <% @committees.each do |committee|%>
+            <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
+              <div class = "image-box">
+                <div class = "overlay-container">
+                  <%= image_tag  committee.image_url.url ,class: "img-responsive "%> 
+                  <a class = "overlay testimg" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
+                    <i class = "fa fa-plus-circle"></i>
+                  </a>
+                </div>
+              <div class = "btn-block" data-toggle = "modal" data-target = "#project-1"><%=committee.committee_name%></div>
+            </div>
+
+            <div class = "modal fade" id = "<%= committee.id %>committee" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+              <div class = "modal-dialog">
+                <div class = "modal-content">
+                  <div class = "modal-header">
+                    <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">&times;</button>
+                    <h2 class = "modal-title" id = "myModalLabel"><%= committee.committee_name %></h2>
+                  </div>
+                  <div class = "modal-body">
+                    <%=button_tag "topic_guide", class: "btn commt_button et_pb_promo_button" ,style:"margin-top: -10px;margin-right: -8px; min-width:0px;" do %>Topic Guide
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                    <%end%>
+                  
+                    <p><span class = "committee_chair">Chair:</span><%= committee.chair %></p>
+                    <p><span class = "committee_chair">Vice Chair:</span><%= committee.vice_chair %></p>
+                    <div>
+                      <%committee.topics.each do |topic|%>
+                        <h4><%=topic.topic_name%></h4>
+                        <span class = "modal_data"><%= image_tag  topic.image_url.url , class: "img-responsive ", style:"height: 72px; width: 85px;" %>
+                        </span>
+                        <span class = "topic_des"><%= topic.description.html_safe%></span>
+                      <%end%>
+                    </div>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal --> 
+                <!-- Modal end -->     
+            </div>
+          <%end%>
+        </div>
+            <!-- portfolio items end -->
+      </div>
+    </div>
   </div>
 </div>
-
-
 
 <script type="text/javascript">
 $(window).load(function(){
@@ -62,7 +65,7 @@ $(window).load(function(){
                 {    var id =$(this).attr("id")
                     // var sr=$(this).attr('src'); 
                     // $('#mimg').attr('src',sr);
-                    $('#'+id+"cmt").modal('show');
+                    $('#'+id+"committee").modal('show');
                 });
 });
 </script>

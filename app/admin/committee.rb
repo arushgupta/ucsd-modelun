@@ -4,7 +4,7 @@ ActiveAdmin.register Committee do
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :order, :committee_name, :chair, :vice_chair, :topic_guide_url, :image_url, :category_id, :is_active, topics_attributes: [:order, :topic_name, :image_url, :description, :_destroy]
-  decorate_with SecretariatDecorator
+  decorate_with CommitteeDecorator
 
   controller do
 
@@ -25,9 +25,11 @@ ActiveAdmin.register Committee do
     column 'Image' do |finder|
       finder.image_url
     end
-    # column 'Topic Guide' do |upload|
-    #   link_to upload.topic_guide_url.file.original_filename, download_committees_path(file: upload.topic_guide_url.file.original_filename )
-    # end
+    column 'Topic Guide' do |upload|
+      unless upload.topic_guide_url.blank?
+        link_to upload.topic_guide_url.file.original_filename, download_committees_path(file: upload.topic_guide_url.file.original_filename )
+      end 
+    end
     column :category
     column :is_active
     column 'Topics' do |committee|
@@ -46,7 +48,9 @@ ActiveAdmin.register Committee do
         finder.image_url
       end
       row 'Topic Guide' do |upload|
-        link_to upload.topic_guide_url.file.original_filename, committee_download_path(file: upload.topic_guide_url.file.original_filename, committee_id: upload.id)
+        unless upload.topic_guide_url.blank?
+          link_to upload.topic_guide_url.file.original_filename, committee_download_path(file: upload.topic_guide_url.file.original_filename, committee_id: upload.id)
+        end
       end
       row :category
       row :is_active

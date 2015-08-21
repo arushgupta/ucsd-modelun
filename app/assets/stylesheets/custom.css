@@ -197,11 +197,12 @@ h2 {
 }
 .conference_promo_description {
 	padding-bottom: 20px;
-	word-wrap: break-word;	
+	word-wrap: break-word;
+	padding-top: 3.5%;
 }
 .conference_promo_button {
 	display: inline-block;
-	color: inherit;
+	color: inherit !important;
 }
 .conference_button {
 	font-size: 20px;
@@ -223,7 +224,7 @@ h2 {
 	transition: all 0.2s;
 }
 .conference_title {
-	background-image: url("register-bg.jpg");
+	background-image: url("conference-title.jpg");
 	background-size: cover;
 	height: 100%;
 	width: 100%;
