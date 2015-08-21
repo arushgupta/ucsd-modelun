@@ -15,7 +15,7 @@
             <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
               <div class = "image-box">
                 <div class = "overlay-container">
-                  <%= image_tag  committee.image_url.url ,class: "img-responsive "%> 
+                  <%= image_tag  committee.image_url.url, class: "img-responsive "%> 
                   <a class = "overlay testimg" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
                     <i class = "fa fa-plus-circle"></i>
                   </a>
@@ -31,16 +31,19 @@
                     <h2 class = "modal-title" id = "myModalLabel"><%= committee.committee_name %></h2>
                   </div>
                   <div class = "modal-body">
+
                     <%=button_tag "topic_guide", class: "btn commt_button et_pb_promo_button" ,style:"margin-top: -10px;margin-right: -8px; min-width:0px;" do %>Topic Guide
-                      <span class="glyphicon glyphicon-chevron-right"></span>
-                    <%end%>
+                      <i class="glyphicon glyphicon-chevron-right"></i>
+                   <%end%>
                   
                     <p><span class = "committee_chair">Chair:</span><%= committee.chair %></p>
                     <p><span class = "committee_chair">Vice Chair:</span><%= committee.vice_chair %></p>
                     <div>
+
                       <%committee.topics.each do |topic|%>
                         <h4><%=topic.topic_name%></h4>
-                        <span class = "modal_data"><%= image_tag  topic.image_url.url , class: "img-responsive ", style:"height: 72px; width: 85px;" %>
+                        <span class = "modal_data">
+                          <%= image_tag  topic.image_url.url , class: "img-responsive committee-image-height" %>
                         </span>
                         <span class = "topic_des"><%= topic.description.html_safe%></span>
                       <%end%>

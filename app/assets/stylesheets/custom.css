@@ -10,7 +10,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body {
 	-webkit-font-smoothing: antialiased;
 }
-.faqtable{margin-left:0px;}
+/* Categories */
+.faqtable {
+  margin-left: 0px;
+}
 .carousel-inner {
     position: relative;
     width: 100%;
@@ -59,6 +62,7 @@ body {
   margin: auto;
   position: relative;
 }
+
 .conference_column {
 	/*float: left;*/
 	background-size: cover;
@@ -71,21 +75,22 @@ body {
 	}
 }
 @media (min-width: 981px) {
-	.conference_column_4_4 {
-		width: 100%;
+  .conference_column_4_4 {
+	width: 100%;
+  }
+}
+@media (min-width: 981px) {
+  .conference_column {
+	margin-right: 2.5%;
+  }
+  .faqtable {
+	  margin-left: 290px;
 	}
 }
 @media (min-width: 981px) {
-
-	.conference_column {
-		margin-right: 5.5%;
-
+	.conference_column_first {
+		margin-left: 2.5%;
 	}
-	.faqtable{margin-left:290px;}
-
-	}
- 
-
 }
 @media (min-width: 981px) {
 	.conference,
@@ -138,10 +143,6 @@ body {
 		display:  inline-flex;
 	}
 }
-.conference_blurb_container a {
-	padding-bottom: 5px;
-	color: #000;
-}
 h4 {
 	font-size: 18px;
 }
@@ -150,6 +151,14 @@ h1 {
 }
 h2 {
 	font-size: 24px;
+}
+.conference_blurb_container h4 a {
+	font-size: 18px;
+	color: #555;
+	font-weight: 400;
+}
+.conference_blurb_container h4 a:hover {
+	color: #1C3D78 ;
 }
 .conference_blurb_content {
 	max-width: 550px;
@@ -169,7 +178,6 @@ h2 {
 }
 .conference_register {
 	background-image: url("register-bg.jpg");
-
 }
 .conference_parallax {
 	overflow: hidden;
@@ -196,13 +204,35 @@ h2 {
 	text-align: center;
 }
 .conference_promo_description {
-	padding-bottom: 20px;
 	word-wrap: break-word;
-	padding-top: 3.5%;
+}
+.conference_promo_description h1 {
+	color: #ececec;
+	font-size: 32px;
+	font-weight: 400;
+	margin: 0;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+a.conference_promo_button.conference_button {
+	margin-bottom: 3%;
+	color: #ececec !important;
+}
+a.conference_promo_button.conference_button.button-white-bg {
+	margin-bottom: 3%;
+	color: #2EA3F2 !important;
 }
 .conference_promo_button {
 	display: inline-block;
 	color: inherit !important;
+}
+.conference_promo_button:hover {
+  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.2);
+  border: 0px;
+}
+a.conference_promo_button.button-white-bg:hover {
+  background: none repeat scroll 0% 0% rgba(204, 204, 204, 0.2);
+  border: 0px;	
 }
 .conference_button {
 	font-size: 20px;
@@ -214,6 +244,7 @@ h2 {
 	border-radius: 3px;
 	transition: all 0.2s;
 }
+
 .conference_button:after {
 	font-size: 32px;
 	line-height: 1em;
@@ -351,4 +382,10 @@ h2 {
   padding-top: 45px !important;
   padding-bottom: 45px !important;
   width: 100%;
+}
+.button-icon-hider {
+	display: none;
+}
+.conference_button:hover .button-icon-hider {
+	display: -webkit-inline-box;
 }

@@ -208,7 +208,7 @@ fieldset[disabled] .btn-xl.active {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #fff;
+    color: blue;
 }
 
 .navbar-default .nav li a:hover,
@@ -858,15 +858,6 @@ ul.social-buttons li a:active {
     opacity: 0;
 }
 
-::-moz-selection {
-    text-shadow: none;
-    background: #fed136;
-}
-
-::selection {
-    text-shadow: none;
-    background: #fed136;
-}
 
 img::selection {
     background: 0 0;
@@ -874,8 +865,4 @@ img::selection {
 
 img::-moz-selection {
     background: 0 0;
-}
-
-body {
-    webkit-tap-highlight-color: #fed136;
 }
