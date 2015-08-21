@@ -258,7 +258,7 @@ a:active {
 }
 .overlay-container:hover .overlay {
 	opacity: 1;
-	filter: alpha(opacity=100);
+	filter: alpha(opacity = 100);
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
@@ -268,8 +268,7 @@ a:active {
   margin-right: 20px;
 }
 .btn-block {
-  border:0px !important;
-  text-align: center;
-  background-color:;
-  height: 33px;
+  border: 0px !important;
+  text-align: left;
+  background-color: transparent;
 }
