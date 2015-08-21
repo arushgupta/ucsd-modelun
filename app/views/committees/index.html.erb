@@ -31,29 +31,15 @@
                     <h2 class = "modal-title" id = "myModalLabel"><%= committee.committee_name %></h2>
                   </div>
                   <div class = "modal-body">
-                    
-                    <p>  
-                      <span class = "committee_chair">
-                        Chair:
-                      </span>
-                      
-                      <span class = "committee-dias-name">
-                        <%= committee.chair %>
-                      </span>
-                    </p>
 
-                    <%= button_tag "topic guide", class: "btn commt_button" %>
-                    
-                    <p>
-                      <span class = "committee_chair">
-                        Vice Chair:
-                      </span>
-                    
-                      <span class = "committee-dias-name">
-                        <%= committee.vice_chair %>
-                      </span>
-                    </p>
-                    <div class = "committee-topic">
+                    <%=button_tag "topic_guide", class: "btn commt_button et_pb_promo_button" ,style:"margin-top: -10px;margin-right: -8px; min-width:0px;" do %>Topic Guide
+                      <i class="glyphicon glyphicon-chevron-right"></i>
+                   <%end%>
+                  
+                    <p><span class = "committee_chair">Chair:</span><%= committee.chair %></p>
+                    <p><span class = "committee_chair">Vice Chair:</span><%= committee.vice_chair %></p>
+                    <div>
+
                       <%committee.topics.each do |topic|%>
                         <h4><%=topic.topic_name%></h4>
                         <span class = "modal_data">

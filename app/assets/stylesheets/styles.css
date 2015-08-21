@@ -258,9 +258,6 @@ footer {
   font-weight: 500;
   padding-left: 31%;
   color: #1C3D78;
-  padding-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 2%;
 }
 .events {
   text-align: left;
@@ -274,6 +271,7 @@ footer {
   color: #777;
   font-style: oblique;
   font-size: 12px;
+  padding-left: 0.8%;
 }
 .events .time-column {
   float: left;
@@ -292,14 +290,19 @@ footer {
   font-size: 24px;
   font-weight: 400;
 }
-#mainNav .navbar-header .brand-name:hover {
-  color: #1C3D78;
+.et_pb_promo_button {
+    display: inline-block;
+    color: inherit;
 }
-#mainNav .dropdown .dropdown-menu a:hover {
-  background-color: transparent !important;
-  color: #1C3D78 !important;
-}
-#mainNav .dropdown .dropdown-menu a {
-  background-color: transparent !important;
-  color: #666 !important;
-}
+.et_pb_promo_button i::before{display: none;}
+.et_pb_promo_button:hover i::before{display:block;}
+.et_pb_button{    font-size: 20px;
+    font-weight: 500;
+    padding: 0.3em 1em;
+    line-height: 1.7em !important;
+    background: transparent;
+    position: relative;
+    border: 2px solid;
+    height: 50px;
+    transition: all 0.2s;}
+.et_pb_promo_button:hover{background-color: lightgrey; border: 0px; }
