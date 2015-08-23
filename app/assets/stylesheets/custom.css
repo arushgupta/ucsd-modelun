@@ -389,3 +389,9 @@ a.conference_promo_button.button-white-bg:hover {
 .conference_button:hover .button-icon-hider {
 	display: -webkit-inline-box;
 }
+.nav-brand-logo img {
+	height: 150%;
+}
+.inline-brand {
+	display: -webkit-box;
+}
