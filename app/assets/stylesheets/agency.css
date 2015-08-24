@@ -9,52 +9,6 @@ body {
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.text-muted {
-    color: #777;
-}
-
-.text-primary {
-    color: #fed136;
-}
-
-p {
-    font-size: 14px;
-    line-height: 1.75;
-}
-
-p.large {
-    font-size: 16px;
-}
-
-a,
-a:hover,
-a:focus,
-a:active,
-a.active {
-    outline: 0;
-}
-
-a {
-    color: #fed136;
-}
-
-a:hover,
-a:focus,
-a:active,
-a.active {
-    color: #fec503;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-}
-
 .img-centered {
     margin: 0 auto;
 }
@@ -335,6 +289,7 @@ section h2.section-heading {
     padding-top: 5%;
     padding-left: 15%;
     font-family: Helvetica, 'Open Sans', Arial, sans-serif;
+    font-weight: 100;
 }
 
 .row h3.section-subheading {

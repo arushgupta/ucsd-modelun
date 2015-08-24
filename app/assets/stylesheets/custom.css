@@ -378,10 +378,7 @@ a.conference_promo_button.button-white-bg:hover {
 }
 .header-img{
   background-image: url(/assets/conference_title.jpg);
-  text-align: center !important;
-  padding-top: 45px !important;
-  padding-bottom: 45px !important;
-  width: 100%;
+  background-size: cover;
 }
 .button-icon-hider {
 	display: none;

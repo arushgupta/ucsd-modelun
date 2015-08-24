@@ -250,13 +250,14 @@ footer {
 .schedule-box {
   color: #444;
   padding-top: 1%;
-  padding-bottom: 5%;
+  padding-bottom: 3%;
 }
 .schedule-date h1 {
   text-align: left;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 300;
   padding-left: 31%;
+  padding-bottom: 2%;
   color: #1C3D78;
 }
 .events {
@@ -267,17 +268,21 @@ footer {
   float: left;
   color: #464d52;
 }
+.events .activity-column .event-activity {
+  font-weight: 200;
+}
 .events .activity-column .event-location {
   color: #777;
   font-style: oblique;
   font-size: 12px;
-  padding-left: 0.8%;
+  font-weight: 200;
 }
 .events .time-column {
   float: left;
   text-align: left;
   padding-left: 20%;
   color: #464d52;
+  font-weight: 200;
 }
 /* Brand */
 #mainNav .white-bg {
@@ -288,7 +293,10 @@ footer {
 #mainNav .navbar-header .brand-name {
   color: #666;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 200;
+}
+a.navbar-brand.page-scroll.brand-name:hover {
+  color: #1C3D78 !important;
 }
 .et_pb_promo_button {
     display: inline-block;
