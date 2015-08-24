@@ -19,7 +19,7 @@ ActiveAdmin.register TravelConference do
     column :season
     column :year
     column :location
-    column :category_id
+    column :category
     column :is_active
     actions
   end
