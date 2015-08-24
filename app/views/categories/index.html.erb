@@ -6,13 +6,13 @@
 </div>
 
 <% case @categories.find(params[:id]).name.downcase! %>
-  <% when "about" || "about us" %>
+  <% when "about", "about us" %>
     <%= render "about" %>
   <% when "travel" %>
     <%= render "travel" %>
-  <% when "sponsors" || "sponsorship" %>
+  <% when "sponsors", "sponsorship" %>
     <%= render "sponsors" %>
-  <% when "contact" || "contact Us" %>
+  <% when "contact", "contact us" %>
     <%= render "contact" %>
   <% else %>
     <%=  render "conference" %>

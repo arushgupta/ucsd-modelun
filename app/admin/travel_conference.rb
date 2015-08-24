@@ -30,7 +30,7 @@ ActiveAdmin.register TravelConference do
       f.input :name
       f.input :short_name 
       f.input :season, as: :select, collection: ["Fall", "Spring", "Summer", "Winter"], include_blank: "select"
-      f.input :year, as: :select , collection: (2010..2030), include_blank: "none"
+      f.input :year, as: :select , collection: (2008..2030), include_blank: "none"
       f.input :start_date, as: :string, input_html: {class: 'datepicker'}
       f.input :end_date, as: :string, input_html: {class: 'datepicker'}
       f.input :location
