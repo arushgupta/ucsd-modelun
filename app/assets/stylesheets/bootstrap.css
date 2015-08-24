@@ -6591,7 +6591,7 @@ overflow:scroll;
 }
 /*# sourceMappingURL=bootstrap.css.map */
 .secretariat_img{width:181px;  float:left; }
-.photo{width:154px;    margin-top: 12px; margin-left: 0px;}
+.photo{margin-top:5%;}
 .bio-header{font-size: 16px;
   color: #4f4f4f;
   font-style: italic;
@@ -6607,9 +6607,9 @@ div.position-one{ font-size: 40px;
   font-family: Georgia, Times, "Times New Roman", serif;
   margin-left:2px;}
   div.bio-right {
-
+    float:left;
+    width:80%;
     margin-left: 17px;
-    width: calc(100% - 240px);
     float:left;}
   
 div.bio-box {

@@ -1,0 +1,39 @@
+
+<section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <% @secretariats.each do|s|%>
+                
+            <div class="col-md-4 col-sm-4" style="width:100%;">    
+                <div class="bio-box">
+                    <div class=" photo col-md-2">
+                        <%= image_tag  s.image_url.url ,class: "img-responsive spkimg img-circle " ,id:s.id%>
+                    </div>
+                    <div class="bio-right col-md-7">
+                        <div class="bio-header">
+                            <div class="position-one"><%=s.position%></div>
+                            <div class="name"><%=s.name%></div>
+                            <div><%=s.college%></div>
+                            <div class="secre_major poeple-description"><%=s.major%></div>
+                        </div>
+                        <div class="bio">
+                            <span class="topic_des"><%= s.description.html_safe%></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%end%>
+        </div>
+    </div>
+</section>
+ <script type="text/javascript">
+// $(window).load(function(){
+//     $('.spkimg').on('click',function()
+//                 {  var id =$(this).attr("id")
+//                     // var sr=$(this).attr('src');
+//                     // $('#mimg').attr('src',sr);
+//                     $('#'+id+"s").modal('show');
+//                 });
+// });
+ </script>
+

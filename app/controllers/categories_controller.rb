@@ -35,7 +35,7 @@ class CategoriesController < ApplicationController
    # @committees=Committee.all.where(category_id:params[:id])
    # @deadlines=Deadline.all.where(category_id: params[:id])
    # @speakers=Speaker.all.where(category_id: params[:id])
-    @secretariats = Secretariat.all.where(category_id: params[:id])
+    # @secretariats = Secretariat.all.where(category_id: params[:id])
 end
 #   def new
 #   	@category = Category.new

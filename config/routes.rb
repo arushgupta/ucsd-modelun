@@ -22,7 +22,7 @@ Rails.application.routes.draw do
       get :download
     end
   end
-
+  resources :secretariats
   resources :categories
   resources :deadlines
   resources :overviews

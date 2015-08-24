@@ -20,10 +20,10 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%= link_to image_tag("conference-2.jpg", alt: "logo"),
-            schedules_path(:cat_id=>params[:id]) %>
+            secretariats_path(:cat_id=>params[:id]) %>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Secretariat", schedules_path(cat_id: params[:id]) %></h4>
+            <h4><%= link_to "Secretariat", secretariats_path(cat_id: params[:id]) %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>

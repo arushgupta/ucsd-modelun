@@ -4,8 +4,7 @@
     <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
   </div>
 </div>
-
-<% case @categories.find(params[:id]).name.downcase! %>
+<% case @categories.find(params[:id]).name.downcase %>
   <% when "about" || "about us" %>
     <%= render "about" %>
   <% when "travel" %>
