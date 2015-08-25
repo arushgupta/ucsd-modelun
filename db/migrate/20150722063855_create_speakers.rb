@@ -6,7 +6,7 @@ class CreateSpeakers < ActiveRecord::Migration
       t.text :description
       t.string :image_url
       t.references :category
-      t.boolean :is_active, :default => true
+      t.boolean :is_active, default: true
       
       t.timestamps null: false
     end

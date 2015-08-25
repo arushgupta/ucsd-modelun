@@ -158,7 +158,7 @@ h2 {
 	font-weight: 400;
 }
 .conference_blurb_container h4 a:hover {
-	color: #1C3D78 ;
+	color: #1C3D78 !important;
 }
 .conference_blurb_content {
 	max-width: 550px;

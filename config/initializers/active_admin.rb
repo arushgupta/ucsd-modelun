@@ -49,7 +49,7 @@ ActiveAdmin.setup do |config|
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
       # menu.add :label => "Others", :priority => 12
-      menu.add :label => "Training Session", :priority => 8
+      # menu.add :label => "Training Session", :priority => 8
       menu.add :label => "Sponsors", :priority => 9
       # menu.add :label => "Apply Now", :priority => 10
       # menu.add :label => "Home Gallery", :priority => 11

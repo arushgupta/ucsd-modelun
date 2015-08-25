@@ -4,7 +4,7 @@ class Topic < ActiveRecord::Base
   
   attr_accessor :image_url
   mount_uploader :image_url, ImageUploader
-  validates :order, presence: true
+  validates :order_id, presence: true
   validates :topic_name, presence: true, uniqueness: true, length: { maximum: 100 }
   validates :description, :presence => true, length: { maximum: 1000}
 end

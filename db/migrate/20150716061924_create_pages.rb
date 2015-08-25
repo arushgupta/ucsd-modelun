@@ -6,6 +6,8 @@ class CreatePages < ActiveRecord::Migration
       t.text :content
       t.text :meta_keywords
       t.string :meta_title
+      t.string :subheading
+      t.text :page_description
       t.references :category      
       t.boolean :is_active, :default => true
       

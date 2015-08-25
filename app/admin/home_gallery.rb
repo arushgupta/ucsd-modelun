@@ -3,7 +3,7 @@ ActiveAdmin.register HomeGallery do
   menu priority: 11
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :image_url, :image_text, :button_url, :button_text, :image_title, :category_id, :is_active,:gallery_type
+  permit_params :image_url, :image_text, :button_url, :button_text, :image_title, :category_id, :is_active, :gallery_type
   decorate_with HomeGalleryDecorator
 
   controller do

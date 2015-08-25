@@ -6,7 +6,7 @@ class CreateApplyNows < ActiveRecord::Migration
       t.string :button_text
       t.string :image_url
       t.references :category
-      t.boolean :is_active, :default => true
+      t.boolean :is_active, default: true
       
       t.timestamps null: false
     end

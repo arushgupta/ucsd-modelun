@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :question
       t.text :answer
       t.references :faq
-      t.boolean :is_active, :default => true
+      t.boolean :is_active, default: true
             
       t.timestamps null: false
     end

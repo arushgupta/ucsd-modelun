@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Award:</strong>
+  <%= @award.award %>
+</p>
+
+<p>
+  <strong>Subheading:</strong>
+  <%= @award.subheading %>
+</p>
+
+<p>
+  <strong>Page description:</strong>
+  <%= @award.page_description %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @award.is_active %>
+</p>
+
+<%= link_to 'Edit', edit_award_path(@award) %> |
+<%= link_to 'Back', awards_path %>

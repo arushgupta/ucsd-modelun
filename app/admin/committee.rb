@@ -3,7 +3,7 @@ ActiveAdmin.register Committee do
   menu priority: 14
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :order, :committee_name, :chair, :vice_chair, :topic_guide_url, :image_url, :category_id, :is_active, topics_attributes: [:order, :topic_name, :image_url, :description, :_destroy]
+  permit_params :order_id, :committee_name, :chair, :vice_chair, :topic_guide_url, :image_url, :category_id, :is_active, topics_attributes: [:order, :topic_name, :image_url, :description, :_destroy]
   decorate_with CommitteeDecorator
 
   controller do
@@ -21,7 +21,7 @@ ActiveAdmin.register Committee do
     column :committee_name
     column :chair
     column :vice_chair
-    column :order
+    column :order_id
     column 'Image' do |finder|
       finder.image_url
     end
@@ -43,7 +43,7 @@ ActiveAdmin.register Committee do
       row :committee_name
       row :chair
       row :vice_chair
-      row :order
+      row :order_id
       row 'Image' do |finder|
         finder.image_url
       end
@@ -63,7 +63,7 @@ ActiveAdmin.register Committee do
   form do |f|
     f.inputs 'Committee Details', multipart: true do
       f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
-      f.input :order
+      f.input :order_id
       f.input :committee_name
       f.input :chair
       f.input :vice_chair

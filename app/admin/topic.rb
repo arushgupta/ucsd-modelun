@@ -3,7 +3,7 @@ ActiveAdmin.register Topic do
   menu false
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :order, :topic_name, :image_url, :description, :is_active
+  permit_params :order_id, :topic_name, :image_url, :description, :is_active
   before_action :set_committee
   belongs_to :committee
   navigation_menu :default
@@ -24,7 +24,7 @@ ActiveAdmin.register Topic do
     end
 
     def new
-      @topic = Topic.new
+     @topic = Topic.new
     end
 
     private
@@ -36,7 +36,7 @@ ActiveAdmin.register Topic do
   index do
     selectable_column
     id_column
-    column :order
+    column :order_id
     column :topic_name
     column :image_url
     column (:description) {|topic| raw(topic.description)}
@@ -50,7 +50,7 @@ ActiveAdmin.register Topic do
   show do
     attributes_table do
       row :id
-      row :order
+      row :order_id
       row :topic_name
       row :image_url
       row (:description) {|topic| raw(topic.description)}
@@ -65,7 +65,7 @@ ActiveAdmin.register Topic do
 
   form do |f|
     f.inputs 'Topic Details' do
-      f.input :order
+      f.input :order_id
       f.input :topic_name
       f.input :image_url, as: :file, image_preview: true, label: "Image (size 500x500)" , hint: f.object.id? ? image_tag(f.object.image_url.url) : ""
       f.input :description, as: :ckeditor

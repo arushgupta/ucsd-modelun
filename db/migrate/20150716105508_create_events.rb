@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.time :start_time
       t.time :end_time
       t.references :schedule
-      t.boolean :is_active, :default => true
+      t.boolean :is_active, default: true
       
       t.timestamps null: false
     end

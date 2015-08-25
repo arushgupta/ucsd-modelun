@@ -6,7 +6,7 @@ class CreateDeadlines < ActiveRecord::Migration
       t.integer :phase_id
       t.string :fee
       t.references :category
-      t.boolean :is_active, :default => true
+      t.boolean :is_active, default: true
       
       t.timestamps null: false
     end

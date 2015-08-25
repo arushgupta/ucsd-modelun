@@ -4,7 +4,7 @@ class CreateSchedules < ActiveRecord::Migration
       t.string :name
       t.date :date
       t.references :category
-      t.boolean :is_active, :default => true
+      t.boolean :is_active, default: true
       
       t.timestamps null: false
     end

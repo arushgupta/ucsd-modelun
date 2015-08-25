@@ -38,7 +38,7 @@ ActiveAdmin.register Secretariat do
       row :college
       row :major
       row (:description) {|secretariat| raw(secretariat.description)}
-      row :image_url 
+      row :image_url
       row :is_active
       row :created_at
       row :updated_at

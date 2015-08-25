@@ -1,12 +1,14 @@
 class TravelConference < ActiveRecord::Base
 
 	  belongs_to :category
-      validates :category,presence: true
-	    validates :location,:presence => true, :format => { :with => /\A[a-zA-Z0-9\s\.',:(){}_\-]+\z/},length: { maximum: 100}
-      validates :name,:presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
-      validates :short_name,:presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
-      validate :date_validation1
-      validate :date_validation
+    has_many :awards
+    
+    validates :category,presence: true
+	  validates :location,:presence => true, :format => { :with => /\A[a-zA-Z0-9\s\.',:(){}_\-]+\z/},length: { maximum: 100}
+    validates :name,:presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
+    validates :short_name,:presence => true,:format => { :with => /\A[a-zA-Z\s\-]+\z/},length: { maximum: 100}
+    validate :date_validation
+
   def display_name
   "#{category.name}_#{name}"
   end
@@ -27,5 +29,5 @@ class TravelConference < ActiveRecord::Base
     else
       return true
     end
-  end 
+  end
 end

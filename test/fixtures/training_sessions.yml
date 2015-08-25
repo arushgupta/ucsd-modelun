@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-08-24
+  committee: MyString
+  topic: MyString
+  description: MyString
+  image_url: MyString
+  topic_guide_url: MyString
+  start_time: 2015-08-24 21:03:41
+  end_time: 2015-08-24 21:03:41
+  subheading: MyString
+  page_description: MyText
+  is_active: false
+
+two:
+  date: 2015-08-24
+  committee: MyString
+  topic: MyString
+  description: MyString
+  image_url: MyString
+  topic_guide_url: MyString
+  start_time: 2015-08-24 21:03:41
+  end_time: 2015-08-24 21:03:41
+  subheading: MyString
+  page_description: MyText
+  is_active: false

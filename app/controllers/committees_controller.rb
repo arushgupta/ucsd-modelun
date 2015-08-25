@@ -12,7 +12,7 @@ class CommitteesController < ApplicationController
     @categories = Category.all
     @cat = Category.all.where("categories.category_id IS NOT NULL")
     @apply = ApplyNow.all
-  	@committees = Committee.all.where(category_id: params[:cat_id]).order('created_at ASC')
+  	@committees = Committee.all.where(category_id: params[:cat_id]).order('order_id ASC')
   end
 
 end

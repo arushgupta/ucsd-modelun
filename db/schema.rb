@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810182558) do
+ActiveRecord::Schema.define(version: 20150824160554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20150810182558) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "awards", force: :cascade do |t|
+    t.string   "award"
+    t.integer  "award_count"
+    t.integer  "travel_conference_id"
+    t.boolean  "is_active",            default: true
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.integer  "category_id"
@@ -70,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150810182558) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "committees", force: :cascade do |t|
-    t.integer  "order"
+    t.integer  "order_id"
     t.string   "committee_name"
     t.string   "chair"
     t.string   "vice_chair"
@@ -106,10 +115,10 @@ ActiveRecord::Schema.define(version: 20150810182558) do
 
   create_table "faqs", force: :cascade do |t|
     t.string   "name"
-    t.integer  "category_id", default: 1
-    t.boolean  "is_active"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "category_id"
+    t.boolean  "is_active",   default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "home_galleries", force: :cascade do |t|
@@ -130,10 +139,12 @@ ActiveRecord::Schema.define(version: 20150810182558) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "location"
+    t.integer  "delegation_fee"
+    t.date     "position_paper_deadline"
     t.integer  "category_id"
-    t.boolean  "is_active",   default: true
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "is_active",               default: true
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   create_table "pages", force: :cascade do |t|
@@ -142,10 +153,12 @@ ActiveRecord::Schema.define(version: 20150810182558) do
     t.text     "content"
     t.text     "meta_keywords"
     t.string   "meta_title"
+    t.string   "subheading"
+    t.text     "page_description"
     t.integer  "category_id"
-    t.boolean  "is_active",     default: true
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.boolean  "is_active",        default: true
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "questions", force: :cascade do |t|
@@ -191,7 +204,7 @@ ActiveRecord::Schema.define(version: 20150810182558) do
   end
 
   create_table "topics", force: :cascade do |t|
-    t.integer  "order"
+    t.integer  "order_id"
     t.string   "topic_name"
     t.string   "image_url"
     t.text     "description"
@@ -199,6 +212,21 @@ ActiveRecord::Schema.define(version: 20150810182558) do
     t.boolean  "is_active",    default: true
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "training_sessions", force: :cascade do |t|
+    t.date     "date"
+    t.string   "committee"
+    t.string   "topic"
+    t.string   "description"
+    t.string   "image_url"
+    t.string   "topic_guide_url"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "category_id"
+    t.boolean  "is_active",       default: true
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "travel_conferences", force: :cascade do |t|

@@ -3,11 +3,11 @@ ActiveAdmin.register TravelConference do
   menu priority: 13
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :name, :short_name, :season, :year, :location, :host, :category_id, :start_date, :end_date, :is_active
+  permit_params :name, :short_name, :season, :year, :location, :host, :category_id, :start_date, :end_date, :is_active, awards_attributes: [:award, :award_count, :is_active, :_destroy]
  
   controller do
     def show
-      @page_title = " Travel Conference"
+      @page_title = "Travel Conference"
     end
   end
 
@@ -19,9 +19,27 @@ ActiveAdmin.register TravelConference do
     column :season
     column :year
     column :location
-    column :category_id
+    column :category
     column :is_active
+    column 'Awards' do |finder|
+      link_to "Add Awards", admin_travel_conference_awards_path(travel_conference_id: finder)
+    end
     actions
+  end
+
+  show do
+    attributes_table do
+      row :name
+      row :short_name
+      row :season
+      row :year
+      row :location
+      row :category
+      row :is_active
+      row 'Awards' do |finder|
+        link_to "Add Awards", admin_travel_conference_awards_path(travel_conference_id: finder)
+      end
+    end
   end
 
   form do |f|
