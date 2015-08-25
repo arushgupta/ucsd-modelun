@@ -5,9 +5,10 @@ class CreateOverviews < ActiveRecord::Migration
       t.date :start_date
       t.date :end_date
       t.string :location
-      t.references :category
+      t.string :welcome_letter
       t.boolean :is_active, :default => true
-      
+      t.references :category
+            
       t.timestamps null: false
     end
   end

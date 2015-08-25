@@ -12,6 +12,7 @@ class Category < ActiveRecord::Base
   has_many :secretariats
   has_many :speakers
   has_many :travel_conferences
+  has_many :icons
   belongs_to :category
   belongs_to :parent_category, class: "Category"
   has_many :subcategories, class: "Category"

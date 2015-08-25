@@ -3,7 +3,7 @@ ActiveAdmin.register Overview do
   menu priority: 4
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :season, :start_date, :end_date, :location, :category_id, :is_active
+  permit_params :season, :start_date, :end_date, :location, :category_id, :is_active, :welcome_letter
 
   controller do
     def show
@@ -18,6 +18,7 @@ ActiveAdmin.register Overview do
     column :start_date
     column :end_date
     column :location
+    column :welcome_letter do |welcome| raw(welcome.welcome_letter) end
     column :category
     column :is_active
     actions
@@ -29,6 +30,7 @@ ActiveAdmin.register Overview do
       f.input :season, as: :select, collection: ["Fall", "Spring", "Summer", "Winter"], include_blank: "select"
       f.input :start_date, as: :string, input_html: {class: 'datepicker'}
       f.input :end_date, as: :string, input_html: {class: 'datepicker'}
+      f.input :welcome_letter, as: :ckeditor 
       f.input :location
       f.input :is_active, label: "Active"
     end

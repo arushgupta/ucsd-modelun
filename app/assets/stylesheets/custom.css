@@ -29,8 +29,8 @@ body {
 }
 .conference_row_2 { 
 	height: 38%;
-    width: 100%;
-    display: inline-block;
+  width: 100%;
+  display: inline-block !important;
 }
 .conference_row_3 { 
 	height: 38%;
@@ -79,6 +79,7 @@ body {
 	.conference_column {
 		margin-right: 5.5%;
 		margin-left: 5.5%;
+		padding-top: 30px
 	}.conference
   .faqtable { 
     margin-left:290px;
@@ -107,7 +108,8 @@ body {
 }
 @media (min-width: 981px) {
   .conference_column_1_3 {
-  	width: 29.666%;
+  	width: 20%;
+  	float: left;
   }
 }
 @media (min-width: 981px) {
@@ -348,3 +350,85 @@ h2 {
   padding-bottom: 45px !important;
   width: 100%;
 }
+
+.conference_blurb_image img {
+    height: 200px;
+    width: 188px;
+}
+@media (min-width: 981px) {
+	.et_pb_column{
+    float: left;
+    width: 25%;
+    text-align: center;
+  }
+  .et_pb_row{
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .new_container{
+    height: 530px;
+    background-color: white;
+  }
+}
+
+
+
+
+.et_pb_column{
+    text-align: center;
+  }
+.new_container{
+	background-color: white;
+}
+
+/*meet the team style*/
+
+@media (min-width: 1281px) {
+	.team_div {
+    height: 560px;
+  }
+
+ .inner_div {
+  	float: left;
+  	width: 30%;
+  	margin-left: 20px;
+  	margin-right: 20px;
+	}
+
+}
+.team_div {
+    /*height: 560px;*/
+    text-align: center;
+    background-image:url(/assets/geometic-bg-black-2.jpg); 
+  }
+.inner_div {
+  /*float: left;*/
+  
+  
+}
+.outer_div {
+    padding-top: 65px;
+    padding-left: 45px;
+    padding-right: 35px;
+    width: 100%;
+}
+.inner_text {
+  text-align: center;
+  color: white;
+}
+.inner_text > h4 {
+  color: white;
+}
+.top_header{
+  padding-top: 20px;
+  text-align: center;
+}
+.top_header > h3{
+  color: white;
+}
+.row{
+	/*background-color: white;*/
+}
+
