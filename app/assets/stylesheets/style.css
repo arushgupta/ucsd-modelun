@@ -221,3 +221,114 @@ File Description:Main CSS file of the template */
   text-align: left;
   background-color: transparent;
 }
+
+.travel_modal{height: 67px;
+    text-align: center;
+    background-color: turquoise;
+    padding-top: 14px;}
+
+.cbp_tmtimeline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+.cbp_tmtimeline>li .cbp_tmtime {
+    display: block;
+    width: 25%;
+    padding-right: 100px;
+    position: absolute;
+    margin-top: 10px;
+}
+.cbp_tmtimeline>li .cbp_tmicon {
+    background: #f54828;
+}
+.cbp_tmtimeline>li .cbp_tmicon {
+    width: 40px;
+    height: 40px;
+    font-family: 'ecoico';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 1.4em;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    color: #fff;
+    background: #f54828;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #ececec;
+    text-align: center;
+    left: 20%;
+    top: 0;
+    margin: 0 0 0 -25px;
+}
+.cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
+    background: #fff;
+    border: 1px solid #ebebeb;
+}
+.cbp_tmtimeline>li .cbp_tmlabel {
+    margin: 0 0 15px 25%;
+    padding: 2em;
+    position: relative;
+    border-radius: 5px;
+}
+.cbp_tmtimeline>li .cbp_tmlabel h2 {
+    margin-top: 0px;
+    padding: 0 0 10px 0;
+    font-family: Open Sans;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.cbp_tmtimeline>li {
+    position: relative;
+}
+[class^="icon-"], [class*=" icon-"] {
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    margin-top: 0;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+.cbp_tmtimeline>li:nth-child(odd) .cbp_tmtime span:last-child {
+    color: #999;
+    font-size: 15px;
+}
+.cbp_tmtimeline>li .cbp_tmtime span {
+    display: block;
+    text-align: right;
+}
+.cbp_tmtimeline:before {
+    background: none repeat scroll 0 0 #ececec;
+    bottom: 0;
+    content: "";
+    left: 20%;
+    margin-left: -10px;
+    position: absolute;
+    top: 0;
+    width: 10px;
+}
+.resource{text-align:left; padding-top:20px;}
+.research_h1{text-align: center;
+    font-weight: bold;
+    padding-bottom: 22px;}
+.research_h3{text-transform: uppercase;
+    font-weight: bold;}
+.pos{padding-left: 23px;
+    padding-top: 10px;}
+.pos_h3{font-weight: bold;
+    padding-bottom: 5px;}

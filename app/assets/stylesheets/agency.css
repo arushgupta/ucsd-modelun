@@ -144,19 +144,17 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #fed136;
-    background-color: #fed136;
+    background-color: transparent;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
 }
 
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: transparent;
+.navbar-default .navbar-header button.navbar-toggle:hover,
+.navbar-default .navbar-header button.navbar-toggle:focus {
+    background-color: #eee !important;
 }
-
 .navbar-default .nav li a {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;

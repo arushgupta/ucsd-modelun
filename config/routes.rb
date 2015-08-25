@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       get :download
     end
   end
+
   resources :travel_conferences
   resources :secretariats
   resources :categories

@@ -7,3 +7,4 @@ class SecretariatsController < ApplicationController
 		@secretariats=Secretariat.all.where(category_id: params[:cat_id])
 	end
 end
+ 
