@@ -1,17 +1,18 @@
 class UsersController < ApplicationController
-	 before_action :admin_user,     only: [:destroy, :create]
+	 # before_action :admin_user,     only: [:destroy, :create]
   def new
   	@user = User.new
   end
   
   def create
-  	 @user = User.new(user_params)
-      if @user.save
-        # UserMailer.account_activation(@user).deliver_now
-        redirect_to root_url
-      else
-        render 'new'
-      end
+    @categories = Category.all.where(is_active: true)
+  	@user = User.new(user_params)
+    if @user.save
+      render "create"
+    else
+      render :json => { :error => @user.errors.full_messages.to_sentence }, 
+           :status => :unprocessable_entity
+    end
   end
 
   def index
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
   
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password)
+      params.require(:user).permit(:first_name, :last_name, :email)
     end
 
 end

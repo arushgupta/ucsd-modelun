@@ -25,8 +25,9 @@ class CategoriesController < ApplicationController
   # end
 
   def index
-   @categories = Category.all
+
    @icons = Icon.where(category_id: params[:id]).first
+   @categories = Category.all.where(is_active: true)
    #@cat=Category.all.where("categories.category_id IS NOT NULL")
    @homeimages = HomeGallery.all.where(category_id: params[:id])
    @pages = Page.all.where(category_id: params[:id])

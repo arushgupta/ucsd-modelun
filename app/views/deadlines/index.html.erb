@@ -1,8 +1,12 @@
-<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
-  padding-top: 17px;color:white;">DEADLINE
-</h1>
-
 <div class="container" id="pricing-section">
+  
+  <div class="row" style = "margin-bottom: 3%; margin-top: 2%;">
+    <div class="col-lg-12 text-center " style = "background-image: url('/assets/conference-title.jpg'); background-size: cover;">
+      <h2 class = "section-heading">Fees and Timeline</h2>
+      <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    </div>
+  </div> 
+  
   <div class="main-low-margin col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margin-top-100 ">
     <div id="pricing-table" class="row">
       <% @deadlines.each do |dead|%>
@@ -17,7 +21,12 @@
                 <span class = "plan-delegate">Per Delegate</span>
             </li>
             <li class = "plan-info"><%=dead.deadline_info%></li>
-            <li class="plan-action">Register</li>
+            <li class="plan-action">
+            <a class = "et_pb_button conference_promo_button conference_button button-white-bg" href="">
+              Register Now
+              <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+            </a>
+            </li>
           </ul>
         </div>
       <%end%>

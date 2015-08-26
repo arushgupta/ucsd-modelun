@@ -10,7 +10,7 @@
     </div>
  
     <!-- Wrapper for slides -->
-    <div class="col-sm-9" style="flaot:left; width: 84%; padding-top:50px">
+    <div class="col-sm-9" style="float:left; width: 84%; padding-top:50px">
       <div class="carousel-inner">
         <div class="item active">
           <div class="main_image">
@@ -106,13 +106,6 @@
           </div>
         </div>
       </div>
-     <!-- Controls -->
-      <!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      </a> -->
     </div>
   </div> <!-- Carousel -->
 </div>
@@ -181,42 +174,97 @@
       <h3>MEET THE CREW</h3>
     </div> <!-- .et_pb_row -->
     <div class="outer_div">
-      <div class="inner_div">
+      <%@secretariats.each do |sec|%>
+        <div class="inner_div">
         <div class="inner_img">
-          <img src="http://elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/team-member-4.jpg" alt="Kenny Sing">
+          <%=image_tag(sec.image_url)%>
         </div>
         <div class="inner_text">
-          <h4>Kenny Sing</h4>
-          <p class="">Graphic Designer</p>
+          <h4><%=sec.name%></h4>
+          <p class=""><%=sec.position%></p>
         </div> <!-- .et_pb_team_member_description -->
       </div>
+      <%end%>
       
-      <div class="inner_div">  
-        <div class="">
-          <div class="inner_img">
-            <img src="http://elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/team-member-4.jpg" alt="Kenny Sing">
-          </div>
-          <div class="inner_text">
-            <h4>Kenny Sing</h4>
-            <p class="">Graphic Designer</p>
-          </div> <!-- .et_pb_team_member_description -->
-        </div> <!-- .et_pb_team_member -->
-      </div>
-      
-      <div class="inner_div">  
-        <div class="">
-          <div class="inner_img">
-            <img src="http://elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/team-member-4.jpg" alt="Kenny Sing">
-          </div>
-          <div class="inner_text">
-            <h4>Kenny Sing</h4>
-            <p class="">Graphic Designer</p>
-          </div> <!-- .et_pb_team_member -->
-        </div>
       </div>
     </div> <!-- .et_pb_row -->
   </div>
 </div>
+<div class="mailing_list">
+  <section class="section1" id="mail_contact">
+    <div class="content">
+      <div class="heading">
+        <h1>Mailing List</h1>
+        <div id="mc_embed_signup">
+          <%=form_for(@user, remote: true) do |f|%>
+            <div id="error_explanation">
+              <% if @user.errors.any? %>
+                <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                <ul>
+                  <% @user.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </div>
+            <div class="mc-field-group">
+              <%=f.text_field :first_name, class: "fname", placeholder: "First Name"%>
+              <%=f.text_field :last_name, class: "lname", placeholder: "Last Name"%>
+              <%=f.text_field :email, class: "email", placeholder: "email"%>
+            </div>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+          <%end%>
+        </div>
+      </div>
+      <ul class="three-col clearself">
+        <li class="column instagram">
+          <a href="http://instagram.com/trojanmun" class="block">
+            <div class="icon"><img width="40" height"40"="" src="http://trojanmun.org/wp-content/uploads/2013/04/icon_instagram.png"><span class="arrow"></span></div>
+            <h2>Instagram</h2>
+            <p class="handle">@trojanmun</p>
+            <div id="instagram"></div>
+          </a>
+        </li>
+        <li class="column twitter">
+          <a href="mailto:sg@trojanmun.org" class="block">
+            <div class="icon"><img width="40" height"40"="" src="http://trojanmun.org/wp-content/uploads/2013/04/icon_mail.png"><span class="arrow"></span></div>
+            <h2>Email</h2>
+            <p class="handle">sg@trojanmun.org</p>
+            <p id="tweet">Keep in touch</p>
+          </a>
+        </li>
+        <li class="column blog">
+          <a href="https://www.facebook.com/trojanmun" class="block">
+            <div class="icon"><img width="40" height"40"="" src="http://trojanmun.org/wp-content/uploads/2013/04/icon_facebook.png"><span class="arrow"></span></div>
+            <h2>Facebook</h2>
+            <p class="handle">facebook.com/trojanmun</p>
+            <figure>
+              <!--<img class="center" src="#" alt="" />-->
+            </figure>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script type="text/javascript">
+  handle_ajax_error = function(response) {
+    try { var responseText = jQuery.parseJSON(response.responseText); } catch(e) { var responseText = null; }
+    if (responseText !== null) { 
+      var responseMsg = responseText.error; 
+    } else {
+      responseMsg = 'There was an unknown error or the request timed out.  Please try again later';
+    }
+    return responseMsg;
+  }
+  
+  $('#new_user').bind('ajax:error', function(data, xhr, response){ 
+    $('#error_explanation').html(handle_ajax_error(xhr));
+  });
+</script>
+
+
 <style type="text/css">
   
 </style>

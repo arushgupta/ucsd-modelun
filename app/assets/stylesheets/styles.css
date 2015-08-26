@@ -197,34 +197,34 @@ footer {
 }
 
 .carousel.vertical .active.right {
-   top: 400px;
+ top: 400px;
 }
 
 .carousel.vertical .item {
-   left: 0;
+  left: 0;
 }
 .main-low-margin {
-    margin-top: 55px;
+  margin-top: 55px;
 }
-
+/* Deadlines */
 #pricing-section .plan-main {
-    background: none repeat scroll 0% 0% #FFF;
-    list-style: none outside none;
-    margin: 0px 0px 20px;
-    text-align: center;
-    padding: 0px;
-    border: 1px solid #E9E9E9;
+  background: none repeat scroll 0% 0% #FFF;
+  list-style: none outside none;
+  margin: 0px 0px 20px;
+  text-align: center;
+  padding: 0px;
+  border: 1px solid #E9E9E9;
 }
 #pricing-section .plan-main li.plan-name {
-    padding: 15px 0px;
-    font-size: 18px;
-    font-weight: 500;
-    background-color: #AFAFAF;
-    color: #FFF;
+  padding: 15px 0px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #AFAFAF;
+  color: #FFF;
 }
 #pricing-section .plan-main li {
-    padding: 10px 0px;
-    margin: 0px;
+  padding: 10px 0px;
+  margin: 0px;
 }
 #pricing-section .plan-main span.plan-dollar {
   vertical-align: top;
@@ -241,11 +241,79 @@ footer {
 }
 #pricing-section .plan-main li.plan-info {
   color: #000;
-  text-align: left;
+  text-align: center;
   margin: 0px 15px;
 }
 #pricing-section .plan-main li.plan-action {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-bottom: 0px none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 0px none;
 }
+/* Schedules */
+.schedule-box {
+  color: #444;
+  padding-top: 1%;
+  padding-bottom: 3%;
+}
+.schedule-date h1 {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 300;
+  padding-left: 31%;
+  padding-bottom: 2%;
+  color: #1C3D78;
+}
+.events {
+  text-align: left;
+  padding-left: 32%;
+}
+.events .activity-column {
+  float: left;
+  color: #464d52;
+}
+.events .activity-column .event-activity {
+  font-weight: 200;
+}
+.events .activity-column .event-location {
+  color: #777;
+  font-style: oblique;
+  font-size: 12px;
+  font-weight: 200;
+}
+.events .time-column {
+  float: left;
+  text-align: left;
+  padding-left: 20%;
+  color: #464d52;
+  font-weight: 200;
+}
+/* Brand */
+#mainNav .white-bg {
+  background-color: #fff !important;
+  padding: 1% !important;
+  color: #666;
+}
+#mainNav .navbar-header .brand-name {
+  color: #666;
+  font-size: 24px;
+  font-weight: 200;
+}
+a.navbar-brand.page-scroll.brand-name:hover {
+  color: #1C3D78 !important;
+}
+.et_pb_promo_button {
+    display: inline-block;
+    color: inherit;
+}
+.et_pb_promo_button i::before{display: none;}
+.et_pb_promo_button:hover i::before{display:block;}
+.et_pb_button{    font-size: 20px;
+    font-weight: 500;
+    padding: 0.3em 1em;
+    line-height: 1.7em !important;
+    background: transparent;
+    position: relative;
+    border: 2px solid;
+    height: 50px;
+    transition: all 0.2s;}
+.et_pb_promo_button:hover{background-color: lightgrey; border: 0px; }

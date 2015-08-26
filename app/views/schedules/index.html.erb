@@ -1,54 +1,44 @@
-<div class="div_height">
-<h1 class="text-center" style="background-color:#404da2;margin-bottom:10px;height: 85px;
-padding-top: 17px;color:white;">SCHEDULE</h1>
-<div class="container a schedule" style ='background-color:'>
-    <div class="row">    
-      <p class="text-center text-inline"> </p>
-        <div class="col-md-6 col-md-offset-3">
-          <%@schedules.each_with_index do |schedule,i|%>
-          <%if i%2==0%>
-            <div class="schedule_display">
-              <table class="table color1">
-              <caption class="schedule">
-                <span class="schedule-name"><%=schedule.name%></span><br>
-                <span class="schedule-date"><%=schedule.date.strftime("%B %d, %Y")%></span>
-              </caption>
-              <tbody>
-                  <%schedule.events.each do |event|%>
-                    <tr>
-                    
-                       <td class="schedule-td"><%=event.activity%></td>
-                       <td><%=event.start_time.strftime("%I:%M%P")%>-<%=event.end_time.strftime(" %I:%M%P")%></td>
-                    </tr>
-
-                    
-                <%end%>
-              </tbody>
-              </table>
-            </div>
-            <%else%>
-            <div class="test22">
-              <table class="table color1">
-              <caption class="schedule">
-                <span class="schedule-name"><%=schedule.name%></span><br>
-                <span class="schedule-date"><%=schedule.date.strftime("%B %d, %Y")%></span>
-              </caption>
-          <tbody>
-                  <%schedule.events.each do |event|%>
-                    <tr>
-                    
-                       <td class="schedule-td"><%=event.activity%></td>
-                       <td><%=event.start_time.strftime("%I:%M%P")%>-<%=event.end_time.strftime(" %I:%M%P")%></td>
-                    </tr>
-
-                    
-                <%end%>
-          </tbody>
-          </table>
-            </div>
-            <%end%>
-          <%end%>
-        </div>  
-      </div>
+<div class="container a schedule" style ='background-color: white'>
+    
+  <div class="row" style = "margin-bottom: 3%; margin-top: 2%;">
+    <div class="col-lg-12 text-center " style = "background-image: url('/assets/conference-title.jpg'); background-size: cover;">
+      <h2 class = "section-heading">Schedule</h2>
+      <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    </div>
   </div>
+
+  <% @schedules.each do |schedule| %>
+    <div class = "row schedule-box">
+      <div class = "col-lg-12 schedule-date">
+        <h1>
+          <%= schedule.date.strftime("%A, %B %d") %>
+        </h1>
+        <div class = "events">
+          <div class = "activity-column">
+            <% schedule.events.each do |event| %>
+              <div class = "row event-list">
+                <span class = "event-activity">
+                  <%= event.activity %>
+                </span>
+                <span class = "event-location">
+                  <% unless event.place.blank? %>
+                    <%= event.place %>
+                  <% end %>
+                </span>
+              </div>
+            <% end %>
+          </div>
+          <div class = "time-column">
+            <% schedule.events.each do |event| %>
+              <div class = "row event-list">
+                <span class = "event-time">
+                  <%=event.start_time.strftime("%-I:%M %p ")%>-<%=event.end_time.strftime(" %-I:%M %p")%>
+                </span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -10,7 +10,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body {
 	-webkit-font-smoothing: antialiased;
 }
-.faqtable{margin-left:0px;}
+/* Categories */
+.faqtable {
+  margin-left: 0px;
+}
 .carousel-inner {
     position: relative;
     width: 100%;
@@ -59,6 +62,7 @@ body {
   margin: auto;
   position: relative;
 }
+
 .conference_column {
 	/*float: left;*/
 	background-size: cover;
@@ -71,9 +75,9 @@ body {
 	}
 }
 @media (min-width: 981px) {
-	.conference_column_4_4 {
-		width: 100%;
-	}
+  .conference_column_4_4 {
+	width: 100%;
+  }
 }
 @media (min-width: 981px) {
 	.conference_column {
@@ -84,6 +88,7 @@ body {
   .faqtable { 
     margin-left:290px;
   }
+
 }
 @media (min-width: 981px) {
 	.conference,
@@ -137,10 +142,6 @@ body {
 		display:  inline-flex;
 	}
 }
-.conference_blurb_container a {
-	padding-bottom: 5px;
-	color: #000;
-}
 h4 {
 	font-size: 18px;
 }
@@ -149,6 +150,14 @@ h1 {
 }
 h2 {
 	font-size: 24px;
+}
+.conference_blurb_container h4 a {
+	font-size: 18px;
+	color: #555;
+	font-weight: 400;
+}
+.conference_blurb_container h4 a:hover {
+	color: #1C3D78 ;
 }
 .conference_blurb_content {
 	max-width: 550px;
@@ -168,7 +177,6 @@ h2 {
 }
 .conference_register {
 	background-image: url("register-bg.jpg");
-	height:200px;
 }
 .conference_parallax {
 	overflow: hidden;
@@ -195,12 +203,35 @@ h2 {
 	text-align: center;
 }
 .conference_promo_description {
-	padding-bottom: 20px;
-	word-wrap: break-word;	
+	word-wrap: break-word;
+}
+.conference_promo_description h1 {
+	color: #ececec;
+	font-size: 32px;
+	font-weight: 400;
+	margin: 0;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+a.conference_promo_button.conference_button {
+	margin-bottom: 3%;
+	color: #ececec !important;
+}
+a.conference_promo_button.conference_button.button-white-bg {
+	margin-bottom: 3%;
+	color: #2EA3F2 !important;
 }
 .conference_promo_button {
 	display: inline-block;
-	color: inherit;
+	color: inherit !important;
+}
+.conference_promo_button:hover {
+  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.2);
+  border: 0px;
+}
+a.conference_promo_button.button-white-bg:hover {
+  background: none repeat scroll 0% 0% rgba(204, 204, 204, 0.2);
+  border: 0px;	
 }
 .conference_button {
 	font-size: 20px;
@@ -212,6 +243,7 @@ h2 {
 	border-radius: 3px;
 	transition: all 0.2s;
 }
+
 .conference_button:after {
 	font-size: 32px;
 	line-height: 1em;
@@ -222,7 +254,7 @@ h2 {
 	transition: all 0.2s;
 }
 .conference_title {
-	background-image: url("register-bg.jpg");
+	background-image: url("conference-title.jpg");
 	background-size: cover;
 	height: 100%;
 	width: 100%;
@@ -344,11 +376,20 @@ h2 {
     width: 100%;
 }
 .header-img{
-  background-image: url(/assets/conference_title.jpg);
-  text-align: center !important;
-  padding-top: 45px !important;
-  padding-bottom: 45px !important;
-  width: 100%;
+  background-image: url(/assets/conference-title.jpg);
+  background-size: cover;
+}
+.button-icon-hider {
+	display: none;
+}
+.conference_button:hover .button-icon-hider {
+	display: -webkit-inline-box;
+}
+.nav-brand-logo img {
+	height: 150%;
+}
+.inline-brand {
+	display: -webkit-box;
 }
 
 .conference_blurb_image img {
@@ -387,7 +428,7 @@ h2 {
 
 @media (min-width: 1281px) {
 	.team_div {
-    height: 560px;
+    height: 430px;
   }
 
  .inner_div {
@@ -428,7 +469,177 @@ h2 {
 .top_header > h3{
   color: white;
 }
+
+.inner_img > img {
+  height: 200px;
+  width: 320px;
+}
 .row{
 	/*background-color: white;*/
+}
+
+.mailing_list{background-image: url(/assets/conference-title.jpg);}
+  .mailing_list .section {
+  	padding: 0;
+}
+.content{
+  /*background-color: white;*/
+}
+.mailing_list .heading {
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 90%;
+  color: black;
+}
+#mc_embed_signup {
+  background: transparent none repeat scroll 0 0;
+  clear: left;
+  font: 14px Helvetica,Arial,sans-serif;
+  margin: 0 auto;
+  width: 100%;
+}
+#mc_embed_signup .mc-field-group input.fname {
+  border-radius: 0;
+  display: inline;
+  float: left;
+  margin: 0 15px 0 2%;
+  padding: 15px 0;
+  text-indent: 4%;
+  width: 29%;
+}
+#mc_embed_signup input {
+  border: 1px solid #999;
+}
+.mc-field-group{
+  padding-bottom: 95px;
+}
+
+#mc_embed_signup .mc-field-group input.lname {
+  border-radius: 0;
+  display: inline;
+  float: left;
+  margin: 0 15px;
+  padding: 15px 0;
+  text-indent: 4%;
+  width: 29%;
+}
+/*#mc_embed_signup input {
+  border: 1px solid #999;
+}*/
+
+#mc_embed_signup .mc-field-group input.email {
+  border-radius: 0;
+  display: inline;
+  float: left;
+  margin: 0 2% 0 15px;
+  padding: 15px 0;
+  text-indent: 4%;
+  width: 29%;
+}
+/*#mc_embed_signup input {
+  border: 1px solid #999;
+}*/
+.mailing_list h1  {
+  font-size: 70px;
+  line-height: 72px;
+  color: #ffffff;
+  padding: 30px;
+  text-decoration: none !important;
+  font-family: "Raleway",sans-serif !important;
+}
+
+#mc_embed_signup .button {
+  background: transparent none repeat scroll 0 0;
+  border: 3px solid #ffffff;
+  border-radius: 0;
+  clear: both;
+  color: #ffffff;
+  cursor: pointer;
+  display: table;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 auto;
+  padding: 10px 3%;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 300ms ease 0s;
+  white-space: nowrap;
+  width: auto;
+}
+.mailing_list .three-col {
+    padding-top: 30px;
+}
+.mailing_list ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.mailing_list .three-col li {
+  float: left;
+  width: 33.3333%;
+}
+
+.mailing_list .three-col li {
+    text-align: center;
+}
+.mailing_list li {
+    line-height: 20px;
+}
+.mailing_list .three-col li a.block {
+    min-height: 350px;
+}
+.mailing_list .three-col li a.block {
+    background: #fff none repeat scroll 0 0;
+    border-top: 4px solid #fff;
+    display: block;
+    padding: 60px 20px;
+    transition: background-color 0.2s ease 0s, border 0.2s ease 0s;
+}
+
+.mailing_list .icon {
+    background: #222 none repeat scroll 0 0;
+    margin: 0 auto 25px;
+    padding: 18px 0;
+    position: relative;
+    width: 80px;
+    z-index: 10;
+}
+
+.mailing_list h2 {
+    color: #444;
+    font-family: "brandon-grotesque",sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.mailing_list p.handle {
+    color: #888;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.mailing_list #instagram, .mailing_list .blog figure {
+    margin: 0 auto;
+    max-width: 240px;
+}
+
+@media(max-width: 780px){
+	#mc_embed_signup .mc-field-group input.fname{
+		width: 100%;
+		margin: 0px;
+	}
+	#mc_embed_signup .mc-field-group input.lname{
+		width: 100%;
+		margin: 0px;
+	}
+	#mc_embed_signup .mc-field-group input.email{
+		width: 100%;
+		margin: 0px;
+	}
 }
 

@@ -17,7 +17,7 @@ include CarrierWave::MiniMagick
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "#{Rails.root}/public/uploads/#{model.class.to_s.underscore}/"
+    "#{Rails.root}/public/uploads/#{model.class.to_s.underscore}/images"
   end
 
   version :thumb do

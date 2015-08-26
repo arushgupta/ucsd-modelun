@@ -267,8 +267,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('glyphicons-halflings-regular.eot');
+  src: url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('glyphicons-halflings-regular.woff2') format('woff2'), url('glyphicons-halflings-regular.woff') format('woff'), url('glyphicons-halflings-regular.ttf') format('truetype'), url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -4405,7 +4405,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333;
+  color: #1C3D78 !important;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -4425,7 +4425,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #ddd;
+  background-color: red !important;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #888;
@@ -5709,17 +5709,32 @@ button.close {
   overflow: hidden;
 }
 .modal {
-  position: fixed;
+ position:absolute;
+overflow:scroll;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1040;
   display: none;
-  overflow: hidden;
+ 
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }
+.section .container .row .isotope-item .modal {
+  position:fixed;
+overflow:scroll;
+  top: 10%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  display: none;
+
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform .3s ease-out;
        -o-transition:      -o-transform .3s ease-out;
@@ -6633,17 +6648,82 @@ background-color: #337AB7;}
 .deadline_head2 {
     text-align: center;
 }
-.ta{height: 290px !important;}
-.deadline_fee{text-align: center; margin-top: 122px;font-weight: bold;}
+.ta {
+  height: 290px !important;
+}
+.deadline_fee {
+  text-align: center; 
+  margin-top: 122px;
+  font-weight: bold;
+}
 .deadline_info {
     text-align: center;
     font-weight: bold;
 }
-.deadline_thumnail{border:0px!important;background-color:#f0ffff !important;}
-.modal_data{float:left; padding-right: 17px;}
-.panel_data{font-weight: bold;font-size:20px;}
-.committee_chair{font-weight: bold;font-size:20px;}
-.secre_major{padding-bottom: 10px;}
-.about_img{height: 202px;width: 223px;margin: 10px;}
-.about_img_width{width:21.333% !important;}
-.cmt_container{padding:0px !important;}
+.deadline_thumnail {
+  border: 0px!important;
+  background-color: #f0ffff !important;
+}
+.modal_data {
+  float: left;
+}
+.panel_data {
+  font-weight: bold;
+  font-size: 20px;
+}
+.committee_chair {
+  font-weight: 300;
+  font-size: 16px;
+  color: #444;
+}
+.committee-dias-name {
+  font-weight: 400;
+  font-size: 16px;
+  padding-left: 1%;
+  color: #444;
+}
+h4.committee-topic {
+  padding-top: 1%;
+  padding-bottom: 2%;
+  font-weight: 200;
+  color: #444;
+}
+.modal-title-header {
+  font-weight: 200;
+}
+.committee-subheading {
+  padding-right: 1%;
+  font-weight: 200 !important;
+}
+.chair-name {
+  font-weight: 300;
+}
+.topic-data {
+  padding-top: 3%;
+}
+.topic-data .modal_data .committee-image-height {
+  max-height: 200px;
+  padding: 0% 0% 2% 0% !important;
+}
+.topic-data span.topic_desc p{
+  padding-bottom: 2.5%;
+}
+.secre_major {
+  padding-bottom: 10px;
+}
+.about_img { 
+  height: 202px;
+  width: 223px;
+  margin: 10px;
+}
+.about_img_width {
+  width: 21.333% !important;
+}
+.cmt_container {
+  padding: 0px !important;
+}
+.shrink {
+  width: 100%; 
+  height: auto;
+  padding: 0.5% !important;
+}
