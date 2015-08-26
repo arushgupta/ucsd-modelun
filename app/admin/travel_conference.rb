@@ -3,8 +3,9 @@ ActiveAdmin.register TravelConference do
   menu priority: 13
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :name, :short_name, :season, :year, :location, :host, :category_id, :start_date, :end_date, :is_active, awards_attributes: [:award, :award_count, :is_active, :_destroy]
- 
+  permit_params :name, :short_name, :season, :year, :location, :host, :category_id, :start_date, :end_date, :travel_team_image_url, :is_active, awards_attributes: [:award_name, :award_recipient, :award_count, :is_active, :_destroy]
+  decorate_with TravelConferenceDecorator
+
   controller do
     def show
       @page_title = "Travel Conference"
@@ -18,7 +19,13 @@ ActiveAdmin.register TravelConference do
     column :short_name
     column :season
     column :year
+    column :start_date
+    column :end_date
     column :location
+    column :host
+    column 'Travel Team Image' do |upload|
+      upload.travel_team_image_url
+    end
     column :category
     column :is_active
     column 'Awards' do |finder|
@@ -33,7 +40,11 @@ ActiveAdmin.register TravelConference do
       row :short_name
       row :season
       row :year
+      row :start_date
+      row :end_date
       row :location
+      row :host
+      row :travel_team_image_url
       row :category
       row :is_active
       row 'Awards' do |finder|
@@ -52,7 +63,8 @@ ActiveAdmin.register TravelConference do
       f.input :start_date, as: :string, input_html: {class: 'datepicker'}
       f.input :end_date, as: :string, input_html: {class: 'datepicker'}
       f.input :location
-      f.input :host
+      f.input :host 
+      f.input :travel_team_image_url, as: :file, image_preview: true, label: "Travel Team Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.travel_team_image_url) : ""
       f.input :is_active, label: "Active"
     end
     f.actions

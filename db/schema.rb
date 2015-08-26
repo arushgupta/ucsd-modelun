@@ -46,8 +46,9 @@ ActiveRecord::Schema.define(version: 20150824160554) do
   end
 
   create_table "awards", force: :cascade do |t|
-    t.string   "award"
-    t.integer  "award_count"
+    t.string   "award_name"
+    t.string   "award_recipient"
+    t.integer  "award_count",          default: 1
     t.integer  "travel_conference_id"
     t.boolean  "is_active",            default: true
     t.datetime "created_at",                          null: false
@@ -216,17 +217,19 @@ ActiveRecord::Schema.define(version: 20150824160554) do
 
   create_table "training_sessions", force: :cascade do |t|
     t.date     "date"
-    t.string   "committee"
-    t.string   "topic"
-    t.string   "description"
-    t.string   "image_url"
+    t.string   "committee_name"
+    t.string   "topic_name"
+    t.string   "topic_description"
+    t.string   "location"
+    t.string   "topic_image_url"
+    t.string   "committee_image_url"
     t.string   "topic_guide_url"
     t.time     "start_time"
     t.time     "end_time"
     t.integer  "category_id"
-    t.boolean  "is_active",       default: true
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.boolean  "is_active",           default: true
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "travel_conferences", force: :cascade do |t|
@@ -238,10 +241,11 @@ ActiveRecord::Schema.define(version: 20150824160554) do
     t.date     "end_date"
     t.string   "location"
     t.string   "host"
+    t.string   "travel_team_image_url"
     t.integer  "category_id"
-    t.boolean  "is_active",   default: true
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "is_active",             default: true
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "users", force: :cascade do |t|

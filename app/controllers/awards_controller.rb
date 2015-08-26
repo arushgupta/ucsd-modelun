@@ -1,9 +1,7 @@
-class AwardsController < InheritedResources::Base
-
-  private
-
-    def award_params
-      params.require(:award).permit(:award, :subheading, :page_description, :is_active)
-    end
+class AwardsController < ApplicationController
+  def index
+    @travelconferences = TravelConference.all
+    # awards = TravelConference.where(travel_conference_id: params[:id]).to_a.count
+    @awards = Award.all.where(is_active: true).to_a
+  end
 end
-

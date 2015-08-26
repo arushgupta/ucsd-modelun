@@ -1,47 +1,90 @@
-<p id="notice"><%= notice %></p>
+<div class = "section">
+  <div class = "container cmt_container">
 
-<h1>Listing Training Sessions</h1>
+    <div class="row" style = "margin-bottom: 3%; margin-top: 2%;">
+      <div class="col-lg-12 text-center " style = "background-image: url('/assets/conference-title.jpg'); background-size: cover;">
+        <h2 class = "section-heading">Training Sessions</h2>
+        <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      </div>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Committee</th>
-      <th>Topic</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Topic guide url</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Subheading</th>
-      <th>Page description</th>
-      <th>Is active</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class = "row object-non-visible animated object-visible fadeIn" data-animation-effect = "fadeIn">
+      <div class = "col-md-12">
+        <div style = "height: auto;" class = "isotope-container row grid-space-20">
+          <% @trainingsessions.each do |session|%>
+            <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
+              <div class = "image-box">
+                <div class = "overlay-container">
+                  <%= image_tag  session.image_url.url, class: "img-responsive "%> 
+                  <a class = "overlay testimg" id = "<%=session.id%>" data-toggle = "modal" data-target = "#project-1">
+                    <i class = "fa fa-plus-circle"></i>
+                  </a>
+                </div>
+              <div class = "btn-block" data-toggle = "modal" data-target = "#project-1">
+                <%=session.committee%>
+              </div>
+            </div>
 
-  <tbody>
-    <% @training_sessions.each do |training_session| %>
-      <tr>
-        <td><%= training_session.date %></td>
-        <td><%= training_session.committee %></td>
-        <td><%= training_session.topic %></td>
-        <td><%= training_session.description %></td>
-        <td><%= training_session.image_url %></td>
-        <td><%= training_session.topic_guide_url %></td>
-        <td><%= training_session.start_time %></td>
-        <td><%= training_session.end_time %></td>
-        <td><%= training_session.subheading %></td>
-        <td><%= training_session.page_description %></td>
-        <td><%= training_session.is_active %></td>
-        <td><%= link_to 'Show', training_session %></td>
-        <td><%= link_to 'Edit', edit_training_session_path(training_session) %></td>
-        <td><%= link_to 'Destroy', training_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <div class = "modal fade" id = "<%= session.id %>session" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+              <div class = "modal-dialog">
+                <div class = "modal-content">
+                  <div class = "modal-header">
+                    <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">&times;</button>
+                    <h2 class = "modal-title modal-title-header" id = "myModalLabel">
+                      <%= session.committee %>
+                    </h2>
+                  </div>
+                  <div class = "modal-body">
 
-<br>
+                    <a class = "btn commt_button conference_promo_button conference_button button-white-bg" style = "margin-top: -10px; margin-right: -8px; min-width:0px;">
+                      Topic Guide
+                      <span class="glyphicon glyphicon-chevron-right button-icon-hider"></span>
+                    </a>
+                  
+                    <p>
+                      <span class = "committee_chair committee-subheading">
+                        Date:
+                        <span class = "chair-name">
+                          <%= session.date.strftime("%A, %B %d") %>
+                        </span>
+                      </span>
+                      <span class = "committee_chair committee-subheading">
+                        Duration:
+                      </span>
+                      <span class = "chair-name">
+                        <%= session.start_time.strftime("%-I:%M %p ") %>-<%= session.end_time.strftime("%-I:%M %p ") %>
+                      </span>
+                    </p>
+                    
+                    <div class = "topic-data">
+                      <h4 class = "committee-topic">
+                        <%= session.topic %>
+                      </h4>
+                      <span class = "topic_desc">
+                        <%= session.description.html_safe %>
+                      </span>
+                    </div>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal --> 
+                <!-- Modal end -->     
+            </div>
+          <%end%>
+        </div>
+            <!-- portfolio items end -->
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'New Training session', new_training_session_path %>
+<script type="text/javascript">
+$(window).load(function(){
+    $('.testimg').on('click',function()
+                {    var id =$(this).attr("id")
+                    // var sr=$(this).attr('src'); 
+                    // $('#mimg').attr('src',sr);
+                    $('#'+id+"session").modal('show');
+                });
+});
+</script>

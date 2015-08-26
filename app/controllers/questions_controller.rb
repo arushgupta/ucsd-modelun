@@ -3,7 +3,6 @@ class QuestionsController < ApplicationController
 before_action :admin_user,     only: [:destroy, :create]
   
   def new
-    byebug
   	@question = Question.new
   end
   
@@ -28,7 +27,6 @@ before_action :admin_user,     only: [:destroy, :create]
   def index
   	# @questions = Question.find(params[:faq_id])
   	# @questions = Question.where()
-    byebug
     puts :id
 
   	@faq = Faq.find(params[:faq_id])

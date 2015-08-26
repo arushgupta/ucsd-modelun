@@ -1,1 +1,0 @@
-json.extract! @training_session, :id, :date, :committee, :topic, :description, :image_url, :topic_guide_url, :start_time, :end_time, :subheading, :page_description, :is_active, :created_at, :updated_at

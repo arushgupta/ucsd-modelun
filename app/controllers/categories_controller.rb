@@ -1,29 +1,5 @@
 class CategoriesController < ApplicationController
 
-# before_action :admin_user,     only: [:destroy, :create]
-  
-  # def new
-  # 	@category = Category.new
-  # end
-  
-  # def create
-    
-  #   if @category.exists
-  #     return redirect_to :action => 'index'
-  #   end
-
-  # 	 @category = Category.new(category_params)
-  #     if @category.save
-  #       redirect_to root_url
-  #     else
-  #       render 'new'
-  #     end
-  # end
-  
-  # def show
-  #   @category = Category.find(params[:id])
-  # end
-
   def index
    @categories = Category.all.where(is_active: true)
    #@cat=Category.all.where("categories.category_id IS NOT NULL")
@@ -36,7 +12,7 @@ class CategoriesController < ApplicationController
    # @deadlines=Deadline.all.where(category_id: params[:id])
    # @speakers=Speaker.all.where(category_id: params[:id])
     @secretariats = Secretariat.all.where(category_id: params[:id])
-end
+  end
 #   def new
 #   	@category = Category.new
 #   end
