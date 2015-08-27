@@ -89,7 +89,7 @@ footer {
 .col-sm {
   margin-left: 2px;
   margin-right: -50px;
-  /*padding-top: 470px;*/
+  /*padding-top: 20px;*/
   /*width: 16%;*/
   float: left;
 }
@@ -105,7 +105,7 @@ footer {
 }
 
 .second_img img {
-  height: 230px;
+  height: 234px;
   overflow: hidden;
   width: 385px;
 }
@@ -116,7 +116,7 @@ footer {
 
 
 .main_image img {
-    height: 465px;
+    height: 478px;
     overflow: hidden;
     width: 900px;
 }
@@ -132,10 +132,13 @@ footer {
   margin: 0;
   width: 100%;
   margin-top: 10px;
+  border: 2px solid black;
 }
  .thumb img {
-  width: 50%;
-  margin: 2px;
+  /*width: 50%;*/
+  /*margin: 2px;*/
+  margin-bottom: -5px; 
+
 }
 .thumb img {
   width: 100%;  
@@ -201,7 +204,7 @@ footer {
   left: 0;
 }
 .main-low-margin {
-  margin-top: 55px;
+  margin-top: 3%;
 }
 /* Deadlines */
 #pricing-section .plan-main {

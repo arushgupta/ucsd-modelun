@@ -8,26 +8,45 @@
   </div> 
   
   <div class="main-low-margin col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margin-top-100 ">
-    <div id="pricing-table" class="row">
+    <div class = "awards-section">
       <% @travelconferences.each do |tconference| %>
-          <div class="col-md-4 col-sm-4">
-            <ul class="plan-main">
-              <li class="plan-name">
-                <%= tconference.short_name %> <%= tconference.year %>
-              </li>
-              <li>
-                <%= image_tag  tconference.travel_team_image_url.url %>
-              </li>
-            </ul>
-              <% tconference.awards.each do |award|%>
-              <ul class = "plain-main">
-              <li>
-                  <span class= "plan-price"><%= award.award_name %></span>
-              </li>
-            </ul>
+        <div class = "awards-title">
+          <span class = "travel-title">
+            <%= tconference.short_name %>,
+          </span>
+          <span class = "travel-time">
+            <%= tconference.season %> <%= tconference.year %>
+          </span>
+        </div>
+        <div class = "travel-img">
+          <%= image_tag tconference.travel_team_image_url.url, class: "img-responsive" %>
+        </div>
+        <div class = "award-list">
+          <div class = "award-list-heading">
+            Awards
           </div>
-        <%end%>
+          <% tconference.awards.each do |award| %>
+            <% if award.award_recipient.blank? %>
+              <ul class = "awards">
+                <li>
+                  <%= award.award_name %>
+                </li>
+              </ul>
+            <%else%>
+              <ul class = "awards">
+                <li>
+                  <span class = "award-recipient">
+                    <%= award.award_recipient %>:
+                  </span>
+                  <span>
+                    <%= award.award_name %>
+                  </span>
+                </li>
+              </ul>
+            <%end%>
+          <%end%>
+        </div>
       <%end%>
-    </div>              
+    </div>
   </div>
 </div>

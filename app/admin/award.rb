@@ -3,7 +3,7 @@ ActiveAdmin.register Award do
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   config.sort_order = 'id_asc'
-  permit_params :award_name, :award_recipient, :award_count, :is_active
+  permit_params :award_name, :award_recipient, :award_count, :category_id, :is_active
   before_action :set_travel_conference
   belongs_to :travel_conference
   navigation_menu :default
@@ -38,6 +38,7 @@ ActiveAdmin.register Award do
     column :award_name
     column :award_recipient
     column :award_count
+    column :category
     column :is_active
     actions
   end
@@ -48,12 +49,14 @@ ActiveAdmin.register Award do
       row :award_name
       row :award_recipient
       row :award_count
+      row :category
       row :is_active
     end
   end
 
   form do |f|
-    f.inputs 'Question Details' do
+    f.inputs 'Award Details' do
+      f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :award_name, label: "Award"
       f.input :award_recipient, label: "Recipient"
       f.input :award_count

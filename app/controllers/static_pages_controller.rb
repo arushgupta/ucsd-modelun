@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
     @tritonmun = HomeGallery.where(gallery_type: "T").order('created_at DESC').last(3)
     @sdimun = HomeGallery.where(gallery_type: "S").order('created_at DESC').last(3)
     @travel = HomeGallery.where(gallery_type: "V").order('created_at DESC').last(3)
+    @secretariats = Secretariat.where(is_active: true).last(3)
+    @user = User.new
   end 
   
   def home

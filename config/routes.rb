@@ -43,6 +43,8 @@ Rails.application.routes.draw do
   end
 
   resources :secretariats
+  resources :home_galleries
+  resources :alumnis
   resources :awards
   resources :categories
   resources :deadlines

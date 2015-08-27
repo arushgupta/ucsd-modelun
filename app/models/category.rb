@@ -1,6 +1,7 @@
 class Category < ActiveRecord::Base
 
   has_many :apply_nows
+  has_many :awards
   has_many :categories
   has_many :committees
   has_many :deadlines
@@ -13,6 +14,8 @@ class Category < ActiveRecord::Base
   has_many :speakers
   has_many :travel_conferences
   has_many :training_sessions
+  has_many :icons
+  has_many :alumnis
   belongs_to :category
   belongs_to :parent_category, class: "Category"
   has_many :subcategories, class: "Category"

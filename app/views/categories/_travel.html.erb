@@ -50,8 +50,7 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <%= link_to image_tag("conference-4.jpg", alt: "logo"),
-            speakers_path(cat_id:params[:id]) %>
+            <%= link_to image_tag("conference-4.jpg", alt: "logo"),speakers_path(cat_id:params[:id]) %>
           </div>
           <div class = "conference_blurb_container">
             <h4><%= link_to "Resources", speakers_path(cat_id: params[:id]) %></h4>
@@ -64,11 +63,10 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <%= link_to image_tag("conference-5.jpg", alt: "logo"),
-            awards_path %>
+            <%= link_to image_tag("conference-5.jpg", alt: "logo"), awards_path %>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Awards", awards_path %></h4>
+            <h4><%= link_to "Past Conference And Awards", awards_path %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>

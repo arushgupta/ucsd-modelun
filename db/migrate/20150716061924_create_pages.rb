@@ -9,7 +9,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :subheading
       t.text :page_description
       t.references :category      
-      t.boolean :is_active, :default => true
+      t.boolean :is_active, default: true
       
       t.timestamps null: false
     end

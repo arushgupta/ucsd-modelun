@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824160554) do
+ActiveRecord::Schema.define(version: 20150827103255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(version: 20150824160554) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "alumnis", force: :cascade do |t|
+    t.string   "name"
+    t.string   "major"
+    t.string   "email"
+    t.string   "image_url"
+    t.text     "bio"
+    t.integer  "category_id"
+    t.boolean  "is_active",   default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "apply_nows", force: :cascade do |t|
     t.string   "headline"
     t.string   "button_url"
@@ -50,6 +62,7 @@ ActiveRecord::Schema.define(version: 20150824160554) do
     t.string   "award_recipient"
     t.integer  "award_count",          default: 1
     t.integer  "travel_conference_id"
+    t.integer  "category_id"
     t.boolean  "is_active",            default: true
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
@@ -135,6 +148,18 @@ ActiveRecord::Schema.define(version: 20150824160554) do
     t.datetime "updated_at",                  null: false
   end
 
+  create_table "icons", force: :cascade do |t|
+    t.string   "overview_icon"
+    t.string   "sechedule_icon"
+    t.string   "commitee_icon"
+    t.string   "speaker_icon"
+    t.string   "fee_icon"
+    t.string   "faq_icon"
+    t.integer  "category_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "overviews", force: :cascade do |t|
     t.string   "season"
     t.date     "start_date"
@@ -142,6 +167,7 @@ ActiveRecord::Schema.define(version: 20150824160554) do
     t.string   "location"
     t.integer  "delegation_fee"
     t.date     "position_paper_deadline"
+    t.text     "welcome_letter"
     t.integer  "category_id"
     t.boolean  "is_active",               default: true
     t.datetime "created_at",                             null: false
@@ -249,7 +275,8 @@ ActiveRecord::Schema.define(version: 20150824160554) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email"
     t.boolean  "is_active",       default: true
     t.datetime "created_at",                     null: false
