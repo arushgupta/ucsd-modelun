@@ -1,0 +1,2 @@
+module TravelConferenceHelper
+end

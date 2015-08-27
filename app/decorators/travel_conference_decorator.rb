@@ -5,3 +5,4 @@ class TravelConferenceDecorator < Draper::Decorator
     h.image_tag model.travel_team_image_url_url
   end
 end
+
