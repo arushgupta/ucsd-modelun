@@ -1,79 +1,235 @@
-<div class="container">
-  <div class="row"  style="margin-left:10%; margin-right:10%;">
-    <div class="col-md-12">
-      <h2 style="text-align:center;">UC SAN DIEGO TRITONMUN XIII SPONSORSHIPS</h2>
-      <div class="col-md-12" style="padding-top:10px;">
-        <h3 style="padding-top:15px; padding-bottom:10px;">Prospective Sponsors,</h3>
-      <p style="padding-top:10px;">My name is John Murillo and I am the Chief-of-Staff for the 12th session of UC San Diego’s Model United Nations conference (TRITONMUN XIII). I am delighted to inform you of a sponsorship opportunity for your organization.</p>
-      <p style="padding-top:10px;">UC San Diego Model United Nations hosts three annual conferences at the Price Center in San Diego. We host a conference in the Fall for High School students, one in the Winter for College students, and one more in the Spring for High School students. This year, our Fall conference will be held October 24, 2015, our Winter conference will be held February 7, 2015 and our Spring Conference will be held April 20-21, 2015. Delegates from top-tier high schools and universities throughout the country, including UCLA, and USD will attend. Overall, we expect over 200 exceptional delegates for our Fall and Winter Conferences, and 300 delegates for our Spring Conference. All of whom will be searching for internships, jobs, and educational opportunities. We guarantee that your institution will find an appropriate audience in our participants.</p>
-      <p style="padding-top:10px;">Your organization’s contribution will allow TRITONMUN to maintain the caliber of its conference and bring together future world leaders and educate them to create positive change in the world of tomorrow. With our innovative sponsorship packages, a broad range of organizations can sponsor TRITONMUN XIII, and all are guaranteed a return on their investment through creating new networks with potential employees, finding prospective customers, and building on your organization’s public image.</p>
-      <p style="padding-top:10px;">Our conferences attract motivated and globally aware individuals from diverse backgrounds. Delegates come from all fields of study, and display a wide range of interests, and professional goals. This is the first year our organization is open to sponsorship, as we feel we have grown to the level where we can offer a mutually beneficial environment for companies seeking a diverse and motivated audience. As a student organization at the University of California at San Diego, we are a non-profit unincorporated association with IRS Code 501(c) 3, making any contribution to our organization tax deductible.</p>
-      <p style="padding-top:10px;">I want to thank you for taking the time to read this, and below you will find a brief sponsorship guide. I hope that you will be able to contribute to our cause, and please feel free to contact me at <a href="#">jpmurill@ucsd.edu</a> with any questions, concerns or alternative sponsorship ideas that you may have.</p>
-      <p style="padding-top:15px;">Sincerely,</p>
-      <p>John Murillo</p>
-      <p>Chief-of-Staff</p>
-      </div>
-    </div>
+<div class = "conference row header-title-bg" style = "margin: 2% 0% 3% 0%;">
+  <div class="col-lg-12 text-center sponsor-header-img">
+    <h2 class = "section-heading"><%= @categories.where(id: params[:id]).take.name %></h2>
+    <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+  </div>
+</div>
 
-    <div >
-    <div class="table-responsive">
-      <table class="table">
-        <tr>
-         <th style="width:2%;"></th>
-         <th>Bronze ($500)</th>
-         <th>Bronze ($500)</th>
-         <th>Gold ($2000)</th>
-         <th>Platinum ($3000)</th>
-        </tr>
-        <tr>
-          <th style="width:2%;">Promotion on Home Page and Mobile App</th>
-         <th>X</th>
-         <th>X</th>
-         <th>X</th>
-         <th>X</th>
-        </tr>
-        <tr>
-         <th style="width:2%;">Advertisement in the Conference Guide (Pages)</th>
-         <th>1/2</th>
-         <th>1</th>
-         <th>2</th>
-         <th>3</th>
-        </tr>
-        <tr>
-         <th style="width:2%;">Promotional Duration (Days)</th>
-         <th>1</th>
-         <th>2</th>
-         <th>3</th>
-         <th>4</th>
-        </tr>
-        <tr>
-          <th style="width:2%;">Banners in Conference Area</th>
-         <th></th>
-         <th>1</th>
-         <th>2</th>
-         <th>3</th>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
-</div>
-<div class = "container">
-  <div class="main-low-margin col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margin-top-100 ">
-    <div id = "pricing-section" class = "row">
-      <div class="col-md-12 col-sm-12">
-        <ul class="plan-main" style = "margin-bottom: 10%;">
-          <li class="plan-name">Coming Soon</li>
-          <li>For Inquiries Please Contact:</li>
-          <li>
-           John Murillo
-          </li>
-          <li>
-            Chief-of-Staff
-          </li>
-          <li><a href="mailto:jpmurill@ucsd.edu?" target="_top">jpmurill@ucsd.edu</a></li>
-        </ul>
+<section id = "team" class = "bg-light-gray" style = "padding:0px 0px;">
+  <div class = "container a faq">
+    
+    <div class = "row faqtable" style = "margin-top: 5%; margin-bottom: 5%;">
+      <div class = "content container faqs">
+        <div class = "page-wrapper">
+            <div class = "page-content">
+              <div class = "row page-row">
+                <div class = "faq-wrapper col-md-8 col-sm-7">
+                  <div class = "panel-group" id = "accordion">
+                    <div class = "panel panel-default">
+                      <div class = "sponsor-panel-heading dropdown" id = "letter">
+                        <%= link_to "Letter to Sponsors", "javascript:void(0)", class: "cmt_button11 panel-title sponsor-tier-title"%>
+                        <div style = "display: none;" class = "letter-dropdown">
+                          <div class = "panel-body">
+                            <div class = "container">
+                              <div class = "col-md-12">
+                                <h2 class = "sponsor-letter-title">UC SAN DIEGO TRITONMUN XIII SPONSORSHIPS</h2>
+                                <div class = "col-md-12 sponsor-letter-content">
+                                  <h3 class = "sponsor-letter-start">Prospective Sponsors,</h3>
+                                  <p style = "padding-top:10px;">My name is John Murillo and I am the Chief-of-Staff for the 12th session of UC San Diego’s Model United Nations conference (TRITONMUN XIII). I am delighted to inform you of a sponsorship opportunity for your organization.</p>
+                                  <p style="padding-top:10px;">UC San Diego Model United Nations hosts three annual conferences at the Price Center in San Diego. We host a conference in the Fall for High School students, one in the Winter for College students, and one more in the Spring for High School students. This year, our Fall conference will be held October 24, 2015, our Winter conference will be held February 7, 2015 and our Spring Conference will be held April 20-21, 2015. Delegates from top-tier high schools and universities throughout the country, including UCLA, and USD will attend. Overall, we expect over 200 exceptional delegates for our Fall and Winter Conferences, and 300 delegates for our Spring Conference. All of whom will be searching for internships, jobs, and educational opportunities. We guarantee that your institution will find an appropriate audience in our participants.</p>
+                                  <p style="padding-top:10px;">Your organization’s contribution will allow TRITONMUN to maintain the caliber of its conference and bring together future world leaders and educate them to create positive change in the world of tomorrow. With our innovative sponsorship packages, a broad range of organizations can sponsor TRITONMUN XIII, and all are guaranteed a return on their investment through creating new networks with potential employees, finding prospective customers, and building on your organization’s public image.</p>
+                                  <p style="padding-top:10px;">Our conferences attract motivated and globally aware individuals from diverse backgrounds. Delegates come from all fields of study, and display a wide range of interests, and professional goals. This is the first year our organization is open to sponsorship, as we feel we have grown to the level where we can offer a mutually beneficial environment for companies seeking a diverse and motivated audience. As a student organization at the University of California at San Diego, we are a non-profit unincorporated association with IRS Code 501(c) 3, making any contribution to our organization tax deductible.</p>
+                                  <p style="padding-top:10px;">I want to thank you for taking the time to read this, and below you will find a brief sponsorship guide. I hope that you will be able to contribute to our cause, and please feel free to contact me at <a href="#">jpmurill@ucsd.edu</a> with any questions, concerns or alternative sponsorship ideas that you may have.</p>
+                                  <p style="padding-top:15px;">Sincerely,</p>
+                                  <p>John Murillo</p>
+                                  <p>Chief-of-Staff</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class = "page-content">
+              <div class = "row page-row">
+                <div class = "faq-wrapper col-md-8 col-sm-7">
+                  <div class = "panel-group" id = "accordion">
+                    <div class = "panel panel-default">
+                      <div class = "sponsor-panel-heading" id = "table">
+                        <%= link_to "Sponsorship Opportunities", "javascript:void(0)", class: "cmt_button12 panel-title sponsor-tier-title"%>
+                        <div style = "display: none;" class = "table-dropdown">
+                          <div class = "panel-body">
+                            <div class="container">
+                              <div class="table-responsive">
+                               <table class="table">
+                                <tr>
+                                  <th class = "first-col"></th>
+                                  <th class = "sponsor-th-content">Bronze ($500)</th>
+                                  <th class = "sponsor-th-content">Bronze ($500)</th>
+                                  <th class = "sponsor-th-content">Gold ($2000)</th>
+                                  <th class = "sponsor-th-content last-col">Platinum ($3000)</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Promotion on Home Page and Mobile App</th>
+                                  <th class = "sponsor-th-content">X</th>
+                                  <th class = "sponsor-th-content">X</th>
+                                  <th class = "sponsor-th-content">X</th>
+                                  <th class = "sponsor-th-content last-col">X</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Advertisement in the Conference Guide (Pages)</th>
+                                  <th class = "sponsor-th-content">1/2</th>
+                                  <th class = "sponsor-th-content">1</th>
+                                  <th class = "sponsor-th-content">2</th>
+                                  <th class = "sponsor-th-content last-col">3</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Promotional Duration (Days)</th>
+                                  <th class = "sponsor-th-content">1</th>
+                                  <th class = "sponsor-th-content">2</th>
+                                  <th class = "sponsor-th-content">3</th>
+                                  <th class = "sponsor-th-content last-col">4</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Banners in Conference Area</th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content">1</th>
+                                  <th class = "sponsor-th-content">2</th>
+                                  <th class = "sponsor-th-content last-col">3</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Verbal Mention at Opening and Closing Ceremony</th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content">X</th>
+                                  <th class = "sponsor-th-content">X</th>
+                                  <th class = "sponsor-th-content last-col">X</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Sponsorship Slideshow at Opening and Closing Ceremony</th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content">X</th>
+                                  <th class = "sponsor-th-content last-col">X</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Naming Rights to Conference Events</th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content">1 Event</th>
+                                  <th class = "sponsor-th-content last-col">2 Events</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Opportunity to Address Delegates at Opening Ceremony</th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content last-col">X</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Logo on Pictures and Podium</th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content last-col">X</th>
+                                </tr>
+                                <tr>
+                                  <th class = "first-col">Opportunity to Address Delegates During Committee</th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content"></th>
+                                  <th class = "sponsor-th-content last-col">X</th>
+                                </tr>
+                               </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class = "page-content">
+              <div class = "row page-row">
+                <div class = "faq-wrapper col-md-8 col-sm-7">
+                  <div class = "panel-group" id = "accordion">
+                    <div class = "panel panel-default">
+                      <div class = "sponsor-panel-heading" id = "inquiry">
+                        <%= link_to "Further Inquiries", "javascript:void(0)", class: "cmt_button13 panel-title sponsor-tier-title"%>
+                        <div style = "display: none;" class = "inquiry-dropdown">
+                          <div class = "panel-body">
+                            <div class="container">
+                              <ul style = "list-style-type: none; font-size: 18px; font-weight: 200;">
+                                <li style = "padding-bottom: 5%;">For Inquiries Please Contact:</li>
+                                <li>
+                                  John Murillo
+                                </li>
+                                <li>  
+                                  Chief-of-Staff
+                                </li>
+                                <li>
+                                  <a href="mailto:jpmurill@ucsd.edu?" target="_top">
+                                    jpmurill@ucsd.edu
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $(".cmt_button11").click(function(e){
+    e.preventDefault();
+    var $div = $(this).next('.letter-dropdown');
+    $(".letter-dropdown").not($div).hide();
+    $(".table-dropdown").not($div).hide();
+    $(".inquiry-dropdown").not($div).hide();
+    $(".sponsor-panel-heading .cmt_button13").css('display', 'block');
+    $(".sponsor-panel-heading .cmt_button12").css('display', 'block');
+    $(".sponsor-panel-heading .cmt_button11").css('display', 'none');
+    $("#letter").css({'padding-top': '10%', 'padding-bottom': '10%'});
+    if ($div.not(":visible")) {
+      $div.show();
+    }
+  });
+  
+  $(".cmt_button12").click(function(e){
+    e.preventDefault();
+    var $div = $(this).next('.table-dropdown');
+    $(".letter-dropdown").not($div).hide();
+    $(".table-dropdown").not($div).hide();
+    $(".inquiry-dropdown").not($div).hide();
+    $(".sponsor-panel-heading .cmt_button12").css('display', 'none');
+    $(".sponsor-panel-heading .cmt_button11").css('display', 'block');
+    $(".sponsor-panel-heading .cmt_button13").css('display', 'block');
+    $("#table").css({'padding-top': '10%', 'padding-bottom': '10%'});
+    if ($div.not(":visible")) {
+      $div.show();
+    }
+  });  
+
+  $(".cmt_button13").click(function(e){
+    e.preventDefault();
+    var $div = $(this).next('.inquiry-dropdown');
+    $(".letter-dropdown").not($div).hide();
+    $(".table-dropdown").not($div).hide();
+    $(".inquiry-dropdown").not($div).hide();
+    $(".sponsor-panel-heading .cmt_button12").css('display', 'block');
+    $(".sponsor-panel-heading .cmt_button11").css('display', 'block');
+    $(".sponsor-panel-heading .cmt_button13").css('display', 'none');
+    $("#inquiry").css({'padding-top': '10%', 'padding-bottom': '10%'});
+    if ($div.not(":visible")) {
+      $div.show();
+    }
+  });
+});
+</script>

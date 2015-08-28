@@ -386,6 +386,26 @@ a.conference_promo_button.button-white-bg:hover {
   background-image: url(/assets/conference-title.jpg);
   background-size: cover;
 }
+.page-header-img {
+  background-image: url(/assets/hex-bg-black.jpg);
+  background-size: cover;
+}
+.about-header-img {
+  background-image: url(/assets/hex-bg-black.jpg);
+  background-size: cover;
+}
+.travel-header-img {
+  background-image: url(/assets/geometic-bg-black.jpg);
+  background-size: cover;
+}
+.sponsor-header-img {
+  background-color: #305b74;
+  background-size: cover;
+}
+.contact-header-img {
+  background-image: url(/assets/ascend-bg.jpg);
+  background-size: cover;
+}
 .button-icon-hider {
   display: none;
 }
@@ -433,4 +453,94 @@ ul.awards {
 span.award-recipient {
   font-weight: 300;
   color: #333;
+}
+
+/* Pages */
+h1.pages-title {
+  font-size: 28px;
+  font-weight: 100;
+  color: #777;
+  padding-bottom: 3%;
+  padding-left: 2%;
+}
+p.pages-description {
+  color: #555;
+  font-weight: 300;
+  padding: 0% 2% 1%;
+}
+ul.pages-list {
+  padding-bottom: 2%;
+  padding-left: 5%;
+  font-weight: 300;
+  color: #555;
+  list-style-type: circle;
+}
+.pages-block {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.image-text {
+  font-style: oblique;
+  color: #777;
+  font-weight: 200;
+  padding-top: 1%;
+}
+
+/* Sponsorship */
+.panel-default > .sponsor-panel-heading {
+  background-color: #FFFFFF;
+  border-color: #DDD;
+  text-align: center;
+  padding: 15% 0% 15% 0%;
+}
+a.sponsor-tier-title {
+  color: #777;
+  font-size: 42px;
+  font-weight: 100;
+}
+h2.sponsor-letter-title {
+  font-size: 22px;
+  font-weight: 300;
+  color: #222;
+}
+.sponsor-letter-content {
+  text-align: left;
+  font-weight: 200;
+}
+h3.sponsor-letter-start {
+  padding-top: 7%;
+  font-weight: 300;
+  color: #444;
+}
+.my-icon-class {
+  float: right;
+  color: #777 !important;
+  font-size: 14px;
+}
+.my-icon-class:hover {
+  color: #1C3D78 !important;
+}
+table.table {
+  width: 100%;
+  margin-bottom: 0%;
+  border-collapse: collapse;
+}
+table, th, td {
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+th.sponsor-th-content {
+  text-align: center;
+  font-weight: 200;
+  color: #666;
+  vertical-align: middle !important;
+}
+th.last-col {
+  border-right: 0;
+}
+th.first-col {
+  width: 2%;
+  text-align: left;
+  font-weight: 200;
+  color: #666;
 }

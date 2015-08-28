@@ -4,7 +4,7 @@ before_action :admin_user,     only: [:destroy, :create]
 
   def index
     @categories = Category.all.where(category_id: nil)
-    @pages = Page.find(params[:id])
+    @pages = Page.find(1)
   end
   
   private
