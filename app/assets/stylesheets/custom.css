@@ -434,3 +434,19 @@ span.award-recipient {
   font-weight: 300;
   color: #333;
 }
+
+@media(max-width: 780px){
+	#mc_embed_signup .mc-field-group input.fname{
+		width: 100%;
+		margin: 0px;
+	}
+	#mc_embed_signup .mc-field-group input.lname{
+		width: 100%;
+		margin: 0px;
+	}
+	#mc_embed_signup .mc-field-group input.email{
+		width: 100%;
+		margin: 0px;
+	}
+}
+
