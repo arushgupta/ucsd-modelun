@@ -64,7 +64,7 @@ ActiveAdmin.register TravelConference do
       f.input :end_date, as: :string, input_html: {class: 'datepicker'}
       f.input :location
       f.input :host 
-      f.input :travel_team_image_url, as: :file, image_preview: true, label: "Travel Team Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.travel_team_image_url) : ""
+      f.input :travel_team_image_url, as: :file, image_preview: true, label: "Image (size 860x700)", hint: f.object.id? ? image_tag(f.object.travel_team_image_url) : ""
       f.input :is_active, label: "Active"
     end
     f.actions

@@ -8,6 +8,8 @@ class CreatePages < ActiveRecord::Migration
       t.string :meta_title
       t.string :subheading
       t.text :page_description
+      t.string :page_icon_url
+      t.boolean :info_page
       t.references :category      
       t.boolean :is_active, default: true
       

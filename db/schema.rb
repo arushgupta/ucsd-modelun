@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827103255) do
+ActiveRecord::Schema.define(version: 20150828060057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,14 @@ ActiveRecord::Schema.define(version: 20150827103255) do
     t.datetime "updated_at",                     null: false
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "deadlines", force: :cascade do |t|
     t.string   "deadline_info"
     t.date     "date"
@@ -182,6 +190,8 @@ ActiveRecord::Schema.define(version: 20150827103255) do
     t.string   "meta_title"
     t.string   "subheading"
     t.text     "page_description"
+    t.string   "page_icon_url"
+    t.boolean  "info_page"
     t.integer  "category_id"
     t.boolean  "is_active",        default: true
     t.datetime "created_at",                      null: false

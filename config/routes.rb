@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   get 'home'   => 'static_pages#index'
   
 
+
+  resources :alumnis
+  resources :awards
+  resources :categories
+
   resources :committees do
     get :download
     collection do
@@ -23,37 +28,37 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :contacts
+  resources :deadlines
+
+  resources :faqs do
+    resources :questions
+  end
+
+  resources :home_galleries
+  resources :overviews
+  resources :pages
+
+  resources :schedules do
+    resources :events
+  end
+
+  resources :secretariats
+  resources :speakers
+  resources :static_pages
+
   resources :training_sessions do
     get :download
     collection do
       get :download
     end
   end
-
-  resources :schedules do
-    resources :events
-  end
-
-  resources :faqs do
-    resources :questions
-  end
   
   resources :travel_conferences do
     resources :awards
   end
 
-  resources :secretariats
-  resources :home_galleries
-  resources :alumnis
-  resources :awards
-  resources :categories
-  resources :deadlines
-  resources :overviews
-  resources :pages
-  resources :speakers
-  resources :users
-  resources :static_pages
-  
+  resources :users  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,7 +3,7 @@ ActiveAdmin.register Page do
   menu priority: 2
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :name, :summary, :content, :meta_keywords, :meta_title, :subheading, :page_description, :category_id, :is_active
+  permit_params :name, :summary, :content, :meta_keywords, :meta_title, :subheading, :page_description, :page_icon_url, :info_page, :category_id, :is_active
   
   controller do
     def show
@@ -19,6 +19,8 @@ ActiveAdmin.register Page do
     column (:content) {|page| raw(page.content)}
     column (:subheading) {|page| raw(page.subheading)}
     column (:page_description) {|page| raw(page.page_description)}
+    column :page_icon_url
+    column :info_page
     column :category
     column :is_active
     actions
@@ -34,6 +36,8 @@ ActiveAdmin.register Page do
       row :meta_title
       row (:subheading) {|page| raw(page.subheading)}
       row (:page_description) {|page| raw(page.page_description)}
+      row :page_icon_url
+      row :info_page
       row :category
       row :is_active
       row :created_at
@@ -51,6 +55,8 @@ ActiveAdmin.register Page do
       f.input :page_description, as: :ckeditor
       f.input :meta_keywords
       f.input :meta_title
+      f.input :page_icon_url, as: :file, image_preview: true, label: "Icon (size 500x500)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
+      f.input :info_page
       f.input :is_active
     end
     f.actions

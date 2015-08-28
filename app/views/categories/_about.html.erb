@@ -6,13 +6,14 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
            <%begin%>
-              <%= link_to image_tag(@icons.overview_icon, alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.overview_icon, alt: "logo"),pages_path(cat_id: params[:id]) %>
             <%rescue%>
-              <%= link_to image_tag("conference-1.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-1.jpg", alt: "logo"),pages_path(cat_id: params[:id]) %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Our Story", overviews_path(cat_id: params[:id]) %></h4>
+            <%debugger%>
+            <h4><%= link_to "Our Story", pages_path(cat_id: params[:id]) %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>
