@@ -64,7 +64,7 @@ body {
 }
 
 .conference_column {
-  /*float: left;*/
+  float: left;
   background-size: cover;
   background-position: center;
 }
@@ -137,7 +137,7 @@ body {
 
 @media (min-width: 981px){
   .conference_row_2{
-    display:  inline-flex;
+    /*display:  inline-flex;*/
   }
   .conference_row_3{
     display:  inline-flex;
@@ -455,19 +455,255 @@ span.award-recipient {
   color: #333;
 }
 
+.conference_blurb_image img {
+    height: 200px;
+    width: 188px;
+}
+@media (min-width: 981px) {
+  .et_pb_column{
+    float: left;
+    width: 25%;
+    text-align: center;
+  }
+  .et_pb_row{
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .new_container{
+    height: 530px;
+    background-color: white;
+  }
+}
+
+
+
+
+.et_pb_column{
+    text-align: center;
+  }
+.new_container{
+  background-color: white;
+}
+
+/*meet the team style*/
+
+@media (min-width: 1281px) {
+  .team_div {
+    height: 430px;
+  }
+
+ .inner_div {
+    float: left;
+    width: 30%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+}
+.team_div {
+    /*height: 560px;*/
+    text-align: center;
+    background-image:url(/assets/geometic-bg-black-2.jpg); 
+  }
+.inner_div {
+  /*float: left;*/
+  
+  
+}
+.outer_div {
+    padding-top: 65px;
+    padding-left: 45px;
+    padding-right: 35px;
+    width: 100%;
+}
+.inner_text {
+  text-align: center;
+  color: white;
+}
+.inner_text > h4 {
+  color: white;
+}
+.top_header{
+  padding-top: 20px;
+  text-align: center;
+}
+.top_header > h3{
+  color: white;
+}
+
+.inner_img > img {
+  height: 200px;
+  width: 320px;
+}
+.row{
+  /*background-color: white;*/
+}
+
+.mailing_list{background-image: url(/assets/conference-title.jpg);}
+  .mailing_list .section {
+    padding: 0;
+}
+.content{
+  /*background-color: white;*/
+}
+.mailing_list .heading {
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 90%;
+  color: black;
+}
+#mc_embed_signup {
+  background: transparent none repeat scroll 0 0;
+  clear: left;
+  font: 14px Helvetica,Arial,sans-serif;
+  margin: 0 auto;
+  width: 100%;
+}
+#mc_embed_signup .mc-field-group input.fname {
+  border-radius: 0;
+  display: inline;
+  float: left;
+  margin: 0 15px 0 2%;
+  padding: 15px 0;
+  text-indent: 4%;
+  width: 29%;
+}
+#mc_embed_signup input {
+  border: 1px solid #999;
+}
+.mc-field-group{
+  padding-bottom: 95px;
+}
+
+#mc_embed_signup .mc-field-group input.lname {
+  border-radius: 0;
+  display: inline;
+  float: left;
+  margin: 0 15px;
+  padding: 15px 0;
+  text-indent: 4%;
+  width: 29%;
+}
+/*#mc_embed_signup input {
+  border: 1px solid #999;
+}*/
+
+#mc_embed_signup .mc-field-group input.email {
+  border-radius: 0;
+  display: inline;
+  float: left;
+  margin: 0 2% 0 15px;
+  padding: 15px 0;
+  text-indent: 4%;
+  width: 29%;
+}
+/*#mc_embed_signup input {
+  border: 1px solid #999;
+}*/
+.mailing_list h1  {
+  font-size: 70px;
+  line-height: 72px;
+  color: #ffffff;
+  padding: 30px;
+  text-decoration: none !important;
+  font-family: "Raleway",sans-serif !important;
+}
+
+#mc_embed_signup .button {
+  background: transparent none repeat scroll 0 0;
+  border: 3px solid #ffffff;
+  border-radius: 0;
+  clear: both;
+  color: #ffffff;
+  cursor: pointer;
+  display: table;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 auto;
+  padding: 10px 3%;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 300ms ease 0s;
+  white-space: nowrap;
+  width: auto;
+}
+.mailing_list .three-col {
+    padding-top: 30px;
+}
+.mailing_list ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.mailing_list .three-col li {
+  float: left;
+  width: 33.3333%;
+}
+
+.mailing_list .three-col li {
+    text-align: center;
+}
+.mailing_list li {
+    line-height: 20px;
+}
+.mailing_list .three-col li a.block {
+    min-height: 350px;
+}
+.mailing_list .three-col li a.block {
+    background: #fff none repeat scroll 0 0;
+    border-top: 4px solid #fff;
+    display: block;
+    padding: 60px 20px;
+    transition: background-color 0.2s ease 0s, border 0.2s ease 0s;
+}
+
+.mailing_list .icon {
+    background: #222 none repeat scroll 0 0;
+    margin: 0 auto 25px;
+    padding: 18px 0;
+    position: relative;
+    width: 80px;
+    z-index: 10;
+}
+
+.mailing_list h2 {
+    color: #444;
+    font-family: "brandon-grotesque",sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.mailing_list p.handle {
+    color: #888;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.mailing_list #instagram, .mailing_list .blog figure {
+    margin: 0 auto;
+    max-width: 240px;
+}
+
 @media(max-width: 780px){
-	#mc_embed_signup .mc-field-group input.fname{
-		width: 100%;
-		margin: 0px;
-	}
-	#mc_embed_signup .mc-field-group input.lname{
-		width: 100%;
-		margin: 0px;
-	}
-	#mc_embed_signup .mc-field-group input.email{
-		width: 100%;
-		margin: 0px;
-	}
+  #mc_embed_signup .mc-field-group input.fname{
+    width: 100%;
+    margin: 0px;
+  }
+  #mc_embed_signup .mc-field-group input.lname{
+    width: 100%;
+    margin: 0px;
+  }
+  #mc_embed_signup .mc-field-group input.email{
+    width: 100%;
+    margin: 0px;
+  }
 }
 
 /* Pages */
@@ -681,4 +917,3 @@ p.overview-letter-end-p {
   font-weight: 200;
   margin: 2% 0%;
 }
-
