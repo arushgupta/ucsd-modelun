@@ -16,6 +16,8 @@ File Description:Main CSS file of the template */
 .section {
 	background-color: #ffffff;
 	width:100%;
+	border: 0;
+	box-shadow: none;
 }
 
 /* Backgrounds
@@ -64,8 +66,9 @@ File Description:Main CSS file of the template */
 	border-radius: 0px;
 }
 .modal-header {
-	background-color: #eee;
+	background-color: transparent;
 	color: #666;
+	border: 0;
 }
 .modal-header h4 {
 	color: #ffffff;
@@ -216,12 +219,6 @@ File Description:Main CSS file of the template */
   margin-left: 20px;
   margin-right: 20px;
 }
-.btn-block {
-  border: 0px !important;
-  text-align: left;
-  background-color: transparent;
-}
-
 .travel_modal{height: 67px;
     text-align: center;
     background-color: turquoise;

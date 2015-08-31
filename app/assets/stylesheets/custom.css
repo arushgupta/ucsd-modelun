@@ -544,3 +544,92 @@ th.first-col {
   font-weight: 200;
   color: #666;
 }
+/* Buttons */
+.navbar-header button:hover {
+  background-color: #eee;
+}
+.modal-close-button {
+  background-color: transparent;
+  font-weight: 100 !important;
+  color: #DDD !important;
+}
+.modal-close-button:hover {
+  color: #999 !important;
+}
+/* Committees Modal Box */
+.glyphicon.glyphicon-plus.glyphicon-white-bg {
+  position: absolute;
+  top: 50%;
+  font-size: 28px;
+  font-weight: 100;
+  color: #323951;
+}
+.btn-block {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 18px;
+  font-weight: 200;
+  color: #323951;
+}
+.modal_data {
+  float: left;
+}
+.panel_data {
+  font-weight: bold;
+  font-size: 20px;
+}
+.committee-dias-name {
+  font-weight: 400;
+  font-size: 16px;
+  padding-left: 1%;
+  color: #444;
+}
+h4.committee-topic {
+  padding-top: 1%;
+  padding-bottom: 2%;
+  font-weight: 200;
+  color: #444;
+}
+.modal-title-header {
+  font-weight: 200;
+}
+.committee-subheading {
+  font-weight: 200 !important;
+  font-size: 18px;
+  color: #212121;
+  width: 40% !important;
+}
+.committee-subheading-value {
+  font-weight: 200;
+  text-align: -webkit-right;
+  width: 60%;
+  color: #757575;
+}
+.topic-data {
+  padding-top: 3%;
+}
+.topic-data .modal_data .committee-image-height {
+  max-height: 200px;
+  padding: 0% 0% 2% 0% !important;
+}
+.topic-data span.topic_desc p{
+  padding-bottom: 2.5%;
+}
+.chair {
+  width: 50%;
+  border-bottom: 1px solid #999;
+  margin: 1%;
+  display: -webkit-box;
+}
+.vice-chair {
+  width: 50%;
+  border-bottom: 1px solid #999;
+  margin: 1%;
+  display: -webkit-box;
+}
+.topic-guide {
+  width: 50%;
+  border-bottom: 1px solid #999;
+  margin: 1%;
+  display: -webkit-box;
+}

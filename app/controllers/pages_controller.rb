@@ -3,8 +3,8 @@ class PagesController < ApplicationController
 before_action :admin_user,     only: [:destroy, :create]
 
   def index
-    @categories = Category.all.where(category_id: nil)
-    @pages = Page.find(1)
+    @categories = Category.all
+    @pages = Page.find(6)
   end
   
   private

@@ -1,4 +1,4 @@
-<% case @pages.category_id.name.downcase! %>
+<% case @categories.where(id: @pages.category_id).take.name.downcase! %>
   <% when "about", "about us", "our club" %>
     <div class = "conference row header-title-bg" style = "margin: 2% 0% 3% 0%;">
   	  <div class="col-lg-12 text-center about-header-img">

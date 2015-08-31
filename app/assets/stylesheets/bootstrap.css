@@ -1163,6 +1163,9 @@ hr {
   overflow: visible;
   clip: auto;
 }
+.sr-only:hover {
+  background-color: #eee;
+}
 h1,
 h2,
 h3,
@@ -6668,50 +6671,6 @@ background-color: #337AB7;}
 .deadline_thumnail {
   border: 0px!important;
   background-color: #f0ffff !important;
-}
-.modal_data {
-  float: left;
-}
-.panel_data {
-  font-weight: bold;
-  font-size: 20px;
-}
-.committee_chair {
-  font-weight: 300;
-  font-size: 16px;
-  color: #444;
-}
-.committee-dias-name {
-  font-weight: 400;
-  font-size: 16px;
-  padding-left: 1%;
-  color: #444;
-}
-h4.committee-topic {
-  padding-top: 1%;
-  padding-bottom: 2%;
-  font-weight: 200;
-  color: #444;
-}
-.modal-title-header {
-  font-weight: 200;
-}
-.committee-subheading {
-  padding-right: 1%;
-  font-weight: 200 !important;
-}
-.chair-name {
-  font-weight: 300;
-}
-.topic-data {
-  padding-top: 3%;
-}
-.topic-data .modal_data .committee-image-height {
-  max-height: 200px;
-  padding: 0% 0% 2% 0% !important;
-}
-.topic-data span.topic_desc p{
-  padding-bottom: 2.5%;
 }
 .secre_major {
   padding-bottom: 10px;
