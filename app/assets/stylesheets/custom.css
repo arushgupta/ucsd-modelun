@@ -917,3 +917,51 @@ p.overview-letter-end-p {
   font-weight: 200;
   margin: 2% 0%;
 }
+
+/*contact us*/
+
+.form_div{
+    padding-top: 80px;
+  }
+ #map {
+  height: 60%;
+}
+.content_div {
+    height: 70%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+}
+.name_field{
+  float: left;
+  width: 50%;
+}
+.name_field > input{
+  width: 95% !important;
+  background-color: lightgrey !important;
+}
+
+.email_field{
+  float: left;
+  width: 50%;
+}
+.email_field > input {
+    width: 85% !important;
+    background-color: lightgrey !important;
+}
+.message_field {
+    padding-top: 60px;
+}
+.message_field > textarea {
+  background-color: lightgrey !important;
+  width: 92.5% !important;
+}
+.form_submit {
+  float: right;
+  padding-right: 7%;
+  padding-top: 2%;
+}
+.col-sm-8 > h1 {
+  padding-bottom: 10px;
+}
+
