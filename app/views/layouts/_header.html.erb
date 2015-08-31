@@ -24,7 +24,7 @@
       <ul class = "nav navbar-nav navbar-right">
         <% @categories.each do |category| %>
           <% if category.category_id.nil? %>
-            <% sub_cat = Category.where(category_id: category.id) %>
+            <% sub_cat = Category.where(category_id: category.id).order('id ASC') %>
               <% if sub_cat.blank? %>
                 <li>
                   <%= link_to category.name, categories_path(id: category.id) %>

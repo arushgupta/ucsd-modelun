@@ -16,8 +16,8 @@
               <div class = "image-box">
                 <div class = "overlay-container">
                   <%= image_tag  committee.image_url.url, class: "img-responsive"%>
-                  <a class = "overlay testimg" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
-                    <i class = "fa fa-plus-circle"></i>
+                  <a class = "overlay committee-image" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
+                    <span class = "glyphicon glyphicon-plus glyphicon-white-bg"></span>
                   </a>
                 </div>
               <div class = "btn-block" data-toggle = "modal" data-target = "#project-1"><%=committee.committee_name%></div>
@@ -27,32 +27,40 @@
               <div class = "modal-dialog">
                 <div class = "modal-content">
                   <div class = "modal-header">
-                    <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">&times;</button>
+                    <span type = "button" class = "glyphicon glyphicon-remove close modal-close-button" data-dismiss = "modal" aria-hidden = "true"></span>
                     <h2 class = "modal-title modal-title-header" id = "myModalLabel"><%= committee.committee_name %></h2>
                   </div>
                   <div class = "modal-body">
-
-                    <a class = "btn commt_button conference_promo_button conference_button button-white-bg" style = "margin-top: -10px; margin-right: -8px; min-width:0px;">
-                      Topic Guide
-                      <span class="glyphicon glyphicon-chevron-right button-icon-hider"></span>
-                    </a>
-                  
-                    <p>
-                      <span class = "committee_chair committee-subheading">
-                        Chair:
-                      </span>
-                      <span class = "chair-name">
-                        <%= committee.chair %>
-                      </span>
-                    </p>
-                    <p>
-                      <span class = "committee_chair">
-                        Vice Chair:
-                      </span>
-                      <span class = "chair-name">
-                        <%= committee.vice_chair %>
-                      </span>
-                    </p>
+                    <div class = "committee-about">
+                      <div class = "chair">
+                        <div class = "committee-subheading">
+                          Chair
+                        </div>
+                        <div class = "committee-subheading-value">
+                          <%= committee.chair %>
+                        </div>
+                      </div>
+                      <div class = "vice-chair">
+                        <div class = "committee-subheading">
+                          Vice Chair
+                        </div>
+                        <div class = "committee-subheading-value">
+                          <%= committee.vice_chair %>
+                        </div>
+                      </div>
+                      <div class = "topic-guide">
+                        <div class = "committee-subheading">
+                          Topic Guide
+                        </div>
+                        <div class = "committee-subheading-value">
+                          <% if committee.topic_guide_url.blank? %>
+                            Coming Soon
+                          <% else %>
+                            <%= link_to committee.topic_guide_url.file.original_filename, download_committees_path(file: committee.topic_guide_url.file.original_filename) %>
+                          <%end%>
+                        </div>
+                      </div>
+                    </div>
 
                     <div class = "topic-data">
                       <%committee.topics.each do |topic|%>
@@ -81,7 +89,7 @@
 
 <script type="text/javascript">
 $(window).load(function(){
-    $('.testimg').on('click',function()
+    $('.committee-image').on('click',function()
                 {    var id =$(this).attr("id")
                     // var sr=$(this).attr('src'); 
                     // $('#mimg').attr('src',sr);

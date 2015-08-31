@@ -49,11 +49,11 @@ ActiveAdmin.register Overview do
       f.input :category, collection: Category.all.map {|category| [category.name, category.id]}, include_blank: "select"
       f.input :season, as: :select, collection: ["Fall", "Spring", "Summer", "Winter"], include_blank: "select"
       f.input :delegation_fee, label: "Delegation Fee (in $)"
-      f.input :position_paper_deadline, input_html: {class: 'datepicker'}
+      f.input :position_paper_deadline, as: :string, input_html: {class: 'datepicker'}
       f.input :start_date, as: :string, input_html: {class: 'datepicker'}
       f.input :end_date, as: :string, input_html: {class: 'datepicker'}
-      f.input :welcome_letter, as: :ckeditor 
       f.input :location
+      f.input :welcome_letter, as: :ckeditor
       f.input :is_active, label: "Active"
     end
     f.actions

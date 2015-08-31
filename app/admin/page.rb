@@ -55,7 +55,7 @@ ActiveAdmin.register Page do
       f.input :page_description, as: :ckeditor
       f.input :meta_keywords
       f.input :meta_title
-      f.input :page_icon_url, as: :file, image_preview: true, label: "Icon (size 500x500)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
+      f.input :page_icon_url, as: :file, image_preview: true, label: "Icon (size 500x500)", hint: f.object.id? ? image_tag(f.object.page_icon_url) : ""
       f.input :info_page
       f.input :is_active
     end

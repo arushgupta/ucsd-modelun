@@ -2,8 +2,8 @@
   <div class = "container a faq">
 
     <div class="row" style = "margin-bottom: 3%; margin-top: 2%;">
-      <div class="col-lg-12 text-center " style = "background-image: url('/assets/conference-title.jpg'); background-size: cover;">
-        <h2 class = "section-heading">Frequently Asked Question</h2>
+      <div class="col-lg-12 text-center header-img">
+        <h2 class = "section-heading">Frequently Asked Questions</h2>
         <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
       </div>
     </div>
@@ -18,20 +18,15 @@
                 <div class = "faq-wrapper col-md-8 col-sm-7">
                   <div class = "panel-group" id = "accordion">
                     <div class = "panel panel-default">
-                      <div class = "panel-heading">
-                        <h4 class = "panel-title " style = "margin-top: 10px; cursor: pointer">
-                          <div class = "cmt_button11" id="<%=question.id%>">
-                            <%= link_to question.question, "javascript:void(0)", class: " ", style: "color: black;"%>
-                            <i class="fa fa-plus-circle" style = "float: right;"></i>
+                      <div class = "panel-heading dropdown" id = "<%=question.id%>div">
+                        <%= link_to question.question, "javascript:void(0)", class: "cmt_button11 faqs-question panel-title" %>
+                        <div style = "display: none;" class = "dropdown-container">
+                          <div class = "panel-body">
+                            <%=question.answer.html_safe%>
                           </div>
-                        </h4>
-                      </div><!--//pane-heading-->
-                      <div style = "display: none;" id = "<%=question.id%>div">
-                        <div class = "panel-body">
-                          <%=question.answer.html_safe%>
-                        </div><!--//panel-body-->
-                      </div><!--//panel-colapse-->            
-                    </div><!--//panel-->
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -46,10 +41,14 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-$(".cmt_button11").click(function(){
-    var id =$(this).attr("id")
-    $("#"+id+"div").toggle();
-    
+
+  $(".cmt_button11").click(function(e){
+    e.preventDefault();
+    var $div = $(this).next('.dropdown-container');
+    $(".dropdown-container").not($div).hide();
+    if ($div.not(":visible")) {
+      $div.show();
+    }
   });
 });
 </script>

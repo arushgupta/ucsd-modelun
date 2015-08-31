@@ -1,4 +1,11 @@
 <div class="conference">
+  
+  <div class = "row header-title-bg" style = "margin: 2% 0% 3% 0%;">
+    <div class="col-lg-12 text-center about-header-img">
+      <h2 class = "section-heading"><%= @categories.where(id: params[:id]).take.name %></h2>
+      <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    </div>
+  </div>
 
   <div class = "conference_row conference_row_2">
     <div class = "conference_column conference_column_first conference_column_1_3">
@@ -12,8 +19,7 @@
             <%end%>
           </div>
           <div class = "conference_blurb_container">
-            <%debugger%>
-            <h4><%= link_to "Our Story", pages_path(cat_id: params[:id]) %></h4>
+            <h4><%= link_to "Our Story", pages_path %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>

@@ -8,9 +8,6 @@ ActiveAdmin.register Category do
   config.sort_order = 'id_asc'
 
   controller do
-    # def asc
-    #  Category.order('id ASC')
-    # end
     def show
       @page_title = " Category"
     end
