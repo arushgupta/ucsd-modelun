@@ -633,3 +633,36 @@ h4.committee-topic {
   margin: 1%;
   display: -webkit-box;
 }
+
+/* Overview Welcome Letter */
+.overview-letter {
+  display: -webkit-box;
+}
+.letter-sg-img.img-responsive {
+  width: 35%;
+  margin: 10% 5% 5% 5%;
+}
+.overview-letter-content {
+  width: 60%;
+  margin-left: 3%;
+  margin-bottom: 5%;
+}
+p.overview-letter-greet {
+  font-size: 20px;
+  font-weight: 200;
+  color: #212121;
+  margin: 3% 0%;
+}
+.overview-letter-body {
+  width: 80%;
+}
+p.overview-letter-body-p {
+  color: #666;
+  margin: 3% 0%;
+  font-weight: 200;
+}
+p.overview-letter-end-p {
+  color: #222;
+  font-weight: 200;
+  margin: 2% 0%;
+}
