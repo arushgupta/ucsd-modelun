@@ -222,6 +222,10 @@ a.conference_promo_button.conference_button.button-white-bg {
   margin-bottom: 3%;
   color: #2EA3F2 !important;
 }
+input.conference_promo_button.conference_button.button-white-bg {
+  margin-bottom: 3%;
+  color: #2EA3F2 !important;
+}
 .conference_promo_button {
   display: inline-block;
   color: inherit !important;
@@ -234,14 +238,18 @@ a.conference_promo_button.button-white-bg:hover {
   background: none repeat scroll 0% 0% rgba(204, 204, 204, 0.2);
   border: 0px;  
 }
+input.conference_promo_button.conference_button.button-white-bg:hover {
+  background: none repeat scroll 0% 0% rgba(204, 204, 204, 0.2);
+  border: 0px;  
+}
 .conference_button {
-  font-size: 20px;
-  font-weight: 500;
-  padding: 0.3em 1em;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  padding: 0.3em 1em !important;
   line-height: 1.7em !important;
   background: transparent;
-  border: 2px solid;
-  border-radius: 3px;
+  border: 2px solid !important;
+  border-radius: 3px !important;
   transition: all 0.2s;
 }
 
@@ -475,12 +483,7 @@ span.award-recipient {
     height: 530px;
     background-color: white;
   }
-}
-
-
-
-
-.et_pb_column{
+}.et_pb_column{
     text-align: center;
   }
 .new_container{
@@ -918,27 +921,74 @@ p.overview-letter-end-p {
   margin: 2% 0%;
 }
 
-/*contact us*/
-
-.form_div{
-    padding-top: 80px;
-  }
- #map {
-  height: 60%;
+/* Contact Us */
+form input[type=submit] {
+  display: inline-block;
+  color: #2EA3F2 !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  padding: 0.3em 1em !important;
+  line-height: 1.7em !important;
+  background: transparent;
+  border: 2px solid !important;
+  border-radius: 3px !important;
+  transition: all 0.2s;
 }
-.content_div {
-    height: 70%;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 5%;
+form input[type=submit]:hover {
+  background: none repeat scroll 0% 0% rgba(204, 204, 204, .3) !important;
+  border: 0 !important;
 }
-.name_field{
+.contact-page {
+  height: 100%;
+  display: inline-table;
+}
+.contact-map {
+  height: 80%;
+  margin-top: 2%;
+  padding: 5%;
+  margin-bottom: 5%;
+}
+.col-sm-12.col-md-6.contact-form {
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+h1.contact-form-title {
+  font-size: 32px;
+  font-weight: 200;
+  color: #323951;
+  margin-bottom: 3%;
+}
+.name_field.col-md-6.col-sm-12 {
   float: left;
   width: 50%;
+  padding-left: 0;
+  padding-right: 0;
+}
+input#contact_name {
+  border: none;
+  border-radius: 0;
+  color: #999;
+  padding: 5%;
+  margin-bottom: 5%;
+  font-weight: 300;
+}
+input#contact_email {
+  border: none;
+  border-radius: 0;
+  color: #999;
+  padding: 5%;
+  margin-bottom: 5%;
+  font-weight: 300; 
+}
+textarea#contact_message {
+  border: none;
+  border-radius: 0;
+  color: #555;
+  font-weight: 300;
 }
 .name_field > input{
   width: 95% !important;
-  background-color: lightgrey !important;
+  background-color: #eee !important;
 }
 
 .email_field{
@@ -947,13 +997,10 @@ p.overview-letter-end-p {
 }
 .email_field > input {
     width: 85% !important;
-    background-color: lightgrey !important;
-}
-.message_field {
-    padding-top: 60px;
+    background-color: #eee !important;
 }
 .message_field > textarea {
-  background-color: lightgrey !important;
+  background-color: #eee !important;
   width: 92.5% !important;
 }
 .form_submit {
@@ -964,4 +1011,20 @@ p.overview-letter-end-p {
 .col-sm-8 > h1 {
   padding-bottom: 10px;
 }
-
+input.contact-name {
+  background-color: #eee;
+}
+.contact-about {
+  font-weight: 200;
+  color: #777;
+  line-height: 1.7em;
+  margin-bottom: 5%;
+}
+.contact-details {
+  font-weight: 200;
+  color: #333;
+}
+span.contact-detail-title {
+  font-weight: 100;
+  font-size: 18px;
+}

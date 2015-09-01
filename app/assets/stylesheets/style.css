@@ -219,11 +219,12 @@ File Description:Main CSS file of the template */
   margin-left: 20px;
   margin-right: 20px;
 }
-.travel_modal{height: 67px;
+.travel_modal {
+	height: 67px;
     text-align: center;
     background-color: turquoise;
-    padding-top: 14px;}
-
+    padding-top: 14px;
+}
 .cbp_tmtimeline {
     margin: 0;
     padding: 0;

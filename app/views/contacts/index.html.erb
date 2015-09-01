@@ -1,28 +1,39 @@
-<div class = "form_div">
-</div>
-<div id="map"></div>
-<div class = "content_div">
-	<div class="col-sm-8">
-		<%flash.each do |k,v|%>
-			<%=v%>
-		<%end%>
-		<h1>Get In Touch</h1>
-		<%=form_for @contact do |f|%>
-			<div class="name_field"><%=f.text_field :name, placeholder: "Name"%></div>
-			<div class="email_field"><%=f.text_field :email, placeholder: "Email", class: "text_box email_text"%></div>
-			<div class="message_field"><%=f.text_area :message, placeholder: "Message",  rows: "7" %></div>
-			<div class="form_submit"><%=f.submit%></div>
-		<%end%>
+<div class = "contact-page">
+  <div id = "map" class = "col-md-12 contact-map"></div>
+  
+  <div class = "contact-content">	
+	<div class = "col-sm-12 col-md-6 contact-form">
+	
+	  <%flash.each do |k,v|%>
+		<%=v%>
+	  <%end%>
+	
+	  <h1 class = "contact-form-title">Get In Touch</h1>
+	
+	  <%=form_for @contact do |f|%>
+		<div class = "name_field col-md-6 col-sm-12"><%=f.text_field :name, placeholder: "Name", class: "text-fields" %></div>
+		<div class = "email_field"><%=f.text_field :email, placeholder: "Email" %></div>
+		<div class = "message_field"><%= f.text_area :message, placeholder: "Message",  rows: "7" %></div>
+		<div class = "form_submit">
+		  <%= f.submit 'Submit' do%>
+		  <%end%>
+		</div>
+	  <%end%>
 	</div>
-	<div class="col-sm-3">
-		<h3>More Info</h3>
-		sit amet, consectetur adipiscing elit. Integer placerat metus id orci facilisis, in luctus eros laoreet. Mauris interdum augue varius, faucibus massa id, imperdiet tortor. Donec vel tortor molestie, hendrerit sem a, hendrerit arcu. Aliquam erat volutpat. Proin varius eros eros, non condimentum nis.
-		Address: 890 Lorem Ipsum Street #12
-		San Francisco, California 65432
-		Phone: 123.4567.890
-		Business Hours: 8a–6:30p M-F, 9a–2p S-S
+
+	<div class="col-sm-12 col-md-3">
+	  <h1 class = "contact-form-title">More Info</h1>
+	  <p class = "contact-about">sit amet, consectetur adipiscing elit. Integer placerat metus id orci facilisis, in luctus eros laoreet. Mauris interdum augue varius, faucibus massa id, imperdiet tortor. Donec vel tortor molestie, hendrerit sem a, hendrerit arcu. Aliquam erat volutpat. Proin varius eros eros, non condimentum nis.</p>
+	  <p class = "contact-details">
+	  	<span class = "contact-detail-title">Address:</span><span> 890 Lorem Ipsum Street #12</span>
+	  </p>
+	  <p class = "contact-details">San Francisco, California 65432</p>
+	  <p class = "contact-details"><span class = "contact-detail-title">Phone:</span> <span>123.4567.890</span></p>
+	  <p class = "contact-details"><span class = "contact-detail-title">Business Hours:</span> <span>8a–6:30p M-F, 9a–2p S-S<span></p>
 	</div>
+  </div>
 </div>
+
 <script>
 	function initMap() {
   	var myLatLng = {lat: 30.726996, lng:  76.841108};
