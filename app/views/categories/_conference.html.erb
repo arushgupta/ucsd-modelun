@@ -32,7 +32,7 @@
             <%begin%>
               <%= link_to image_tag(@icons.sechedule_icon, alt: "logo"),schedules_path(:cat_id=>params[:id]) %>
             <%rescue%>
-              <%= link_to image_tag("conference-2.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-2.jpg", alt: "logo"),schedules_path(cat_id: params[:id]) %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
@@ -49,7 +49,7 @@
             <%begin%>
               <%= link_to image_tag(@icons.commitee_icon, alt: "logo"),committees_path(:cat_id=>params[:id]) %>
             <%rescue%>
-              <%= link_to image_tag("conference-3.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-3.jpg", alt: "logo"),committees_path(cat_id: params[:id]) %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
@@ -66,7 +66,7 @@
             <%begin%>
               <%= link_to image_tag(@icons.speaker_icon, alt: "logo"),speakers_path(cat_id:params[:id]) %>
             <%rescue%>
-              <%= link_to image_tag("conference-4.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-4.jpg", alt: "logo"),speakers_path(cat_id: params[:id]) %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
@@ -83,7 +83,7 @@
             <%begin%>
               <%= link_to image_tag(@icons.fee_icon, alt: "logo"),deadlines_path(cat_id: params[:id]) %>
             <%rescue%>
-              <%= link_to image_tag("conference-5.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-5.jpg", alt: "logo"),deadlines_path(cat_id: params[:id]) %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
@@ -100,7 +100,7 @@
             <%begin%>
               <%= link_to image_tag(@icons.faq_icon, alt: "logo"),faqs_path(cat_id:params[:id]) %>
             <%rescue%>
-              <%= link_to image_tag("conference-6.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-6.jpg", alt: "logo"),faqs_path(cat_id: params[:id]) %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">

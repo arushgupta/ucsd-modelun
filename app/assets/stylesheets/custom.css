@@ -248,7 +248,7 @@ input.conference_promo_button.conference_button.button-white-bg:hover {
   padding: 0.3em 1em !important;
   line-height: 1.7em !important;
   background: transparent;
-  border: 2px solid !important;
+  border: 2px solid;
   border-radius: 3px !important;
   transition: all 0.2s;
 }
@@ -468,22 +468,25 @@ span.award-recipient {
     width: 188px;
 }
 @media (min-width: 981px) {
-  .et_pb_column{
+  .branch_column{
     float: left;
-    width: 25%;
+    width: 20%;
     text-align: center;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
   }
-  .et_pb_row{
+  .branch_row{
     padding-top: 100px;
     padding-left: 20px;
     padding-right: 20px;
   }
-
   .new_container{
-    height: 530px;
+    height: 360px;
     background-color: white;
+    margin: 5% 0%;
   }
-}.et_pb_column{
+}
+.branch_column{
     text-align: center;
   }
 .new_container{
@@ -1027,4 +1030,17 @@ input.contact-name {
 span.contact-detail-title {
   font-weight: 100;
   font-size: 18px;
+}
+
+/* Home Page */
+span.marketable-line {
+  font-size: 58px;
+  font-weight: 100;
+  text-align: center;
+  color: #555;
+}
+.market-mun.col-md-12 {
+  text-align: center;
+  margin: 5% 0%;
+  padding: 0;
 }
