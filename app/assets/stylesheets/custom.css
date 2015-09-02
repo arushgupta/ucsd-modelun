@@ -1022,7 +1022,6 @@ form input[type=submit]:hover {
   display: inline-table;
 }
 .contact-map {
-  height: 80%;
   margin-top: 2%;
   padding: 5%;
   margin-bottom: 5%;
@@ -1030,6 +1029,7 @@ form input[type=submit]:hover {
 .col-sm-12.col-md-6.contact-form {
   margin-left: 5%;
   margin-bottom: 5%;
+  float-left;
 }
 h1.contact-form-title {
   font-size: 32px;
@@ -1083,7 +1083,6 @@ textarea#contact_message {
   width: 92.5% !important;
 }
 .form_submit {
-  float: right;
   padding-right: 7%;
   padding-top: 2%;
 }
@@ -1114,8 +1113,21 @@ span.contact-detail-title {
   width: 60%;
   top:1%;
 }
-.thumbnail {margin-bottom:6px;}
-
-.carousel-control.left,.carousel-control.right{
+.thumbnail {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+.carousel-control.left,.carousel-control.right {
   background-image:none;
+}
+
+.from_test {
+  float: right;
+}
+.simple_captcha {
+    border: 1px solid #CCC;
+    padding: 5px !important;
+    float:left;
 }

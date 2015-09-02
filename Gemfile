@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'simple_captcha2', require: 'simple_captcha'
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
 gem "jquery-ui-rails"
