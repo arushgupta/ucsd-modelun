@@ -1,46 +1,18 @@
 <div class="row">
-  <div id="carousel-example-generic" class="carousel slide vertical" data-ride="carousel">
-    <!-- Indicators -->
-    <div class="col-sm-2 col-sm">
-      <div class="carousel-indicators carousel_ind">
-        <div data-target="#carousel-example-generic" data-slide-to="0" class="active thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
-        <div data-target="#carousel-example-generic" data-slide-to="1" class="thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
-        <div data-target="#carousel-example-generic" data-slide-to="2" class="thumb"><img src="http://placehold.it/100/e8117f/fff&amp;text=Product+Main"></div>
-      </div>
-    </div>
- 
-    <!-- Wrapper for slides -->
-    <div class="col-sm-9" style="float:left; width: 84%; padding-top:50px">
+  <div class = "market-mun col-md-12">
+    <span class = "marketable-line">We invite you to learn, debate, grow and lead</span>
+  </div>
+
+  <div id="carousel-example-generic" class = "carousel slide vertical" data-ride="carousel">
+    <div class="col-md-12" style = "padding: 0;">
       <div class="carousel-inner">
         <div class="item active">
           <div class="main_image">
             <%begin%>
-              <%= image_tag (@tritonmun[0].image_url)%>
+              <%= image_tag (@tritonmun[0].image_url), class: "img-responsive"%>
             <%rescue%>
-              <img src="assets/image_1.jpg" alt="...">
+              <img src="assets/image_1.jpg" alt="..." class = "img-responsive">
             <%end%>
-          </div>
-          <div class="second_img">
-            <div class="side_img_1">
-              <%begin%>
-                <%= image_tag (@tritonmun[1].image_url)%>
-              <%rescue%>
-                <img src="assets/image_2.jpg" alt="...">
-              <%end%>
-              <!-- <div class="caption">
-                <h4>Caption Text</h4>
-              </div> -->
-            </div>
-            <div class="side_img_2">
-              <%begin%>
-                <%= image_tag (@tritonmun[2].image_url)%>
-              <%rescue%>
-                <img src="assets/image_3.jpg" alt="...">
-              <%end%>
-              <!-- <div class="caption_1">
-                <h4>Caption Text</h4>
-              </div> -->
-            </div>
           </div>
         </div>
         <div class="item">
@@ -51,28 +23,6 @@
               <img src="assets/image_1.jpg" alt="...">
             <%end%>
           </div>
-          <div class="second_img">
-            <div class="side_img_1">
-              <%begin%>
-                <%= image_tag (@sdimun[1].image_url)%>
-              <%rescue%>
-                <img src="assets/image_2.jpg" alt="...">
-              <%end%>
-              <!-- <div class="caption">
-                <h4>Caption Text</h4>
-              </div> -->
-            </div>
-            <div class="side_img_2">
-              <%begin%>
-                <%= image_tag (@sdimun[2].image_url)%>
-              <%rescue%>
-                <img src="assets/image_3.jpg" alt="...">
-              <%end%>
-              <!-- <div class="caption_1">
-                <h4>Caption Text</h4>
-              </div> -->
-            </div>
-          </div>
         </div>
         <div class="item">
           <div class="main_image">
@@ -82,89 +32,48 @@
               <img src="assets/image_1.jpg" alt="...">
             <%end%>
           </div>
-          <div class="second_img">
-            <div class="side_img_1">
-              <%begin%>
-                <%= image_tag (@travel[1].image_url)%>
-              <%rescue%>
-                <img src="assets/image_2.jpg" alt="...">
-              <%end%>
-              <!-- <div class="caption">
-                <h4>Caption Text</h4>
-              </div> -->
-            </div>
-            <div class="side_img_2">
-              <%begin%>
-                <%= image_tag (@travel[2].image_url)%>
-              <%rescue%>
-                <img src="assets/image_3.jpg" alt="...">
-              <%end%>
-              <!-- <div class="caption_1">
-                <h4>Caption Text</h4>
-              </div> -->
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div> <!-- Carousel -->
 </div>
+
 <div class="new_container">
-  <div class="et_pb_section  et_pb_section_1 et_pb_with_background et_section_regular">
-    <div class="et_pb_row et_pb_row_0 et_pb_row_4col">
-      <div class="et_pb_column et_pb_column_1_4 et_pb_column_0">
-        <div class="et_pb_blurb et_pb_module et_pb_bg_layout_light et_pb_text_align_center  et_pb_blurb_0 et_pb_blurb_position_top">
-          <div class="et_pb_blurb_content">
-            <div class="et_pb_main_blurb_image">
-              <img src="http://elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/builder-blurbs-mobile.jpg" alt="" class="et-waypoint et_pb_animation_top et-animated">
-            </div>
-            <div class="et_pb_blurb_container">
-              <h4>Title</h4>
-                Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
-            </div>
-          </div> <!-- .et_pb_blurb_content -->
-        </div> <!-- .et_pb_blurb -->
-      </div> <!-- .et_pb_column -->
-      <div class="et_pb_column et_pb_column_1_4 et_pb_column_1">
-        <div class="et_pb_blurb et_pb_module et_pb_bg_layout_light et_pb_text_align_center  et_pb_blurb_1 et_pb_blurb_position_top">
-          <div class="et_pb_blurb_content">
-            <div class="et_pb_main_blurb_image">
-              <img src="http://elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/builder-blurbs-export.jpg" alt="" class="et-waypoint et_pb_animation_top et-animated">
-            </div>
-            <div class="et_pb_blurb_container">
-              <h4>Title</h4>
-              Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
-            </div>
-          </div> <!-- .et_pb_blurb_content -->
-        </div> <!-- .et_pb_blurb -->
-      </div> <!-- .et_pb_column -->
-      <div class="et_pb_column et_pb_column_1_4 et_pb_column_2">
-        <div class="et_pb_blurb et_pb_module et_pb_bg_layout_light et_pb_text_align_center  et_pb_blurb_2 et_pb_blurb_position_top">
-          <div class="et_pb_blurb_content">
-            <div class="et_pb_main_blurb_image">
-              <img src="http://elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/builder-blurbs-layouts.jpg" alt="" class="et-waypoint et_pb_animation_top et-animated">
-            </div>
-            <div class="et_pb_blurb_container">
-              <h4>Title</h4>
-              Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
-            </div>
-          </div> <!-- .et_pb_blurb_content -->
-        </div> <!-- .et_pb_blurb -->
-      </div> <!-- .et_pb_column -->
-      <div class="et_pb_column et_pb_column_1_4 et_pb_column_3">
-        <div class="et_pb_blurb et_pb_module et_pb_bg_layout_light et_pb_text_align_center  et_pb_blurb_3 et_pb_blurb_position_top">
-          <div class="et_pb_blurb_content">
-            <div class="et_pb_main_blurb_image">
-              <img src="http://elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/builder-blurbs-commerce.jpg" alt="" class="et-waypoint et_pb_animation_top et-animated">
-            </div>
-            <div class="et_pb_blurb_container">
-              <h4>Title</h4>
-              Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
-            </div>
-          </div> <!-- .et_pb_blurb_content -->
-        </div> <!-- .et_pb_blurb -->
-      </div> <!-- .et_pb_column -->
-    </div> <!-- .et_pb_row -->
+  <div class="branch_column">
+    <div class="branch_main_blurb_image">
+      <img src = "assets/conference-1.jpg" alt="">
+    </div>
+    <div class="branch_blurb_container">
+      <h4>Title</h4>
+        Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
+    </div>
+  </div>
+  <div class="branch_column">
+    <div class="branch_main_blurb_image">
+      <img src="assets/conference-2.jpg" alt="">
+    </div>
+    <div class="branch_blurb_container">
+      <h4>Title</h4>
+        Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
+    </div>
+  </div>
+  <div class="branch_column">
+    <div class="branch_main_blurb_image">
+      <img src="assets/conference-3.jpg" alt="">
+    </div>
+    <div class="branch_blurb_container">
+      <h4>Title</h4>
+        Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
+    </div>
+  </div>
+  <div class="branch_column">
+    <div class="branch_main_blurb_image">
+      <img src="assets/conference-4.jpg" alt="">
+    </div>
+    <div class="branch_blurb_container">
+      <h4>Title</h4>
+        Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
+    </div>
   </div>
 </div>
 

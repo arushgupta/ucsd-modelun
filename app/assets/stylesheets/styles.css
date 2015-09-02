@@ -95,8 +95,9 @@ footer {
 }
 .main_image{
   overflow: hidden;
-  width: 70%;
-  float: left;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 .second_img{
   width: 30%;
@@ -116,9 +117,9 @@ footer {
 
 
 .main_image img {
-    height: 478px;
+    height: 480px;
     overflow: hidden;
-    width: 900px;
+    width: 100%;
 }
 .thumb {
   width: 100%;
