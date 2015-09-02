@@ -15,7 +15,7 @@
             <%begin%>
               <%= link_to image_tag(@icons.overview_icon, alt: "logo"),overviews_path(cat_id: params[:id]) %>
             <%rescue%>
-              <%= link_to image_tag("conference-1.png", alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-1.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">

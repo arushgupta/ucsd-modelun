@@ -1107,3 +1107,15 @@ span.contact-detail-title {
   font-weight: 100;
   font-size: 18px;
 }
+
+/* Home Galleries */
+
+.modal-dialog {
+  width: 60%;
+  top:1%;
+}
+.thumbnail {margin-bottom:6px;}
+
+.carousel-control.left,.carousel-control.right{
+  background-image:none;
+}

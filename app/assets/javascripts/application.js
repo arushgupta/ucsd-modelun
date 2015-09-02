@@ -15,7 +15,6 @@
 //= require ckeditor/init
 //= require jquery_ujs
 //= require jquery-ui
-//= require turbolinks
 //= require ckeditor/config
 //= require ckeditor/filebrowser/javascripts/fileuploader.js
 
