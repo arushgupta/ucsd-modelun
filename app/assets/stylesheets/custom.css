@@ -542,7 +542,7 @@ h3.home-secretariat-title {
   font-size: 42px;
   margin: 2% auto;
   font-weight: 100;
-  font-family: sans-serif, Helvetica Neue, 'Open Sans'; 
+  font-family: sans-serif, Helvetica Neue; 
 }
 .home-secretariat-list {
   width: 100%;
@@ -587,7 +587,7 @@ h1.mailing-list-title  {
   line-height: 1.7em;
   color: #18355B;
   font-weight: 100;
-  font-family: sans-serif, Helvetica Neue, 'Open Sans'; 
+  font-family: sans-serif, Helvetica Neue; 
 }
 #mc_embed_signup {
   background: transparent none repeat scroll 0 0;
@@ -754,6 +754,40 @@ h3.counter-value {
   }
 }
 
+/* Footer */
+.footer-element {
+  text-align: center;
+  font-size: 48px;
+  background-color: #FFFFFF;
+  margin: 1% 0% 0%;
+  padding: 5%;
+}
+.footer-icon {
+  width: 60%;
+  text-align: center;
+  margin: 0% auto;
+  background-color: #F9F9F9;
+  padding: 5%;
+}
+.footer-fa-icon {
+  color: #AAA;
+}
+.footer-fa-icon:hover {
+  color: #18355B;
+  background-color: #EEE;
+}
+.footer-title {
+  text-align: center;
+  margin-top: 5%;
+  padding: 0;
+}
+h1.footer-title-text {
+  font-size: 42px;
+  line-height: 1.7em;
+  color: #18355B;
+  font-weight: 100;
+  font-family: sans-serif, Helvetica Neue; 
+}
 /* Pages */
 h1.pages-title {
   font-size: 28px;
