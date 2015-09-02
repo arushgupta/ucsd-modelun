@@ -233,10 +233,12 @@ input.conference_promo_button.conference_button.button-white-bg {
 .conference_promo_button:hover {
   background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.2);
   border: 0px;
+  padding: 0.4em 1.1em;
 }
 a.conference_promo_button.button-white-bg:hover {
   background: none repeat scroll 0% 0% rgba(204, 204, 204, 0.2);
-  border: 0px;  
+  border: 0px;
+  padding: 0.4em 1.1em;  
 }
 input.conference_promo_button.conference_button.button-white-bg:hover {
   background: none repeat scroll 0% 0% rgba(204, 204, 204, 0.2);
@@ -245,7 +247,7 @@ input.conference_promo_button.conference_button.button-white-bg:hover {
 .conference_button {
   font-size: 20px !important;
   font-weight: 500 !important;
-  padding: 0.3em 1em !important;
+  padding: 0.3em 1em;
   line-height: 1.7em !important;
   background: transparent;
   border: 2px solid;
@@ -481,7 +483,7 @@ span.award-recipient {
     padding-right: 20px;
   }
   .new_container{
-    height: 360px;
+    height: 50%;
     background-color: white;
     margin: 5% 0%;
   }
@@ -493,74 +495,99 @@ span.award-recipient {
   background-color: white;
 }
 
-/*meet the team style*/
+/* Home Page */
+span.marketable-line {
+  font-size: 58px;
+  font-weight: 100;
+  text-align: center;
+  color: #555;
+}
+.market-mun.col-md-12 {
+  text-align: center;
+  margin: 3% 0%;
+  padding: 5% 0%;
+  background-color: #F9F9F9;
+}
+.branch_blurb_container {
+  margin-top: 5%;
+}
+h4.branch-title {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  color: #555;
+}
+p.branch-description {
+  font-weight: 200;
+  color: #555;
+}
+
+/* Secretariats - Home */
 
 @media (min-width: 1281px) {
-  .team_div {
+  .home-secretariat {
     height: 430px;
   }
-
- .inner_div {
-    float: left;
-    width: 30%;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
 }
-.team_div {
-    /*height: 560px;*/
-    text-align: center;
-    background-image:url(/assets/geometic-bg-black-2.jpg); 
-  }
-.inner_div {
-  /*float: left;*/
-  
-  
-}
-.outer_div {
-    padding-top: 65px;
-    padding-left: 45px;
-    padding-right: 35px;
-    width: 100%;
-}
-.inner_text {
+.home-secretariat {
   text-align: center;
-  color: white;
+  background-color: #F9F9F9;
 }
-.inner_text > h4 {
-  color: white;
-}
-.top_header{
-  padding-top: 20px;
+.home-secretariat-header {
+  padding-top: 2%;
   text-align: center;
 }
-.top_header > h3{
-  color: white;
+h3.home-secretariat-title {
+  color: #18355B;
+  font-size: 42px;
+  margin: 2% auto;
+  font-weight: 100;
+  font-family: sans-serif, Helvetica Neue, 'Open Sans'; 
 }
-
-.inner_img > img {
-  height: 200px;
-  width: 320px;
+.home-secretariat-list {
+  width: 100%;
+  display: -webkit-box;
+  padding: 3% 0%;
 }
-.row{
-  /*background-color: white;*/
+.home-secretariat-info {
+  width: 25%;
+  margin: 0% 4%;
 }
-
-.mailing_list{background-image: url(/assets/conference-title.jpg);}
-  .mailing_list .section {
-    padding: 0;
+.home-secretariat-img > img {
+  width: 200px;
+  border-radius: 100%;
 }
-.content{
-  /*background-color: white;*/
-}
-.mailing_list .heading {
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
+h4.home-secretariat-name {
+  color: #18355B;
+  font-size: 24px;
   text-align: center;
-  width: 90%;
-  color: black;
+  font-weight: 200;
+}
+p.home-secretariat-position {
+  color: #666;
+  font-size: 22px;
+  font-weight: 100;
+}
+.row {
+  padding: 0;
+  margin: 0;
+}
+
+/* Mailing List - Home */
+.mailing-list {
+  background-color: #FFFFFF;
+}
+.mailing-list-header {
+  padding: 3% 0%;
+  text-align: center;
+  margin: auto;
+}
+h1.mailing-list-title  {
+  font-size: 42px;
+  line-height: 1.7em;
+  color: #18355B;
+  font-weight: 100;
+  font-family: sans-serif, Helvetica Neue, 'Open Sans'; 
 }
 #mc_embed_signup {
   background: transparent none repeat scroll 0 0;
@@ -569,56 +596,39 @@ span.award-recipient {
   margin: 0 auto;
   width: 100%;
 }
-#mc_embed_signup .mc-field-group input.fname {
+#mc_embed_signup .mc-field-group input.fname,
+#mc_embed_signup .mc-field-group input.lname {
   border-radius: 0;
   display: inline;
   float: left;
-  margin: 0 15px 0 2%;
-  padding: 15px 0;
+  margin: 0 3%;
+  padding: 1.8% 0;
   text-indent: 4%;
-  width: 29%;
+  width: 25%;
+  background-color: #F1F1F1;
+  color: #999;
+  border: none;
+  font-weight: 300;
+}
+#mc_embed_signup .mc-field-group input.email {
+  border-radius: 0;
+  display: inline;
+  float: left;
+  margin: 0 3%;
+  padding: 1.8% 0;
+  text-indent: 4%;
+  width: 30%;
+  background-color: #F1F1F1;
+  color: #999;
+  border: none;
+  font-weight: 300;
 }
 #mc_embed_signup input {
   border: 1px solid #999;
 }
 .mc-field-group{
-  padding-bottom: 95px;
+  padding-bottom: 8%;
 }
-
-#mc_embed_signup .mc-field-group input.lname {
-  border-radius: 0;
-  display: inline;
-  float: left;
-  margin: 0 15px;
-  padding: 15px 0;
-  text-indent: 4%;
-  width: 29%;
-}
-/*#mc_embed_signup input {
-  border: 1px solid #999;
-}*/
-
-#mc_embed_signup .mc-field-group input.email {
-  border-radius: 0;
-  display: inline;
-  float: left;
-  margin: 0 2% 0 15px;
-  padding: 15px 0;
-  text-indent: 4%;
-  width: 29%;
-}
-/*#mc_embed_signup input {
-  border: 1px solid #999;
-}*/
-.mailing_list h1  {
-  font-size: 70px;
-  line-height: 72px;
-  color: #ffffff;
-  padding: 30px;
-  text-decoration: none !important;
-  font-family: "Raleway",sans-serif !important;
-}
-
 #mc_embed_signup .button {
   background: transparent none repeat scroll 0 0;
   border: 3px solid #ffffff;
@@ -638,6 +648,38 @@ span.award-recipient {
   white-space: nowrap;
   width: auto;
 }
+
+/* Counter - Home */
+.counter-boxes {
+  padding-top: 2%;
+}
+.counter-hover.col-md-3:hover {
+  background-color: #F9F9F9 !important;
+}
+.counter-table-cell {
+  margin-bottom: 15%;
+}
+.counter-icon {
+  text-align: center;
+  padding: 10% 0%;
+}
+h3.counter-title {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-align: center;
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  padding: 8% 0;
+  margin-bottom: 15%;
+}
+h3.counter-value {
+  font-size: 98px;
+  text-align: center;
+  margin: 10% auto;
+  font-weight: 100;
+  color: #5E6469;
+}
+
 .mailing_list .three-col {
     padding-top: 30px;
 }
@@ -1030,17 +1072,4 @@ input.contact-name {
 span.contact-detail-title {
   font-weight: 100;
   font-size: 18px;
-}
-
-/* Home Page */
-span.marketable-line {
-  font-size: 58px;
-  font-weight: 100;
-  text-align: center;
-  color: #555;
-}
-.market-mun.col-md-12 {
-  text-align: center;
-  margin: 5% 0%;
-  padding: 0;
 }
