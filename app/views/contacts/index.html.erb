@@ -14,14 +14,13 @@
 		<div class = "email_field"><%=f.text_field :email, placeholder: "Email" %></div>
 		<div class = "message_field"><%= f.text_area :message, placeholder: "Message",  rows: "7" %></div>
 		<div class = "form_submit col-md-12 ">
-          <%= show_simple_captcha(:label => "human authentication",code_type: "numeric") %>
 		  <%= f.submit 'Submit',class:"from_test" do%>
 		   <%end%>
 		</div>
 	  <%end%>
 	</div>
 
-	<div class="col-md-3 col-sm-12" style = "float:left">
+	<div class="col-md-3 col-sm-12" style = "float:left; margin: 0% 10%; padding: 0;">
 	  <h1 class = "contact-form-title">More Info</h1>
 	  <p class = "contact-about">sit amet, consectetur adipiscing elit. Integer placerat metus id orci facilisis, in luctus eros laoreet. Mauris interdum augue varius, faucibus massa id, imperdiet tortor. Donec vel tortor molestie, hendrerit sem a, hendrerit arcu. Aliquam erat volutpat. Proin varius eros eros, non condimentum nis.</p>
 	  <p class = "contact-details">
