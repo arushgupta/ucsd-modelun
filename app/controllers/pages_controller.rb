@@ -4,7 +4,7 @@ before_action :admin_user,     only: [:destroy, :create]
 
   def index
     @categories = Category.all
-    @pages = Page.find(8)
+    @pages = Page.find(6)
   end
   
   private

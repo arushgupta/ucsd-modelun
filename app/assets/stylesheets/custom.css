@@ -1189,6 +1189,13 @@ span.position-paper-sample-text:hover {
   font-weight: 100;
 }
 @media (min-width: 981px) {
+  .conferences-resources-list {
+    list-style-type: decimal;
+    font-size: 18px;
+    font-weight: 200;
+  }
+}
+@media (min-width: 981px) {
   .travel-resources-list {
     list-style-type: decimal;
     font-size: 18px;
@@ -1196,14 +1203,14 @@ span.position-paper-sample-text:hover {
     margin-left: 40%;
   }
 }
-.travel-resources-list-item {
+.list-item {
   text-align: left;
   padding-top: 2%;
   color: #777;
 }
-.travel-resources-list-item-link {
+.list-item-link {
   color: #AAA !important;
 }
-.travel-resources-list-item-link:hover {
+.list-item-link:hover {
   color: #5E6469 !important;
 }
