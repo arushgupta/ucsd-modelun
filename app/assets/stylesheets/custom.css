@@ -1171,3 +1171,32 @@ span.position-paper-sample-text {
 span.position-paper-sample-text:hover {
   color: #5E6469;
 }
+
+/* Resources - Travel */
+.travel-resources {
+  margin: 5% 0%;
+}
+.travel-resources-title {
+  margin: 0 40%;
+  font-size: 32px;
+  font-weight: 100;
+}
+@media (min-width: 981px) {
+  .travel-resources-list {
+    list-style-type: decimal;
+    font-size: 18px;
+    font-weight: 200;
+    margin-left: 40%;
+  }
+}
+.travel-resources-list-item {
+  text-align: left;
+  padding-top: 2%;
+  color: #777;
+}
+.travel-resources-list-item-link {
+  color: #AAA !important;
+}
+.travel-resources-list-item-link:hover {
+  color: #5E6469 !important;
+}
