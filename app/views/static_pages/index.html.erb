@@ -64,11 +64,11 @@
   <div class = "home-secretariat-list row">
     <%@secretariats.each do |sec|%>
     <div class="col-md-4">  
-      <div class = "home-secretariat-info " style="width:60%;">
-        <div class = "home-secretariat-img ">
+      <div class = "home-secretariat-info">
+        <div class = "home-secretariat-img">
           <%=image_tag(sec.image_url)%>
         </div>
-        <div class="home-secretariat-text ">
+        <div class="home-secretariat-text">
           <h4 class = "home-secretariat-name"><%=sec.name%></h4>
           <p class = "home-secretariat-position"><%=sec.position%></p>
         </div>

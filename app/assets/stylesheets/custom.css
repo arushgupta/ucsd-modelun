@@ -550,8 +550,8 @@ h3.home-secretariat-title {
   padding: 3% 0%;
 }
 .home-secretariat-info {
-  width: 25%;
-  margin: 0% 4%;
+  width: 100%;
+  margin: 5% 0;
 }
 .home-secretariat-img > img {
   width: 200px;
