@@ -741,16 +741,16 @@ h3.counter-value {
 
 @media(max-width: 780px){
   #mc_embed_signup .mc-field-group input.fname{
-    width: 100%;
-    margin: 0px;
+    width: 90%;
+    margin: 0% 5% 2%;
   }
   #mc_embed_signup .mc-field-group input.lname{
-    width: 100%;
-    margin: 0px;
+    width: 90%;
+    margin: 2% 5%;
   }
   #mc_embed_signup .mc-field-group input.email{
-    width: 100%;
-    margin: 0px;
+    width: 90%;
+    margin: 2% 5% 4%;
   }
 }
 
@@ -1023,7 +1023,7 @@ form input[type=submit]:hover {
 }
 .contact-map {
   margin-top: 2%;
-  padding: 5%;
+  padding: 9%;
   margin-bottom: 5%;
 }
 .col-sm-12.col-md-6.contact-form {
@@ -1125,12 +1125,18 @@ span.contact-detail-title {
 
 .from_test {
   float: right;
+  margin-top: 1%;
 }
-.simple_captcha {
-    border: 1px solid #CCC;
+.g-recaptcha {
     padding: 5px !important;
     float:left;
 }
+
+.thislink {
+  pointer-events: none;
+  cursor: default;
+}
+
 
 /* Position Paper - Pages */
 .position-paper-formatting-title {
@@ -1138,7 +1144,7 @@ span.contact-detail-title {
   font-weight: 100;
   padding-bottom: 5%;
   float: right;
-  margin: 0 32% 0 0;
+  margin: 0 38% 0 0;
 }
 .position-paper-submission-title {
   text-align: left;
@@ -1171,6 +1177,7 @@ span.position-paper-sample-text {
 span.position-paper-sample-text:hover {
   color: #5E6469;
 }
+
 
 /* Resources - Travel */
 .travel-resources {

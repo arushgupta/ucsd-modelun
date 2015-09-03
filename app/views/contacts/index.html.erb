@@ -14,7 +14,8 @@
 		<div class = "email_field"><%=f.text_field :email, placeholder: "Email" %></div>
 		<div class = "message_field"><%= f.text_area :message, placeholder: "Message",  rows: "7" %></div>
 		<div class = "form_submit col-md-12 ">
-		  <%= f.submit 'Submit',class:"from_test" do%>
+		<%= recaptcha_tags %>
+		<%= f.submit 'Submit',class:"from_test" do%>
 		   <%end%>
 		</div>
 	  <%end%>
