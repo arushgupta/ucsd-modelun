@@ -56,27 +56,31 @@
 </div>
 
 <!-- Secretariats -->
+<div class="col-md-12" style = "padding: 0;">
 <div class= "home-secretariat">
   <div class = "home-secretariat-header">
     <h3 class = "home-secretariat-title">Hi, let's get acquainted!</h3>
   </div>
-  <div class = "home-secretariat-list">
+  <div class = "home-secretariat-list row">
     <%@secretariats.each do |sec|%>
-      <div class = "home-secretariat-info">
-        <div class = "home-secretariat-img">
+    <div class="col-md-4">  
+      <div class = "home-secretariat-info " style="width:60%;">
+        <div class = "home-secretariat-img ">
           <%=image_tag(sec.image_url)%>
         </div>
-        <div class="home-secretariat-text">
+        <div class="home-secretariat-text ">
           <h4 class = "home-secretariat-name"><%=sec.name%></h4>
           <p class = "home-secretariat-position"><%=sec.position%></p>
         </div>
       </div>
+    </div>
     <%end%>
   </div>
   <a class = "conference_promo_button conference_button button-white-bg" href="">
     More Members
     <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
   </a>
+</div>
 </div>
 
 <!-- Counter -->

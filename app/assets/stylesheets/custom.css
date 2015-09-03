@@ -546,7 +546,7 @@ h3.home-secretariat-title {
 }
 .home-secretariat-list {
   width: 100%;
-  display: -webkit-box;
+  display: inline-block;
   padding: 3% 0%;
 }
 .home-secretariat-info {
