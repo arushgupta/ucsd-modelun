@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
 
 	def create
 		@contact = Contact.new(contact_params)
-		if simple_captcha_valid?
+		if verify_recaptacha
 		@contact.save
 		flash[:notice] = "Your information saved successfully"
 		redirect_to contacts_path
