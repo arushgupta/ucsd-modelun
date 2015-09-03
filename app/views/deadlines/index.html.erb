@@ -22,18 +22,18 @@
             </li>
             <li class = "plan-info"><%=dead.deadline_info%></li>
             <li class="plan-action">
-              <% if dead.date > Date.today%>
-            <a id="<%=dead.id%>" class = "et_pb_button conference_promo_button conference_button button-white-bg" href="">
+            <% if dead.date > Date.today%>
+              <a id="<%=dead.id%>" class = "et_pb_button conference_promo_button conference_button button-white-bg" href="">
 
-              Register Now
-              <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
-            </a>
+                Register Now
+                <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+              </a>
             <%else%>
-            <a id="<%=dead.id%>" class = "et_pb_button conference_promo_button conference_button button-white-bg thislink" href="">
+              <a id="<%=dead.id%>" class = "et_pb_button conference_promo_button conference_button button-white-bg thislink" href="">
 
-              Register Now
-              <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
-            </a>
+                Register Now
+                <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+              </a>
             <%end%>
             </li>
           </ul>
@@ -42,6 +42,3 @@
     </div>              
   </div>
 </div>
-<script type="text/javascript">
-
-</script>

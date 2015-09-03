@@ -1131,5 +1131,48 @@ span.contact-detail-title {
     padding: 5px !important;
     float:left;
 }
+
 .thislink{pointer-events: none;
            cursor: default;}
+
+
+/* Position Paper - Pages */
+.position-paper-formatting-title {
+  text-align: left;
+  font-weight: 100;
+  padding-bottom: 5%;
+  float: right;
+  margin: 0 38% 0 0;
+}
+.position-paper-submission-title {
+  text-align: left;
+  font-weight: 100;
+  padding-bottom: 5%;
+  margin: 0 13%;
+}
+.position-paper-list {
+  margin: 0 0 5%;
+  font-weight: 200;
+}
+@media (min-width: 981px) {
+  .position-paper-middle {
+    margin: 0% 33%;
+  }
+}
+.position-paper-sample {
+  text-align: center;
+  padding: 15%;
+  background-color: #F9F9F9;
+}
+span.position-paper-sample-text {
+  font-size: 1.5em;
+  color: #AAA;
+  font-weight: 100;
+}
+.position-paper-sample:hover {
+  background-color: #EEE;
+}
+span.position-paper-sample-text:hover {
+  color: #5E6469;
+}
+
