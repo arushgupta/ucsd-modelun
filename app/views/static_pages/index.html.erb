@@ -1,160 +1,161 @@
 <div class="row">
+  <div class="col-md-12" style = "padding: 0;">
+    <div class="item active">
+      <div class="main_image">
+        <%begin%>
+          <%= image_tag (@tritonmun[0].image_url), class: "img-responsive"%>
+        <%rescue%>
+        <img src="assets/image_1.jpg" alt="..." class = "img-responsive">
+        <%end%>
+      </div>
+    </div>
+  </div>
   <div class = "market-mun col-md-12">
     <span class = "marketable-line">We invite you to learn, debate, grow and lead</span>
   </div>
-
-  <div id="carousel-example-generic" class = "carousel slide vertical" data-ride="carousel">
-    <div class="col-md-12" style = "padding: 0;">
-      <div class="carousel-inner">
-        <div class="item active">
-          <div class="main_image">
-            <%begin%>
-              <%= image_tag (@tritonmun[0].image_url), class: "img-responsive"%>
-            <%rescue%>
-              <img src="assets/image_1.jpg" alt="..." class = "img-responsive">
-            <%end%>
-          </div>
-        </div>
-        <div class="item">
-          <div class="main_image">
-            <%begin%>
-              <%= image_tag (@sdimun[0].image_url)%>
-            <%rescue%>
-              <img src="assets/image_1.jpg" alt="...">
-            <%end%>
-          </div>
-        </div>
-        <div class="item">
-          <div class="main_image">
-            <%begin%>
-              <%= image_tag (@travel[0].image_url)%>
-            <%rescue%>
-              <img src="assets/image_1.jpg" alt="...">
-            <%end%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> <!-- Carousel -->
 </div>
 
+<!-- Branches -->
 <div class="new_container">
   <div class="branch_column">
     <div class="branch_main_blurb_image">
-      <img src = "assets/conference-1.jpg" alt="">
+      <img src = "assets/conference-1.jpg" alt="" style = "height: 100px; width: 100px;">
     </div>
     <div class="branch_blurb_container">
-      <h4>Title</h4>
-        Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
+      <h4 class = "branch-title">TritonMUN</h4>
+      <p class = "branch-description">A biannual conference held in Fall and Spring to encourage highschool students to get involved.</p>
     </div>
   </div>
   <div class="branch_column">
     <div class="branch_main_blurb_image">
-      <img src="assets/conference-2.jpg" alt="">
+      <img src="assets/conference-2.jpg" alt="" style = "height: 100px; width: 100px;">
     </div>
     <div class="branch_blurb_container">
-      <h4>Title</h4>
-        Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
+      <h4 class = "branch-title">SandiMUN</h4>
+      <p class = "branch-description">An intercollegiate conference that aims to provide a forum for students to tackle global issues.</p>
     </div>
   </div>
   <div class="branch_column">
     <div class="branch_main_blurb_image">
-      <img src="assets/conference-3.jpg" alt="">
+      <img src="assets/conference-3.jpg" alt="" style = "height: 100px; width: 100px;">
     </div>
     <div class="branch_blurb_container">
-      <h4>Title</h4>
-        Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
+      <h4 class = "branch-title">Travel Team</h4>
+      <p class = "branch-description">A team of award-winning and experienced individuals who go to other collegiate conferences.</p>
     </div>
   </div>
   <div class="branch_column">
     <div class="branch_main_blurb_image">
-      <img src="assets/conference-4.jpg" alt="">
+      <img src="assets/conference-4.jpg" alt="" style = "height: 100px; width: 100px;">
     </div>
     <div class="branch_blurb_container">
-      <h4>Title</h4>
-        Divi will change the way you build websites forever. The advanced page builder makes it possible to build truly dynamic pages without learning code.
+      <h4 class = "branch-title">Home Team</h4>
+      <p class = "branch-description">A team of outstanding people who organize the conferences held at UCSD.</p>
     </div>
   </div>
 </div>
 
-<div class= "team_div">
-  <div class="et_pb_section  et_pb_section_3 et_pb_with_background et_section_regular">
-    <div class="top_header">
-      <h3>MEET THE CREW</h3>
-    </div> <!-- .et_pb_row -->
-    <div class="outer_div">
-      <%@secretariats.each do |sec|%>
-        <div class="inner_div">
-        <div class="inner_img">
+<!-- Secretariats -->
+<div class="col-md-12" style = "padding: 0;">
+<div class= "home-secretariat">
+  <div class = "home-secretariat-header">
+    <h3 class = "home-secretariat-title">Hi, let's get acquainted!</h3>
+  </div>
+  <div class = "home-secretariat-list row">
+    <%@secretariats.each do |sec|%>
+    <div class="col-md-4">  
+      <div class = "home-secretariat-info">
+        <div class = "home-secretariat-img">
           <%=image_tag(sec.image_url)%>
         </div>
-        <div class="inner_text">
-          <h4><%=sec.name%></h4>
-          <p class=""><%=sec.position%></p>
-        </div> <!-- .et_pb_team_member_description -->
-      </div>
-      <%end%>
-      
-      </div>
-    </div> <!-- .et_pb_row -->
-  </div>
-</div>
-<div class="mailing_list">
-  <section class="section1" id="mail_contact">
-    <div class="content">
-      <div class="heading">
-        <h1>Mailing List</h1>
-        <div id="mc_embed_signup">
-          <%=form_for(@user, remote: true) do |f|%>
-            <div id="error_explanation">
-              <% if @user.errors.any? %>
-                <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-                <ul>
-                  <% @user.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                  <% end %>
-                </ul>
-              <% end %>
-            </div>
-            <div class="mc-field-group">
-              <%=f.text_field :first_name, class: "fname", placeholder: "First Name"%>
-              <%=f.text_field :last_name, class: "lname", placeholder: "Last Name"%>
-              <%=f.text_field :email, class: "email", placeholder: "Email"%>
-            </div>
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-          <%end%>
+        <div class="home-secretariat-text">
+          <h4 class = "home-secretariat-name"><%=sec.name%></h4>
+          <p class = "home-secretariat-position"><%=sec.position%></p>
         </div>
       </div>
-      <ul class="three-col clearself">
-        <li class="column instagram">
-          <a href="http://instagram.com/trojanmun" class="block">
-            <div class="icon"><img width="40" height"40"="" src="http://trojanmun.org/wp-content/uploads/2013/04/icon_instagram.png"><span class="arrow"></span></div>
-            <h2>Instagram</h2>
-            <p class="handle">@trojanmun</p>
-            <div id="instagram"></div>
-          </a>
-        </li>
-        <li class="column twitter">
-          <a href="mailto:sg@trojanmun.org" class="block">
-            <div class="icon"><img width="40" height"40"="" src="http://trojanmun.org/wp-content/uploads/2013/04/icon_mail.png"><span class="arrow"></span></div>
-            <h2>Email</h2>
-            <p class="handle">sg@trojanmun.org</p>
-            <!-- <p id="tweet">Keep in touch</p> -->
-          </a>
-        </li>
-        <li class="column blog">
-          <a href="https://www.facebook.com/trojanmun" class="block">
-            <div class="icon"><img width="40" height"40"="" src="http://trojanmun.org/wp-content/uploads/2013/04/icon_facebook.png"><span class="arrow"></span></div>
-            <h2>Facebook</h2>
-            <p class="handle">facebook.com/trojanmun</p>
-            <figure>
-              <!--<img class="center" src="#" alt="" />-->
-            </figure>
-          </a>
-        </li>
-      </ul>
     </div>
-  </section>
+    <%end%>
+  </div>
+  <a class = "conference_promo_button conference_button button-white-bg" href="">
+    More Members
+    <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+  </a>
+</div>
+</div>
+
+<!-- Counter -->
+<div class = "counter-boxes col-md-12">
+  <div class = "counter-members counter-hover col-md-3">
+    <div class = "counter-table-container">
+      <div class = "counter-table-cell">
+        <div class = "counter-icon">
+          <span class = "fa fa-users" style = "font-size: 32px;"></span>
+        </div>
+        <h3 class = "counter-title">MEMBERS</h3>
+        <h3 class = "counter-value">50</h3>
+      </div>
+    </div>
+  </div>
+  <div class = "counter-secretariats counter-hover col-md-3">
+    <div class = "counter-table-container">
+      <div class = "counter-table-cell">
+        <div class = "counter-icon">
+          <span class = "glyphicon glyphicon-user" style = "font-size: 28px;"></span>
+        </div>
+        <h3 class = "counter-title">SECRETARIATS</h3>
+        <h3 class = "counter-value">10</h3>
+      </div>
+    </div>
+  </div>
+  <div class = "counter-conferences counter-hover col-md-3">
+    <div class = "counter-table-container">
+      <div class = "counter-table-cell">
+        <div class = "counter-icon">
+          <span class = "fa fa-trophy" style = "font-size: 32px;"></span>
+        </div>
+        <h3 class = "counter-title">AWARDS</h3>
+        <h3 class = "counter-value">38</h3>
+      </div>
+    </div>
+  </div>
+  <div class = "counter-awards counter-hover col-md-3">
+    <div class = "counter-table-container">
+      <div class = "counter-table-cell">
+        <div class = "counter-icon">
+          <span class = "fa fa-gavel" style = "font-size: 32px;"></span>
+        </div>
+        <h3 class = "counter-title">CONFERENCES</h3>
+        <h3 class = "counter-value">14</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mailing List -->
+<div class = "mailing-list">
+  <div class = "mailing-list-header">
+    <h1 class = "mailing-list-title">Mailing List</h1>
+  </div>
+  <div id = "mc_embed_signup">
+    <%=form_for(@user, remote: true) do |f|%>
+      <div id = "error_explanation">
+        <% if @user.errors.any? %>
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+      <div class = "mc-field-group">
+        <%=f.text_field :first_name, class: "fname", placeholder: "First Name"%>
+        <%=f.text_field :last_name, class: "lname", placeholder: "Last Name"%>
+        <%=f.text_field :email, class: "email", placeholder: "Email Address"%>
+      </div>
+      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+    <%end%>
+  </div>
 </div>
 
 <script type="text/javascript">

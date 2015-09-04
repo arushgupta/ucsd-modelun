@@ -95,9 +95,8 @@ footer {
 }
 .main_image{
   overflow: hidden;
-  width: 90%;
-  margin-right: 5%;
-  margin-left: 5%;
+  width: 70%;
+  margin: 5% auto 2%;
 }
 .second_img{
   width: 30%;
@@ -117,9 +116,10 @@ footer {
 
 
 .main_image img {
-    height: 480px;
+    height: 341px;
     overflow: hidden;
-    width: 100%;
+    width: 1012px;
+    margin-top: 2%;
 }
 .thumb {
   width: 100%;
@@ -266,10 +266,11 @@ footer {
 }
 .events {
   text-align: left;
-  padding-left: 32%;
+  padding-left: 31%;
 }
 .events .activity-column {
   float: left;
+  padding-left: 10%;
   color: #464d52;
 }
 .events .activity-column .event-activity {
@@ -284,7 +285,6 @@ footer {
 .events .time-column {
   float: left;
   text-align: left;
-  padding-left: 20%;
   color: #464d52;
   font-weight: 200;
 }
