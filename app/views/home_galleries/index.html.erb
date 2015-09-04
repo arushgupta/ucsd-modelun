@@ -8,7 +8,7 @@
 <div class="container-fluid">
   <div class="row">
    	<%@galleries.each_with_index do |gallery, index|%>
-			<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image <%=index+1%>" href="#"><img class="thumbnail img-responsive" src="<%=gallery.image_url%>"></a></div>
+			<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image <%=index+1%>" href="javascript:void(0)"><img class="thumbnail img-responsive" src="<%=gallery.image_url%>"></a></div>
 		<%end%>
   </div>
 </div>
@@ -34,6 +34,10 @@
 
 <script type="text/javascript">
 	/* copy loaded thumbnails into carousel */
+$(document).ready(function () {           
+  $('.carousel').carousel();       
+});
+
 $('.row .thumbnail').on('load', function() {  
 }).each(function(i) {
   if(this.complete) {

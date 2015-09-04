@@ -46,7 +46,7 @@ ActiveAdmin.register Page do
   form do |f|
     f.inputs "Page Details" do
       f.input :category, collection: Category.all.map {|category| [category.name, category.id]}, include_blank: "select"
-      f.input :name 
+      f.input :name
       f.input :content, as: :ckeditor
       f.input :subheading
       f.input :page_description, as: :ckeditor
