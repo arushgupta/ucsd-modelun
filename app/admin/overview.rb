@@ -3,7 +3,7 @@ ActiveAdmin.register Overview do
   menu priority: 4
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :season, :delegation_fee, :position_paper_deadline, :welcome_letter, :start_date, :end_date, :location, :category_id, :is_active
+  permit_params :season, :delegation_fee, :position_paper_deadline, :welcome_letter, :start_date, :end_date, :location, :registration_form_url, :category_id, :is_active
 
   controller do
     def show
@@ -18,6 +18,7 @@ ActiveAdmin.register Overview do
     column :start_date
     column :end_date
     column :location
+    column :registration_form_url
     column :delegation_fee
     column :position_paper_deadline
     column (:welcome_letter)  {|overview| raw(overview.welcome_letter)}
@@ -32,6 +33,7 @@ ActiveAdmin.register Overview do
       row :start_date
       row :end_date
       row :location
+      row :registration_form_url
       row 'Delegation Fee' do |finder|
         finder.delegation_fee
       end
@@ -53,6 +55,7 @@ ActiveAdmin.register Overview do
       f.input :start_date, as: :string, input_html: {class: 'datepicker'}
       f.input :end_date, as: :string, input_html: {class: 'datepicker'}
       f.input :location
+      f.input :registration_form_url
       f.input :welcome_letter, as: :ckeditor
       f.input :is_active, label: "Active"
     end

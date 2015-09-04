@@ -9,7 +9,7 @@ class CommitteesController < ApplicationController
   end
 
   def index
-    @categories = Category.all
+    @categories = Category.all.where(is_active: true).order('created_at ASC')
     @cat = Category.all.where("categories.category_id IS NOT NULL")
     @apply = ApplyNow.all
   	@committees = Committee.all.where(category_id: params[:cat_id]).order('order_id ASC')

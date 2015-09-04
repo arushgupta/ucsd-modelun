@@ -8,12 +8,12 @@
 <div class="container-fluid">
   <div class="row">
    	<%@galleries.each_with_index do |gallery, index|%>
-			<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image <%=index+1%>" href="#"><img class="thumbnail img-responsive" src="<%=gallery.image_url%>"></a></div>
+			<div class="col-lg-3 col-sm-4 col-xs-6"><a class = "fancybox" title="Image <%=index+1%>" href="<%=gallery.image_url%>"><img class="thumbnail img-responsive " src="<%=gallery.image_url%>"></a></div>
 		<%end%>
   </div>
 </div>
 
-<div class="modal" id="myModal" role="dialog">
+<!-- <div class="modal" id="myModal" role="dialog">
   <div class="modal-dialog">
   	<div class="modal-content">
 			<div class="modal-header">
@@ -29,14 +29,33 @@
 			</div>
    	</div>
   </div>
-</div>
+</div> -->
 
 
+<script type = "text/javascript">
+$(".fancybox")
+    .attr('rel', 'gallery')
+    .fancybox({
+        padding : 0
+    });
+
+
+</script>
+<!-- 
 <script type="text/javascript">
+
+
+
 	/* copy loaded thumbnails into carousel */
+<<<<<<< HEAD
   $(document).ready(function () {           
             $('.carousel').carousel();       
         });
+=======
+$(document).ready(function () {           
+  $('.carousel').carousel();       
+});
+>>>>>>> c8ede1a1163ab1225dda1413fd3cd2ad1530018f
 
 $('.row .thumbnail').on('load', function() {  
 }).each(function(i) {
@@ -70,4 +89,4 @@ $('.row .thumbnail').click(function(){
     $('#modalCarousel').carousel(id); // slide carousel to selected
   	
 });
-</script>
+</script> -->

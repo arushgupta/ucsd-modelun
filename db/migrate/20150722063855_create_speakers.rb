@@ -3,6 +3,10 @@ class CreateSpeakers < ActiveRecord::Migration
     create_table :speakers do |t|
       t.string :panel
       t.string :name
+      t.string :fb_url
+      t.string :tw_url
+      t.string :in_url
+      t.string :website_url
       t.text :description
       t.string :image_url
       t.references :category

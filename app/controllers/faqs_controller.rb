@@ -25,9 +25,9 @@ before_action :admin_user,     only: [:destroy, :create]
   end
 
   def index
-    @categories = Category.all
-      @cat = Category.all.where("categories.category_id IS NOT NULL")
-      @apply = ApplyNow.all
+    @categories = Category.all.where(is_active: true).order('created_at ASC')
+    @cat = Category.all.where("categories.category_id IS NOT NULL")
+    @apply = ApplyNow.all
     @faqs=Faq.all.where(category_id: params[:cat_id])
   end
 
