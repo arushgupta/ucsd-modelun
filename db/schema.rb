@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20150903114854) do
     t.string   "button_text"
     t.string   "image_title"
     t.string   "gallery_type"
+    t.boolean  "is_home_img"
     t.integer  "category_id"
     t.boolean  "is_active",    default: true
     t.datetime "created_at",                  null: false
