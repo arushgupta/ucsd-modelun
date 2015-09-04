@@ -30,7 +30,8 @@
 
 <script type="text/javascript">
 	/* copy loaded thumbnails into carousel */
-$('.row .thumbnail').on('load', function() {  
+  // $(document).ready(function(){  
+$('.row .thumbnail').on('ready', function() {  
 }).each(function(i) {
   if(this.complete) {
   	var item = $('<div class="item"></div>');
@@ -45,6 +46,7 @@ $('.row .thumbnail').on('load', function() {
     }
   }
 });
+// });
 
 /* activate the carousel */
 $('#modalCarousel').carousel({interval:false});
@@ -55,6 +57,7 @@ $('#modalCarousel').on('slid.bs.carousel', function () {
 })
 
 /* when clicking a thumbnail */
+
 $('.row .thumbnail').click(function(){
     var idx = $(this).parents('div').index();
   	var id = parseInt(idx);
@@ -62,4 +65,5 @@ $('.row .thumbnail').click(function(){
     $('#modalCarousel').carousel(id); // slide carousel to selected
   	
 });
+
 </script>
