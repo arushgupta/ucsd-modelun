@@ -5,6 +5,11 @@ class CreateSecretariats < ActiveRecord::Migration
       t.string :name
       t.string :college
       t.string :major
+      t.string :email
+      t.string :fb_url
+      t.string :tw_url
+      t.string :in_url
+      t.string :website
       t.text :description
       t.string :image_url
       t.references :category

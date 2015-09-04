@@ -32,13 +32,13 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
            <%begin%>
-              <%= link_to image_tag(@icons.secretariat_icon, alt: "logo"), secretariats_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.secretariat_icon, alt: "logo"), secretariats_path %>
             <%rescue%>
-              <%= link_to image_tag("conference-2.jpg", alt: "logo"),secretariats_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-2.jpg", alt: "logo"),secretariats_path %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Secretariat", secretariats_path(cat_id: params[:id]) %></h4>
+            <h4><%= link_to "Secretariat", secretariats_path %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>
@@ -49,13 +49,13 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
            <%begin%>
-              <%= link_to image_tag(@icons.alumni_icon, alt: "logo"),alumnis_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.alumni_icon, alt: "logo"),alumnis_path %>
             <%rescue%>
-              <%= link_to image_tag("conference-3.jpg", alt: "logo"),alumnis_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-3.jpg", alt: "logo"),alumnis_path %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Alumni", alumnis_path(cat_id: params[:id]) %></h4>
+            <h4><%= link_to "Alumni", alumnis_path %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>

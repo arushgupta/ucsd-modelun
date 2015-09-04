@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
 	def index
-		# @categories = Category.all.where(is_active: true)
+		@categories = Category.all.where(is_active: true).order('created_at ASC')
 		@contact = Contact.new
 	end
 

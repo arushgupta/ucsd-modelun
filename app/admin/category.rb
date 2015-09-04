@@ -9,7 +9,7 @@ ActiveAdmin.register Category do
 
   controller do
     def show
-      @page_title = " Category"
+      @page_title = "Category"
     end
   end
   

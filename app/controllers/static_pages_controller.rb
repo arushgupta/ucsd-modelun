@@ -22,7 +22,7 @@ class StaticPagesController < ApplicationController
 
   private
     def find_category
-      @categories = Category.all.where(is_active: true)
+      @categories = Category.all.where(is_active: true).order('created_at ASC')
       @cat = Category.all.where("categories.category_id IS NOT NULL")
       @apply = ApplyNow.all
     end

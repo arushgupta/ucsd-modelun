@@ -21,6 +21,6 @@ class Category < ActiveRecord::Base
   belongs_to :parent_category, class: "Category"
   has_many :subcategories, class: "Category"
 
- validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true
+  validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true
  
 end
