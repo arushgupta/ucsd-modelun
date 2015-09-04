@@ -32,8 +32,8 @@ body {
 }
 .conference_row_2 { 
   height: 38%;
-    width: 100%;
-    display: inline-block;
+  width: 100%;
+  display: inline-block;
 }
 .conference_row_3 { 
   height: 38%;
@@ -53,7 +53,7 @@ body {
 }
 @media (min-width: 981px) {
   .conference_row {
-    padding: 2% 0;
+    margin: 2% 0 !important;
   }
 }
 .container,
@@ -121,7 +121,7 @@ body {
 @media (min-width: 981px) {
   .conference_column_1_3,
   .conference_module {
-    /*margin-bottom: 0%;*/
+    margin: 0% 1.5% 2%;
   }
 }
 @media (min-width: 981px) {
@@ -232,13 +232,11 @@ input.conference_promo_button.conference_button.button-white-bg {
 }
 .conference_promo_button:hover {
   background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.2);
-  border: 0px;
-  padding: 0.4em 1.1em;
+  border: 2px solid rgba(255, 255, 255, 0);
 }
 a.conference_promo_button.button-white-bg:hover {
   background: none repeat scroll 0% 0% rgba(204, 204, 204, 0.2);
-  border: 0px;
-  padding: 0.4em 1.1em;  
+  border: 2px solid rgba(204, 204, 204, 0) !important;
 }
 input.conference_promo_button.conference_button.button-white-bg:hover {
   background: none repeat scroll 0% 0% rgba(204, 204, 204, 0.2);
@@ -466,8 +464,8 @@ span.award-recipient {
 }
 
 .conference_blurb_image img {
-    height: 200px;
-    width: 188px;
+  max-height: 200px;
+  max-width: 210px;
 }
 @media (min-width: 981px) {
   .branch_column{
@@ -743,14 +741,17 @@ h3.counter-value {
   #mc_embed_signup .mc-field-group input.fname{
     width: 90%;
     margin: 0% 5% 2%;
+    padding: 5% 0;
   }
   #mc_embed_signup .mc-field-group input.lname{
     width: 90%;
     margin: 2% 5%;
+    padding: 5% 0;
   }
   #mc_embed_signup .mc-field-group input.email{
     width: 90%;
     margin: 2% 5% 4%;
+    padding: 5% 0;
   }
 }
 
@@ -1015,7 +1016,7 @@ form input[type=submit] {
 }
 form input[type=submit]:hover {
   background: none repeat scroll 0% 0% rgba(204, 204, 204, .3) !important;
-  border: 0 !important;
+  border: 2px solid rgba(204, 204, 204, 0) !important;
 }
 .contact-page {
   height: 100%;
@@ -1184,7 +1185,7 @@ span.position-paper-sample-text:hover {
   margin: 5% 0%;
 }
 .travel-resources-title {
-  margin: 0 40%;
+  margin: 0 40% 1%;
   font-size: 32px;
   font-weight: 100;
 }

@@ -111,24 +111,24 @@
       </div>
     </div>
     <%@pages.each do |page|%>
-    <div class = "conference_column conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-            <%begin%>
-              <%= link_to image_tag(@icons.overview_icon, alt: "logo"),overviews_path(cat_id: params[:id]) %>
-            <%rescue%>
-              <%= link_to image_tag("conference-6.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "Overview", overviews_path(cat_id: params[:id]) %></h4>
-            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <%begin%>
+                <%= link_to image_tag(@icons.page_icon_url, alt: "logo"),page_path(page, id: page) %>
+              <%rescue%>
+                <%= link_to image_tag("conference-6.jpg", alt: "logo"),page_path(page, id: page) %>
+              <%end%>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to page.name, page_path(page,id: page.id) %></h4>
+              <%= page.page_description.html_safe %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
- <%end%>
+    <%end%>
  </div>
 
 
@@ -138,7 +138,7 @@
         <div class = "conference_promo_description">
           <h1>Look No Further. Register Today</h1>
         </div>
-        <a class = "conference_promo_button conference_button" href = "https://www.google.com">
+        <a class = "conference_promo_button conference_button" href = "http://goo.gl/forms/2Isv2hKZze">
           Register Now
           <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
         </a>

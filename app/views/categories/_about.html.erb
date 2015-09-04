@@ -8,23 +8,25 @@
   </div>
 
   <div class = "conference_row conference_row_2">
-    <div class = "conference_column conference_column_first conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-           <%begin%>
-              <%= link_to image_tag(@icons.overview_icon, alt: "logo"),pages_path(cat_id: params[:id]) %>
-            <%rescue%>
-              <%= link_to image_tag("conference-1.jpg", alt: "logo"),pages_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "Our Story", pages_path %></h4>
-            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+    <%@pages.each do |page|%>
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <%begin%>
+                <%= link_to image_tag(@icons.page_icon_url, alt: "logo"),page_path(page, id: page) %>
+              <%rescue%>
+                <%= link_to image_tag("conference-6.jpg", alt: "logo"),page_path(page, id: page) %>
+              <%end%>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to page.name, page_path(page,id: page.id) %></h4>
+              <%= page.page_description.html_safe %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <%end%>
     <div class = "conference_column conference_column_1_3">
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
@@ -59,38 +61,18 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class = "conference_row conference_row_3">
-    <div class = "conference_column conference_column_first conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-           <%begin%>
-              <%= link_to image_tag(@icons.history_icon, alt: "logo"), pages_path(cat_id: params[:id]) %>
-            <%rescue%>
-              <%= link_to image_tag("conference-4.jpg", alt: "logo"), pages_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "History", pages_path(cat_id: params[:id]) %></h4>
-            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
-          </div>
-        </div>
-      </div>
-    </div>
     <div class = "conference_column conference_column_1_3">
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
            <%begin%>
-              <%= link_to image_tag(@icons.gallery_icon, alt: "logo"), home_galleries_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.gallery_icon, alt: "logo"), home_galleries_path %>
             <%rescue%>
-              <%= link_to image_tag("conference-5.jpg", alt: "logo"), home_galleries_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-5.jpg", alt: "logo"), home_galleries_path %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Gallery", home_galleries_path(cat_id: params[:id]) %></h4>
+            <h4><%= link_to "Gallery", home_galleries_path %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>

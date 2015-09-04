@@ -5,7 +5,7 @@
         <%begin%>
           <%= image_tag (@tritonmun[0].image_url), class: "img-responsive"%>
         <%rescue%>
-        <img src="assets/image_1.jpg" alt="..." class = "img-responsive">
+        <img src="/assets/f3.jpg" alt="..." class = "img-responsive">
         <%end%>
       </div>
     </div>
@@ -102,7 +102,7 @@
         <div class = "counter-icon">
           <span class = "glyphicon glyphicon-user" style = "font-size: 28px;"></span>
         </div>
-        <h3 class = "counter-title">SECRETARIATS</h3>
+        <h3 class = "counter-title">SECRETARIAT</h3>
         <h3 class = "counter-value">10</h3>
       </div>
     </div>
@@ -132,7 +132,7 @@
 </div>
 
 <!-- Mailing List -->
-<div class = "mailing-list">
+<div class = "mailing-list col-md-12">
   <div class = "mailing-list-header">
     <h1 class = "mailing-list-title">Mailing List</h1>
   </div>
@@ -149,9 +149,9 @@
         <% end %>
       </div>
       <div class = "mc-field-group">
-        <%=f.text_field :first_name, class: "fname", placeholder: "First Name"%>
-        <%=f.text_field :last_name, class: "lname", placeholder: "Last Name"%>
-        <%=f.text_field :email, class: "email", placeholder: "Email Address"%>
+        <%=f.text_field :first_name, class: "fname", placeholder: "First Name *"%>
+        <%=f.text_field :last_name, class: "lname", placeholder: "Last Name *"%>
+        <%=f.text_field :email, class: "email", placeholder: "Email Address *"%>
       </div>
       <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
     <%end%>
@@ -174,7 +174,3 @@
   });
 </script>
 
-
-<style type="text/css">
-  
-</style>

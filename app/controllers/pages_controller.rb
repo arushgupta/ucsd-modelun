@@ -3,8 +3,12 @@ class PagesController < ApplicationController
 before_action :admin_user,     only: [:destroy, :create]
 
   def index
-    @categories = Category.all
     @pages = Page.find(6)
+  end
+
+  def show
+  	@categories = Category.all
+    @pages = Page.find(params[:id])
   end
   
   private

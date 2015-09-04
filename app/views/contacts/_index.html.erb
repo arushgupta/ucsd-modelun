@@ -7,14 +7,14 @@
 		<%=v%>
 	  <%end%>
 	
-	  <h1 class = "contact-form-title">Get In Touch</h1>
+	  <h1 class = "contact-form-title">Write Us</h1>
 	
 	  <%=form_for @contact do |f|%>
-		<div class = "name_field col-md-6 col-sm-12"><%=f.text_field :name, placeholder: "Name", class: "text-fields" %></div>
-		<div class = "email_field"><%=f.text_field :email, placeholder: "Email" %></div>
-		<div class = "message_field"><%= f.text_area :message, placeholder: "Message",  rows: "7" %></div>
+		<div class = "name_field col-md-6 col-sm-12"><%=f.text_field :name, placeholder: "Name *", class: "text-fields" %></div>
+		<div class = "email_field"><%=f.text_field :email, placeholder: "Email *" %></div>
+		<div class = "message_field"><%= f.text_area :message, placeholder: "Message *",  rows: "7" %></div>
 		<div class = "form_submit col-md-12 ">
-		<%= recaptcha_tags %>
+		<%=hidden_field_tag :category_id, params[:id]%>
 		<%= f.submit 'Submit',class:"from_test" do%>
 		   <%end%>
 		</div>
