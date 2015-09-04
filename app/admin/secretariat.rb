@@ -3,7 +3,7 @@ ActiveAdmin.register Secretariat do
   menu priority: 5
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :position, :name, :major, :description, :image_url, :college, :email, :fb_url, :tw_url, :in_url, :website, :category_id, :is_active
+  permit_params :position, :name, :major, :description, :image_url, :college, :email, :fb_url, :tw_url, :in_url, :website_url, :category_id, :is_active
   decorate_with SecretariatDecorator
   config.sort_order = 'id_asc'
 
@@ -51,7 +51,7 @@ ActiveAdmin.register Secretariat do
         finder.in_url
       end
       row 'Personal Website' do |finder|
-        finder.website
+        finder.website_url
       end
       row :is_active
       row :created_at
@@ -70,7 +70,7 @@ ActiveAdmin.register Secretariat do
       f.input :fb_url, label: 'Facebook'
       f.input :tw_url, label: 'Twitter'
       f.input :in_url, label: 'LinkedIn'
-      f.input :website, label: 'Personal Website'
+      f.input :website_url, label: 'Personal Website'
       f.input :description, label: "Description", as: :ckeditor
       f.input :image_url, as: :file, image_preview: true, label: "Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
       f.input :is_active, label: "Active"
