@@ -163,9 +163,15 @@ ActiveRecord::Schema.define(version: 20150903114854) do
     t.string   "speaker_icon"
     t.string   "fee_icon"
     t.string   "faq_icon"
+    t.string   "training_session_icon"
+    t.string   "travel_conferences_icon"
+    t.string   "awards_icon"
+    t.string   "alumni_icon"
+    t.string   "galleries_icon"
+    t.string   "secretariats_icon"
     t.integer  "category_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "overviews", force: :cascade do |t|

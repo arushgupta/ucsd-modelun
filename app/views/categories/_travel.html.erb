@@ -41,7 +41,7 @@
           <div class = "conference_blurb_content">
             <div class = "conference_blurb_image">
               <%begin%>
-                <%= link_to image_tag(@icons.page_icon_url, alt: "logo"),page_path(page, id: page) %>
+                <%= link_to image_tag(page.icon_url, alt: "logo"),page_path(page, id: page) %>
               <%rescue%>
                 <%= link_to image_tag("conference-6.jpg", alt: "logo"),page_path(page, id: page) %>
               <%end%>
