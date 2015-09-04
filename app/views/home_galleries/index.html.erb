@@ -13,72 +13,16 @@
   </div>
 </div>
 
-<!-- <div class="modal" id="myModal" role="dialog">
-  <div class="modal-dialog">
-  	<div class="modal-content">
-			<div class="modal-header">
-				<span type = "button" class = "glyphicon glyphicon-remove close modal-close-button" data-dismiss = "modal" aria-hidden = "true"></span>
-				<h3 class = "modal-title"></h3>
-			</div>
-			<div class="modal-body">
-				<div id="modalCarousel" class="carousel slide">
-          <div class="carousel-inner"></div>
-          <a class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-          <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-        </div>
-			</div>
-   	</div>
-  </div>
-</div> -->
-
-
 <script type = "text/javascript">
 $(".fancybox")
-    .attr('rel', 'gallery')
-    .fancybox({
-        padding : 0
-    });
-</script>
-<!-- 
-<script type="text/javascript">
-
-
-
-	/* copy loaded thumbnails into carousel */
-$(document).ready(function () {           
-  $('.carousel').carousel();       
-});
-
-$('.row .thumbnail').on('load', function() {  
-}).each(function(i) {
-  if(this.complete) {
-  	var item = $('<div class="item"></div>');
-    var itemDiv = $(this).parents('div');
-    var title = $(this).parent('a').attr("title");
-    
-    item.attr("title",title);
-  	$(itemDiv.html()).appendTo(item);
-  	item.appendTo('.carousel-inner'); 
-    if (i==0){ // set first item active
-     item.addClass('active');
+  .attr('rel', 'gallery')
+  .fancybox({
+    helpers : {
+        overlay : {
+            css : {
+                'background' : 'rgba(0, 0, 0, 0.8)'
+            }
+        }
     }
-  }
 });
-
-/* activate the carousel */
-$('#modalCarousel').carousel({interval:false});
-
-/* change modal title when slide changes */
-$('#modalCarousel').on('slid.bs.carousel', function () {
-  $('.modal-title').html($(this).find('.active').attr("title"));
-})
-
-/* when clicking a thumbnail */
-$('.row .thumbnail').click(function(){
-    var idx = $(this).parents('div').index();
-  	var id = parseInt(idx);
-  	$('#myModal').modal('show'); // show the modal
-    $('#modalCarousel').carousel(id); // slide carousel to selected
-  	
-});
-</script> -->
+</script>
