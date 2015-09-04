@@ -21,7 +21,7 @@
 				<h3 class = "modal-title"></h3>
 			</div>
 			<div class="modal-body">
-				<div id="modalCarousel" class="carousel">
+				<div id="modalCarousel" class="carousel slide">
           <div class="carousel-inner"></div>
           <a class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
           <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
@@ -34,6 +34,10 @@
 
 <script type="text/javascript">
 	/* copy loaded thumbnails into carousel */
+  $(document).ready(function () {           
+            $('.carousel').carousel();       
+        });
+
 $('.row .thumbnail').on('load', function() {  
 }).each(function(i) {
   if(this.complete) {
