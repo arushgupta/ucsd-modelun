@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
     @pages = Page.all.where(category_id: params[:id], is_active: true).order('created_at ASC')
     @contact = Contact.new
     @overviews = Overview.all.where(category_id: params[:id], is_active: true)
+    @sponsors = Sponsor.all.where(is_active: true)
     # @overviews=Overview.all.where(category_id: params[:id],is_active: true).first
     # @faqs=Faq.all.where(category_id: params[:id])
     # @schedules=Schedule.all.where(category_id: params[:id])

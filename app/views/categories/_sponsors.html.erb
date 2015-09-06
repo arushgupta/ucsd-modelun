@@ -21,7 +21,13 @@
                         <div style = "display: none;" class = "letter-dropdown">
                           <div class = "panel-body">
                             <div class = "container">
-                              <%= @pages.where(name: 'Letter').take.content.html_safe %>
+                              <% if @pages.where(name: 'Letter').exists? %>
+                                <%= @pages.where(name: 'Letter').take.content.html_safe %>
+                              <%else%>
+                                <div class="col-md-12" class = "coming-soon" >
+                                  <h1 class = "coming-soon-title">Coming Soon :)</h1>
+                                </div>
+                              <% end %>
                             </div>
                           </div>
                         </div>
@@ -42,7 +48,13 @@
                         <div style = "display: none;" class = "table-dropdown">
                           <div class = "panel-body">
                             <div class="container">
-                              <%= @pages.where(name: 'Sponsorship Opportunities').take.content.html_safe %>
+                              <% if @pages.where(name: 'Sponsorship Opportunities').exists? %>
+                                <%= @pages.where(name: 'Sponsorship Opportunities').take.content.html_safe %>
+                              <%else%>
+                                <div class="col-md-12" class = "coming-soon" >
+                                  <h1 class = "coming-soon-title">Coming Soon :)</h1>
+                                </div>
+                              <% end %>
                             </div>
                           </div>
                         </div>
@@ -62,7 +74,13 @@
                         <div style = "display: none;" class = "inquiry-dropdown">
                           <div class = "panel-body">
                             <div class="container">
-                              <%= @pages.where(name: 'Further Inquiries').take.content.html_safe %>
+                              <% if @pages.where(name: 'Further Inquiries').exists? %>
+                                <%= @pages.where(name: 'Further Inquiries').take.content.html_safe %>
+                              <%else%>
+                                <div class="col-md-12" class = "coming-soon" >
+                                  <h1 class = "coming-soon-title">Coming Soon :)</h1>
+                                </div>
+                              <% end %>
                             </div>
                           </div>
                         </div>
@@ -79,6 +97,7 @@
 </section>
 
 <% if @sponsors.count.zero? %>
+<% else %>
   <div class = "col-md-12 home-sponsors">
     <div class = "cold-md-12 home-sponsors-header">
       <h1 class = "home-sponsors-title">Our Sponsors</h1>

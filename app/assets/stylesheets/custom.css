@@ -1244,6 +1244,28 @@ span.position-paper-sample-text:hover {
   color: #5E6469 !important;
 }
 
+/* Sample - 1 column Page */
+h1.pages-title {
+  font-size: 42px;
+  font-weight: 100;
+  text-align: center;
+  margin: 5% auto;
+}
+.col-md-12.page-subheading {
+  font-size: 20px;
+  font-weight: 200;
+  margin: 0 0 3%;
+}
+.col-md-8.page-content {
+  margin: 0 16.5%;
+}
+p.page-content-p {
+  margin-bottom: 3%;
+}
+span.page-content-text-b {
+  font-weight: 600;
+}
+
 /* Coming Soon */
 .coming-soon {
   text-align: center;
