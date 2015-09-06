@@ -129,6 +129,41 @@
   </div>
 </div>
 
+<!-- Apply Now -->
+<% if @applynows.count.zero? %>
+<% else %>
+  <div class = "col-md-12 home-apply-now">
+    <div class = "col-md-12 home-apply-now-header">
+      <h1 class = "home-apply-now-title">Quick links</h1>
+    </div>
+    <% @applynows.each do |apply| %>
+      <div class = "col-md-4 quick-link-container">
+        <a href = "<%= apply.button_url %>">
+          <h3 class = "apply-now-headline">
+            <%= apply.headline %>
+          </h3>
+        </a>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<!-- Sponsors -->
+<% if @sponsors.count.zero? %>
+  <div class = "col-md-12 home-sponsors">
+    <div class = "cold-md-12 home-sponsors-header">
+      <h1 class = "home-sponsors-title">Our Sponsors</h1>
+    </div>
+    <ul class = "sponsor-list">
+      <% @sponsors.each do |sponsor| %>
+        <li class = "sponsor-list-item">
+          <img src = "<%= sponsor.logo_url %>" alt = "<% sponsor.name %>" class = "sponsor-img">
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <!-- Mailing List -->
 <div class = "mailing-list col-md-12">
   <div class = "mailing-list-header">

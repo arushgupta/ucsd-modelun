@@ -24,8 +24,8 @@ ActiveAdmin.register TrainingSession do
     end
     column :committee_name
     column :topic_name
-    column (:topic_description) {|session| raw(session.topic_description)}
     column :location
+    column (:topic_description) {|session| raw(session.topic_description)}
     column :committee_image_url
     column :topic_image_url
     column 'Topic Guide' do |upload|
@@ -45,8 +45,8 @@ ActiveAdmin.register TrainingSession do
       row :end_time
       row :committee_name
       row :topic_name
-      row :topic_description
       row :location
+      row :topic_description
       row :committee_image_url
       row :topic_image_url
       row 'Topic Guide' do |upload|
@@ -67,8 +67,8 @@ ActiveAdmin.register TrainingSession do
       f.input :end_time, as: :string, input_html: {class: 'timepicker'}
       f.input :committee_name
       f.input :topic_name
-      f.input :topic_description, as: :ckeditor
       f.input :location
+      f.input :topic_description, as: :ckeditor
       f.input :committee_image_url, as: :file, image_preview: true, label: "Committee Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.committee_image_url) : ""
       f.input :topic_image_url, as: :file, image_preview: true, label: "Topic Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.topic_image_url) : ""
       f.input :topic_guide_url, as: :file, hint: f.object.id? ? link_to(f.object.topic_guide_url.url): "", label: "Topic Guide (PDF only)"

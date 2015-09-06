@@ -78,6 +78,21 @@
   </div>
 </section>
 
+<% if @sponsors.count.zero? %>
+  <div class = "col-md-12 home-sponsors">
+    <div class = "cold-md-12 home-sponsors-header">
+      <h1 class = "home-sponsors-title">Our Sponsors</h1>
+    </div>
+    <ul class = "sponsor-list">
+      <% @sponsors.each do |sponsor| %>
+        <li class = "sponsor-list-item">
+          <img src = "<%= sponsor.logo_url %>" alt = "<% sponsor.name %>" class = "sponsor-img">
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <script type="text/javascript">
 $(document).ready(function(){
 

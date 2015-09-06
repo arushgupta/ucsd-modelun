@@ -5,6 +5,8 @@ class StaticPagesController < ApplicationController
     @sdimun = HomeGallery.where(gallery_type: "S").order('created_at DESC').last(3)
     @travel = HomeGallery.where(gallery_type: "V").order('created_at DESC').last(3)
     @secretariats = Secretariat.where(is_active: true).last(3)
+    @applynows = ApplyNow.where(is_active: true)
+    @sponsors = Sponsor.where(is_active: true)
     @user = User.new
   end 
   
