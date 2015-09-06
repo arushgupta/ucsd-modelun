@@ -77,10 +77,13 @@
                               <% if @pages.where(name: 'Further Inquiries').exists? %>
                                 <%= @pages.where(name: 'Further Inquiries').take.content.html_safe %>
                               <%else%>
-                                <div class="col-md-12" class = "coming-soon" >
-                                  <h1 class = "coming-soon-title">Coming Soon :)</h1>
-                                </div>
-                              <% end %>
+                                <ul style="list-style-type: none; font-size: 18px; font-weight: 200;">
+                                  <li style="padding-bottom: 5%;">For Inquiries Please Contact:</li>
+                                  <li>John Murillo</li>
+                                  <li>Chief-of-Staff</li>
+                                  <li><a href="mailto:jpmurill@ucsd.edu?" target="_top">jpmurill@ucsd.edu </a></li>
+                                </ul>
+                                <% end %>
                             </div>
                           </div>
                         </div>
