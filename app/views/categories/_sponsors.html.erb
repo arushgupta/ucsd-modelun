@@ -24,7 +24,7 @@
                               <% if @pages.where(name: 'Letter').exists? %>
                                 <%= @pages.where(name: 'Letter').take.content.html_safe %>
                               <%else%>
-                                <div class="col-md-12" class = "coming-soon" >
+                                <div class="col-md-12 coming-soon" >
                                   <h1 class = "coming-soon-title">Coming Soon :)</h1>
                                 </div>
                               <% end %>
@@ -51,7 +51,7 @@
                               <% if @pages.where(name: 'Sponsorship Opportunities').exists? %>
                                 <%= @pages.where(name: 'Sponsorship Opportunities').take.content.html_safe %>
                               <%else%>
-                                <div class="col-md-12" class = "coming-soon" >
+                                <div class="col-md-12 coming-soon" >
                                   <h1 class = "coming-soon-title">Coming Soon :)</h1>
                                 </div>
                               <% end %>

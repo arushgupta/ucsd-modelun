@@ -1,52 +1,61 @@
-<div class="container" id="pricing-section">
-  
-  <div class="row" style = "margin-bottom: 3%; margin-top: 2%;">
-    <div class="col-lg-12 text-center travel-header-img">
-      <h2 class = "section-heading">Awards</h2>
-      <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-    </div>
-  </div> 
-  
-  <div class="main-low-margin col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margin-top-100 ">
-    <div class = "awards-section">
-      <% @travelconferences.each do |tconference| %>
-        <div class = "awards-title">
-          <span class = "travel-title">
-            <%= tconference.short_name %>,
-          </span>
-          <span class = "travel-time">
-            <%= tconference.season %> <%= tconference.year %>
-          </span>
-        </div>
-        <div class = "travel-img">
-          <%= image_tag tconference.travel_team_image_url.url, class: "img-responsive" %>
-        </div>
-        <div class = "award-list">
-          <div class = "award-list-heading">
-            Awards
-          </div>
-          <% tconference.awards.each do |award| %>
-            <% if award.award_recipient.blank? %>
-              <ul class = "awards">
-                <li>
-                  <%= award.award_name %>
-                </li>
-              </ul>
-            <%else%>
-              <ul class = "awards">
-                <li>
-                  <span class = "award-recipient">
-                    <%= award.award_recipient %>:
-                  </span>
-                  <span>
-                    <%= award.award_name %>
-                  </span>
-                </li>
-              </ul>
-            <%end%>
-          <%end%>
-        </div>
-      <%end%>
-    </div>
+<div class = "conference row header-title-bg" style = "margin: 2% 0% 3% 0%;">
+  <div class="col-lg-12 text-center travel-header-img">
+    <h2 class = "section-heading">Awards</h2>
+    <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
   </div>
 </div>
+
+
+<% if @awards.count.zero? %>
+  <div class="col-md-12 coming-soon" >
+    <h1 class = "coming-soon-title">Coming Soon :)</h1>
+  </div>
+<% else %>
+  <div class="container" id="pricing-section">
+    <div class="main-low-margin col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margin-top-100 ">
+      <div class = "awards-section">
+        <% @travelconferences.each do |tconference| %>
+          <div class = "awards-title">
+            <span class = "travel-title">
+              <%= tconference.short_name %>,
+            </span>
+            <span class = "travel-time">
+              <%= tconference.season %> <%= tconference.year %>
+            </span>
+          </div>
+          <% if tconference.travel_team_image_url.url.nil? %>
+          <% else %>
+            <div class = "travel-img">
+              <%= image_tag tconference.travel_team_image_url.url, class: "img-responsive" %>
+            </div>
+          <% end %>
+          <div class = "award-list">
+            <div class = "award-list-heading">
+              Awards
+            </div>
+            <% tconference.awards.each do |award| %>
+              <% if award.award_recipient.blank? %>
+                <ul class = "awards">
+                  <li>
+                    <%= award.award_name %>
+                  </li>
+                </ul>
+              <%else%>
+                <ul class = "awards">
+                  <li>
+                    <span class = "award-recipient">
+                      <%= award.award_recipient %>:
+                    </span>
+                    <span>
+                      <%= award.award_name %>
+                    </span>
+                  </li>
+                </ul>
+              <%end%>
+            <%end%>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+<% end %>

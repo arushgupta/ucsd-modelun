@@ -19,11 +19,15 @@
                         <div class="bio-header">
                             <div class="position-one"><%=s.position%></div>
                             <div class="name"><%=s.name%></div>
-                            <div><%=s.college%></div>
+                            <div class = "college"><%=s.college%></div>
                             <div class="secre_major poeple-description"><%=s.major%></div>
                         </div>
                         <div class="bio">
-                            <span class="topic_des"><%= s.description.html_safe%></span>
+                            <span class="topic_des"><%= s.description.html_safe%></span><br />
+                            <span class = "social-media-links">
+                                <% if s.email %>
+                                <% end %>
+                            </span>
                         </div>
                     </div>
                 </div>
