@@ -5,7 +5,7 @@
         <%begin%>
           <%= image_tag (@tritonmun[0].image_url), class: "img-responsive"%>
         <%rescue%>
-        <img src="assets/image_1.jpg" alt="..." class = "img-responsive">
+        <img src="/assets/f3.jpg" alt="..." class = "img-responsive">
         <%end%>
       </div>
     </div>
@@ -76,9 +76,7 @@
     </div>
     <%end%>
   </div>
-  <a class = "conference_promo_button conference_button button-white-bg" href="">
-    More Members
-    <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+  <%= link_to raw('More Members <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>'), secretariats_path, class: "conference_promo_button conference_button button-white-bg" %>
   </a>
 </div>
 </div>
@@ -102,7 +100,7 @@
         <div class = "counter-icon">
           <span class = "glyphicon glyphicon-user" style = "font-size: 28px;"></span>
         </div>
-        <h3 class = "counter-title">SECRETARIATS</h3>
+        <h3 class = "counter-title">SECRETARIAT</h3>
         <h3 class = "counter-value">10</h3>
       </div>
     </div>
@@ -131,8 +129,44 @@
   </div>
 </div>
 
+<!-- Apply Now -->
+<% if @applynows.count.zero? %>
+<% else %>
+  <div class = "col-md-12 home-apply-now">
+    <div class = "col-md-12 home-apply-now-header">
+      <h1 class = "home-apply-now-title">Quick links</h1>
+    </div>
+    <% @applynows.each do |apply| %>
+      <div class = "col-md-4 quick-link-container">
+        <a href = "<%= apply.button_url %>">
+          <h3 class = "apply-now-headline">
+            <%= apply.headline %>
+          </h3>
+        </a>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<!-- Sponsors -->
+<% if @sponsors.count.zero? %>
+<% else %>
+  <div class = "col-md-12 home-sponsors">
+    <div class = "cold-md-12 home-sponsors-header">
+      <h1 class = "home-sponsors-title">Our Sponsors</h1>
+    </div>
+    <ul class = "sponsor-list">
+      <% @sponsors.each do |sponsor| %>
+        <li class = "sponsor-list-item">
+          <img src = "<%= sponsor.logo_url %>" alt = "<% sponsor.name %>" class = "sponsor-img">
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <!-- Mailing List -->
-<div class = "mailing-list">
+<div class = "mailing-list col-md-12">
   <div class = "mailing-list-header">
     <h1 class = "mailing-list-title">Mailing List</h1>
   </div>
@@ -149,9 +183,9 @@
         <% end %>
       </div>
       <div class = "mc-field-group">
-        <%=f.text_field :first_name, class: "fname", placeholder: "First Name"%>
-        <%=f.text_field :last_name, class: "lname", placeholder: "Last Name"%>
-        <%=f.text_field :email, class: "email", placeholder: "Email Address"%>
+        <%=f.text_field :first_name, class: "fname", placeholder: "First Name *"%>
+        <%=f.text_field :last_name, class: "lname", placeholder: "Last Name *"%>
+        <%=f.text_field :email, class: "email", placeholder: "Email Address *"%>
       </div>
       <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
     <%end%>
@@ -174,7 +208,3 @@
   });
 </script>
 
-
-<style type="text/css">
-  
-</style>

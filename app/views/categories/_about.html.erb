@@ -3,23 +3,42 @@
   <div class = "row header-title-bg" style = "margin: 2% 0% 3% 0%;">
     <div class="col-lg-12 text-center about-header-img">
       <h2 class = "section-heading"><%= @categories.where(id: params[:id]).take.name %></h2>
-      <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      <h3 class = "section-subheading text-muted"><%= @categories.where(id: params[:id]).take.subheading %></h3>
     </div>
   </div>
 
   <div class = "conference_row conference_row_2">
-    <div class = "conference_column conference_column_first conference_column_1_3">
+    <%@pages.each do |page|%>
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <%begin%>
+                <%= link_to image_tag(page.icon_url, alt: "logo"),page_path(page, id: page) %>
+              <%rescue%>
+                <%= link_to image_tag("conference-6.jpg", alt: "logo"),page_path(page, id: page) %>
+              <%end%>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to page.name, page_path(page,id: page.id) %></h4>
+              <%= page.page_description.html_safe %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end%>
+    <div class = "conference_column conference_column_1_3">
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
            <%begin%>
-              <%= link_to image_tag(@icons.overview_icon, alt: "logo"),pages_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.secretariat_icon, alt: "logo"), secretariats_path %>
             <%rescue%>
-              <%= link_to image_tag("conference-1.jpg", alt: "logo"),pages_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-2.jpg", alt: "logo"),secretariats_path %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Our Story", pages_path %></h4>
+            <h4><%= link_to "Secretariat", secretariats_path %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>
@@ -30,13 +49,13 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
            <%begin%>
-              <%= link_to image_tag(@icons.secretariat_icon, alt: "logo"), secretariats_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.alumni_icon, alt: "logo"),alumnis_path %>
             <%rescue%>
-              <%= link_to image_tag("conference-2.jpg", alt: "logo"),secretariats_path(cat_id: params[:id]) %>
+              <%= link_to image_tag("conference-3.jpg", alt: "logo"),alumnis_path %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Secretariat", secretariats_path(cat_id: params[:id]) %></h4>
+            <h4><%= link_to "Alumni", alumnis_path %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>
@@ -47,50 +66,13 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
            <%begin%>
-              <%= link_to image_tag(@icons.alumni_icon, alt: "logo"),alumnis_path(cat_id: params[:id]) %>
-            <%rescue%>
-              <%= link_to image_tag("conference-3.jpg", alt: "logo"),alumnis_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "Alumni", alumnis_path(cat_id: params[:id]) %></h4>
-            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class = "conference_row conference_row_3">
-    <div class = "conference_column conference_column_first conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-           <%begin%>
-              <%= link_to image_tag(@icons.history_icon, alt: "logo"), pages_path(cat_id: params[:id]) %>
-            <%rescue%>
-              <%= link_to image_tag("conference-4.jpg", alt: "logo"), pages_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "History", pages_path(cat_id: params[:id]) %></h4>
-            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class = "conference_column conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-           <%begin%>
-              <%= link_to image_tag(@icons.gallery_icon, alt: "logo"), home_galleries_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.gallery_icon, alt: "logo"), home_galleries_path %>
             <%rescue%>
               <%= link_to image_tag("conference-5.jpg", alt: "logo"), home_galleries_path(cat_id: params[:id]) %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Gallery", home_galleries_path(cat_id: params[:id]) %></h4>
+            <h4><%= link_to "Gallery", home_galleries_path %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>

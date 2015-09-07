@@ -4,7 +4,6 @@ class CreateApplyNows < ActiveRecord::Migration
       t.string :headline
       t.string :button_url
       t.string :button_text
-      t.string :image_url
       t.references :category
       t.boolean :is_active, default: true
       

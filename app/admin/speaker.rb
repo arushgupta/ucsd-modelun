@@ -3,7 +3,7 @@ ActiveAdmin.register Speaker do
   menu priority: 7
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :panel, :name, :description, :image_url, :is_active, :category_id
+  permit_params :panel, :name, :description, :fb_url, :tw_url, :in_url, :website_url, :image_url, :is_active, :category_id
   decorate_with SpeakerDecorator
 
   controller do
@@ -21,6 +21,18 @@ ActiveAdmin.register Speaker do
     column 'Image' do |finder|
       finder.image_url
     end
+    column 'Facebook' do |finder|
+      finder.fb_url
+    end
+    column 'Twitter' do |finder|
+      finder.tw_url
+    end
+    column 'LinkedIn' do |finder|
+      finder.in_url
+    end
+    column 'Personal Website' do |finder|
+      finder.website_url
+    end
     column :category
     column :is_active
     actions
@@ -32,6 +44,18 @@ ActiveAdmin.register Speaker do
       row :category
       row :name
       row :panel
+      row 'Facebook' do |finder|
+        finder.fb_url
+      end
+      row 'Twitter' do |finder|
+        finder.tw_url
+      end
+      row 'LinkedIn' do |finder|
+        finder.in_url
+      end
+      row 'Personal Website' do |finder|
+        finder.website_url
+      end
       row (:description) {|speaker| raw(speaker.description)}
       row 'Image' do |finder|
         finder.image_url
@@ -47,6 +71,10 @@ ActiveAdmin.register Speaker do
       f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :name
       f.input :panel
+      f.input :fb_url, label: 'Facebook'
+      f.input :tw_url, label: 'Twitter'
+      f.input :in_url, label: 'LinkedIn'
+      f.input :website_url, label: 'Personal Website'
       f.input :description, as: :ckeditor
       f.input :image_url, as: :file, image_preview: true, label: "Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
       f.input :is_active, label: "Active"

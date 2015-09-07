@@ -5,33 +5,65 @@
   </div>
 </div>
 
-<section class="no-padding" id="portfolio">
-    <div class="container-fluid">
-        <div class="row no-gutter">
-            <% @secretariats.each do|s|%>
-                
-            <div class="col-md-4 col-sm-4" style="width:100%;">    
-                <div class="bio-box">
-                    <div class=" photo col-md-2">
-                        <%= image_tag  s.image_url.url ,class: "img-responsive spkimg img-circle " ,id:s.id%>
-                    </div>
-                    <div class="bio-right col-md-7">
-                        <div class="bio-header">
-                            <div class="position-one"><%=s.position%></div>
-                            <div class="name"><%=s.name%></div>
-                            <div><%=s.college%></div>
-                            <div class="secre_major poeple-description"><%=s.major%></div>
+<% if @secretariats.count.zero? %>
+  <div class="col-md-12 coming-soon" >
+    <h1 class = "coming-soon-title">Coming Soon :)</h1>
+  </div>
+<% else %>
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <% @secretariats.each do|s|%>
+                <div class="col-md-4 col-sm-4" style="width:100%;">    
+                    <div class="bio-box">
+                        <div class=" photo col-md-2">
+                            <%= image_tag  s.image_url.url ,class: "img-responsive spkimg img-circle " ,id:s.id%>
                         </div>
-                        <div class="bio">
-                            <span class="topic_des"><%= s.description.html_safe%></span>
+                        <div class="bio-right col-md-7">
+                            <div class="bio-header">
+                                <div class="position-one"><%=s.position%></div>
+                                <div class="name"><%=s.name%></div>
+                                <div class = "college"><%=s.college%></div>
+                                <div class="secre_major poeple-description"><%=s.major%></div>
+                            </div>
+                            <div class="bio">
+                                <span class="topic_des"><%= s.description.html_safe%></span><br />
+                                <span class = "social-media-links">
+                                    <% if s.email.present? %>
+                                        <a href = "mailto:<%= s.email %>">
+                                            <span class = "fa fa-paper-plane social-media-item"></span>
+                                        </a>
+                                    <% end %>
+                                    <% if s.fb_url.present? %>
+                                        <a href = "<%= s.fb_url %>">
+                                            <span class = "fa fa-facebook social-media-item"></span>
+                                        </a>
+                                    <% end %>
+                                    <% if s.tw_url.present? %>
+                                        <a href = "<%= s.tw_url %>">
+                                            <span class = "fa fa-twitter social-media-item"></span>
+                                        </a>
+                                    <% end %>
+                                    <% if s.in_url.present? %>
+                                        <a href = "<%= s.in_url %>">
+                                            <span class = "fa fa-linkedin social-media-item"></span>
+                                        </a>
+                                    <% end %>
+                                    <% if s.website_url.present? %>
+                                        <a href = "<%= s.website_url %>">
+                                            <span class = "fa fa-globe social-media-item"></span>
+                                        </a>
+                                    <% end %>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <%end%>
             </div>
-            <%end%>
         </div>
-    </div>
-</section>
+    </section>
+<% end %>
 
  <script type="text/javascript">
 // $(window).load(function(){

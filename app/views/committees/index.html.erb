@@ -88,6 +88,9 @@
 </div>
 
 <script type="text/javascript">
+$(document).ready(function () { 
+    jQuery.noConflict();
+    });
 $(window).load(function(){
     $('.committee-image').on('click',function()
                 {    var id =$(this).attr("id")

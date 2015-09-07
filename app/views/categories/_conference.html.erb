@@ -3,7 +3,7 @@
   <div class = "row header-title-bg" style = "margin: 2% 0% 3% 0%;">
     <div class="col-lg-12 text-center header-img">
       <h2 class = "section-heading"><%= @categories.where(id: params[:id]).take.name %></h2>
-      <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      <h3 class = "section-subheading text-muted"><%= @categories.where(id: params[:id]).take.subheading %></h3>
     </div>
   </div>
 
@@ -19,7 +19,7 @@
             <%end%>
           </div>
           <div class = "conference_blurb_container">
-            <h4><%= link_to "Overview", overviews_path(cat_id: params[:id]) %></h4>
+            <h4><%= link_to "Welcome Letter", overviews_path(cat_id: params[:id]) %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>
@@ -30,7 +30,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%begin%>
-              <%= link_to image_tag(@icons.sechedule_icon, alt: "logo"),schedules_path(:cat_id=>params[:id]) %>
+              <%= link_to image_tag(@icons.sechedule_icon, alt: "logo"),schedules_path(cat_id: params[:id]) %>
             <%rescue%>
               <%= link_to image_tag("conference-2.jpg", alt: "logo"),schedules_path(cat_id: params[:id]) %>
             <%end%>
@@ -47,7 +47,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%begin%>
-              <%= link_to image_tag(@icons.commitee_icon, alt: "logo"),committees_path(:cat_id=>params[:id]) %>
+              <%= link_to image_tag(@icons.commitee_icon, alt: "logo"),committees_path(cat_id: params[:id]) %>
             <%rescue%>
               <%= link_to image_tag("conference-3.jpg", alt: "logo"),committees_path(cat_id: params[:id]) %>
             <%end%>
@@ -64,7 +64,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%begin%>
-              <%= link_to image_tag(@icons.speaker_icon, alt: "logo"),speakers_path(cat_id:params[:id]) %>
+              <%= link_to image_tag(@icons.speaker_icon, alt: "logo"),speakers_path(cat_id: params[:id]) %>
             <%rescue%>
               <%= link_to image_tag("conference-4.jpg", alt: "logo"),speakers_path(cat_id: params[:id]) %>
             <%end%>
@@ -110,39 +110,50 @@
         </div>
       </div>
     </div>
-    <%@pages.each do |page|%>
-    <div class = "conference_column conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-            <%begin%>
-              <%= link_to image_tag(@icons.overview_icon, alt: "logo"),overviews_path(cat_id: params[:id]) %>
-            <%rescue%>
-              <%= link_to image_tag("conference-6.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "Overview", overviews_path(cat_id: params[:id]) %></h4>
-            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+    <% @pages.each do |page|%>
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <%begin%>
+                <%= link_to image_tag(page.icon_url, alt: "logo"),page_path(page, id: page) %>
+              <%rescue%>
+                <%= link_to image_tag("conference-6.jpg", alt: "logo"),page_path(page, id: page) %>
+              <%end%>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to page.name, page_path(page,id: page.id) %></h4>
+              <%= page.page_description.html_safe %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
- <%end%>
+    <%end%>
  </div>
-
-
-<div class = " conference_register conference_parallax">
-  <div class = "conference_column_4_4">
-      <div class = "conference_promo conference_module conference_bg_layout_dark onference_heading_text_center conference_no_bg">
-        <div class = "conference_promo_description">
-          <h1>Look No Further. Register Today</h1>
+ 
+  <% if @overviews.count.zero? %>
+    <div class = " conference_register conference_parallax">
+      <div class = "conference_column_4_4">
+        <div class = "conference_promo conference_module conference_bg_layout_dark onference_heading_text_center conference_no_bg">
+          <div class = "conference_promo_description">
+            <h1>Registration Coming Soon</h1>
+          </div>
         </div>
-        <a class = "conference_promo_button conference_button" href = "https://www.google.com">
-          Register Now
-          <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
-        </a>
       </div>
     </div>
-</div>
+  <%else%>
+    <div class = " conference_register conference_parallax">
+      <div class = "conference_column_4_4">
+        <div class = "conference_promo conference_module conference_bg_layout_dark onference_heading_text_center conference_no_bg">
+          <div class = "conference_promo_description">
+            <h1>Look No Further. Register Today</h1>
+          </div>
+          <a class = "conference_promo_button conference_button" href = "<%= @overviews.take.registration_form_url%>">
+            Register Now
+            <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

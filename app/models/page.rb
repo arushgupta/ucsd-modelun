@@ -14,4 +14,6 @@ class Page < ActiveRecord::Base
  def display_name
   "#{category.name}_#{name}"
  end
+
+
 end

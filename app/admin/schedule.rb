@@ -24,6 +24,20 @@ ActiveAdmin.register Schedule do
     actions
   end
   
+
+  show do
+    attributes_table do
+      row :id
+      row :name
+      row :date
+      row :category
+      row :is_active
+      row 'Events' do |schedule|
+        link_to "Add Events", admin_schedule_events_path(schedule_id: schedule)
+      end
+    end
+  end
+
   form do |f|
     f.inputs 'Schedule Details' do
       f.input :category, collection: Category.all.map {|c| [c.name,c.id]}, include_blank: "select"

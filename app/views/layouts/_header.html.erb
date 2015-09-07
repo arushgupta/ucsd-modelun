@@ -11,7 +11,7 @@
       <div class = "inline-brand">
         <div>
           <a class = "navbar-brand page-scroll nav-brand-logo" style = "padding-top: 0" href = "">
-            <img src = "assets/brand-logo.png">
+            <img src = "/assets/brand-logo.png">
           </a>
         </div>
         <div>
@@ -25,7 +25,7 @@
       <ul class = "nav navbar-nav navbar-right">
         <% @categories.each do |category| %>
           <% if category.category_id.nil? %>
-            <% sub_cat = Category.where(category_id: category.id).order('id ASC') %>
+            <% sub_cat = Category.where(category_id: category.id).order('created_at ASC') %>
               <% if sub_cat.blank? %>
                 <li>
                   <%= link_to category.name, categories_path(id: category.id) %>

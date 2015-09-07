@@ -15,7 +15,6 @@ ActiveAdmin.register Page do
     selectable_column
     id_column
     column :name
-    column :summary
     column (:content) {|page| raw(page.content)}
     column (:subheading) {|page| raw(page.subheading)}
     column (:page_description) {|page| raw(page.page_description)}
@@ -30,7 +29,6 @@ ActiveAdmin.register Page do
     attributes_table do
       row :id
       row :name
-      row :summary
       row (:content) {|page| raw(page.content)}
       row :meta_keywords
       row :meta_title
@@ -49,7 +47,6 @@ ActiveAdmin.register Page do
     f.inputs "Page Details" do
       f.input :category, collection: Category.all.map {|category| [category.name, category.id]}, include_blank: "select"
       f.input :name
-      f.input :summary
       f.input :content, as: :ckeditor
       f.input :subheading
       f.input :page_description, as: :ckeditor

@@ -5,6 +5,8 @@ class StaticPagesController < ApplicationController
     @sdimun = HomeGallery.where(gallery_type: "S").order('created_at DESC').last(3)
     @travel = HomeGallery.where(gallery_type: "V").order('created_at DESC').last(3)
     @secretariats = Secretariat.where(is_active: true).last(3)
+    @applynows = ApplyNow.where(is_active: true)
+    @sponsors = Sponsor.where(is_active: true)
     @user = User.new
   end 
   
@@ -22,7 +24,7 @@ class StaticPagesController < ApplicationController
 
   private
     def find_category
-      @categories = Category.all
+      @categories = Category.all.where(is_active: true).order('created_at ASC')
       @cat = Category.all.where("categories.category_id IS NOT NULL")
       @apply = ApplyNow.all
     end

@@ -16,10 +16,11 @@ class Category < ActiveRecord::Base
   has_many :training_sessions
   has_many :icons
   has_many :alumnis
+  has_many :sponsors
   belongs_to :category
   belongs_to :parent_category, class: "Category"
   has_many :subcategories, class: "Category"
 
- validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true
+  validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true
  
 end
