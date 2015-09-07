@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
 
   def index
     @icons = Icon.where(category_id: params[:id]).first
+    debugger
     @categories = Category.all.where(is_active: true).order('created_at ASC')
     #@cat=Category.all.where("categories.category_id IS NOT NULL")
     # @homeimages = HomeGallery.all.where(category_id: params[:id])
