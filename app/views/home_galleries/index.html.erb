@@ -5,13 +5,23 @@
   </div>
 </div>
 
-<div class="container-fluid">
-  <div class="row">
-   	<%@galleries.each_with_index do |gallery, index|%>
-			<div class="col-lg-3 col-sm-4 col-xs-6"><a class = "fancybox" title = "<%= gallery.image_title%>" href="<%=gallery.image_url%>"><img class="thumbnail img-responsive" src="<%=gallery.image_url%>"></a></div>
-		<%end%>
+<% if @galleries.count.zero? %>
+  <div class="col-md-12 coming-soon" >
+    <h1 class = "coming-soon-title">Coming Soon :)</h1>
   </div>
-</div>
+<% else %>
+  <div class="container-fluid">
+    <div class="row">
+   	  <%@galleries.each_with_index do |gallery, index|%>
+			  <div class="col-lg-3 col-sm-4 col-xs-6">
+          <a class = "fancybox" title = "<%= gallery.image_title%>" href="<%=gallery.image_url%>">
+            <img class="thumbnail img-responsive" src="<%=gallery.image_url%>">
+          </a>
+        </div>
+  		<%end%>
+    </div>
+  </div>
+<% end %>
 
 <script type = "text/javascript">
 $(".fancybox")

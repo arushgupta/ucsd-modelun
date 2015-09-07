@@ -1266,6 +1266,26 @@ span.page-content-text-b {
   font-weight: 600;
 }
 
+/* Social Media Links */
+span.social-media-item {
+  font-size: 1em;
+  color: #666;
+  margin-right: 0.5%;
+}
+span.fa-twitter.social-media-item:hover {
+  color: #00ACED;
+}
+span.fa-facebook.social-media-item:hover {
+  color: #3B5998;
+}
+span.fa-linkedin.social-media-item:hover {
+  color: #007BB5;
+}
+span.fa-paper-plane.social-media-item:hover,
+span.fa-globe.social-media-item:hover {
+  color: #18355B;
+}
+
 /* Coming Soon */
 .coming-soon {
   text-align: center;

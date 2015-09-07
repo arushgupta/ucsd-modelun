@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20150903114854) do
     t.string   "headline"
     t.string   "button_url"
     t.string   "button_text"
-    t.string   "image_url"
     t.integer  "category_id"
     t.boolean  "is_active",   default: true
     t.datetime "created_at",                 null: false
@@ -70,6 +69,7 @@ ActiveRecord::Schema.define(version: 20150903114854) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
+    t.string   "subheading"
     t.integer  "category_id"
     t.boolean  "is_active",   default: true
     t.datetime "created_at",                 null: false
@@ -164,9 +164,15 @@ ActiveRecord::Schema.define(version: 20150903114854) do
     t.string   "speaker_icon"
     t.string   "fee_icon"
     t.string   "faq_icon"
+    t.string   "training_session_icon"
+    t.string   "travel_conferences_icon"
+    t.string   "awards_icon"
+    t.string   "alumni_icon"
+    t.string   "galleries_icon"
+    t.string   "secretariats_icon"
     t.integer  "category_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "overviews", force: :cascade do |t|
@@ -223,6 +229,11 @@ ActiveRecord::Schema.define(version: 20150903114854) do
     t.string   "name"
     t.string   "college"
     t.string   "major"
+    t.string   "email"
+    t.string   "fb_url"
+    t.string   "tw_url"
+    t.string   "in_url"
+    t.string   "website_url"
     t.text     "description"
     t.string   "image_url"
     t.integer  "category_id"
@@ -243,6 +254,10 @@ ActiveRecord::Schema.define(version: 20150903114854) do
   create_table "speakers", force: :cascade do |t|
     t.string   "panel"
     t.string   "name"
+    t.string   "fb_url"
+    t.string   "tw_url"
+    t.string   "in_url"
+    t.string   "website_url"
     t.text     "description"
     t.string   "image_url"
     t.integer  "category_id"

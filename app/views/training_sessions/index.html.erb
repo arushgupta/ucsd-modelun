@@ -8,79 +8,106 @@
       </div>
     </div>
 
-    <div class = "row object-non-visible animated object-visible fadeIn" data-animation-effect = "fadeIn">
-      <div class = "col-md-12">
-        <div style = "height: auto;" class = "isotope-container row grid-space-20">
-          <% @trainingsessions.each do |session|%>
-            <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
-              <div class = "image-box">
-                <div class = "overlay-container">
-                  <%= image_tag  session.committee_image_url.url, class: "img-responsive "%> 
-                  <a class = "overlay testimg" id = "<%=session.id%>" data-toggle = "modal" data-target = "#project-1">
-                    <i class = "fa fa-plus-circle"></i>
-                  </a>
-                </div>
-              <div class = "btn-block" data-toggle = "modal" data-target = "#project-1">
-                <%=session.committee_name %>
-              </div>
-            </div>
-
-            <div class = "modal fade" id = "<%= session.id %>session" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
-              <div class = "modal-dialog">
-                <div class = "modal-content">
-                  <div class = "modal-header">
-                    <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">&times;</button>
-                    <h2 class = "modal-title modal-title-header" id = "myModalLabel">
-                      <%= session.committee_name %>
-                    </h2>
-                  </div>
-                  <div class = "modal-body">
-
-                    <a class = "btn commt_button conference_promo_button conference_button button-white-bg" style = "margin-top: -10px; margin-right: -8px; min-width:0px;">
-                      Topic Guide
-                      <span class="glyphicon glyphicon-chevron-right button-icon-hider"></span>
+    <% if @trainingsessions.count.zero? %>
+      <div class="col-md-12 coming-soon" >
+        <h1 class = "coming-soon-title">Coming Soon :)</h1>
+      </div>
+    <% else %>
+      <div class = "row object-non-visible animated object-visible fadeIn" data-animation-effect = "fadeIn">
+        <div class = "col-md-12">
+          <div style = "height: auto;" class = "isotope-container row grid-space-20">
+            <% @trainingsessions.each do |session|%>
+              <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
+                <div class = "image-box">
+                  <div class = "overlay-container">
+                    <%= image_tag  session.committee_image_url.url, class: "img-responsive "%> 
+                    <a class = "overlay trainingimg" id = "<%=session.id%>" data-toggle = "modal" data-target = "#project-1">
+                      <span class = "glyphicon glyphicon-plus glyphicon-white-bg"></span>
                     </a>
-                  
-                    <p>
-                      <span class = "committee_chair committee-subheading">
-                        Date:
-                        <span class = "chair-name">
-                          <%= session.date.strftime("%A, %B %d") %>
-                        </span>
-                      </span>
-                      <span class = "committee_chair committee-subheading">
-                        Duration:
-                      </span>
-                      <span class = "chair-name">
-                        <%= session.start_time.strftime("%-I:%M %p ") %>-<%= session.end_time.strftime("%-I:%M %p ") %>
-                      </span>
-                    </p>
-                    
-                    <div class = "topic-data">
-                      <h4 class = "committee-topic">
-                        <%= session.topic_name %>
-                      </h4>
-                      <span class = "topic_desc">
-                        <%= session.topic_description.html_safe %>
-                      </span>
+                  </div>
+                  <div class = "btn-block" data-toggle = "modal" data-target = "#project-1">
+                    <%=session.committee_name %>
+                  </div>
+                </div>
+                <div class = "modal fade" id = "<%= session.id %>session" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+                  <div class = "modal-dialog">
+                    <div class = "modal-content">
+                        <!-- Modal Header -->
+                      <div class = "modal-header">
+                        <span type = "button" class = "glyphicon glyphicon-remove close modal-close-button" data-dismiss = "modal" aria-hidden = "true"></span>
+                        <h2 class = "modal-title modal-title-header" id = "myModalLabel">
+                          <%= session.committee_name %>
+                        </h2>
+                      </div>
+                        <!-- Modal Body -->
+                      <div class = "modal-body">
+                        <div class = "committee-about">
+                          <div class = "chair">
+                            <div class = "committee-subheading">
+                              Date
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <%= session.date.strftime("%A, %B %d") %>
+                            </div>
+                          </div>
+                          <div class = "vice-chair">
+                            <div class = "committee-subheading">
+                              Time
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <%= session.start_time.strftime("%-I:%M %p ") %>-<%= session.end_time.strftime("%-I:%M %p ") %>
+                            </div>
+                          </div>
+                          <div class = "vice-chair">
+                            <div class = "committee-subheading">
+                              Location
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <%= session.location %>
+                            </div>
+                          </div>
+                          <div class = "topic-guide">
+                            <div class = "committee-subheading">
+                              Topic Guide
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <% if session.topic_guide_url.blank? %>
+                                Coming Soon
+                              <% else %>
+                                <%= link_to session.topic_guide_url.file.original_filename, download_training_sessions_path(file: session.topic_guide_url.file.original_filename) %>
+                              <%end%>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class = "topic-data">
+                          <h4 class = "committee-topic"><%= session.topic_name %></h4>
+                          <span class = "modal_data">
+                            <%= image_tag  session.topic_image_url.url , class: "img-responsive committee-image-height" %>
+                          </span>
+                          <span class = "topic_desc">
+                            <%= session.topic_description.html_safe %>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-            </div><!-- /.modal --> 
-                <!-- Modal end -->     
-            </div>
-          <%end%>
-        </div>
-            <!-- portfolio items end -->
+                </div>
+              </div>
+            <%end%>
+          </div>
+        </div>      
       </div>
-    </div>
+    <%end%>
   </div>
 </div>
 
 <script type="text/javascript">
+$(document).ready(function () { 
+    jQuery.noConflict();
+    });
 $(window).load(function(){
-    $('.testimg').on('click',function()
+    $('.trainingimg').on('click',function()
                 {    var id =$(this).attr("id")
                     // var sr=$(this).attr('src'); 
                     // $('#mimg').attr('src',sr);
