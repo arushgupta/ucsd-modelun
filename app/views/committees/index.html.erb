@@ -1,96 +1,101 @@
+<div class = "conference row header-title-bg" style = "margin: 2% 0% 3% 0%;">
+  <div class="col-lg-12 text-center header-img">
+    <h2 class = "section-heading">Committees</h2>
+    <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+  </div>
+</div>
+
 <div class = "section">
   <div class = "container cmt_container">
 
-    <div class="row" style = "margin-bottom: 3%; margin-top: 2%;">
-      <div class="col-lg-12 text-center " style = "background-image: url('/assets/conference-title.jpg'); background-size: cover;">
-        <h2 class = "section-heading">Committees</h2>
-        <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    <% if @committees.count.zero? or Topic.group(params[:id]).count.zero? %>
+      <div class="col-md-12 coming-soon" >
+        <h1 class = "coming-soon-title">Coming Soon :)</h1>
       </div>
-    </div>
-
-    <div class = "row object-non-visible animated object-visible fadeIn" data-animation-effect = "fadeIn">
-      <div class = "col-md-12">
-        <div style = "height: auto;" class = "isotope-container row grid-space-20">
-          <% @committees.each do |committee|%>
-            <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
-              <div class = "image-box">
-                <div class = "overlay-container">
-                  <%= image_tag  committee.image_url.url, class: "img-responsive"%>
-                  <a class = "overlay committee-image" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
-                    <span class = "glyphicon glyphicon-plus glyphicon-white-bg"></span>
-                  </a>
-                </div>
-              <div class = "btn-block" data-toggle = "modal" data-target = "#project-1"><%=committee.committee_name%></div>
-            </div>
-
-            <div class = "modal fade "  id = "<%= committee.id %>committee"  role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
-              <div class = "modal-dialog">
-                <div class = "modal-content">
-                  <div class = "modal-header">
-                    <span type = "button" class = "glyphicon glyphicon-remove close modal-close-button" data-dismiss = "modal" aria-hidden = "true"></span>
-                    <h2 class = "modal-title modal-title-header" id = "myModalLabel"><%= committee.committee_name %></h2>
+    <% else %>
+      <div class = "row object-non-visible animated object-visible fadeIn" data-animation-effect = "fadeIn">
+        <div class = "col-md-12">
+          <div style = "height: auto;" class = "isotope-container row grid-space-20">
+            <% @committees.each do |committee|%>
+              <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
+                <div class = "image-box">
+                  <div class = "overlay-container">
+                    <%= image_tag  committee.image_url.url, class: "img-responsive"%>
+                    <a class = "overlay committee-image" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
+                      <span class = "glyphicon glyphicon-plus glyphicon-white-bg"></span>
+                    </a>
                   </div>
-                  <div class = "modal-body">
-                    <div class = "committee-about">
-                      <div class = "chair">
-                        <div class = "committee-subheading">
-                          Chair
-                        </div>
-                        <div class = "committee-subheading-value">
-                          <%= committee.chair %>
-                        </div>
+                  <div class = "btn-block" data-toggle = "modal" data-target = "#project-1"><%=committee.committee_name%>
+                  </div>
+                </div>
+
+                <div class = "modal fade" id = "<%= committee.id %>committee" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+                  <div class = "modal-dialog">
+                    <div class = "modal-content">
+                      <div class = "modal-header">
+                        <span type = "button" class = "glyphicon glyphicon-remove close modal-close-button" data-dismiss = "modal" aria-hidden = "true"></span>
+                        <h2 class = "modal-title modal-title-header" id = "myModalLabel"><%= committee.committee_name %></h2>
                       </div>
-                      <div class = "vice-chair">
-                        <div class = "committee-subheading">
-                          Vice Chair
+                      <div class = "modal-body">
+                        <div class = "committee-about">
+                          <div class = "chair">
+                            <div class = "committee-subheading">
+                              Chair
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <%= committee.chair %>
+                            </div>
+                          </div>
+                          <div class = "vice-chair">
+                            <div class = "committee-subheading">
+                              Vice Chair
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <%= committee.vice_chair %>
+                            </div>
+                          </div>
+                          <div class = "topic-guide">
+                            <div class = "committee-subheading">
+                              Topic Guide
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <% if committee.topic_guide_url.blank? %>
+                                Coming Soon
+                              <% else %>
+                                <%= link_to committee.topic_guide_url.file.original_filename, download_committees_path(file: committee.topic_guide_url.file.original_filename) %>
+                              <%end%>
+                            </div>
+                          </div>
                         </div>
-                        <div class = "committee-subheading-value">
-                          <%= committee.vice_chair %>
-                        </div>
-                      </div>
-                      <div class = "topic-guide">
-                        <div class = "committee-subheading">
-                          Topic Guide
-                        </div>
-                        <div class = "committee-subheading-value">
-                          <% if committee.topic_guide_url.blank? %>
-                            Coming Soon
-                          <% else %>
-                            <%= link_to committee.topic_guide_url.file.original_filename, download_committees_path(file: committee.topic_guide_url.file.original_filename) %>
+
+                        <div class = "topic-data">
+                          <%committee.topics.each do |topic|%>
+                            <h4 class = "committee-topic"><%=topic.topic_name%></h4>
+                            <span class = "modal_data">
+                              <%= image_tag  topic.image_url.url , class: "img-responsive committee-image-height" %>
+                            </span>
+                            <span class = "topic_desc">
+                              <%= topic.description.html_safe %>
+                            </span>
                           <%end%>
                         </div>
                       </div>
                     </div>
-
-                    <div class = "topic-data">
-                      <%committee.topics.each do |topic|%>
-                        <h4 class = "committee-topic"><%=topic.topic_name%></h4>
-                        <span class = "modal_data">
-                          <%= image_tag  topic.image_url.url , class: "img-responsive committee-image-height" %>
-                        </span>
-                        <span class = "topic_desc">
-                          <%= topic.description.html_safe %>
-                        </span>
-                      <%end%>
-                    </div>
                   </div>
-                </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-            </div><!-- /.modal --> 
-                <!-- Modal end -->     
-            </div>
-          <%end%>
+                </div>
+              </div>
+            <%end%>
+          </div>
         </div>
-            <!-- portfolio items end -->
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
 <script type="text/javascript">
 $(document).ready(function () { 
     jQuery.noConflict();
-
+    
     $('.committee-image').on('click',function()
                 {    var id =$(this).attr("id")
                     // var sr=$(this).attr('src'); 

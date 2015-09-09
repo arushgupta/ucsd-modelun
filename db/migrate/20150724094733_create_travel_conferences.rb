@@ -9,6 +9,7 @@ class CreateTravelConferences < ActiveRecord::Migration
       t.date :end_date
       t.string :location
       t.string :host
+      t.string :application_url
       t.string :travel_team_image_url
       t.references :category
       t.boolean :is_active, default: true
