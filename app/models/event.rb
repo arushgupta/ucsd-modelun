@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
    
   def time_validation
     if end_time < start_time
-      errors[:end_time] << "cannot be before the start time"
+      errors[:end_time] << "End Time cannot be set to a time before the start time."
       return false
     else
       return true
