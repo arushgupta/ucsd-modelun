@@ -8,7 +8,9 @@ class ContactsController < ApplicationController
 		@contact = Contact.new(contact_params)
 		# if verify_recaptacha
 		@contact.save
-		flash[:notice] = "Your information saved successfully"
+		# flash.now.notice = "Your information saved successfully"
+		# flash[:notice] = "Your information saved successfully"
+		# flash.clear
 		# redirect_to contacts_path
 	    # else
 	    # flash[:notice] = "Your information is incorrect"
