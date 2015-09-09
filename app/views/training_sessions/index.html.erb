@@ -15,13 +15,13 @@
             <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
               <div class = "image-box">
                 <div class = "overlay-container">
-                  <%= image_tag  session.image_url.url, class: "img-responsive "%> 
+                  <%= image_tag  session.committee_image_url.url, class: "img-responsive "%> 
                   <a class = "overlay testimg" id = "<%=session.id%>" data-toggle = "modal" data-target = "#project-1">
                     <i class = "fa fa-plus-circle"></i>
                   </a>
                 </div>
               <div class = "btn-block" data-toggle = "modal" data-target = "#project-1">
-                <%=session.committee%>
+                <%=session.committee_name %>
               </div>
             </div>
 
@@ -31,7 +31,7 @@
                   <div class = "modal-header">
                     <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">&times;</button>
                     <h2 class = "modal-title modal-title-header" id = "myModalLabel">
-                      <%= session.committee %>
+                      <%= session.committee_name %>
                     </h2>
                   </div>
                   <div class = "modal-body">
@@ -58,10 +58,10 @@
                     
                     <div class = "topic-data">
                       <h4 class = "committee-topic">
-                        <%= session.topic %>
+                        <%= session.topic_name %>
                       </h4>
                       <span class = "topic_desc">
-                        <%= session.description.html_safe %>
+                        <%= session.topic_description.html_safe %>
                       </span>
                     </div>
                   </div>
@@ -79,12 +79,10 @@
 </div>
 
 <script type="text/javascript">
-$(window).load(function(){
     $('.testimg').on('click',function()
                 {    var id =$(this).attr("id")
                     // var sr=$(this).attr('src'); 
                     // $('#mimg').attr('src',sr);
                     $('#'+id+"session").modal('show');
                 });
-});
 </script>

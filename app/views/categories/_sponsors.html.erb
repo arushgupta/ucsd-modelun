@@ -1,7 +1,7 @@
 <div class = "conference row header-title-bg" style = "margin: 2% 0% 3% 0%;">
   <div class="col-lg-12 text-center sponsor-header-img">
     <h2 class = "section-heading"><%= @categories.where(id: params[:id]).take.name %></h2>
-    <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    <h3 class = "section-subheading text-muted"><%= @categories.where(id: params[:id]).take.subheading %></h3>
   </div>
 </div>
 
@@ -15,13 +15,19 @@
               <div class = "row page-row">
                 <div class = "faq-wrapper col-md-8 col-sm-7" style = "margin:0 16.5%;">
                   <div class = "panel-group" id = "accordion">
-                    <div class = "panel panel-default">
+                    <div class = "panel panel-default" style="padding: 0%;">
                       <div class = "sponsor-panel-heading dropdown" id = "letter">
                         <%= link_to "Letter to Sponsors", "javascript:void(0)", class: "cmt_button11 panel-title sponsor-tier-title"%>
                         <div style = "display: none;" class = "letter-dropdown">
                           <div class = "panel-body">
                             <div class = "container">
-                              <%= @pages.where(name: 'Letter').take.content.html_safe %>
+                              <% if @pages.where(name: 'Letter').exists? %>
+                                <%= @pages.where(name: 'Letter').take.content.html_safe %>
+                              <%else%>
+                                <div class="col-md-12" class = "coming-soon" >
+                                  <h1 class = "coming-soon-title">Coming Soon :)</h1>
+                                </div>
+                              <% end %>
                             </div>
                           </div>
                         </div>
@@ -36,13 +42,19 @@
               <div class = "row page-row">
                 <div class = "faq-wrapper col-md-8 col-sm-7" style = "margin:0 16.5%;">
                   <div class = "panel-group" id = "accordion">
-                    <div class = "panel panel-default">
+                    <div class = "panel panel-default" style="padding:0px;">
                       <div class = "sponsor-panel-heading" id = "table">
                         <%= link_to "Sponsorship Opportunities", "javascript:void(0)", class: "cmt_button12 panel-title sponsor-tier-title"%>
                         <div style = "display: none;" class = "table-dropdown">
                           <div class = "panel-body">
                             <div class="container">
-                              <%= @pages.where(name: 'Sponsorship Opportunities').take.content.html_safe %>
+                              <% if @pages.where(name: 'Sponsorship Opportunities').exists? %>
+                                <%= @pages.where(name: 'Sponsorship Opportunities').take.content.html_safe %>
+                              <%else%>
+                                <div class="col-md-12" class = "coming-soon" >
+                                  <h1 class = "coming-soon-title">Coming Soon :)</h1>
+                                </div>
+                              <% end %>
                             </div>
                           </div>
                         </div>
@@ -56,13 +68,22 @@
               <div class = "row page-row">
                 <div class = "faq-wrapper col-md-8 col-sm-7" style = "margin:0 16.5%;">
                   <div class = "panel-group" id = "accordion">
-                    <div class = "panel panel-default">
+                    <div class = "panel panel-default" style="padding:0px;">
                       <div class = "sponsor-panel-heading" id = "inquiry">
                         <%= link_to "Further Inquiries", "javascript:void(0)", class: "cmt_button13 panel-title sponsor-tier-title"%>
                         <div style = "display: none;" class = "inquiry-dropdown">
                           <div class = "panel-body">
                             <div class="container">
-                              <%= @pages.where(name: 'Further Inquiries').take.content.html_safe %>
+                              <% if @pages.where(name: 'Further Inquiries').exists? %>
+                                <%= @pages.where(name: 'Further Inquiries').take.content.html_safe %>
+                              <%else%>
+                                <ul style="list-style-type: none; font-size: 18px; font-weight: 200;">
+                                  <li style="padding-bottom: 5%;">For Inquiries Please Contact:</li>
+                                  <li>John Murillo</li>
+                                  <li>Chief-of-Staff</li>
+                                  <li><a href="mailto:jpmurill@ucsd.edu?" target="_top">jpmurill@ucsd.edu </a></li>
+                                </ul>
+                                <% end %>
                             </div>
                           </div>
                         </div>
@@ -77,6 +98,22 @@
     </div>
   </div>
 </section>
+
+<% if @sponsors.count.zero? %>
+<% else %>
+  <div class = "col-md-12 home-sponsors">
+    <div class = "cold-md-12 home-sponsors-header">
+      <h1 class = "home-sponsors-title">Our Sponsors</h1>
+    </div>
+    <ul class = "sponsor-list">
+      <% @sponsors.each do |sponsor| %>
+        <li class = "sponsor-list-item">
+          <img src = "<%= sponsor.logo_url %>" alt = "<% sponsor.name %>" class = "sponsor-img">
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <script type="text/javascript">
 $(document).ready(function(){

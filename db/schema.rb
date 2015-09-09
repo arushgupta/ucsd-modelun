@@ -180,7 +180,7 @@ ActiveRecord::Schema.define(version: 20150903114854) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "location"
-    t.string   "registraiton_form_url"
+    t.string   "registration_form_url"
     t.integer  "delegation_fee"
     t.date     "position_paper_deadline"
     t.text     "welcome_letter"

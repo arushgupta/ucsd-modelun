@@ -23,7 +23,7 @@
               <div class = "btn-block" data-toggle = "modal" data-target = "#project-1"><%=committee.committee_name%></div>
             </div>
 
-            <div class = "modal fade"  id = "<%= committee.id %>committee" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+            <div class = "modal fade "  id = "<%= committee.id %>committee"  role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
               <div class = "modal-dialog">
                 <div class = "modal-content">
                   <div class = "modal-header">
@@ -99,18 +99,5 @@ $(document).ready(function () {
                 });
 
 });
-// (function()
-// {
-//   if( window.localStorage )
-//   {
-//     if( !localStorage.getItem( 'firstLoad' ) )
-//     {
-//       localStorage[ 'firstLoad' ] = true;
-//       // window.location.reload();
-//     }  
-//     else
-//       localStorage.removeItem( 'firstLoad' );
-//   }
-// })();
 
 </script>
