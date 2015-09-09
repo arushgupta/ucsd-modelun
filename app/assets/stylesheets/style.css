@@ -220,10 +220,36 @@ File Description:Main CSS file of the template */
   margin-right: 20px;
 }
 .travel_modal {
-	height: 67px;
+	cursor: pointer;
+	height: auto;
     text-align: center;
-    background-color: turquoise;
-    padding-top: 14px;
+    background-color: #FAFAFA;
+    padding: 10%;
+}
+.travel_modal:hover {
+	background-color: #E5E5E5;
+}
+span.travel-name-link {
+	cursor: pointer;
+	text-align: center;
+	vertical-align: baseline;
+	color: #777;
+	font-size: 24px;
+	font-weight: 200;
+}
+.topic-data.apply-here {
+	margin: 10%;
+	text-align: center;
+}
+a.apply-link {
+	padding: 5% 10%;
+	background-color: #FAFAFA;
+	color: #777;
+	font-size: 22px;
+	font-weight: 200;
+}
+a.apply-link:hover {
+	background-color: #E5E5E5;
 }
 .cbp_tmtimeline {
     margin: 0;
@@ -320,14 +346,25 @@ File Description:Main CSS file of the template */
     top: 0;
     width: 10px;
 }
-.resource{text-align:left; padding-top:20px;}
-.research_h1{text-align: center;
+.resource {
+	text-align: left;
+	padding-top: 20px;
+}
+.research_h1 {
+	text-align: center;
     font-weight: bold;
-    padding-bottom: 22px;}
-.research_h3{text-transform: uppercase;
-    font-weight: bold;}
-.pos{padding-left:7px;
-    padding-top: 10px;}
-.pos_h3{font-weight: bold;
+    padding-bottom: 22px;
+}
+.research_h3 {
+	text-transform: uppercase;
+    font-weight: bold;
+}
+.pos {
+  	padding-left:7px;
+    padding-top: 10px;
+}
+.pos_h3 {
+	font-weight: bold;
     padding-bottom: 5%;
-padding-top: 5%;}
+	padding-top: 5%;
+}

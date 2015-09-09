@@ -433,7 +433,9 @@ input.conference_promo_button.conference_button.button-white-bg:hover {
   display: -webkit-inline-box;
 }
 .nav-brand-logo img {
-  height: 150%;
+  height: 100%;
+  padding: 0 !important;
+  margin-right: 5px;
 }
 .inline-brand {
   display: -webkit-box;

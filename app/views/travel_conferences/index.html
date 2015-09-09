@@ -1,68 +1,94 @@
+<div class="conference row header-title-bg" style = "margin: 2% 0% 3% 0%;">
+  <div class="col-lg-12 text-center travel-header-img">
+    <h2 class = "section-heading">Upcoming Conferences</h2>
+    <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+  </div>
+</div>
+
 <div class = "section">
   <div class = "container cmt_container">
-
-    <div class="row" style = "margin-bottom: 3%; margin-top: 2%;">
-      <div class="col-lg-12 text-center travel-header-img">
-        <h2 class = "section-heading">Upcoming Conferences</h2>
-        <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    <% if @tconferences.count.zero? %>
+      <div class="col-md-12 coming-soon" >
+        <h1 class = "coming-soon-title">Coming Soon :)</h1>
       </div>
-    </div>
-
-    <div class = "row object-non-visible animated object-visible fadeIn" data-animation-effect = "fadeIn">
-      <div class = "col-md-12">
-        <div style = "height: auto;" class = "isotope-container row grid-space-20">
-          <%@tconferences.each do |tcon|%>
-            <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
-              <div class = "image-box">
-                   <div class = "overlay-container travel_modal">
-                      <a class = " testtcon" id = "<%=tcon.id%>" data-toggle = "modal" data-target = "#project-1" href="#">
-                    <%=tcon.name%>
+    <% else %>
+      <div class = "row object-non-visible animated object-visible fadeIn" data-animation-effect = "fadeIn">
+        <div class = "col-md-12">
+          <div style = "height: auto;" class = "isotope-container row grid-space-20">
+            <%@tconferences.each do |tcon|%>
+              <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
+                <div class = "image-box">
+                  <a class = " testtcon" id = "<%=tcon.id%>" data-toggle = "modal" data-target = "#project-1">
+                    <div class = "overlay-container travel_modal">
+                      <span class = "travel-name-link"><%= tcon.name %></span>
+                    </div>
                   </a>
-                </div>
-              <div class = "btn-block" data-toggle = "modal" data-target = "#project-1"><%=tcon.season%></div>
-            </div>
-
-            <div class = "modal fade" id = "<%= tcon.id %>tcon" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
-              <div class = "modal-dialog">
-                <div class = "modal-content">
-                  <div class = "modal-header">
-
-                    <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">&times;</button>
-                    
-                    <h2 class = "modal-title modal-title-header" id = "myModalLabel"><%=tcon.name%></h2>
+                  <div class = "btn-block" data-toggle = "modal" data-target = "#project-1">
+                    <span style = "font-size: 22px; font-weight: 300; color: #5E6469;">
+                      <%= tcon.season %> <%= tcon.year %>
+                    </span>
                   </div>
-                  <div class = "modal-body">
-                  
-                    <p>
-                      <span class = "committee_chair committee-subheading">
-                        :
-                      </span>
-                      <span class = "chair-name">
-                        <%=tcon.short_name%>
-                      </span>
-                    </p>
-                    <p>
-                      <span class = "committee_chair">
-                       :
-                      </span>
-                      <span class = "chair-name">
-                        <%=tcon.start_date%>
-                      </span>
-                    </p>
+                </div>
+                <div class = "modal fade" id = "<%= tcon.id %>tcon" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+                  <div class = "modal-dialog">
+                    <div class = "modal-content">
+                    
+                      <div class = "modal-header">
+                        <span type = "button" class = "glyphicon glyphicon-remove close modal-close-button" data-dismiss = "modal" aria-hidden = "true"></span>
+                        <h2 class = "modal-title modal-title-header" id = "myModalLabel"><%= tcon.name %></h2>
+                      </div>
 
+                      <div class = "modal-body">
+
+                        <div class = "committee-about">
+                          <div class = "chair">
+                            <div class = "committee-subheading">
+                              Starts On
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <%= tcon.start_date.strftime("%A, %B %d") %>
+                            </div>
+                          </div>
+                          <div class = "vice-chair">
+                            <div class = "committee-subheading">
+                              Ends On
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <%= tcon.end_date.strftime("%A, %B %d") %>
+                            </div>
+                          </div>
+                          <div class = "topic-guide">
+                            <div class = "committee-subheading">
+                              Location
+                            </div>
+                            <div class = "committee-subheading-value">
+                              <%= tcon.location %>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class = "topic-data apply-here">
+                          <a class = "apply-link" href = "<%= tcon.application_url %>">
+                            Apply Here
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            </div>
-        </div>
-          <%end%>
+            <%end%>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
 
 <script type="text/javascript">
+$(document).ready(function () { 
+    jQuery.noConflict();
+    });
 $(window).load(function(){
     $('.testtcon').on('click',function()
                 {    var id =$(this).attr("id")

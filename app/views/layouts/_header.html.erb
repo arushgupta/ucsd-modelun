@@ -10,12 +10,14 @@
 
       <div class = "inline-brand">
         <div>
-          <a class = "navbar-brand page-scroll nav-brand-logo" style = "padding-top: 0" href = "">
+          <%= link_to image_tag("brand-logo.png"), root_url, class: "navbar-brand page-scroll nav-brand-logo", style: 'padding: 0; margin-right: 5px;' %>
+<!--           <a class = "navbar-brand page-scroll nav-brand-logo" style = "padding-top: 0" href = "">
             <img src = "/assets/brand-logo.png">
-          </a>
+          </a> -->
         </div>
         <div>
-          <a class = "navbar-brand page-scroll brand-name" href = "">UCSD MUN</a>
+          <%= link_to 'UCSD MUN', root_url, class: "navbar-brand page-scroll brand-name" %>
+<!--           <a class = "navbar-brand page-scroll brand-name" href = "">UCSD MUN</a> -->
         </div>
       </div>
 
