@@ -2,11 +2,11 @@
   <div id = "map" class = "col-md-12 contact-map"></div>
   <div class = "col-sm-12">	
 	<div class=" col-sm-12 col-md-6 contact-form">
-	
+	<div id="flash">
 	  <%flash.each do |k,v|%>
 		<%=v%>
 	  <%end%>
-	
+	</div>
 	  <h1 class = "contact-form-title">Write Us</h1>
 	
 	  <%=form_for @contact do |f|%>
@@ -36,6 +36,11 @@
 
 
 <script>
+$('document').ready(function() {
+  setTimeout(function() {
+    $('#flash').slideUp();
+  }, 3000);
+});
 	function initMap() {
   	var myLatLng = {lat: 30.726996, lng:  76.841108};
   	var map = new google.maps.Map(document.getElementById('map'), {
