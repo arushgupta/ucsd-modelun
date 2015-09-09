@@ -856,7 +856,6 @@ ul.pages-list {
   background-color: #FFFFFF;
   border-color: #DDD;
   text-align: center;
-  padding: 15% 0% 15% 0%;
 }
 a.sponsor-tier-title {
   color: #777;
@@ -1297,4 +1296,8 @@ span.fa-globe.social-media-item:hover {
   font-size: 98px;
   font-weight: 100;
   color: #5E6469;
+}
+@media (min-width: 397px) {
+  a.sponsor-tier-title{font-size: 20px;font-weight: 100;}
+  .coming-soon-title{font-size:40px;font-weight:100;}
 }

@@ -7,7 +7,12 @@ class StaticPagesController < ApplicationController
     @secretariats = Secretariat.where(is_active: true).last(3)
     @applynows = ApplyNow.where(is_active: true)
     @sponsors = Sponsor.where(is_active: true)
+    @members = User.all.count
     @user = User.new
+    @secretariat = Secretariat.all.count
+    @awards=Award.all.count
+    cat= Category.where(name: "conference")
+    # @cats=cat.first.categories.count
   end 
   
   def home
