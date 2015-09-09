@@ -8,7 +8,7 @@ class Secretariat < ActiveRecord::Base
 	validates :name, presence: true, format: { with: /\A[a-zA-Z\s\-]+\z/}, length: { maximum: 100 }
 	validates :college, presence: true, format: { with: /\A[a-zA-Z\s\-]+\z/}, length: { maximum: 100 }
 	validates :major, presence: true, format: { with: /\A[a-zA-Z\s\.',:(){}\-]+\z/}, length: { maximum: 100 }
-	validates :description, presence: true, length: { maximum: 350 }
+	validates :description, presence: true, length: { maximum: 750 }
 	validates :image_url, presence: true
     #validate :validate_minimum_image_size 
   
