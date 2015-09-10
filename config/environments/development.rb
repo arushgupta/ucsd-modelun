@@ -50,8 +50,8 @@ Rails.application.configure do
       :address              => "smtp.sendgrid.net",
       :port                 => 587,
       # :domain               => ".com",
-      :user_name            => "ucsdmunadmin",
-      :password             => "Admin123!",
+      :user_name            => "username",
+      :password             => "password",
       :authentication       => :plain,
       # :enable_starttls_auto => true
 }
