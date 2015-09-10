@@ -31,7 +31,7 @@
       <img src="assets/conference-2.jpg" alt="" style = "height: 100px; width: 100px;">
     </div>
     <div class="branch_blurb_container">
-      <h4 class = "branch-title">SandiMUN</h4>
+      <h4 class = "branch-title">SanDiMUN</h4>
       <p class = "branch-description">An intercollegiate conference that aims to provide a forum for students to tackle global issues.</p>
     </div>
   </div>
@@ -56,30 +56,33 @@
 </div>
 
 <!-- Secretariats -->
-<div class="col-md-12" style = "padding: 0;">
-<div class= "home-secretariat">
-  <div class = "home-secretariat-header">
-    <h3 class = "home-secretariat-title">Hi, let's get acquainted!</h3>
-  </div>
-  <div class = "home-secretariat-list row">
-    <%@secretariats.each do |sec|%>
-    <div class="col-md-4">  
-      <div class = "home-secretariat-info">
-        <div class = "home-secretariat-img">
-          <%=image_tag(sec.image_url)%>
-        </div>
-        <div class="home-secretariat-text">
-          <h4 class = "home-secretariat-name"><%=sec.name%></h4>
-          <p class = "home-secretariat-position"><%=sec.position%></p>
-        </div>
+<% if @secretariats.count.zero? %>
+<% else %>
+  <div class="col-md-12" style = "padding: 0;">
+    <div class= "home-secretariat">
+      <div class = "home-secretariat-header">
+        <h3 class = "home-secretariat-title">Hi, let's get acquainted!</h3>
       </div>
+      <div class = "home-secretariat-list row">
+        <%@secretariats.each do |sec|%>
+          <div class="col-md-4">  
+            <div class = "home-secretariat-info">
+              <div class = "home-secretariat-img">
+                <%=image_tag(sec.image_url)%>
+              </div>
+              <div class="home-secretariat-text">
+                <h4 class = "home-secretariat-name"><%=sec.name%></h4>
+                <p class = "home-secretariat-position"><%=sec.position%></p>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      </div>
+      <%= link_to raw('More Members <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>'), secretariats_path, class: "conference_promo_button conference_button button-white-bg" %>
+      </a>
     </div>
-    <%end%>
   </div>
-  <%= link_to raw('More Members <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>'), secretariats_path, class: "conference_promo_button conference_button button-white-bg" %>
-  </a>
-</div>
-</div>
+<% end %>
 
 <!-- Counter -->
 <div class = "counter-boxes col-md-12">
