@@ -302,19 +302,3 @@ footer {
 a.navbar-brand.page-scroll.brand-name:hover {
   color: #1C3D78 !important;
 }
-.et_pb_promo_button {
-    display: inline-block;
-    color: inherit;
-}
-.et_pb_promo_button i::before{display: none;}
-.et_pb_promo_button:hover i::before{display:block;}
-.et_pb_button{    font-size: 20px;
-    font-weight: 500;
-    padding: 0.3em 1em;
-    line-height: 1.7em !important;
-    background: transparent;
-    position: relative;
-    border: 2px solid;
-    height: 50px;
-    transition: all 0.2s;}
-.et_pb_promo_button:hover{background-color: lightgrey; border: 0px; }

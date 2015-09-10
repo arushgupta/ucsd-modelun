@@ -35,17 +35,9 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-  config.action_mailer.default_url_options = {:host => "localhost:3000"}
+  config.action_mailer.default_url_options = {host: "localhost:3000"}
   config.action_mailer.perform_deliveries = true
-  # ActionMailer::Base.smtp_settings = {
-  #   address: 'smtp.gmail.com',
-  #   port: '587',
-  #   authentication: :plain,
-  #   user_name: 'arushgupta.me@gmail.com',
-  #   password: 'Admin123!',
-  #   #:domain         => 'heroku.com',
-  #   enable_starttls_auto: true
-  # }
+  
   config.action_mailer.smtp_settings = {
       :address              => "smtp.sendgrid.net",
       :port                 => 587,
@@ -55,7 +47,6 @@ Rails.application.configure do
       :authentication       => :plain,
       # :enable_starttls_auto => true
 }
-
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

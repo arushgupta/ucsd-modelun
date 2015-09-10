@@ -132,28 +132,20 @@
  </div>
  
   <% if @overviews.count.zero? %>
-    <div class = " conference_register conference_parallax">
-      <div class = "conference_column_4_4">
-        <div class = "conference_promo conference_module conference_bg_layout_dark onference_heading_text_center conference_no_bg">
-          <div class = "conference_promo_description">
-            <h1>Registration Coming Soon</h1>
-          </div>
-        </div>
+    <div class = "conference_register">
+      <div class = "conference_promo_description">
+        <h1>Registration Coming Soon</h1>
       </div>
     </div>
   <%else%>
     <div class = " conference_register conference_parallax">
-      <div class = "conference_column_4_4">
-        <div class = "conference_promo conference_module conference_bg_layout_dark onference_heading_text_center conference_no_bg">
-          <div class = "conference_promo_description">
-            <h1>Look No Further. Register Today</h1>
-          </div>
-          <a class = "conference_promo_button conference_button" href = "<%= @overviews.take.registration_form_url%>">
-            Register Now
-            <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
-          </a>
-        </div>
+      <div class = "conference_promo_description">
+        <h1>Look No Further. Register Today</h1>
       </div>
+      <a class = "conference_promo_button conference_button" href = "<%= @overviews.take.registration_form_url%>">
+        Register Now
+        <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+      </a>
     </div>
   <% end %>
 </div>
