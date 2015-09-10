@@ -196,6 +196,7 @@
 </div>
 
 <script type="text/javascript">
+
    jQuery.noConflict();
   handle_ajax_error = function(response) {
     try { var responseText = jQuery.parseJSON(response.responseText); } catch(e) { var responseText = null; }
@@ -210,5 +211,10 @@
   $('#new_user').bind('ajax:error', function(data, xhr, response){ 
     $('#error_explanation').html(handle_ajax_error(xhr));
   });
+  $('document').ready(function() {
+  setTimeout(function() {
+    $('#error_explanation').slideUp();
+  }, 5000);
+});
 </script>
 
