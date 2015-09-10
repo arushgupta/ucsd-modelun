@@ -1,6 +1,6 @@
 <div class = "contact-page">
   <div id = "map" class = "col-md-12 contact-map"></div>
-  <div class = "col-sm-12">	
+  <div class = "col-md-12">	
 	<div class=" col-sm-12 col-md-6 contact-form">
 	
 	  <%flash.each do |k,v|%>
@@ -21,7 +21,7 @@
 	  <%end%>
 	</div>
 
-	<div class="col-md-3 col-sm-12" style = "float:left; margin: 0% 10%; padding: 0;">
+	<div class="col-md-4 col-sm-12" style = "float:left; margin: 0% 5%; padding: 0;">
 	  <h1 class = "contact-form-title">More Info</h1>
 	  <p class = "contact-about">
 	  	For information about how to join Model United Nations at UCSD, contact <a href = "mailto:travelingtritons@gmail.com">travelingtritons@gmail.com</a><br />
@@ -29,10 +29,10 @@
 	  	For information about our college conference, contact <a href = "mailto:sandimun.ucsd@gmail.com">sandimun.ucsd@gmail.com</a>
 	  </p>
 	  <p class = "contact-details">
-	  	<span class = "contact-detail-title">Location:</span><span>Asante AD, I-House</span>
+	  	<span class = "contact-detail-title">Location:</span><span> Asante AD, I-House</span>
 	  </p>
-	  <p class = "contact-details"><span class = "contact-detail-title">Phone:</span> <span>123.4567.890</span></p>
-	  <p class = "contact-details"><span class = "contact-detail-title">Meeting Times:</span> <span>7p-9p Thursdays, 1p-3p Sundays<span></p>
+	  <!-- <p class = "contact-details"><span class = "contact-detail-title">Phone:</span><span> 123.4567.890</span></p> -->
+	  <p class = "contact-details"><span class = "contact-detail-title">Meeting Times:</span><span> 7p-9p Thursdays, 1p-3p Sundays<span></p>
 	</div>
   </div>
 </div>
@@ -40,16 +40,16 @@
 
 <script>
 	function initMap() {
-  	var myLatLng = {lat: 30.726996, lng:  76.841108};
+  	var myLatLng = {lat: 32.8840261, lng:  -117.2419056};
   	var map = new google.maps.Map(document.getElementById('map'), {
-    	zoom: 10,
+    	zoom: 15,
     	center: myLatLng
   	});
 	  var marker = new google.maps.Marker({
-  	  position: myLatLng,
+  	    position: myLatLng,
     	map: map,
-    	title: 'Net Solutions',
-    	label: "Net Solutions"
+    	flat: true,
+    	title: 'Asante Hall',
   	});
 	}
 </script>

@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-	 default from: 'DoNotReply@ucsdmun.org'
+	 default from: 'DONOTREPLY@ucsdmun.org'
  
   def welcome_email(user)
     @user = user
     # @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Welcome to Model UN at UCSD')
+    mail(to: @user.email, subject: 'Welcome to Model United Nations at UCSD')
   end
 end
