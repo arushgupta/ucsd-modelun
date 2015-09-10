@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
   resources :secretariats
   resources :speakers
+  resources :sponsors
   resources :static_pages
 
   resources :training_sessions do

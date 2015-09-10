@@ -2,7 +2,7 @@ class Category < ActiveRecord::Base
 
   has_many :apply_nows
   has_many :awards
-  has_many :categories
+  # has_many :categories
   has_many :committees
   has_many :deadlines
   has_many :faqs
@@ -17,9 +17,9 @@ class Category < ActiveRecord::Base
   has_many :icons
   has_many :alumnis
   has_many :sponsors
-  belongs_to :category
-  belongs_to :parent_category, class: "Category"
-  has_many :subcategories, class: "Category"
+  belongs_to :parent_category, class: "Category", foreign_key: "category_id"
+  # belongs_to :parent_category, class: "Category", foreign_key: :category_id
+  has_many :categories
 
   validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true
  

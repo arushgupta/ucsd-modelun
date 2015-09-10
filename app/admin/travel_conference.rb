@@ -3,7 +3,7 @@ ActiveAdmin.register TravelConference do
   menu priority: 13
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :name, :short_name, :season, :year, :location, :host, :category_id, :start_date, :end_date, :travel_team_image_url, :is_active, awards_attributes: [:award_name, :award_recipient, :award_count, :is_active, :_destroy]
+  permit_params :name, :short_name, :season, :year, :location, :application_url, :host, :category_id, :start_date, :end_date, :travel_team_image_url, :is_active, awards_attributes: [:award_name, :award_recipient, :award_count, :is_active, :_destroy]
   decorate_with TravelConferenceDecorator
 
   controller do
@@ -23,6 +23,7 @@ ActiveAdmin.register TravelConference do
     column :end_date
     column :location
     column :host
+    column :application_url
     column 'Travel Team Image' do |upload|
       upload.travel_team_image_url
     end
@@ -44,6 +45,7 @@ ActiveAdmin.register TravelConference do
       row :end_date
       row :location
       row :host
+      row :application_url
       row :travel_team_image_url
       row :category
       row :is_active
@@ -63,7 +65,8 @@ ActiveAdmin.register TravelConference do
       f.input :start_date, as: :string, input_html: {class: 'datepicker'}
       f.input :end_date, as: :string, input_html: {class: 'datepicker'}
       f.input :location
-      f.input :host 
+      f.input :host
+      f.input :application_url, label: 'Application Link'
       f.input :travel_team_image_url, as: :file, image_preview: true, label: "Image (size 860x700)", hint: f.object.id? ? image_tag(f.object.travel_team_image_url) : ""
       f.input :is_active, label: "Active"
     end

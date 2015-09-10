@@ -90,7 +90,7 @@
           <span class = "fa fa-users" style = "font-size: 32px;"></span>
         </div>
         <h3 class = "counter-title">MEMBERS</h3>
-        <h3 class = "counter-value">50</h3>
+        <h3 class = "counter-value"><%= @members %></h3>
       </div>
     </div>
   </div>
@@ -101,7 +101,7 @@
           <span class = "glyphicon glyphicon-user" style = "font-size: 28px;"></span>
         </div>
         <h3 class = "counter-title">SECRETARIAT</h3>
-        <h3 class = "counter-value">10</h3>
+        <h3 class = "counter-value"><%= @secretariat %></h3>
       </div>
     </div>
   </div>
@@ -112,7 +112,7 @@
           <span class = "fa fa-trophy" style = "font-size: 32px;"></span>
         </div>
         <h3 class = "counter-title">AWARDS</h3>
-        <h3 class = "counter-value">38</h3>
+        <h3 class = "counter-value"><%= @awards %></h3>
       </div>
     </div>
   </div>
@@ -123,7 +123,7 @@
           <span class = "fa fa-gavel" style = "font-size: 32px;"></span>
         </div>
         <h3 class = "counter-title">CONFERENCES</h3>
-        <h3 class = "counter-value">14</h3>
+        <h3 class = "counter-value"><%= @conferences %></h3>
       </div>
     </div>
   </div>
@@ -193,6 +193,7 @@
 </div>
 
 <script type="text/javascript">
+   jQuery.noConflict();
   handle_ajax_error = function(response) {
     try { var responseText = jQuery.parseJSON(response.responseText); } catch(e) { var responseText = null; }
     if (responseText !== null) { 

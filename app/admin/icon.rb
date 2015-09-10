@@ -3,6 +3,7 @@ ActiveAdmin.register Icon do
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :overview_icon, :sechedule_icon, :commitee_icon, :speaker_icon, :fee_icon, :faq_icon, :training_session_icon, :alumni_icon, :secretariats_icon, :galleries_icon, :travel_conferences_icon, :awards_icon, :category_id
+  decorate_with IconDecorator
 
   form do |f|
     f.inputs 'Icon Details' do

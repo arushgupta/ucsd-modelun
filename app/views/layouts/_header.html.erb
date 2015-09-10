@@ -10,13 +10,19 @@
 
       <div class = "inline-brand">
         <div>
-          <a class = "navbar-brand page-scroll nav-brand-logo" style = "padding-top: 0" href = "">
+          <%= link_to image_tag("brand-logo.png"), root_url, class: "navbar-brand page-scroll nav-brand-logo", style: 'padding: 0; margin-right: 5px;' %>
+<!--           <a class = "navbar-brand page-scroll nav-brand-logo" style = "padding-top: 0" href = "">
             <img src = "/assets/brand-logo.png">
-          </a>
+          </a> -->
         </div>
         <div>
+<<<<<<< HEAD
           <%=link_to "UCSD MUN" , root_url,  class: "navbar-brand page-scroll brand-name"%>
           <!-- <a class = "navbar-brand page-scroll brand-name" href = "">UCSD MUN</a> -->
+=======
+          <%= link_to 'UCSD MUN', root_url, class: "navbar-brand page-scroll brand-name" %>
+<!--           <a class = "navbar-brand page-scroll brand-name" href = "">UCSD MUN</a> -->
+>>>>>>> f69dc9d2f78529ef6ffddb73b6f1cc63a57207d2
         </div>
       </div>
 
@@ -32,7 +38,7 @@
                 </li>
               <% else %>
                 <li class = "dropdown">
-                  <a href = "categories?id = <%=category.id%>" class = "dropdown-toggle" data-id = <%=category.id%> >
+                  <a href = "categories?id = <%=category.id%>" data-hover="dropdown" data-toggle="dropdown" class = "dropdown-toggle " data-id = <%=category.id%> >
                     <%=category.name%>
                     <b class="caret"></b>
                   </a>

@@ -295,6 +295,7 @@ ActiveRecord::Schema.define(version: 20150903114854) do
     t.date     "end_date"
     t.string   "location"
     t.string   "host"
+    t.string   "application_url"
     t.string   "travel_team_image_url"
     t.integer  "category_id"
     t.boolean  "is_active",             default: true

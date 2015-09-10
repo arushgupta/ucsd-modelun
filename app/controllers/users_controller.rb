@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @categories = Category.all.where(is_active: true)
   	@user = User.new(user_params)
     if @user.save
+      UserMailer.welcome_email(@user).deliver_now
       render "create"
     else
       render :json => { :error => @user.errors.full_messages.to_sentence }, 
