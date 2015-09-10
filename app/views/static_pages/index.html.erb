@@ -206,6 +206,7 @@
   }
   
   $('#new_user').bind('ajax:error', function(data, xhr, response){ 
+    alert("hello");
     $('#error_explanation').html(handle_ajax_error(xhr));
   });
   $('document').ready(function() {
