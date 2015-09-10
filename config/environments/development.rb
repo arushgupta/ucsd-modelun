@@ -47,13 +47,13 @@ Rails.application.configure do
   #   enable_starttls_auto: true
   # }
   config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
+      :address              => "smtp.sendgrid.net",
       :port                 => 587,
-      :domain               => "gmail.com",
-      :user_name            => "ucsdmunadm@gmail.com",
-      :password             => "Admin123!",
+      # :domain               => ".com",
+      :user_name            => "username",
+      :password             => "password",
       :authentication       => :plain,
-      :enable_starttls_auto => true
+      # :enable_starttls_auto => true
 }
 
   # Raises error for missing translations

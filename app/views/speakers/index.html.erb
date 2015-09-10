@@ -10,46 +10,49 @@
     <h1 class = "coming-soon-title">Coming Soon :)</h1>
   </div>
 <% else %>
-  <section id = "team" class = "bg-light-gray" style = "padding: 0px 0px;">
-    <div class = "container">
-      <div id = "people-section">
-        <div class = "main-low-margin col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margin-top-100 ">
-          <div id = "people-table" class = "row">
-            <% @speakers.each do |speaker|%>
-              <div class = "col-md-4 col-sm-4">
-                <ul class = "people-main">
-                  <li><%= image_tag speaker.image_url.url, class: "people-img" %></li>
-                  <li class = "less-on-bottom">
-                    <span class="people-name"><%= speaker.name %></span>
-                  </li>
-                  <li class = "less-on-top">
-                    <span class = "people-position"><%= speaker.panel %></span>
-                  </li>
-                  <li class = "poeple-description"><%= speaker.description.html_safe %></li>
-                </ul>
-                <ul class = "people-social">
-                  <li>
-                    <a href = "#">
-                      <span class = "social-menu-fb">
-                        <i class = "fa fa-facebook"></i>
-                      </span>
-                    </a>
-                    <a href = "#">
-                      <span class = "social-menu-tw">
-                        <i class = "fa fa-twitter"></i>
-                      </span>
-                    </a>
-                    <a href = "#">
-                      <span class = "social-menu-in">
-                        <i class = "fa fa-linkedin"></i>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
+  <section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+      <div class="row no-gutter">
+        <% @speakers.each do|speaker|%>
+          <div class="col-md-4 col-sm-4" style="width:100%;">    
+            <div class="bio-box">
+              <div class=" photo col-md-2">
+                <%= image_tag  speaker.image_url.url ,class: "img-responsive spkimg img-circle " ,id:speaker.id%>
               </div>
-            <%end%>
-          </div>              
-        </div>
+              <div class="bio-right col-md-7">
+                <div class="bio-header">
+                  <div class="position-one"><%=speaker.name%></div>
+                  <div class="name"><%=speaker.panel%></div>
+                </div>
+                <div class="bio">
+                  <span class="topic_des"><%= speaker.description.html_safe%></span><br />
+                  <span class = "social-media-links">
+                    <% if speaker.fb_url.present? %>
+                      <a href = "<%= speaker.fb_url %>">
+                        <span class = "fa fa-facebook social-media-item"></span>
+                      </a>
+                    <% end %>
+                    <% if speaker.tw_url.present? %>
+                      <a href = "<%= speaker.tw_url %>">
+                        <span class = "fa fa-twitter social-media-item"></span>
+                      </a>
+                    <% end %>
+                    <% if speaker.in_url.present? %>
+                      <a href = "<%= speaker.in_url %>">
+                        <span class = "fa fa-linkedin social-media-item"></span>
+                      </a>
+                    <% end %>
+                    <% if speaker.website_url.present? %>
+                      <a href = "<%= speaker.website_url %>">
+                        <span class = "fa fa-globe social-media-item"></span>
+                      </a>
+                    <% end %>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%end%>
       </div>
     </div>
   </section>
