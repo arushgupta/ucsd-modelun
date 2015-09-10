@@ -51,7 +51,9 @@
            <%begin%>
               <%= link_to image_tag(@icons.alumni_icon, alt: "logo"),alumnis_path %>
             <%rescue%>
-              <%= link_to image_tag("conference-3.jpg", alt: "logo"),alumnis_path %>
+              <%= link_to alumnis_path do %>
+                <span class = "fa fa-graduation-cap" style = "font-size: 12em"></span>
+              <% end %>
             <%end%>
           </div>
           <div class = "conference_blurb_container">

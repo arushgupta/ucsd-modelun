@@ -7,7 +7,7 @@ ActiveAdmin.register ApplyNow do
 
   controller do
     def show
-      @page_title = "Apply"
+      @page_title = "Quick Links"
     end
   end
 
@@ -23,7 +23,7 @@ ActiveAdmin.register ApplyNow do
   end
   
   form do |f|
-    f.inputs "Apply Now Button Details" do
+    f.inputs "Quick Links Details" do
       f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :headline
       f.input :button_text
