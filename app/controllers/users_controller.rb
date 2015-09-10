@@ -7,8 +7,9 @@ class UsersController < ApplicationController
   def create
     @categories = Category.all.where(is_active: true)
   	@user = User.new(user_params)
+    @user_details = "http://#{request.host_with_port}/users/unsubscribe?email=#{@user.email}"
     if @user.save
-      UserMailer.welcome_email(@user).deliver_now
+      UserMailer.welcome_email(@user, @user_details).deliver_now
       render "create"
     else
       render :json => { :error => @user.errors.full_messages.to_sentence }, 
@@ -22,6 +23,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def unsubscribe
+    @categories = Category.all.where(is_active: true)
   end
   
   private
