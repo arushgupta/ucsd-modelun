@@ -149,7 +149,8 @@ ActiveAdmin.setup do |config|
   # Enable and disable Batch Actions
   #
   config.batch_actions = false
-
+  # config.favicon = '/assets/favicon.ico'
+  config.favicon = 'favicon.ico'
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your
