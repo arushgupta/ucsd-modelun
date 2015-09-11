@@ -210,11 +210,9 @@
   
   $('#new_user').bind('ajax:error', function(data, xhr, response){ 
     $('#error_explanation').html(handle_ajax_error(xhr));
-  });
-  $('document').ready(function() {
-  setTimeout(function() {
+    setTimeout(function() {
     $('#error_explanation').slideUp();
   }, 5000);
-});
+  });
 </script>
 

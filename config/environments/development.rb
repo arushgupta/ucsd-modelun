@@ -44,6 +44,7 @@ Rails.application.configure do
       # :domain               => ".com",
       :user_name            => "usename",
       :password             => "password",
+
       :authentication       => :plain,
       # :enable_starttls_auto => true
 }
