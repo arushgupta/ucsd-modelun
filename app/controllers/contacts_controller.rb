@@ -5,8 +5,16 @@ class ContactsController < ApplicationController
 	end
 
 	def create
-		@contact = Contact.new(contact_params)
+		contact = Contact.new(contact_params)
 		# if verify_recaptacha
+# <<<<<<< HEAD
+# 		if contact.save
+# 			admin = AdminUser.first
+# 			UserMailer.new_contact_mail(admin, contact).deliver_now
+# 		  flash[:notice] = "Your information is incorrect"
+#      redirect_to categories_path(id: params[:category_id])
+#     end
+# =======
 		@contact.save
 
 		flash.keep[:notice] = "Your information saved successfully"
@@ -17,7 +25,8 @@ class ContactsController < ApplicationController
 	    # else
 	    # flash[:notice] = "Your information is incorrect"
         redirect_to categories_path(id: params[:category_id])
-        # end
+#         # end
+# >>>>>>> 517965ab8f0c0128c51b5e466104d4ebbab6df87
 	end
 
 	private

@@ -189,21 +189,8 @@ h2 {
   padding-right: 15px;
 }
 .conference_register {
-  background-image: url("register-bg.jpg");
-}
-.conference_parallax {
-  overflow: hidden;
-}
-.conference_parallax_bg {
-  transform: translate(0px, 96.8203125px);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  position: relative;
+  background-color: #18355B;
+  margin: 3% 0%;
 }
 .conference_bg_layout_dark {
   color: #fff !important;
@@ -219,12 +206,11 @@ h2 {
   word-wrap: break-word;
 }
 .conference_promo_description h1 {
-  color: #ececec;
-  font-size: 32px;
-  font-weight: 400;
-  margin: 0;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  color: #FFF;
+  font-size: 2em;
+  font-weight: 100;
+  padding: 3% 0%;
+  text-align: center;
 }
 a.conference_promo_button.conference_button {
   margin-bottom: 3%;
@@ -403,7 +389,8 @@ input.conference_promo_button.conference_button.button-white-bg:hover {
     width: 100%;
 }
 .header-img{
-  background-image: url(/assets/conference-title.jpg);
+  background-color: #18355B;
+  /*background-image: url(/assets/conference-title.jpg);*/
   background-size: cover;
 }
 .page-header-img {
@@ -859,7 +846,7 @@ ul.pages-list {
 }
 a.sponsor-tier-title {
   color: #777;
-  font-size: 42px;
+  font-size: 3em !important;
   font-weight: 100;
 }
 h2.sponsor-letter-title {
@@ -1293,7 +1280,7 @@ span.fa-globe.social-media-item:hover {
   margin: 5% 0% 0%;
 }
 .coming-soon-title {
-  font-size: 98px;
+  font-size: 4em !important;
   font-weight: 100;
   color: #5E6469;
 }
