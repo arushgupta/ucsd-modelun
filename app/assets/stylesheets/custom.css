@@ -774,39 +774,26 @@ h1.mailing-list-title  {
 }
 
 /* Footer */
-.footer-element {
-  text-align: center;
-  font-size: 48px;
-  background-color: #FFFFFF;
-  margin: 1% 0% 0%;
-  padding: 5%;
+.footer {
+  background-color: #122A48;
+  text-align: left;
+  padding: 1%;
+  font-size: 20px;
 }
-.footer-icon {
-  width: 60%;
-  text-align: center;
-  margin: 0% auto;
-  background-color: #F9F9F9;
-  padding: 5%;
+.fa-footer-fb {
+  color: #EFEFEF;
+  margin-right: 1%;
 }
-.footer-fa-icon {
-  color: #AAA;
+.fa-footer-fb:hover {
+  color: #3B5998;
 }
-.footer-fa-icon:hover {
-  color: #18355B;
-  background-color: #EEE;
+.fa-footer-mail {
+  color: #EFEFEF;
 }
-.footer-title {
-  text-align: center;
-  margin-top: 5%;
-  padding: 0;
+.fa-footer-mail:hover {
+  color: #DD4B39;
 }
-h1.footer-title-text {
-  font-size: 42px;
-  line-height: 1.7em;
-  color: #18355B;
-  font-weight: 100;
-  font-family: sans-serif, Helvetica Neue; 
-}
+
 /* Pages */
 h1.pages-title {
   font-size: 28px;
