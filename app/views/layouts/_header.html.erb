@@ -29,7 +29,7 @@
             <% sub_cat = Category.where(category_id: category.id).order('created_at ASC') %>
               <% if sub_cat.blank? %>
                 <li>
-                  <%= link_to category.name, categories_path(id: category.id) %>
+                  <%= link_to category.name, category_path(category) %>
                 </li>
               <% else %>
                 <li class = "dropdown">
@@ -39,7 +39,7 @@
                   </a>
                   <ul class="dropdown-menu">
                     <% sub_cat.each do |c| %>
-                      <li><%= link_to c.name, categories_path(id: c.id) %></li>
+                      <li><%= link_to c.name, category_path(c) %></li>
                     <%end%>
                   </ul>
                 </li>

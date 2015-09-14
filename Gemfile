@@ -22,6 +22,8 @@ gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'pg',          '0.17.1'
 
+gem 'friendly_id', '~> 5.1.0'
+
 group :development, :test do
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
