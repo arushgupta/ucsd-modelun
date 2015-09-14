@@ -12,7 +12,8 @@ class CommitteesController < ApplicationController
     @categories = Category.all.where(is_active: true).order('created_at ASC')
     @cat = Category.all.where("categories.category_id IS NOT NULL")
     @apply = ApplyNow.all
-  	@committees = Committee.all.where(category_id: params[:cat_id]).order('order_id ASC')
+    category = Category.friendly.find(params[:cat_id])
+  	@committees = category.committees.order('order_id ASC')
   end
 
 end

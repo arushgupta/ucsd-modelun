@@ -6,7 +6,8 @@ before_action :admin_user,     only: [:destroy, :create]
     @categories = Category.all.where(is_active: true).order('created_at ASC')
     @cat = Category.all.where("categories.category_id IS NOT NULL")
     @apply = ApplyNow.all
-    @faqs = Faq.all.where(category_id: params[:cat_id], is_active: true)
+    category = Category.friendly.find(params[:cat_id])
+    @faqs = category.faqs.where(is_active: true)
     @question_count = Question.group(params[:id]).count
   end
 
