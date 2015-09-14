@@ -1,4 +1,4 @@
-<% case @categories.find(params[:id]).name.downcase %>
+<% case @category %>
   <% when "about", "about us", "our club" %>
     <%= render "about" %>
   <% when "travel" %>
