@@ -1,10 +1,8 @@
 class StaticPagesController < ApplicationController
   before_filter :find_category
   def index
-    @tritonmun = HomeGallery.where(gallery_type: "T").order('created_at DESC').last(3)
-    @sdimun = HomeGallery.where(gallery_type: "S").order('created_at DESC').last(3)
-    @travel = HomeGallery.where(gallery_type: "V").order('created_at DESC').last(3)
-    @secretariats = Secretariat.where(is_active: true).last(3)
+    @homeimg = HomeGallery.where(is_home_img: true)
+    @secretariats = Secretariat.where(is_active: true).first(3)
     @applynows = ApplyNow.where(is_active: true)
     @sponsors = Sponsor.where(is_active: true)
     @members = member_counter

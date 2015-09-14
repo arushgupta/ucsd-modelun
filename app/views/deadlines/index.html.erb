@@ -13,30 +13,33 @@
   <div class="container" id="pricing-section">
     <div class="main-low-margin col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margin-top-100 ">
       <div id="pricing-table" class="row">
-        <% @deadlines.each do |dead|%>
+        <% @deadlines.each do |deadline|%>
           <div class="col-md-4 col-sm-4">
             <ul class="plan-main">
-              <li class="plan-name"><%= dead.phase_id %></li>
-              <li ><%=dead.date.strftime("%e %B, %Y")%></li>
+              <li class="plan-name"><%= deadline.phase_id %></li>
+              <li ><%=deadline.date.strftime("%e %B, %Y")%></li>
               <li>
                 <span class = "plan-dollar">$</span>
-                <span class= "plan-price"><%= dead.fee %></span>
+                <span class= "plan-price"><%= deadline.fee %></span>
               </li>
               <li>
                 <span class = "plan-delegate">Per Delegate</span>
               </li>
-              <li class = "plan-info"><%=dead.deadline_info%></li>
+              <li class = "plan-info"><%=deadline.deadline_info%></li>
               <li class="plan-action">
-                <% if dead.date > Date.today%>
-                  <a id="<%=dead.id%>" class = "conference_promo_button conference_button button-white-bg" href="">
-                    Register Now
-                    <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
-                  </a>
-                <%else%>
-                  <a id="<%=dead.id%>" class = "conference_promo_button conference_button button-white-bg thislink" href="">
-                    Register Now
-                    <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
-                  </a>
+                <% if deadline.date < Date.today %>
+                <% else %>
+                  <% if @overviews.count.zero? %>
+                    <a id="<%=deadline.id%>" class = "conference_promo_button conference_button button-white-bg" href = "">
+                      Register Now
+                      <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+                    </a>
+                  <%else%>
+                    <a id="<%=deadline.id%>" class = "conference_promo_button conference_button button-white-bg thislink" href = "<%= @overviews.take.registration_form_url %>">
+                      Register Now
+                      <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+                    </a>
+                    <% end %>
                 <%end%>
               </li>
             </ul>
