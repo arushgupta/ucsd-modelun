@@ -34,7 +34,8 @@ Rails.application.routes.draw do
   resources :faqs do
     resources :questions
   end
-
+  
+  resources :histories
   resources :home_galleries
   resources :overviews
   resources :pages

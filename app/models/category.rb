@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
   friendly_id :name, use: :slugged
   has_many :apply_nows
   has_many :awards
-  # has_many :categories
+  has_many :histories
   has_many :committees
   has_many :deadlines
   has_many :faqs

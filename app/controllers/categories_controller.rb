@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
     @contact = Contact.new
     @overviews = @category.overviews.where(is_active: true)
     @sponsors = Sponsor.all.where(is_active: true)
-    @icons = @category.icons
+    @icons = Icon.all
 
     # @overviews=Overview.all.where(category_id: params[:id],is_active: true).first
     # @faqs=Faq.all.where(category_id: params[:id])

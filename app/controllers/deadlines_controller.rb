@@ -6,5 +6,6 @@ class DeadlinesController < ApplicationController
     @apply = ApplyNow.all
     category = Category.friendly.find(params[:cat_id])
 		@deadlines = category.deadlines
+    @overviews = category.overviews.where(is_active: true)
   end
 end

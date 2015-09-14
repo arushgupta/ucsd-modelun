@@ -159,6 +159,15 @@ ActiveRecord::Schema.define(version: 20150914070531) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "histories", force: :cascade do |t|
+    t.integer  "year"
+    t.text     "description"
+    t.integer  "category_id"
+    t.boolean  "is_active",   default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "home_galleries", force: :cascade do |t|
     t.string   "image_url"
     t.string   "image_text"
@@ -175,8 +184,8 @@ ActiveRecord::Schema.define(version: 20150914070531) do
 
   create_table "icons", force: :cascade do |t|
     t.string   "overview_icon"
-    t.string   "sechedule_icon"
-    t.string   "commitee_icon"
+    t.string   "schedule_icon"
+    t.string   "committee_icon"
     t.string   "speaker_icon"
     t.string   "fee_icon"
     t.string   "faq_icon"
@@ -186,9 +195,11 @@ ActiveRecord::Schema.define(version: 20150914070531) do
     t.string   "alumni_icon"
     t.string   "galleries_icon"
     t.string   "secretariats_icon"
+    t.string   "history_icon"
     t.integer  "category_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.boolean  "is_active",               default: true
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   create_table "overviews", force: :cascade do |t|
