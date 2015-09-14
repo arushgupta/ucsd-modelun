@@ -31,8 +31,9 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
+            <%debugger%>
            <%begin%>
-              <%= link_to image_tag(@icons.secretariat_icon, alt: "logo"), secretariats_path %>
+              <%= link_to image_tag(@icons.take.secretariats_icon, alt: "logo"), secretariats_path %>
             <%rescue%>
               <%= link_to image_tag("conference-2.jpg", alt: "logo"),secretariats_path %>
             <%end%>
@@ -49,7 +50,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
            <%begin%>
-              <%= link_to image_tag(@icons.alumni_icon, alt: "logo"),alumnis_path %>
+              <%= link_to image_tag(@icons.take.alumni_icon, alt: "logo"),alumnis_path %>
             <%rescue%>
               <%= link_to alumnis_path do %>
                 <span class = "fa fa-graduation-cap" style = "font-size: 12em"></span>
@@ -68,7 +69,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
            <%begin%>
-              <%= link_to image_tag(@icons.gallery_icon, alt: "logo"), home_galleries_path %>
+              <%= link_to image_tag(@icons.take.galleries_icon, alt: "logo"), home_galleries_path %>
             <%rescue%>
               <%= link_to image_tag("conference-5.jpg", alt: "logo"), home_galleries_path %>
             <%end%>
