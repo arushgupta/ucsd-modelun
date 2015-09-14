@@ -31,7 +31,6 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <%debugger%>
            <%begin%>
               <%= link_to image_tag(@icons.take.secretariats_icon, alt: "logo"), secretariats_path %>
             <%rescue%>
@@ -76,6 +75,23 @@
           </div>
           <div class = "conference_blurb_container">
             <h4><%= link_to "Gallery", home_galleries_path %></h4>
+            Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "conference_column conference_column_1_3">
+      <div class = "conference_blurb conference_module conference_heading_text_center">
+        <div class = "conference_blurb_content">
+          <div class = "conference_blurb_image">
+           <%begin%>
+              <%= link_to image_tag(@icons.take.history_icon, alt: "logo"), histories_path %>
+            <%rescue%>
+              <%= link_to image_tag("conference-5.jpg", alt: "logo"), histories_path %>
+            <%end%>
+          </div>
+          <div class = "conference_blurb_container">
+            <h4><%= link_to "History", histories_path %></h4>
             Donec at euismod nibh, eu bibendum quam. Nullam non gravida purus, nec  eleifend tincidunt nisi. Fusce at purus in massa laoreet
           </div>
         </div>
