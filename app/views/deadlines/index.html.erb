@@ -28,6 +28,17 @@
               <li class = "plan-info"><%=deadline.deadline_info%></li>
               <li class="plan-action">
                 <% if deadline.date < Date.today %>
+                 <% if @overviews.count.zero? %>
+                    <a id="<%=deadline.id%>" class = "conference_promo_button conference_button button-white-bg" href = "" style = "pointer-events:none">
+                      Register Now
+                      <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+                    </a>
+                  <%else%>
+                    <a id="<%=deadline.id%>" class = "conference_promo_button conference_button button-white-bg thislink" href = "<%= @overviews.take.registration_form_url %>" style = "pointer-events:none">
+                      Register Now
+                      <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
+                    </a>
+                    <% end %>
                 <% else %>
                   <% if @overviews.count.zero? %>
                     <a id="<%=deadline.id%>" class = "conference_promo_button conference_button button-white-bg" href = "">

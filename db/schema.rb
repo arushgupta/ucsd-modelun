@@ -184,8 +184,8 @@ ActiveRecord::Schema.define(version: 20150914070531) do
 
   create_table "icons", force: :cascade do |t|
     t.string   "overview_icon"
-    t.string   "schedule_icon"
-    t.string   "committee_icon"
+    t.string   "sechedule_icon"
+    t.string   "commitee_icon"
     t.string   "speaker_icon"
     t.string   "fee_icon"
     t.string   "faq_icon"
@@ -195,11 +195,9 @@ ActiveRecord::Schema.define(version: 20150914070531) do
     t.string   "alumni_icon"
     t.string   "galleries_icon"
     t.string   "secretariats_icon"
-    t.string   "history_icon"
     t.integer  "category_id"
-    t.boolean  "is_active",               default: true
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "overviews", force: :cascade do |t|
