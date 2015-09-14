@@ -69,6 +69,7 @@ File Description:Main CSS file of the template */
 	background-color: transparent;
 	color: #666;
 	border: 0;
+	margin: 0 1%;
 }
 .modal-header h4 {
 	color: #ffffff;
@@ -238,7 +239,7 @@ span.travel-name-link {
 	font-weight: 200;
 }
 .topic-data.apply-here {
-	margin: 10%;
+	margin: 5% 10% 10%;
 	text-align: center;
 }
 a.apply-link {

@@ -846,7 +846,7 @@ ul.pages-list {
 }
 a.sponsor-tier-title {
   color: #777;
-  font-size: 42px;
+  font-size: 3em !important;
   font-weight: 100;
 }
 h2.sponsor-letter-title {
@@ -924,10 +924,14 @@ th.first-col {
 }
 .modal_data {
   float: left;
+  margin: 0 auto;
 }
 .panel_data {
   font-weight: bold;
   font-size: 20px;
+}
+.committee-about {
+  margin: 0 2%;
 }
 .committee-dias-name {
   font-weight: 400;
@@ -940,6 +944,13 @@ h4.committee-topic {
   padding-bottom: 2%;
   font-weight: 200;
   color: #444;
+}
+.travel-modal-title {
+  text-align: center;
+  margin-top: 3%;
+}
+.travel-about {
+  margin: 1% auto 0 !important;
 }
 .modal-title-header {
   font-weight: 200;
@@ -958,10 +969,11 @@ h4.committee-topic {
 }
 .topic-data {
   padding-top: 3%;
+  margin: 0 3%;
 }
 .topic-data .modal_data .committee-image-height {
   max-height: 200px;
-  padding: 0% 0% 2% 0% !important;
+  margin: 0 auto 2%;
 }
 .topic-data span.topic_desc p{
   padding-bottom: 2.5%;
@@ -1127,8 +1139,8 @@ span.contact-detail-title {
 
 /* Home Galleries */
 .modal-dialog {
-  width: 60%;
-  top:1%;
+  width: 80%;
+  margin: 5% auto;
 }
 .thumbnail {
   border: 0;
@@ -1280,7 +1292,7 @@ span.fa-globe.social-media-item:hover {
   margin: 5% 0% 0%;
 }
 .coming-soon-title {
-  font-size: 98px;
+  font-size: 4em !important;
   font-weight: 100;
   color: #5E6469;
 }

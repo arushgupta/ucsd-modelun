@@ -10,10 +10,10 @@ class ContactsController < ApplicationController
 		if contact.save
 			admin = AdminUser.first
 			UserMailer.new_contact_mail(admin, contact).deliver_now
-		  flash[:notice] = "Your information is incorrect"
-     redirect_to categories_path(id: params[:category_id])
+		  	flash[:notice] = "Your information is incorrect"
+     		redirect_to categories_path(id: params[:category_id])
+   		end
     end
-	end
 
 	private
 	def contact_params

@@ -12,7 +12,7 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <%= link_to image_tag("conference-2.jpg", alt: "logo"), training_sessions_path %>
+            <%= link_to image_tag(@icons.take.training_session_icon, alt: "logo"), training_sessions_path %>
           </div>
           <div class = "conference_blurb_container">
             <h4><%= link_to "Training Sessions", training_sessions_path %></h4>
@@ -25,7 +25,7 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <%= link_to image_tag("conference-3.jpg", alt: "logo"), travel_conferences_path %>
+            <%= link_to image_tag(@icons.take.travel_conferences_icon, alt: "logo"), travel_conferences_path %>
           </div>
           <div class = "conference_blurb_container">
             <h4><%= link_to "Upcoming Conferences", travel_conferences_path %></h4>
@@ -59,7 +59,7 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <%= link_to image_tag("conference-5.jpg", alt: "logo"), awards_path %>
+            <%= link_to image_tag(@icons.take.awards_icon, alt: "logo"), awards_path %>
           </div>
           <div class = "conference_blurb_container">
             <h4><%= link_to "Past Conferences And Awards", awards_path %></h4>

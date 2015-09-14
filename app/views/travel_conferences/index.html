@@ -35,13 +35,13 @@
                     
                       <div class = "modal-header">
                         <span type = "button" class = "glyphicon glyphicon-remove close modal-close-button" data-dismiss = "modal" aria-hidden = "true"></span>
-                        <h2 class = "modal-title modal-title-header" id = "myModalLabel"><%= tcon.name %></h2>
+                        <h2 class = "modal-title modal-title-header travel-modal-title" id = "myModalLabel"><%= tcon.name %></h2>
                       </div>
 
                       <div class = "modal-body">
 
-                        <div class = "committee-about">
-                          <div class = "chair">
+                        <div class = "committee-about" style = "margin-top: 3%">
+                          <div class = "chair travel-about">
                             <div class = "committee-subheading">
                               Starts On
                             </div>
@@ -49,7 +49,7 @@
                               <%= tcon.start_date.strftime("%A, %B %d") %>
                             </div>
                           </div>
-                          <div class = "vice-chair">
+                          <div class = "vice-chair travel-about">
                             <div class = "committee-subheading">
                               Ends On
                             </div>
@@ -57,7 +57,7 @@
                               <%= tcon.end_date.strftime("%A, %B %d") %>
                             </div>
                           </div>
-                          <div class = "topic-guide">
+                          <div class = "topic-guide travel-about">
                             <div class = "committee-subheading">
                               Location
                             </div>

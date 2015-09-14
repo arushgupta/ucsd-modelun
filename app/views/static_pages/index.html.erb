@@ -37,7 +37,7 @@
   </div>
   <div class="branch_column">
     <div class="branch_main_blurb_image">
-      <img src="assets/travel_team.jpg" alt="" style = "height: 100px; width: 100px; border-radius: 100%;">
+      <img src="assets/travel-team.jpg" alt="" style = "height: 100px; width: 100px; border-radius: 100%;">
     </div>
     <div class="branch_blurb_container">
       <h4 class = "branch-title">Travel Team</h4>
@@ -56,9 +56,8 @@
 </div>
 
 <!-- Secretariats -->
-<% if @secretariats.count.zero? %>
-<% else %>
-  <div class="col-md-12" style = "padding: 0;">
+<% unless @secretariats.count.zero? %>
+  <div class="col-md-12" style="padding-bottom:5%">
     <div class= "home-secretariat">
       <div class = "home-secretariat-header">
         <h3 class = "home-secretariat-title">Hi, let's get acquainted!</h3>
@@ -78,8 +77,8 @@
           </div>
         <%end%>
       </div>
-      <%= link_to raw('More Members <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>'), secretariats_path, class: "conference_promo_button conference_button button-white-bg" %>
-      </a>
+      <div class="link">
+      <%= link_to raw('More Members <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>'), secretariats_path, class: "conference_promo_button conference_button button-white-bg" %></div>
     </div>
   </div>
 <% end %>
@@ -196,6 +195,7 @@
 </div>
 
 <script type="text/javascript">
+
    jQuery.noConflict();
   handle_ajax_error = function(response) {
     try { var responseText = jQuery.parseJSON(response.responseText); } catch(e) { var responseText = null; }
@@ -209,6 +209,9 @@
   
   $('#new_user').bind('ajax:error', function(data, xhr, response){ 
     $('#error_explanation').html(handle_ajax_error(xhr));
+    setTimeout(function() {
+    $('#error_explanation').slideUp();
+  }, 5000);
   });
 </script>
 
