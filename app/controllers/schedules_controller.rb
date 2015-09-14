@@ -1,8 +1,9 @@
 class SchedulesController < ApplicationController
 	def index
-	@categories = Category.all.where(is_active: true).order('created_at ASC')
+		@categories = Category.all.where(is_active: true).order('created_at ASC')
     @cat = Category.all.where("categories.category_id IS NOT NULL")
     @apply = ApplyNow.all
-    @schedules = Schedule.all.where(category_id: params[:cat_id], is_active: true)
+    category = Category.friendly.find(params[:cat_id])
+    @schedules = category.schedules.where(is_active: true)
 	end
 end
