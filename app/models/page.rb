@@ -1,5 +1,4 @@
 class Page < ActiveRecord::Base
-  
   belongs_to :category
    
   attr_accessor :page_icon_url

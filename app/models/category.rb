@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
-
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   has_many :apply_nows
   has_many :awards
   has_many :histories
@@ -17,9 +18,9 @@ class Category < ActiveRecord::Base
   has_many :icons
   has_many :alumnis
   has_many :sponsors
-  belongs_to :parent_category, class: "Category", foreign_key: "category_id"
-  # belongs_to :parent_category, class: "Category", foreign_key: :category_id
-  has_many :categories
+  belongs_to :category
+  has_many :categories, class: "Category", foreign_key: "category_id"
+
 
   validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true
  

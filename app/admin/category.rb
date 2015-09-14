@@ -11,6 +11,9 @@ ActiveAdmin.register Category do
     def show
       @page_title = "Category"
     end
+    def find_resource
+      scoped_collection.where(slug: params[:id]).first!
+    end
   end
   
   index do
@@ -25,7 +28,7 @@ ActiveAdmin.register Category do
 
   form do |f|
   	f.inputs "Category Details" do
-      f.input :parent_category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select", label: 'Parent'
+      f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
   	  f.input :name
       f.input :subheading
       f.input :is_active, label: "Active"

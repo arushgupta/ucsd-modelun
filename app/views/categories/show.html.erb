@@ -1,0 +1,12 @@
+<% case @category.name.downcase %>
+  <% when "about", "about us", "our club" %>
+    <%= render "about" %>
+  <% when "travel" %>
+   <%= render "travel" %>
+  <% when "sponsors", "sponsorship" %>
+    <%= render "sponsors" %>
+  <% when "contact", "contact us" %>
+    <%= render "contacts/index" %>
+  <% else %>
+    <%=  render "conference" %>
+<% end %>
