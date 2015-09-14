@@ -4,11 +4,11 @@ class IconDecorator < Draper::Decorator
   def overview_icon
     h.image_tag model.overview_icon
   end
-  def sechedule_icon
-  	h.image_tag model.sechedule_icon
+  def schedule_icon
+  	h.image_tag model.schedule_icon
   end
-  def commitee_icon
-  	h.image_tag model.commitee_icon
+  def committee_icon
+  	h.image_tag model.committee_icon
   end
   def speaker_icon
   	h.image_tag model.speaker_icon
@@ -36,5 +36,8 @@ class IconDecorator < Draper::Decorator
   end
   def secretariats_icon
   	h.image_tag model.secretariats_icon
+  end
+  def history_icon
+    h.image_tag model.history_icon
   end
 end

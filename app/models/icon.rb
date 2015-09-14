@@ -1,8 +1,8 @@
 class Icon < ActiveRecord::Base
 	belongs_to :category
 	mount_uploader :overview_icon, ImageUploader
-	mount_uploader :sechedule_icon, ImageUploader
-	mount_uploader :commitee_icon, ImageUploader
+	mount_uploader :schedule_icon, ImageUploader
+	mount_uploader :committee_icon, ImageUploader
 	mount_uploader :speaker_icon, ImageUploader
 	mount_uploader :fee_icon, ImageUploader
 	mount_uploader :faq_icon, ImageUploader
@@ -12,4 +12,5 @@ class Icon < ActiveRecord::Base
 	mount_uploader :alumni_icon, ImageUploader
 	mount_uploader :galleries_icon, ImageUploader
 	mount_uploader :secretariats_icon, ImageUploader
+	mount_uploader :history_icon, ImageUploader
 end
