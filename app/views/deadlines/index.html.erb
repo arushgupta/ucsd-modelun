@@ -29,28 +29,28 @@
               <li class="plan-action">
                 <% if deadline.date < Date.today %>
                  <% if @overviews.count.zero? %>
-                    <a id="<%=deadline.id%>" class = "conference_promo_button conference_button button-white-bg" href = "" style = "pointer-events:none">
+                    <a class = "conference_promo_button conference_button button-white-bg" href = "" style = "pointer-events:none">
                       Register Now
                       <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
                     </a>
                   <%else%>
-                    <a id="<%=deadline.id%>" class = "conference_promo_button conference_button button-white-bg thislink" href = "<%= @overviews.take.registration_form_url %>" style = "pointer-events:none">
+                    <a class = "conference_promo_button conference_button button-white-bg" href = "<%= @overviews.take.registration_form_url %>" style = "pointer-events:none">
                       Register Now
                       <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
                     </a>
-                    <% end %>
+                  <% end %>
                 <% else %>
                   <% if @overviews.count.zero? %>
-                    <a id="<%=deadline.id%>" class = "conference_promo_button conference_button button-white-bg" href = "">
+                    <a class = "conference_promo_button conference_button button-white-bg" href = "">
                       Register Now
                       <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
                     </a>
                   <%else%>
-                    <a id="<%=deadline.id%>" class = "conference_promo_button conference_button button-white-bg thislink" href = "<%= @overviews.take.registration_form_url %>">
+                    <a class = "conference_promo_button conference_button button-white-bg" href = "<%= @overviews.take.registration_form_url %>">
                       Register Now
                       <span class = "glyphicon glyphicon-chevron-right button-icon-hider"></span>
                     </a>
-                    <% end %>
+                  <% end %>
                 <%end%>
               </li>
             </ul>

@@ -5,7 +5,7 @@ class DeadlinesController < ApplicationController
     @cat = Category.all.where("categories.category_id IS NOT NULL")
     @apply = ApplyNow.all
     category = Category.friendly.find(params[:cat_id])
-		@deadlines = category.deadlines
+	@deadlines = category.deadlines.order('date ASC')
     @overviews = category.overviews.where(is_active: true)
   end
 end

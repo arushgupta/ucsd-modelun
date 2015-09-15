@@ -190,7 +190,7 @@ h2 {
 }
 .conference_register {
   background-color: #18355B;
-  margin: 3% 0%;
+  margin: 3% 0% 0%;
 }
 .conference_bg_layout_dark {
   color: #fff !important;
@@ -776,7 +776,7 @@ h1.mailing-list-title  {
 /* Footer */
 .footer {
   background-color: #122A48;
-  text-align: left;
+  text-align: center;
   padding: 1%;
   font-size: 20px;
 }
@@ -792,6 +792,10 @@ h1.mailing-list-title  {
 }
 .fa-footer-mail:hover {
   color: #DD4B39;
+}
+.footer-brand {
+  color: #EFEFEF;
+  font-weight: 100;
 }
 
 /* Pages */
