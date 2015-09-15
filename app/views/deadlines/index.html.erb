@@ -60,3 +60,16 @@
     </div>
   </div>
 <% end %>
+
+<%if @overviews.count.zero? %>
+<% else %>
+  <div class = "col-md-6 deadline-info">
+    <span class = "deadline-info-text">
+      Position Papers Submition Deadline <span class = "deadline-info-data"><%= @overviews.take.position_paper_deadline.strftime("%e %B, %Y") %></span>
+    </span>
+    <br />
+    <span class = "deadline-info-text">
+      Delegation Fee (Per School) <span class = "deadline-info-data">$<%= @overviews.take.delegation_fee %></span>
+    </span>
+  </div>
+<% end %>

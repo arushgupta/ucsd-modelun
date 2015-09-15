@@ -10,21 +10,23 @@
 	  <%= javascript_include_tag 'application' %>
 	  <%= favicon_link_tag 'favicon.ico' %>
 	  <script type="text/javascript" src="/assets/jquery.js"></script>
-    <link rel="stylesheet" href="/assets/jquery.fancybox.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="/assets/jquery.fancybox.pack.js"></script>
-    <link rel="stylesheet" href="/assets/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
-<script type="text/javascript" src="/assets/jquery.fancybox-buttons.js?v=1.0.5"></script>
-<script type="text/javascript" src="/assets/jquery.fancybox-media.js?v=1.0.6"></script>
+      <link rel="stylesheet" href="/assets/jquery.fancybox.css" type="text/css" media="screen" />
+      <script type="text/javascript" src="/assets/jquery.fancybox.pack.js"></script>
+      <link rel="stylesheet" href="/assets/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+      <script type="text/javascript" src="/assets/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	  <script type="text/javascript" src="/assets/jquery.fancybox-media.js?v=1.0.6"></script>
 
-<link rel="stylesheet" href="/assets/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
-<script type="text/javascript" src="/assets/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+  	  <link rel="stylesheet" href="/assets/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+	  <script type="text/javascript" src="/assets/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
 	  <%= csrf_meta_tags %> 
 	  <%= render 'layouts/shim' %>
 	</head>
 	<body>
 		<%= render 'layouts/header' %>
-	 	<%= yield %>
+		<div class = "container" style = "min-height: 100%; height: auto; padding: 0;">
+	 	  <%= yield %>
+	 	</div>
 		<%= render 'layouts/footer' %>
 	</body>
 </html>
