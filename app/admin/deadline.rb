@@ -1,6 +1,7 @@
 ActiveAdmin.register Deadline do
 
   menu priority: 6
+  menu parent: "Conferences"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   config.sort_order = 'id_asc'

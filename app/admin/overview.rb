@@ -1,6 +1,7 @@
 ActiveAdmin.register Overview do
   
   menu priority: 4
+  menu parent: "Conferences"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :season, :delegation_fee, :position_paper_deadline, :welcome_letter, :start_date, :end_date, :location, :registration_form_url, :category_id, :is_active

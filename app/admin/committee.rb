@@ -1,6 +1,7 @@
 ActiveAdmin.register Committee do
 
   menu priority: 14
+  menu parent: "Conferences"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :order_id, :committee_name, :chair, :vice_chair, :topic_guide_url, :image_url, :category_id, :is_active, topics_attributes: [:order, :topic_name, :image_url, :description, :_destroy]
@@ -68,7 +69,7 @@ ActiveAdmin.register Committee do
       f.input :chair
       f.input :vice_chair
       f.input :topic_guide_url, as: :file, hint: f.object.id? ? link_to(f.object.topic_guide_url.url): "", label: "Topic Guide (PDF only)"
-      f.input :image_url, as: :file, image_preview: true, label: "Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
+      f.input :image_url, as: :file, image_preview: true, label: "Image (size 300x225)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
       f.input :is_active, label: "Active"
     end
     f.actions

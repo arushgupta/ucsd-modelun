@@ -33,7 +33,7 @@ ActiveAdmin.register Sponsor do
     f.inputs 'Speaker Details' do
       f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :name
-      f.input :logo_url, as: :file, image_preview: true, label: "Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.logo_url) : ""
+      f.input :logo_url, as: :file, image_preview: true, label: "Image (Max. width 165px)", hint: f.object.id? ? image_tag(f.object.logo_url) : ""
       f.input :is_active, label: 'Active'
   	end
   	f.actions

@@ -1,6 +1,7 @@
 ActiveAdmin.register HomeGallery do
   
   menu priority: 11
+  menu parent: "About"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :image_url, :image_text, :button_url, :button_text, :image_title, :category_id, :is_home_img, :is_active, :gallery_type
@@ -31,11 +32,11 @@ ActiveAdmin.register HomeGallery do
       f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :gallery_type, as: :select, collection: HomeGallery.types, include_blank: "select"
       f.input :image_title
-      f.input :image_url, as: :file, image_preview: true, label: "Image (size 1400x730)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
       f.input :image_text
       f.input :button_url
       f.input :button_text
-      f.input :is_home_img, label: "Home Image"
+      f.input :image_url, as: :file, image_preview: true, label: "Image (Min. size 960x640)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
+      f.input :is_home_img, label: "Home Image (size 1012x341)"
       f.input :is_active, label: "Active"
     end
     f.actions

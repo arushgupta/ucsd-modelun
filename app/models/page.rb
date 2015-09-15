@@ -10,7 +10,8 @@ class Page < ActiveRecord::Base
   validates :content, length: { maximum: 5000 }
   validates :meta_keywords, length: { maximum: 100 }
   validates :meta_title, length: { maximum: 50 }
-  validates :page_description, length: { maximum: 130 }
+  validates :page_description, length: { maximum: 150 }
+  validates :subheading, length: {maximum: 57}
   
   def display_name
     "#{category.name}_#{name}"

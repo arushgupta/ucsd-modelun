@@ -1,7 +1,7 @@
 <div class = "conference row header-title-bg" style = "margin: 2% 0% 3% 0%;">
   <div class="col-lg-12 text-center header-img">
     <h2 class = "section-heading">Committees</h2>
-    <h3 class = "section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    <h3 class = "section-subheading text-muted">Global dilemmas that should be discussed</h3>
   </div>
 </div>
 
@@ -71,9 +71,7 @@
                         <div class = "topic-data">
                           <%committee.topics.each do |topic|%>
                             <h4 class = "committee-topic"><%=topic.topic_name%></h4>
-                            <span class = "modal_data">
-                              <%= image_tag  topic.image_url.url , class: "img-responsive committee-image-height" %>
-                            </span>
+                            <%= image_tag  topic.image_url.url , class: "img-responsive committee-image-height" %>
                             <span class = "topic_desc">
                               <%= topic.description.html_safe %>
                             </span>

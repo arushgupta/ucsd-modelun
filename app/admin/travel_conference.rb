@@ -1,6 +1,7 @@
 ActiveAdmin.register TravelConference do
 
   menu priority: 13
+  menu parent: "Travel"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :name, :short_name, :season, :year, :location, :application_url, :host, :category_id, :start_date, :end_date, :travel_team_image_url, :is_active, awards_attributes: [:award_name, :award_recipient, :award_count, :is_active, :_destroy]

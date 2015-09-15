@@ -1,6 +1,7 @@
 ActiveAdmin.register Alumni do
 
   menu priority: 12
+  menu parent: "About"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :email, :name, :major, :bio, :image_url, :is_active, :category_id
@@ -51,7 +52,7 @@ ActiveAdmin.register Alumni do
       f.input :major
       f.input :email
       f.input :bio, as: :ckeditor
-      f.input :image_url, as: :file, image_preview: true, label: "Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
+      f.input :image_url, as: :file, image_preview: true, label: "Image (width 200px)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
       f.input :is_active, label: "Active"
     end
     f.actions

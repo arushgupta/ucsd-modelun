@@ -250,26 +250,7 @@ footer {
   margin-bottom: 20px;
   border-bottom: 0px none;
 }
-@media (min-width: 992px) {
-  .deadline-info {
-    margin: 5% 25% !important;
-  }
-}
-.deadline-info {
-  text-align: center;
-  padding: 3% 0%;
-  margin: 5% 12%;
-  border-top: 1px solid #CCC;
-  border-bottom: 1px solid #CCC;
-}
-.deadline-info-text {
-  font-size: 20px;
-  font-weight: 100;
-}
-.deadline-info-data {
-  font-weight: 200;
-  color: #122A48;
-}
+
 /* Schedules */
 .schedule-box {
   color: #444;

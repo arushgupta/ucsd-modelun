@@ -1,6 +1,7 @@
 ActiveAdmin.register Faq do
  
   menu priority: 3
+  menu parent: "Conferences"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :name, :category_id, :is_active, questions_attributes: [:question, :answer, :id, :_destroy]

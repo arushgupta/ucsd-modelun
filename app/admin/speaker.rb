@@ -1,6 +1,7 @@
 ActiveAdmin.register Speaker do
 
   menu priority: 7
+  menu parent: "Conferences"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :panel, :name, :description, :fb_url, :tw_url, :in_url, :website_url, :image_url, :is_active, :category_id
@@ -76,7 +77,7 @@ ActiveAdmin.register Speaker do
       f.input :in_url, label: 'LinkedIn'
       f.input :website_url, label: 'Personal Website'
       f.input :description, as: :ckeditor
-      f.input :image_url, as: :file, image_preview: true, label: "Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
+      f.input :image_url, as: :file, image_preview: true, label: "Image (width 200px)", hint: f.object.id? ? image_tag(f.object.image_url) : ""
       f.input :is_active, label: "Active"
     end
     f.actions

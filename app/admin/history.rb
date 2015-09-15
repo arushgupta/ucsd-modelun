@@ -1,5 +1,6 @@
 ActiveAdmin.register History do
-
+  
+  menu parent: "About"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :year, :description, :is_active, :category_id

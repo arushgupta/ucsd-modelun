@@ -47,12 +47,12 @@ ActiveAdmin.register Page do
     f.inputs "Page Details" do
       f.input :category, collection: Category.all.map {|category| [category.name, category.id]}, include_blank: "select"
       f.input :name
-      f.input :content, as: :ckeditor
       f.input :subheading
-      f.input :page_description, as: :ckeditor
-      f.input :meta_keywords
       f.input :meta_title
-      f.input :page_icon_url, as: :file, image_preview: true, label: "Icon (size 500x500)", hint: f.object.id? ? image_tag(f.object.page_icon_url) : ""
+      f.input :meta_keywords
+      f.input :content, as: :ckeditor
+      f.input :page_description, as: :ckeditor
+      f.input :page_icon_url, as: :file, image_preview: true, label: "Icon (size 210x200)", hint: f.object.id? ? image_tag(f.object.page_icon_url) : ""
       f.input :info_page
       f.input :is_active
     end

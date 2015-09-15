@@ -1,6 +1,7 @@
 ActiveAdmin.register TrainingSession do
 
   menu priority: 8
+  menu parent: "Travel"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :date, :committee_name, :topic_name, :topic_description, :topic_image_url, :committee_image_url, :location, :start_time, :end_time, :topic_guide_url, :category_id, :is_active
@@ -69,8 +70,8 @@ ActiveAdmin.register TrainingSession do
       f.input :topic_name
       f.input :location
       f.input :topic_description, as: :ckeditor
-      f.input :committee_image_url, as: :file, image_preview: true, label: "Committee Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.committee_image_url) : ""
-      f.input :topic_image_url, as: :file, image_preview: true, label: "Topic Image (size 500x500)", hint: f.object.id? ? image_tag(f.object.topic_image_url) : ""
+      f.input :committee_image_url, as: :file, image_preview: true, label: "Committee Image (size 300x225)", hint: f.object.id? ? image_tag(f.object.committee_image_url) : ""
+      f.input :topic_image_url, as: :file, image_preview: true, label: "Topic Image (Max. height 360px)", hint: f.object.id? ? image_tag(f.object.topic_image_url) : ""
       f.input :topic_guide_url, as: :file, hint: f.object.id? ? link_to(f.object.topic_guide_url.url): "", label: "Topic Guide (PDF only)"
       f.input :is_active, label: "Active"
     end
