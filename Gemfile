@@ -10,26 +10,26 @@ gem 'sass-rails',   '5.0.2'
 gem 'uglifier',     '2.5.3'
 gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails', '4.0.3'
-gem 'capistrano', '~> 3.1.0'
+# gem 'capistrano', '~> 3.1.0'
 
-# integrate bundler with capistrano
-gem 'capistrano-bundler'
+# # integrate bundler with capistrano
+# gem 'capistrano-bundler'
 
-# if you are using rvm
-gem 'capistrano-rvm'
+# # if you are using rvm
+# gem 'capistrano-rvm'
 
-gem 'capistrano3-unicorn'
+# gem 'capistrano3-unicorn'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# # Use ActiveModel has_secure_password
+# # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
- gem 'unicorn'
+# # Use Unicorn as the app server
+#  gem 'unicorn'
 
-# Use Capistrano for deployment
- gem 'capistrano-rails', '~> 1.1.0'
+# # Use Capistrano for deployment
+#  gem 'capistrano-rails', '~> 1.1.0'
 
- gem 'sprockets', '~> 2.8'
+#  gem 'sprockets', '~> 2.8'
 # gem 'turbolinks',   '2.3.0'
 gem 'activeadmin',  github: 'gregbell/active_admin'
 gem 'active_admin_theme'
