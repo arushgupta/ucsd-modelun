@@ -1,6 +1,6 @@
 ActiveAdmin.register Page do
 
-  menu priority: 2
+  menu priority: 3
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :name, :summary, :content, :meta_keywords, :meta_title, :subheading, :page_description, :page_icon_url, :info_page, :category_id, :is_active
@@ -17,7 +17,7 @@ ActiveAdmin.register Page do
     column :name
     column (:content) {|page| raw(page.content)}
     column (:subheading) {|page| raw(page.subheading)}
-    column (:page_description) {|page| raw(page.page_description)}
+    # column (:page_description) {|page| raw(page.page_description)}
     column :page_icon_url
     column :info_page
     column :category
@@ -30,10 +30,10 @@ ActiveAdmin.register Page do
       row :id
       row :name
       row (:content) {|page| raw(page.content)}
-      row :meta_keywords
-      row :meta_title
+      # row :meta_keywords
+      # row :meta_title
       row (:subheading) {|page| raw(page.subheading)}
-      row (:page_description) {|page| raw(page.page_description)}
+      # row (:page_description) {|page| raw(page.page_description)}
       row :page_icon_url
       row :info_page
       row :category
@@ -48,10 +48,10 @@ ActiveAdmin.register Page do
       f.input :category, collection: Category.all.map {|category| [category.name, category.id]}, include_blank: "select"
       f.input :name
       f.input :subheading
-      f.input :meta_title
-      f.input :meta_keywords
+      # f.input :meta_title
+      # f.input :meta_keywords
       f.input :content, as: :ckeditor
-      f.input :page_description, as: :ckeditor
+      # f.input :page_description, as: :ckeditor
       f.input :page_icon_url, as: :file, image_preview: true, label: "Icon (size 210x200)", hint: f.object.id? ? image_tag(f.object.page_icon_url) : ""
       f.input :info_page
       f.input :is_active

@@ -1,6 +1,7 @@
 ActiveAdmin.register Icon do
 
   before_filter :skip_sidebar!, only: :index
+  menu priority: 5
   config.batch_actions = false
   permit_params :overview_icon, :schedule_icon, :committee_icon, :speaker_icon, :fee_icon, :faq_icon, :training_session_icon, :alumni_icon, :secretariats_icon, :galleries_icon, :travel_conferences_icon, :awards_icon, :history_icon, :category_id
   decorate_with IconDecorator

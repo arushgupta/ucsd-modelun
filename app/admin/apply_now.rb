@@ -1,6 +1,6 @@
 ActiveAdmin.register ApplyNow do
 
-  menu priority: 10
+  menu priority: 4
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :headline, :button_url, :button_text, :category_id, :is_active

@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
 
-  menu priority: 1
+  menu priority: 2
  
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
