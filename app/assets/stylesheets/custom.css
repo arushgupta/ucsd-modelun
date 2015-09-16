@@ -1070,7 +1070,7 @@ form input[type=submit]:hover {
 .col-sm-12.col-md-6.contact-form {
   margin-left: 5%;
   margin-bottom: 5%;
-  float-left;
+  float: left;
 }
 h1.contact-form-title {
   font-size: 32px;
