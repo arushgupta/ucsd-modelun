@@ -5,6 +5,24 @@ ActiveAdmin.register Icon do
   config.batch_actions = false
   permit_params :overview_icon, :schedule_icon, :committee_icon, :speaker_icon, :fee_icon, :faq_icon, :training_session_icon, :alumni_icon, :secretariats_icon, :galleries_icon, :travel_conferences_icon, :awards_icon, :history_icon, :category_id
   decorate_with IconDecorator
+  
+  index do
+    selectable_column
+    column :category
+    column :overview_icon
+    column :schedule_icon
+    column :committee_icon
+    column :speaker_icon
+    column :fee_icon
+    column :faq_icon
+    column :training_session_icon
+    column :travel_conferences_icon
+    column :awards_icon
+    column :galleries_icon
+    column :secretariats_icon
+    column :history_icon
+    actions
+  end
 
   show do
     attributes_table do
