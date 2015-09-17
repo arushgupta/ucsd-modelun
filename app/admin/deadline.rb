@@ -32,7 +32,7 @@ ActiveAdmin.register Deadline do
       f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :phase_id, as: :select, collection: Deadline.phase_ids, include_blank: "select"
       f.input :date, as: :string, input_html: {class: "datepicker"}
-      f.input :fee, label: "Fee (in $)"
+      f.input :fee, label: "Fee"
       f.input :deadline_info, label: "Information"
       f.input :is_active, label: "Active"
     end
