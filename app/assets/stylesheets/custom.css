@@ -405,13 +405,13 @@ input.conference_promo_button.conference_button.button-white-bg:hover {
   background-size: cover;
 }
 .sponsor-header-img {
-  background-color: #305b74;
+  background-color: #122A48;
   background-size: cover;
 }
-.contact-header-img {
+/*.contact-header-img {
   background-image: url(/assets/ascend-bg.jpg);
   background-size: cover;
-}
+}*/
 .button-icon-hider {
   display: none;
 }

@@ -13,7 +13,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <% begin %>
-              <%= link_to image_tag(@icons.take.training_session_icon, alt: "logo"), training_sessions_path %>
+              <%= link_to image_tag(@icons.take.training_session_icon, alt: "training-session-icon.png"), training_sessions_path %>
             <% rescue %>
               <%= link_to image_tag("conference-1.jpg", alt: "logo"), training_sessions_path %>
               <%end%>
@@ -29,7 +29,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <% begin %>
-              <%= link_to image_tag(@icons.take.travel_conferences_icon, alt: "logo"), travel_conferences_path %>
+              <%= link_to image_tag(@icons.take.travel_conferences_icon, alt: "travel-conferences.png"), travel_conferences_path %>
             <% rescue %>
               <%= link_to image_tag("conference-2.jpg", alt: "logo"), travel_conferences_path %>
             <% end %>
@@ -64,7 +64,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <% begin %>
-              <%= link_to image_tag(@icons.take.awards_icon, alt: "logo"), awards_path %>
+              <%= link_to image_tag(@icons.take.awards_icon, alt: "award.png"), awards_path %>
             <% rescue %>
               <%= link_to image_tag("conference-3.jpg", alt: "logo"), travel_conferences_path %>
             <% end %>
