@@ -14,14 +14,14 @@
           <div class = "conference_blurb_content">
             <div class = "conference_blurb_image">
               <%begin%>
-                <%= link_to image_tag(page.icon_url, alt: "logo"),page_path(page, id: page) %>
+              <%debugger%>
+                <%= link_to image_tag(page.page_icon_url.url, alt: "logo"),page_path(page, id: page) %>
               <%rescue%>
                 <%= link_to image_tag("conference-1.jpg", alt: "logo"),page_path(page, id: page) %>
               <%end%>
             </div>
             <div class = "conference_blurb_container">
               <h4><%= link_to page.name, page_path(page,id: page.id) %></h4>
-              <!-- <%= page.page_description.html_safe %> -->
             </div>
           </div>
         </div>
