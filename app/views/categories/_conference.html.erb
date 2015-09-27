@@ -13,7 +13,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%begin%>
-              <%= link_to image_tag(@icons.take.overview_icon, alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.take.overview_icon, alt: "letter.png"),overviews_path(cat_id: params[:id]) %>
             <%rescue%>
               <%= link_to image_tag("conference-1.jpg", alt: "logo"),overviews_path(cat_id: params[:id]) %>
             <%end%>
@@ -29,7 +29,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%begin%>
-              <%= link_to image_tag(@icons.take.schedule_icon, alt: "logo"),schedules_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.take.schedule_icon, alt: "schedule.png"),schedules_path(cat_id: params[:id]) %>
             <%rescue%>
               <%= link_to image_tag("conference-2.jpg", alt: "logo"),schedules_path(cat_id: params[:id]) %>
             <%end%>
@@ -45,7 +45,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%begin%>
-              <%= link_to image_tag(@icons.take.committee_icon, alt: "logo"),committees_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.take.committee_icon, alt: "committee-icon.png"),committees_path(cat_id: params[:id]) %>
             <%rescue%>
               <%= link_to image_tag("conference-3.jpg", alt: "logo"),committees_path(cat_id: params[:id]) %>
             <%end%>
@@ -61,7 +61,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%begin%>
-              <%= link_to image_tag(@icons.take.speaker_icon, alt: "logo"),speakers_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.take.speaker_icon, alt: "speaker.png"),speakers_path(cat_id: params[:id]) %>
             <%rescue%>
               <%= link_to image_tag("conference-4.jpg", alt: "logo"),speakers_path(cat_id: params[:id]) %>
             <%end%>
@@ -77,7 +77,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%begin%>
-              <%= link_to image_tag(@icons.take.fee_icon, alt: "logo"),deadlines_path(cat_id: params[:id]) %>
+              <%= link_to image_tag(@icons.take.fee_icon, alt: "fee-icon.png"),deadlines_path(cat_id: params[:id]) %>
             <%rescue%>
               <%= link_to image_tag("conference-5.jpg", alt: "logo"),deadlines_path(cat_id: params[:id]) %>
             <%end%>
@@ -93,7 +93,7 @@
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
             <%begin%>
-              <%= link_to image_tag(@icons.take.faq_icon, alt: "logo"),faqs_path(cat_id:params[:id]) %>
+              <%= link_to image_tag(@icons.take.faq_icon, alt: "faq.png"),faqs_path(cat_id:params[:id]) %>
             <%rescue%>
               <%= link_to image_tag("conference-6.jpg", alt: "logo"),faqs_path(cat_id: params[:id]) %>
             <%end%>
@@ -110,7 +110,7 @@
           <div class = "conference_blurb_content">
             <div class = "conference_blurb_image">
               <%begin%>
-                <%= link_to image_tag(page.page_icon_url.url, alt: "logo"),page_path(page, id: page) %>
+                <%= link_to image_tag(page.page_icon_url.url, alt: "page-icon.png"),page_path(page, id: page) %>
               <%rescue%>
                 <%= link_to image_tag("conference-6.jpg", alt: "logo"),page_path(page, id: page) %>
               <%end%>
