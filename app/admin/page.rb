@@ -4,7 +4,8 @@ ActiveAdmin.register Page do
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   permit_params :name, :summary, :content, :meta_keywords, :meta_title, :subheading, :page_description, :page_icon_url, :info_page, :category_id, :is_active
-  
+  decorate_with PageDecorator
+
   controller do
     def show
       @page_title = "Page Details"

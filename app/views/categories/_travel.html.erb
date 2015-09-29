@@ -12,10 +12,10 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <% begin %>
-              <%= link_to image_tag(@icons.take.training_session_icon, alt: "training-session-icon.png"), training_sessions_path %>
-            <% rescue %>
-              <%= link_to image_tag("conference-1.jpg", alt: "logo"), training_sessions_path %>
+            <% if @icons.take.training_session_icon.nil? %>
+              <%= link_to image_tag(@icons.take.training_session_icon, alt: "logo"), training_sessions_path %>
+            <% else %>
+              <%= link_to image_tag("training-session-icon.png", alt: "logo"), training_sessions_path %>
               <%end%>
           </div>
           <div class = "conference_blurb_container">
@@ -28,10 +28,10 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <% begin %>
-              <%= link_to image_tag(@icons.take.travel_conferences_icon, alt: "travel-conferences.png"), travel_conferences_path %>
-            <% rescue %>
-              <%= link_to image_tag("conference-2.jpg", alt: "logo"), travel_conferences_path %>
+            <% if @icons.take.travel_conferences_icon.nil? %>
+              <%= link_to image_tag(@icons.take.travel_conferences_icon, alt: "logo"), travel_conferences_path %>
+            <% else %>
+              <%= link_to image_tag("travel-conferences.png", alt: "logo"), travel_conferences_path %>
             <% end %>
           </div>
           <div class = "conference_blurb_container">
@@ -46,10 +46,10 @@
         <div class = "conference_blurb conference_module conference_heading_text_center">
           <div class = "conference_blurb_content">
             <div class = "conference_blurb_image">
-              <%begin%>
-                <%= link_to image_tag(page.page_icon_url.url, alt: "page-icon.png"),page_path(page, id: page) %>
-              <%rescue%>
-                <%= link_to image_tag("conference-6.jpg", alt: "logo"),page_path(page, id: page) %>
+              <% if page.page_icon_url.url.nil? %>
+                <%= link_to image_tag(page.page_icon_url.url, alt: "logo"),page_path(page, id: page) %>
+              <% else %>
+                <%= link_to image_tag("page-icon.png", alt: "logo"),page_path(page, id: page) %>
               <%end%>
             </div>
             <div class = "conference_blurb_container">
@@ -63,10 +63,10 @@
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
           <div class = "conference_blurb_image">
-            <% begin %>
-              <%= link_to image_tag(@icons.take.awards_icon, alt: "award.png"), awards_path %>
-            <% rescue %>
-              <%= link_to image_tag("conference-3.jpg", alt: "logo"), travel_conferences_path %>
+            <% if @icons.take.awards_icon.nil? %>
+              <%= link_to image_tag(@icons.take.awards_icon, alt: "logo"), awards_path %>
+            <% else %>
+              <%= link_to image_tag("award.png", alt: "logo"), awards_path %>
             <% end %>
           </div>
           <div class = "conference_blurb_container">
