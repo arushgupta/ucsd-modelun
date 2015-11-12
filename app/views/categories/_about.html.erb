@@ -26,6 +26,12 @@
         </div>
       </div>
     <%end%>
+
+  <% if @icons.take.nil? %>
+      <div class="col-md-12 coming-soon" >
+        <h1 class = "coming-soon-title">Coming Soon :)</h1>
+      </div>
+  <% else %>
     <div class = "conference_column conference_column_1_3">
       <div class = "conference_blurb conference_module conference_heading_text_center">
         <div class = "conference_blurb_content">
@@ -90,6 +96,7 @@
         </div>
       </div>
     </div>
+  <% end %>
   </div>
 </div>
 
