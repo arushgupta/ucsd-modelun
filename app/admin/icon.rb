@@ -6,9 +6,15 @@ ActiveAdmin.register Icon do
   permit_params :overview_icon, :schedule_icon, :committee_icon, :speaker_icon, :fee_icon, :faq_icon, :training_session_icon, :alumni_icon, :secretariats_icon, :galleries_icon, :travel_conferences_icon, :awards_icon, :history_icon, :category_id
   decorate_with IconDecorator
   
+  controller do
+    def show
+      @page_title = "Icons"
+    end
+  end
+
   index do
     selectable_column
-    column :category
+    # column :category
     column :overview_icon
     column :schedule_icon
     column :committee_icon
@@ -26,7 +32,7 @@ ActiveAdmin.register Icon do
 
   show do
     attributes_table do
-      row :id
+      # row :id
       row :overview_icon
       row :schedule_icon
       row :committee_icon
@@ -45,7 +51,7 @@ ActiveAdmin.register Icon do
 
   form do |f|
     f.inputs 'Icon Details' do
-    	f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
+    	# f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :overview_icon, as: :file, image_preview: true, label: "Overview (size 210x200)", hint: f.object.id? ? image_tag(f.object.overview_icon) : ""
       f.input :schedule_icon, as: :file, image_preview: true, label: "Schedule (size 210x200)", hint: f.object.id? ? image_tag(f.object.schedule_icon) : ""
       f.input :committee_icon, as: :file, image_preview: true, label: "Committee (size 210x200)", hint: f.object.id? ? image_tag(f.object.committee_icon) : ""

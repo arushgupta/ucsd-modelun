@@ -7,103 +7,109 @@
     </div>
   </div>
 
-  <div class = "conference_row conference_row_2">
-    <div class = "conference_column conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-            <% if @icons.take.overview_icon.nil? %>
-              <%= link_to image_tag(@icons.take.overview_icon, alt: "logo"),overviews_path(cat_id: params[:id]) %>
-            <% else %>
-              <%= link_to image_tag("letter.png", alt: "logo"),overviews_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "Welcome Letter", overviews_path(cat_id: params[:id]) %></h4>
+  <% if @icons.take.nil? %>
+      <div class="col-md-12 coming-soon" >
+        <h1 class = "coming-soon-title">Coming Soon :)</h1>
+      </div>
+  <% else %>
+    <div class = "conference_row conference_row_2">
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <% if @icons.take.overview_icon.nil? %>
+                <%= link_to image_tag(@icons.take.overview_icon, alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <% else %>
+                <%= link_to image_tag("letter.png", alt: "logo"),overviews_path(cat_id: params[:id]) %>
+              <%end%>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to "Welcome Letter", overviews_path(cat_id: params[:id]) %></h4>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class = "conference_column conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-            <% if @icons.take.schedule_icon.nil? %>
-              <%= link_to image_tag(@icons.take.schedule_icon, alt: "logo"),schedules_path(cat_id: params[:id]) %>
-            <% else %>
-              <%= link_to image_tag("schedule.png", alt: "logo"),schedules_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "Schedule", schedules_path(cat_id: params[:id]) %></h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class = "conference_column conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-            <% if @icons.take.committee_icon.nil? %>
-              <%= link_to image_tag(@icons.take.committee_icon, alt: "logo"),committees_path(cat_id: params[:id]) %>
-            <% else %>
-              <%= link_to image_tag("committee-icon.png", alt: "logo"),committees_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "Committees", committees_path(cat_id: params[:id]) %></h4>
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <% if @icons.take.schedule_icon.nil? %>
+                <%= link_to image_tag(@icons.take.schedule_icon, alt: "logo"),schedules_path(cat_id: params[:id]) %>
+              <% else %>
+                <%= link_to image_tag("schedule.png", alt: "logo"),schedules_path(cat_id: params[:id]) %>
+              <%end%>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to "Schedule", schedules_path(cat_id: params[:id]) %></h4>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class = "conference_column conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-            <% if @icons.take.speaker_icon.nil? %>
-              <%= link_to image_tag(@icons.take.speaker_icon, alt: "logo"),speakers_path(cat_id: params[:id]) %>
-            <% else %>
-              <%= link_to image_tag("speaker.png", alt: "logo"),speakers_path(cat_id: params[:id]) %>
-            <% end %>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "Speakers", speakers_path(cat_id: params[:id]) %></h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class = "conference_column conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-            <% if @icons.take.fee_icon.nil? %>
-              <%= link_to image_tag(@icons.take.fee_icon, alt: "logo"),deadlines_path(cat_id: params[:id]) %>
-            <% else %>
-              <%= link_to image_tag("fee-icon.png", alt: "logo"),deadlines_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "Fees & Timeline", deadlines_path(cat_id: params[:id]) %></h4>
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <% if @icons.take.committee_icon.nil? %>
+                <%= link_to image_tag(@icons.take.committee_icon, alt: "logo"),committees_path(cat_id: params[:id]) %>
+              <% else %>
+                <%= link_to image_tag("committee-icon.png", alt: "logo"),committees_path(cat_id: params[:id]) %>
+              <%end%>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to "Committees", committees_path(cat_id: params[:id]) %></h4>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class = "conference_column conference_column_1_3">
-      <div class = "conference_blurb conference_module conference_heading_text_center">
-        <div class = "conference_blurb_content">
-          <div class = "conference_blurb_image">
-            <% if @icons.take.faq_icon.nil? %>
-              <%= link_to image_tag(@icons.take.faq_icon, alt: "logo"),faqs_path(cat_id:params[:id]) %>
-            <% else %>
-              <%= link_to image_tag("faq.png", alt: "logo"),faqs_path(cat_id: params[:id]) %>
-            <%end%>
-          </div>
-          <div class = "conference_blurb_container">
-            <h4><%= link_to "FAQs", faqs_path(cat_id: params[:id]) %></h4>
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <% if @icons.take.speaker_icon.nil? %>
+                <%= link_to image_tag(@icons.take.speaker_icon, alt: "logo"),speakers_path(cat_id: params[:id]) %>
+              <% else %>
+                <%= link_to image_tag("speaker.png", alt: "logo"),speakers_path(cat_id: params[:id]) %>
+              <% end %>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to "Speakers", speakers_path(cat_id: params[:id]) %></h4>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <% if @icons.take.fee_icon.nil? %>
+                <%= link_to image_tag(@icons.take.fee_icon, alt: "logo"),deadlines_path(cat_id: params[:id]) %>
+              <% else %>
+                <%= link_to image_tag("fee-icon.png", alt: "logo"),deadlines_path(cat_id: params[:id]) %>
+              <%end%>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to "Fees & Timeline", deadlines_path(cat_id: params[:id]) %></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = "conference_column conference_column_1_3">
+        <div class = "conference_blurb conference_module conference_heading_text_center">
+          <div class = "conference_blurb_content">
+            <div class = "conference_blurb_image">
+              <% if @icons.take.faq_icon.nil? %>
+                <%= link_to image_tag(@icons.take.faq_icon, alt: "logo"),faqs_path(cat_id:params[:id]) %>
+              <% else %>
+                <%= link_to image_tag("faq.png", alt: "logo"),faqs_path(cat_id: params[:id]) %>
+              <%end%>
+            </div>
+            <div class = "conference_blurb_container">
+              <h4><%= link_to "FAQs", faqs_path(cat_id: params[:id]) %></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
     <% @pages.each do |page|%>
       <div class = "conference_column conference_column_1_3">
         <div class = "conference_blurb conference_module conference_heading_text_center">
