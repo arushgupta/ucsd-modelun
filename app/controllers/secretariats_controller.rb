@@ -3,7 +3,7 @@ class SecretariatsController < ApplicationController
 		@categories = Category.all.where(is_active: true).order('created_at ASC')
         @cat = Category.all.where("categories.category_id IS NOT NULL")
         @apply = ApplyNow.all
-		@secretariats=Secretariat.all.where(is_active: true)
+		@secretariats=Secretariat.all.where(is_active: true).order('id ASC')
 	end
 end
  
