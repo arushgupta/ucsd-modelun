@@ -16,9 +16,9 @@ ActiveAdmin.register Deadline do
   index do
     selectable_column
     id_column
-    # column 'Information' do |finder|
-    #   finder.deadline_info
-    # end
+    column 'Information' do |finder|
+      finder.deadline_info
+    end
     column :date
     column :phase_id
     column :delegate_fee
@@ -37,7 +37,7 @@ ActiveAdmin.register Deadline do
       f.input :date, as: :string, input_html: {class: "datepicker"}
       f.input :delegate_fee, label: "Delegate Fee"
       f.input :delegation_fee, label: "Delegation Fee"
-      # f.input :deadline_info, label: "Information"
+      f.input :deadline_info, label: "Information"
       f.input :is_active, label: "Active"
     end
     actions

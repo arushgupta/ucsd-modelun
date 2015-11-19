@@ -116,10 +116,10 @@ footer {
 
 
 .main_image img {
-    height: 341px;
+    height: auto;
     overflow: hidden;
-    width: 1012px;
-    margin-top: 2%;
+    width: auto;
+    margin: 2% auto 0%;
 }
 .thumb {
   width: 100%;
