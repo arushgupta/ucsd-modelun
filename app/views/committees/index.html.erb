@@ -8,7 +8,7 @@
 <div class = "section">
   <div class = "container cmt_container">
 
-    <% if @committees.count.zero? or Topic.group(params[:id]).count.zero? %>
+    <% if @committees.count.zero? and Topic.group(params[:id]).count.zero? %>
       <div class="col-md-12 coming-soon" >
         <h1 class = "coming-soon-title">Coming Soon :)</h1>
       </div>
