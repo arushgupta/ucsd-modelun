@@ -20,10 +20,16 @@
               <li ><%=deadline.date.strftime("%e %B, %Y")%></li>
               <li>
                 <span class = "plan-dollar">$</span>
-                <span class= "plan-price"><%= deadline.fee %></span>
+                <span class= "plan-price"><%= deadline.delegate_fee %></span>
               </li>
               <li>
                 <span class = "plan-delegate">Per Delegate</span>
+              </li>
+              <li>
+                <span class = "plan-delegate">$<%= deadline.delegation_fee%></span>
+              </li>
+              <li>
+                <span class = "plan-delegate">Per Delegation</span>
               </li>
               <li class = "plan-info"><%=deadline.deadline_info%></li>
               <li class="plan-action">
@@ -67,9 +73,9 @@
     <span class = "page-info-text">
       Position Papers Submition Deadline <span class = "page-info-data"><%= @overviews.take.position_paper_deadline.strftime("%e %B, %Y") %></span>
     </span>
-    <br />
+<!--     <br />
     <span class = "page-info-text">
       Delegation Fee (Per School) <span class = "page-info-data">$<%= @overviews.take.delegation_fee %></span>
-    </span>
+    </span> -->
   </div>
 <% end %>

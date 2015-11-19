@@ -4,7 +4,7 @@ ActiveAdmin.register Overview do
   menu parent: "Conferences"
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
-  permit_params :season, :delegation_fee, :position_paper_deadline, :welcome_letter, :start_date, :end_date, :location, :registration_form_url, :category_id, :is_active
+  permit_params :season, :position_paper_deadline, :welcome_letter, :start_date, :end_date, :location, :registration_form_url, :category_id, :is_active
 
   controller do
     def show
@@ -20,7 +20,6 @@ ActiveAdmin.register Overview do
     column :end_date
     column :location
     column :registration_form_url
-    column :delegation_fee
     column :position_paper_deadline
     column (:welcome_letter)  {|overview| raw(overview.welcome_letter)}
     column :category
@@ -35,9 +34,6 @@ ActiveAdmin.register Overview do
       row :end_date
       row :location
       row :registration_form_url
-      row 'Delegation Fee' do |finder|
-        finder.delegation_fee
-      end
       row 'Position Paper Deadline' do |finder|
         finder.position_paper_deadline
       end
@@ -51,7 +47,6 @@ ActiveAdmin.register Overview do
     f.inputs "Overview Details" do
       f.input :category, collection: Category.all.map {|category| [category.name, category.id]}, include_blank: "select"
       f.input :season, as: :select, collection: ["Fall", "Spring", "Summer", "Winter"], include_blank: "select"
-      f.input :delegation_fee, label: "Delegation Fee"
       f.input :position_paper_deadline, as: :string, input_html: {class: 'datepicker'}
       f.input :start_date, as: :string, input_html: {class: 'datepicker'}
       f.input :end_date, as: :string, input_html: {class: 'datepicker'}

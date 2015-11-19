@@ -4,7 +4,8 @@ class CreateDeadlines < ActiveRecord::Migration
       t.string :deadline_info
       t.date :date
       t.integer :phase_id
-      t.string :fee
+      t.integer :delegate_fee
+      t.integer :delegation_fee
       t.references :category
       t.boolean :is_active, default: true
       

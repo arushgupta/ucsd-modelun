@@ -5,7 +5,7 @@ ActiveAdmin.register Deadline do
   before_filter :skip_sidebar!, only: :index
   config.batch_actions = false
   config.sort_order = 'id_asc'
-  permit_params :date, :deadline_info, :phase_id, :fee, :category_id, :is_active
+  permit_params :date, :deadline_info, :phase_id, :delegate_fee, :delegation_fee, :category_id, :is_active
 
   controller do
     def show
@@ -21,7 +21,10 @@ ActiveAdmin.register Deadline do
     end
     column :date
     column :phase_id
-    column :fee
+    column :delegate_fee
+    column 'Delegation Fee' do |finder|
+      finder.delegation_fee
+    end
     column :category
     column :is_active
     actions
@@ -32,7 +35,8 @@ ActiveAdmin.register Deadline do
       f.input :category, collection: Category.all.map {|c| [c.name, c.id]}, include_blank: "select"
       f.input :phase_id, as: :select, collection: Deadline.phase_ids, include_blank: "select"
       f.input :date, as: :string, input_html: {class: "datepicker"}
-      f.input :fee, label: "Fee"
+      f.input :delegate_fee, label: "Delegate Fee"
+      f.input :delegation_fee, label: "Delegation Fee"
       f.input :deadline_info, label: "Information"
       f.input :is_active, label: "Active"
     end

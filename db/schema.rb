@@ -120,11 +120,12 @@ ActiveRecord::Schema.define(version: 20150914070531) do
     t.string   "deadline_info"
     t.date     "date"
     t.integer  "phase_id"
-    t.string   "fee"
+    t.integer  "delegate_fee"
+    t.integer  "delegation_fee"
     t.integer  "category_id"
-    t.boolean  "is_active",     default: true
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.boolean  "is_active",      default: true
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -208,7 +209,6 @@ ActiveRecord::Schema.define(version: 20150914070531) do
     t.date     "end_date"
     t.string   "location"
     t.string   "registration_form_url"
-    t.integer  "delegation_fee"
     t.date     "position_paper_deadline"
     t.text     "welcome_letter"
     t.integer  "category_id"
