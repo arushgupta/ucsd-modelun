@@ -17,21 +17,19 @@
           <div class="col-md-4 col-sm-4">
             <ul class="plan-main">
               <li class="plan-name"><%= deadline.phase_id %></li>
-              <li ><%=deadline.date.strftime("%e %B, %Y")%></li>
+              <li class = "plan-date"><%=deadline.date.strftime("%e %B, %Y")%></li>
               <li>
-                <span class = "plan-dollar">$</span>
-                <span class= "plan-price"><%= deadline.delegate_fee %></span>
+                <span class= "plan-price">$<%= deadline.delegate_fee %></span>
               </li>
-              <li>
+              <li class = "plan-list-view">
                 <span class = "plan-delegate">Per Delegate</span>
               </li>
               <li>
-                <span class = "plan-delegate">$<%= deadline.delegation_fee%></span>
+                <span class = "plan-price">$<%= deadline.delegation_fee%></span>
               </li>
-              <li>
-                <span class = "plan-delegate">Per Delegation</span>
+              <li class = "plan-list-view">
+                <span class = "plan-delegate">Delegation Fee</span>
               </li>
-              <li class = "plan-info"><%=deadline.deadline_info%></li>
               <li class="plan-action">
                 <% if deadline.date < Date.today %>
                  <% if @overviews.count.zero? %>
