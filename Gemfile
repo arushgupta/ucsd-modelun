@@ -12,7 +12,7 @@ gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails', '4.0.3'
 # gem 'capistrano', '~> 3.1.0'
 
-# # integrate bundler with capistrano
+# integrate bundler with capistrano
 # gem 'capistrano-bundler'
 
 # # if you are using rvm
@@ -41,10 +41,15 @@ gem 'cancancan'
 gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'pg',          '0.17.1'
-
+gem 'puma'
 gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
+  gem 'capistrano',	 			require: false
+  gem 'capistrano-rvm',			require: false
+  gem 'capistrano-rails',		require: false
+  gem 'capistrano-bundler',		require: false
+  gem 'capistrano3-unicorn',	require: false
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
