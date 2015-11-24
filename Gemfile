@@ -49,7 +49,7 @@ group :development, :test do
   gem 'capistrano-rvm',			require: false
   gem 'capistrano-rails',		require: false
   gem 'capistrano-bundler',		require: false
-  gem 'capistrano3-unicorn',	require: false
+  gem 'capistrano3-puma',	require: false
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'

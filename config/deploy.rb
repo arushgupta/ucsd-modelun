@@ -1,5 +1,3 @@
-# config valid only for Capistrano 3.1
-lock '3.1.0'
 server '45.55.183.214', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url, 'git@github.com:arushgupta/rails-sample-app.git'
