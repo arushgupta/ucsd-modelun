@@ -20,13 +20,17 @@
               <div style = "height: auto;" class = "col-sm-6 col-md-3 isotope-item web-design">
                 <div class = "image-box">
                   <div class = "overlay-container">
-                    <%= image_tag  committee.image_url.url, class: "img-responsive"%>
+                    <% if committee.image_url.url.nil? %>
+                      <%= image_tag  committee.image_url.url, class: "img-responsive"%>
+                    <% else %>
+                      <%= image_tag("committee-logo.png", alt: "logo")%>
+                    <%end%>
                     <a class = "overlay committee-image" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
                       <span class = "glyphicon glyphicon-plus glyphicon-white-bg"></span>
                     </a>
                   </div>
-<!--                   <div class = "btn-block" data-toggle = "modal" data-target = "#project-1"><%=committee.committee_name%>
-                  </div> -->
+                  <div class = "btn-block" data-toggle = "modal" data-target = "#project-1"><%=committee.committee_name%>
+                  </div>
                 </div>
 
                 <div class = "modal fade" id = "<%= committee.id %>committee" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">

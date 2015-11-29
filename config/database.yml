@@ -5,3 +5,13 @@ development:
   database: project_development
   pool: 5
   host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  database: deploydemo_production
+  username: rails
+  password: mMDCpADGyM
+  host: localhost

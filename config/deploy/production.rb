@@ -14,7 +14,7 @@ role :db,  %w{deploy@45.55.183.214}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server '162.xxx.xxx.xx', user: 'deploy', roles: %w{app db web}
+server '45.55.183.214', user: 'deploy', roles: %w{app db web}
 set :unicorn_rack_env, -> { "production" }
 
 # you can set custom ssh options

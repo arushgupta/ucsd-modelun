@@ -17,7 +17,11 @@
           <div class="col-md-4 col-sm-4" style="width:100%;">    
             <div class="bio-box">
               <div class=" photo col-md-2">
-                <%= image_tag  speaker.image_url.url ,class: "img-responsive spkimg img-circle " ,id:speaker.id%>
+                <% if speaker.image_url.url.nil? %>
+                  <%= image_tag  speaker.image_url.url ,class: "img-responsive spkimg img-circle " ,id:speaker.id%>
+                <% else %>
+                  <%= image_tag("default_avatar.png", alt: "logo", class: "img-responsive spkimg img-circle")%>
+                <%end%>
               </div>
               <div class="bio-right col-md-7">
                 <div class="bio-header">
