@@ -4,9 +4,9 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{deploy@162.243.91.138}
-role :web, %w{deploy@162.243.91.138}
-role :db,  %w{deploy@162.243.91.138}
+role :app, %w{deploy@162.243.214.165}
+role :web, %w{deploy@162.243.214.165}
+role :db,  %w{deploy@162.243.214.165}
 
 # Extended Server Syntax
 # ======================
@@ -14,7 +14,7 @@ role :db,  %w{deploy@162.243.91.138}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server '162.243.91.138', user: 'deploy', roles: %w{app db web}
+server '162.243.214.165', user: 'deploy', roles: %w{app db web}
 set :unicorn_rack_env, -> { "production" }
 
 # you can set custom ssh options
