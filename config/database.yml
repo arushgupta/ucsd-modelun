@@ -1,9 +1,12 @@
 
 development:
   adapter: postgresql
-  encoding: utf8
-  database: project_development
+  encoding: unicode
   pool: 5
+  timeout: 5000
+  database: project_development
+  username: rails
+  password: nQiGb2a77t
   host: localhost
 
 production:
@@ -11,7 +14,7 @@ production:
   encoding: unicode
   pool: 5
   timeout: 5000
-  database: deploydemo_production
+  database: project_production
   username: rails
-  password: mMDCpADGyM
+  password: nQiGb2a77t
   host: localhost

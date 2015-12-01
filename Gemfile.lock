@@ -66,7 +66,7 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
-    autoprefixer-rails (6.1.1)
+    autoprefixer-rails (6.1.2)
       execjs
       json
     bcrypt (3.1.7)
@@ -170,14 +170,14 @@ GEM
     mime-types (2.99)
     mini_magick (3.8.0)
       subexec (~> 0.2.1)
-    mini_portile (0.6.2)
+    mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.1)
-    nokogiri (1.6.6.4)
-      mini_portile (~> 0.6.0)
+    nokogiri (1.6.7)
+      mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyamorous (1.2.0)
@@ -223,7 +223,7 @@ GEM
       i18n
       polyamorous (~> 1.2)
     rdoc (4.2.0)
-    recaptcha (0.6.0)
+    recaptcha (1.0.2)
       json
     request_store (1.2.1)
     responders (2.1.0)
