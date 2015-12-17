@@ -4,8 +4,8 @@ development:
   pool: 5
   timeout: 5000
   database: project_development
-  username: rails
-  password: nQiGb2a77t
+  # username: rails
+  # password: nQiGb2a77t
   host: localhost
 
 production:
@@ -13,7 +13,7 @@ production:
   encoding: unicode
   pool: 5
   timeout: 5000
-  database: project_production
+  database: rails_project_production
   username: rails
   password: nQiGb2a77t
   host: localhost
