@@ -4,7 +4,7 @@ pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn_stderr.log"
 stdout_path "#{root}/log/unicorn_stdout.log"
 listen '/tmp/unicorn.ucsd_mun.sock'
-listen 9200
+#listen 9200
 worker_processes 2
 timeout 360
 
