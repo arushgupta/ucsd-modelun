@@ -2,7 +2,7 @@ working_directory '/var/www/ucsd_mun/current'
 pid '/var/www/ucsd_mun/current/tmp/pids/unicorn.pid'
 stderr_path '/var/www/ucsd_mun/log/unicorn.log'
 stdout_path '/var/www/ucsd_mun/log/unicorn.log'
-listen '/var/run/unicorn.ucsd_mun.sock'
+listen '/var/run/unicorn.sock'
 worker_processes 2
 timeout 30
 
