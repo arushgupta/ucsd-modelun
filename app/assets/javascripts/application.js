@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require ckeditor/config
+//= require ckeditor/init
 //= require ckeditor/filebrowser/javascripts/fileuploader.js
 //= require categories
 
