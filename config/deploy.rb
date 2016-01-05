@@ -2,7 +2,7 @@ set :application, 'ucsd_mun'
 set :repo_url, 'git@github.com:arushgupta/rails-sample-app.git'
 set :deploy_to, '/var/www/ucsd_mun'
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system','public/uploads')
 set :format, :pretty
 set :log_level, :info
 set :scm, :git
