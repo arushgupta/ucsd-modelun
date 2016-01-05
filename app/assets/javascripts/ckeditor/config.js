@@ -103,8 +103,8 @@ CKEDITOR.editorConfig = function( config )
             }
         }
     });
-
-    CKEDITOR.replace('ckeditor', {
+}
+CKEDITOR.replace('ckeditor', {
   filebrowserUploadUrl: '/path/to/upload.php',
   extraPlugins: 'attach', // attachment plugin
   toolbar: this.customToolbar, //use custom toolbar
@@ -129,4 +129,3 @@ CKEDITOR.editorConfig = function( config )
     }
   }
 });
-}
