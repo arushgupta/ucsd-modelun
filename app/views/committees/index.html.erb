@@ -21,9 +21,9 @@
                 <div class = "image-box">
                   <div class = "overlay-container">
                     <% if committee.image_url.url.nil? %>
-                      <%= image_tag  committee.image_url.url, class: "img-responsive"%>
-                    <% else %>
                       <%= image_tag("committee-logo.png", alt: "logo")%>
+                    <% else %>
+                      <%= image_tag  committee.image_url.url, class: "img-responsive"%>
                     <%end%>
                     <a class = "overlay committee-image" id = "<%=committee.id%>" data-toggle = "modal" data-target = "#project-1">
                       <span class = "glyphicon glyphicon-plus glyphicon-white-bg"></span>
