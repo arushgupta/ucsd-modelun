@@ -18,9 +18,9 @@
                     <div class="bio-box">
                         <div class=" photo col-md-2">
                             <% if s.image_url.url.nil? %>
-                                <%= image_tag  s.image_url.url ,class: "img-responsive spkimg img-circle " ,id:s.id%>
-                            <% else %>
                                 <%= image_tag("default_avatar.png", alt: "logo", class: "img-responsive spkimg img-circle")%>
+                            <% else %>
+                                <%= image_tag  s.image_url.url ,class: "img-responsive spkimg img-circle " ,id:s.id%>
                             <%end%>
                         </div>
                         <div class="bio-right col-md-7">

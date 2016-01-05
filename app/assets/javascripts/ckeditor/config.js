@@ -103,4 +103,30 @@ CKEDITOR.editorConfig = function( config )
             }
         }
     });
+
+    CKEDITOR.replace('ckeditor', {
+  filebrowserUploadUrl: '/path/to/upload.php',
+  extraPlugins: 'attach', // attachment plugin
+  toolbar: this.customToolbar, //use custom toolbar
+  autoCloseUpload: true, //autoClose attachment container on attachment upload
+  validateSize: 100, //100mb size limit
+  on: {
+    onAttachmentUpload: function(response) {
+      /*
+       the following code just utilizes the attachment upload response to generate 
+       ticket-attachment on your page
+      */
+      attachment_id = $(response).attr('data-id');
+      if (attachment_id) {
+        attachment = $(response).html();
+        $closeButton = $('<span class="attachment-close">').text('x').on('click', closeButtonEvent)
+        $('.ticket-attachment-container').show()
+          .append($('<div>', { class: 'ticket-attachment' }).html(attachment).append($closeButton))
+          .append($('<input>', { type: 'hidden', name: 'attachment_ids[]' }).val(attachment_id)
+          );
+        }
+      }
+    }
+  }
+});
 }
