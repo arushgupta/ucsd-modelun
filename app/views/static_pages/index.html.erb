@@ -70,7 +70,7 @@
                 <% if sec.image_url.url.nil? %>
                   <%= image_tag("default_avatar.png", alt: "logo", class: "img-responsive spkimg img-circle")%>
                 <% else %>
-                  <%= image_tag  sec.image_url.url ,class: "img-responsive spkimg img-circle " ,id:s.id%>
+                  <%= image_tag  sec.image_url.url ,class: "img-responsive spkimg img-circle " ,id:sec.id%>
                 <%end%>
               </div>
               <div class="home-secretariat-text">
