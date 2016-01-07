@@ -599,6 +599,7 @@ h3.counter-value {
   margin: 10% auto;
   font-weight: 100;
   color: #5E6469;
+  font-family: inherit;
 }
 
 /* Apply Now - Home */
@@ -1305,6 +1306,7 @@ span.fa-globe.social-media-item:hover {
   margin: 5% 0% 0%;
 }
 .coming-soon-title {
+  font-family: inherit;
   font-size: 4em !important;
   font-weight: 100;
   color: #5E6469;

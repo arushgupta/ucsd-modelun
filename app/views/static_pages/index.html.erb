@@ -57,7 +57,7 @@
 
 <!-- Secretariats -->
 <% unless @secretariats.count.zero? %>
-  <div class="col-md-12" style="padding-bottom:5%; margin-bottom: 3%;">
+  <div class="col-md-12" style="margin-top: 3%; margin-bottom: 3%;">
     <div class= "home-secretariat">
       <div class = "home-secretariat-header">
         <h3 class = "home-secretariat-title">Hi, let's get acquainted!</h3>
@@ -68,9 +68,9 @@
             <div class = "home-secretariat-info">
               <div class = "home-secretariat-img">
                 <% if sec.image_url.url.nil? %>
-                  <%= image_tag  sec.image_url.url ,class: "img-responsive spkimg img-circle " ,id:s.id%>
+                  <%= image_tag("default_avatar.png", alt: "logo", class: "img-responsive spkimg img-circle")%>
                 <% else %>
-                <%= image_tag("default_avatar.png", alt: "logo", class: "img-responsive spkimg img-circle")%>
+                  <%= image_tag  sec.image_url.url ,class: "img-responsive spkimg img-circle " ,id:s.id%>
                 <%end%>
               </div>
               <div class="home-secretariat-text">
