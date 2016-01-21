@@ -18,9 +18,9 @@
             <div class="bio-box">
               <div class=" photo col-md-2">
                 <% if speaker.image_url.url.nil? %>
-                  <%= image_tag  speaker.image_url.url ,class: "img-responsive spkimg img-circle " ,id:speaker.id%>
-                <% else %>
                   <%= image_tag("default_avatar.png", alt: "logo", class: "img-responsive spkimg img-circle")%>
+                <% else %>
+                  <%= image_tag  speaker.image_url.url ,class: "img-responsive spkimg img-circle " ,id:speaker.id%>
                 <%end%>
               </div>
               <div class="bio-right col-md-7">

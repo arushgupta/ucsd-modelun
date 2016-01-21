@@ -52,9 +52,9 @@
             <div class = "conference_blurb_content">
               <div class = "conference_blurb_image">
                 <% if page.page_icon_url.url.nil? %>
-                  <%= link_to image_tag(page.page_icon_url.url, alt: "logo"),page_path(page, id: page) %>
-                <% else %>
                   <%= link_to image_tag("page-icon.png", alt: "logo"),page_path(page, id: page) %>
+                <% else %>
+                  <%= link_to image_tag(page.page_icon_url.url, alt: "logo"),page_path(page, id: page) %>
                 <%end%>
               </div>
               <div class = "conference_blurb_container">
